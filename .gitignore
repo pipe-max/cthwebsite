@@ -1,0 +1,6 @@
+# Skills de desarrollo (no forman parte del sitio)
+.agents/
+.claude/skills/
+
+# macOS
+.DS_Store
