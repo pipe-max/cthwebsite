@@ -410,22 +410,72 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   font-weight:600;color:var(--ink);line-height:1.25;max-width:26em;margin:0 auto}
 @media(max-width:560px){.propuesta-box{padding:36px 22px}}
 
-/* ---------- PROGRAMAS ACADÉMICOS ---------- */
-.prog-nav{background:#fff;border-bottom:2px solid var(--line)}
-.prog-nav .wrap{display:flex;gap:0;overflow-x:auto}
-.prog-nav a{display:block;padding:18px 28px;font-weight:700;font-size:.9rem;color:var(--muted);
-  border-bottom:3px solid transparent;margin-bottom:-2px;transition:.2s;white-space:nowrap}
-.prog-nav a:hover{color:var(--sapphire)}
-.prog-nav a.on{color:var(--sapphire);border-bottom-color:var(--gold)}
+/* ---------- PROGRAMAS ACADÉMICOS · TABS ---------- */
+.prog-tabs-section{background:var(--paper-2);padding:64px 0 0}
+.prog-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+@media(max-width:900px){.prog-tabs{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 
-.prog-body{margin-top:36px}
+/* Tab card */
+.ptab{border:none;cursor:pointer;padding:0;display:flex;flex-direction:column;
+  border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(10,27,51,.09);
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,outline-color .2s;
+  text-align:left;outline:3px solid transparent;width:100%;background:none}
+.ptab:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(10,27,51,.16)}
+.ptab.active{transform:translateY(-8px);box-shadow:0 20px 56px rgba(10,27,51,.22);outline-color:var(--gold)}
+
+/* Tab top colored header */
+.ptab-top{position:relative;padding:36px 28px 28px;min-height:150px;display:flex;
+  flex-direction:column;justify-content:flex-end;overflow:hidden}
+.ptab-bg{position:absolute;inset:0;pointer-events:none}
+.ptab-age{position:relative;font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px}
+.ptab-top h3{position:relative;font-family:var(--display);font-size:1.65rem;font-weight:700;color:#fff;line-height:1.2;margin:0}
+
+/* Gradients per level */
+.ptab-cyan{background:linear-gradient(145deg,#24BCEF,#1E5BB8)}
+.ptab-navy{background:linear-gradient(145deg,#2568CC,#0A1B33)}
+.ptab-green{background:linear-gradient(145deg,#1D9E6E,#0D4A38)}
+
+/* Tab body (white) */
+.ptab-body{flex:1;padding:22px 28px 24px;background:#fff;display:flex;flex-direction:column}
+.ptab-body>p{color:var(--muted);font-size:.88rem;line-height:1.65;margin:0 0 16px;flex:1}
+.ptab-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ptab-link{font-size:.85rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:5px;transition:color .2s}
+.ptab:hover .ptab-link,.ptab.active .ptab-link{color:var(--sapphire)}
+.ptab-link svg{transition:transform .2s}
+.ptab:hover .ptab-link svg,.ptab.active .ptab-link svg{transform:translateX(3px)}
+
+/* Prog badge */
+.prog-badge{display:inline-flex;align-items:center;background:var(--cyan-soft);
+  color:var(--sapphire);font-size:.77rem;font-weight:700;padding:4px 12px;border-radius:20px}
+
+/* ---------- PANELS ---------- */
+.prog-panels-wrap{background:var(--paper);padding:0 0 80px;scroll-margin-top:80px}
+.prog-panel{display:none}
+.prog-panel.active{display:block;animation:fadePanel .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes fadePanel{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* Colored accent stripe at top of panel */
+.panel-stripe{height:5px}
+.panel-stripe.ptab-cyan{background:linear-gradient(90deg,#24BCEF,#1E5BB8)}
+.panel-stripe.ptab-navy{background:linear-gradient(90deg,#2568CC,#0A1B33)}
+.panel-stripe.ptab-green{background:linear-gradient(90deg,#1D9E6E,#0D4A38)}
+
+/* Panel header */
+.panel-head{padding:48px 0 36px;border-bottom:2px solid var(--line);margin-bottom:48px}
+.panel-head .eyebrow{margin-bottom:10px}
+.panel-head h2{font-family:var(--display);font-size:2.2rem;color:var(--ink);margin:0 0 8px}
+.panel-head .subhead{color:var(--muted);font-size:.92rem;margin:0}
+
+/* Prose */
 .prog-body p{color:var(--ink-2);font-size:1rem;line-height:1.78;margin-bottom:14px}
 .prog-body p:last-child{margin-bottom:0}
-.prog-cols{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:36px}
+.prog-cols{display:grid;grid-template-columns:1fr 1fr;gap:52px}
 @media(max-width:760px){.prog-cols{grid-template-columns:1fr;gap:24px}}
 
+/* Staff */
 .staff-intro{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
-.staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px}
+.staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
 .staff-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
   border-radius:14px;padding:18px 20px;transition:.2s}
 .staff-card:hover{border-color:var(--sapphire);box-shadow:0 8px 24px rgba(16,42,76,.08)}

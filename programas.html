@@ -90,44 +90,94 @@
   </div>
 </section>
 
-<!-- NAV DE NIVELES -->
-<div class="prog-nav">
+<!-- TABS DE PROGRAMAS -->
+<div class="prog-tabs-section">
   <div class="wrap">
-    <a href="#preescolar" class="prog-level-link">Preescolar · K3–Transición</a>
-    <a href="#primaria" class="prog-level-link">Primaria · 2°–6°</a>
-    <a href="#bachillerato" class="prog-level-link">Bachillerato · 7°–12°</a>
+    <div class="prog-tabs reveal">
+
+      <!-- Preescolar -->
+      <button class="ptab active" data-panel="preescolar" aria-selected="true" role="tab">
+        <div class="ptab-top ptab-cyan">
+          <svg class="ptab-bg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg>
+          <span class="ptab-age">Kínder 3 · Transición</span>
+          <h3>Preescolar</h3>
+        </div>
+        <div class="ptab-body">
+          <p>Estrategia de "juego trabajo": los niños aprenden jugando, dialogando y descubriendo el mundo a su ritmo.</p>
+          <div class="ptab-footer">
+            <span class="prog-badge">3 – 6 años</span>
+            <span class="ptab-link">Ver programa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Primaria -->
+      <button class="ptab" data-panel="primaria" aria-selected="false" role="tab">
+        <div class="ptab-top ptab-navy">
+          <svg class="ptab-bg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg>
+          <span class="ptab-age">1° a 6°</span>
+          <h3>Primaria</h3>
+        </div>
+        <div class="ptab-body">
+          <p>Pénsum internacional homologado al colombiano, con énfasis en arte, música, expresión corporal y estudios judaicos.</p>
+          <div class="ptab-footer">
+            <span class="prog-badge">7 – 12 años</span>
+            <span class="ptab-link">Ver programa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Bachillerato -->
+      <button class="ptab" data-panel="bachillerato" aria-selected="false" role="tab">
+        <div class="ptab-top ptab-green">
+          <svg class="ptab-bg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg>
+          <span class="ptab-age">7° a 12°</span>
+          <h3>Bachillerato</h3>
+        </div>
+        <div class="ptab-body">
+          <p>Formación integral que prepara a los jóvenes para la universidad y la vida, con competencias para el siglo XXI.</p>
+          <div class="ptab-footer">
+            <span class="prog-badge">12 – 18 años</span>
+            <span class="ptab-link">Ver programa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </button>
+
+    </div>
   </div>
 </div>
 
-<!-- PREESCOLAR -->
-<section class="levels" id="preescolar">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Preescolar</span>
-      <h2>Aprender jugando, descubrir el mundo.</h2>
-      <p>Kínder 3 a Transición · 3 a 6 años</p>
-    </div>
+<!-- PANELES DE CONTENIDO -->
+<div class="prog-panels-wrap" id="prog-panels">
 
-    <div class="prog-cols">
-      <div class="prog-body reveal">
-        <p>Como nuestro colegio adoptó como modelo pedagógico la metodología Horaá Mutemet — educación para la diversidad —, hemos venido implementando en el Preescolar la estrategia del <strong>"juego trabajo"</strong>: que permite a las niñas y los niños aprender mientras juegan y potenciar habilidades en entornos cercanos a algunas de sus experiencias de vida.</p>
-        <p>En momentos de juego trabajo, los niños practican el diálogo, el trabajo en equipo y el valor de la coexistencia. Apoyándonos en estos planteamientos, estamos fortaleciendo en ellos la exploración, la curiosidad, la observación; de esta forma respetamos sus ritmos de aprendizaje y, de paso, fomentamos el espíritu investigativo tan necesario en nuestros días.</p>
-        <p>Otra de las herramientas en las que hemos venido trabajando es la <strong>metodología por proyectos</strong>, que encaja perfectamente con lo que nos propone Horaá Mutemet. El enfoque respeta la curiosidad natural de los niños y responde a su necesidad de explorar, investigar y hacer preguntas sobre lo que los rodea.</p>
-        <p>En relación con lo anterior está la importancia que le damos al <strong>inglés como segunda lengua</strong>. Con este objetivo buscamos impulsar las habilidades comunicativas de los niños mediante un acercamiento lo más natural posible al idioma, inmerso en los proyectos y en juego trabajo, lo que nos permite reconocer que ellos, en las edades que tienen, logran absorber el idioma sin presión o temor a equivocarse.</p>
+  <!-- ── PREESCOLAR ── -->
+  <div class="prog-panel active" id="panel-preescolar" role="tabpanel">
+    <div class="panel-stripe ptab-cyan"></div>
+    <div class="wrap">
+      <div class="panel-head">
+        <span class="eyebrow">Preescolar</span>
+        <h2>Aprender jugando, descubrir el mundo.</h2>
+        <p class="subhead">Kínder 3 a Transición · 3 a 6 años</p>
       </div>
-      <div class="prog-body reveal">
-        <p>El colegio también ha venido descubriendo las <strong>habilidades artísticas</strong> que poseen nuestros niños; por esa razón es importante para nosotros desarrollar esas destrezas desde la música y expresión corporal (danza y teatro), permitiéndonos potenciar desde las dimensiones corporales y estéticas la sensopercepción, la propiocepción, la disociación, entre otras.</p>
-        <p>Desde la dimensión corporal damos relevancia a la <strong>motricidad gruesa</strong> con la educación física: con esto trabajamos la coordinación, el seguimiento de instrucciones, lateralidad, etc.</p>
-        <p>Como nuestro colegio pertenece a la <strong>comunidad judía de Medellín</strong>, también relacionamos a los niños con la cultura judía a través de los estudios judaicos, en los que aprendemos y compartimos elementos valiosos del judaísmo. Nuestros estudiantes se forman como seres que logran introyectar hábitos y rutinas necesarios para sus diferentes etapas. Son niños que aprenden a respetar las diferencias.</p>
-        <p>Las dimensiones prescolares están fundamentadas en los lineamientos del Ministerio de Educación Nacional para la educación inicial, permitiéndonos estar en sintonía con los objetivos que persigue la educación en Colombia en lo relacionado con la adquisición de competencias para la vida.</p>
+      <div class="prog-cols">
+        <div class="prog-body">
+          <p>Como nuestro colegio adoptó como modelo pedagógico la metodología Horaá Mutemet — educación para la diversidad —, hemos venido implementando en el Preescolar la estrategia del <strong>"juego trabajo"</strong>: que permite a las niñas y los niños aprender mientras juegan y potenciar habilidades en entornos cercanos a algunas de sus experiencias de vida.</p>
+          <p>En momentos de juego trabajo, los niños practican el diálogo, el trabajo en equipo y el valor de la coexistencia. Apoyándonos en estos planteamientos, estamos fortaleciendo en ellos la exploración, la curiosidad, la observación; de esta forma respetamos sus ritmos de aprendizaje y, de paso, fomentamos el espíritu investigativo tan necesario en nuestros días.</p>
+          <p>Otra de las herramientas en las que hemos venido trabajando es la <strong>metodología por proyectos</strong>, que encaja perfectamente con lo que nos propone Horaá Mutemet. El enfoque respeta la curiosidad natural de los niños y responde a su necesidad de explorar, investigar y hacer preguntas sobre lo que los rodea.</p>
+          <p>En relación con lo anterior está la importancia que le damos al <strong>inglés como segunda lengua</strong>. Con este objetivo buscamos impulsar las habilidades comunicativas de los niños mediante un acercamiento lo más natural posible al idioma, inmerso en los proyectos y en juego trabajo, lo que nos permite reconocer que ellos, en las edades que tienen, logran absorber el idioma sin presión o temor a equivocarse.</p>
+        </div>
+        <div class="prog-body">
+          <p>El colegio también ha venido descubriendo las <strong>habilidades artísticas</strong> que poseen nuestros niños; por esa razón es importante para nosotros desarrollar esas destrezas desde la música y expresión corporal (danza y teatro), permitiéndonos potenciar desde las dimensiones corporales y estéticas la sensopercepción, la propiocepción, la disociación, entre otras.</p>
+          <p>Desde la dimensión corporal damos relevancia a la <strong>motricidad gruesa</strong> con la educación física: con esto trabajamos la coordinación, el seguimiento de instrucciones, lateralidad, etc.</p>
+          <p>Como nuestro colegio pertenece a la <strong>comunidad judía de Medellín</strong>, también relacionamos a los niños con la cultura judía a través de los estudios judaicos, en los que aprendemos y compartimos elementos valiosos del judaísmo. Nuestros estudiantes se forman como seres que logran introyectar hábitos y rutinas necesarios para sus diferentes etapas. Son niños que aprenden a respetar las diferencias.</p>
+          <p>Las dimensiones prescolares están fundamentadas en los lineamientos del Ministerio de Educación Nacional para la educación inicial, permitiéndonos estar en sintonía con los objetivos que persigue la educación en Colombia en lo relacionado con la adquisición de competencias para la vida.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="staff-intro reveal">
-      <span class="eyebrow">Equipo Preescolar</span>
-    </div>
-    <div class="staff-grid">
-      <div class="staff-card leader reveal">
+      <div class="staff-intro">
+        <span class="eyebrow">Equipo Preescolar</span>
+      </div>
+      <div class="staff-grid">
+      <div class="staff-card leader">
         <div class="av">PC</div>
         <div class="info">
           <h4>Paola Cardona</h4>
@@ -135,7 +185,7 @@
           <a class="email" href="mailto:coordinacionpreescolar@theodoro.edu.co">coordinacionpreescolar@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card leader reveal">
+      <div class="staff-card leader">
         <div class="av">PM</div>
         <div class="info">
           <h4>Paula Monsalve</h4>
@@ -143,7 +193,7 @@
           <a class="email" href="mailto:psicologiapreescolar@theodoro.edu.co">psicologiapreescolar@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">NH</div>
         <div class="info">
           <h4>Natalia Herrera</h4>
@@ -151,7 +201,7 @@
           <a class="email" href="mailto:natalia.herrera@theodoro.edu.co">natalia.herrera@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">LS</div>
         <div class="info">
           <h4>Luisa Salinas</h4>
@@ -159,7 +209,7 @@
           <a class="email" href="mailto:lsalinas@theodoro.edu.co">lsalinas@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">SA</div>
         <div class="info">
           <h4>Sara Arias</h4>
@@ -167,7 +217,7 @@
           <a class="email" href="mailto:sara.arias@theodoro.edu.co">sara.arias@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">JB</div>
         <div class="info">
           <h4>Jennifer Betancur</h4>
@@ -175,7 +225,7 @@
           <a class="email" href="mailto:jeniffer.betancur@theodoro.edu.co">jeniffer.betancur@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">SS</div>
         <div class="info">
           <h4>Sandra Solano</h4>
@@ -183,7 +233,7 @@
           <a class="email" href="mailto:sandra.solano@theodoro.edu.co">sandra.solano@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">CL</div>
         <div class="info">
           <h4>Carolina López</h4>
@@ -191,7 +241,7 @@
           <a class="email" href="mailto:carolina.lopez@theodoro.edu.co">carolina.lopez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">AM</div>
         <div class="info">
           <h4>Ana María Agudelo</h4>
@@ -199,7 +249,7 @@
           <a class="email" href="mailto:anamaria.agudelo@theodoro.edu.co">anamaria.agudelo@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">PL</div>
         <div class="info">
           <h4>Patricia Larralde</h4>
@@ -208,36 +258,36 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+    </div><!-- /.wrap -->
+  </div><!-- /panel-preescolar -->
 
-<!-- PRIMARIA -->
-<section class="services" id="primaria">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Primaria</span>
-      <h2>Ciudadanos del mundo con raíces profundas.</h2>
-      <p>Grados 2° a 6° · 7 a 11 años</p>
-    </div>
-
-    <div class="prog-cols">
-      <div class="prog-body reveal">
-        <p>La sección de Primaria abarca desde el grado Segundo hasta Sexto (niños desde los 7 hasta los 11 años de edad). Además de la aplicación de Horaá Mutemet dentro de todos los procesos pedagógicos, se cuenta con una <strong>participación activa y constante de la psicóloga</strong> de la sección, del programa United Within Difference (Unidos por la Diferencia) así como de la coordinación de la sección.</p>
-        <p>Se hace énfasis en los valores y en las enseñanzas impartidas por el rabino y los docentes de <strong>Cultura Judía</strong>. El aprendizaje y las experiencias cotidianas de los niños están guiadas por todo el equipo de docentes y los directores de grupo.</p>
-        <p>Tener docentes que aportan al conocimiento y las creencias desde puntos distintos (los estudiantes escogen cursos de Religión Judía, Católica, Cristiana o Desarrollo Humano) permite fomentar el <strong>respeto por la diferencia</strong> y lograr un desarrollo integral y una mente abierta hacia lo nuevo o distinto.</p>
+  <!-- ── PRIMARIA ── -->
+  <div class="prog-panel" id="panel-primaria" role="tabpanel">
+    <div class="panel-stripe ptab-navy"></div>
+    <div class="wrap">
+      <div class="panel-head">
+        <span class="eyebrow">Primaria</span>
+        <h2>Ciudadanos del mundo con raíces profundas.</h2>
+        <p class="subhead">Grados 2° a 6° · 7 a 11 años</p>
       </div>
-      <div class="prog-body reveal">
-        <p>Nuestro programa es <strong>bilingüe</strong> y a él se agrega el idioma hebreo, hecho que permite a nuestros estudiantes tener una visión cultural y social más amplia del mundo. Adicionalmente, los docentes desarrollan distintas plataformas que permiten la integración y la conectividad local y global.</p>
-        <p>Como formadores de ciudadanos del mundo que son, están en capacidad de asumir con liderazgo, integridad y respeto los retos y propuestas que la sociedad demanda.</p>
-        <p>Al finalizar la Escuela Primaria, nuestros estudiantes se enfrentan ante las <strong>pruebas Cambridge</strong> para definir sus avances y progresos en Inglés.</p>
+      <div class="prog-cols">
+        <div class="prog-body">
+          <p>La sección de Primaria abarca desde el grado Segundo hasta Sexto (niños desde los 7 hasta los 11 años de edad). Además de la aplicación de Horaá Mutemet dentro de todos los procesos pedagógicos, se cuenta con una <strong>participación activa y constante de la psicóloga</strong> de la sección, del programa United Within Difference (Unidos por la Diferencia) así como de la coordinación de la sección.</p>
+          <p>Se hace énfasis en los valores y en las enseñanzas impartidas por el rabino y los docentes de <strong>Cultura Judía</strong>. El aprendizaje y las experiencias cotidianas de los niños están guiadas por todo el equipo de docentes y los directores de grupo.</p>
+          <p>Tener docentes que aportan al conocimiento y las creencias desde puntos distintos (los estudiantes escogen cursos de Religión Judía, Católica, Cristiana o Desarrollo Humano) permite fomentar el <strong>respeto por la diferencia</strong> y lograr un desarrollo integral y una mente abierta hacia lo nuevo o distinto.</p>
+        </div>
+        <div class="prog-body">
+          <p>Nuestro programa es <strong>bilingüe</strong> y a él se agrega el idioma hebreo, hecho que permite a nuestros estudiantes tener una visión cultural y social más amplia del mundo. Adicionalmente, los docentes desarrollan distintas plataformas que permiten la integración y la conectividad local y global.</p>
+          <p>Como formadores de ciudadanos del mundo que son, están en capacidad de asumir con liderazgo, integridad y respeto los retos y propuestas que la sociedad demanda.</p>
+          <p>Al finalizar la Escuela Primaria, nuestros estudiantes se enfrentan ante las <strong>pruebas Cambridge</strong> para definir sus avances y progresos en Inglés.</p>
+        </div>
       </div>
-    </div>
 
     <div class="staff-intro reveal">
       <span class="eyebrow">Equipo Primaria</span>
     </div>
     <div class="staff-grid">
-      <div class="staff-card leader reveal">
+      <div class="staff-card leader">
         <div class="av">OA</div>
         <div class="info">
           <h4>Olga Lucia Amar</h4>
@@ -245,7 +295,7 @@
           <a class="email" href="mailto:coordinacionprimaria@theodoro.edu.co">coordinacionprimaria@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card leader reveal">
+      <div class="staff-card leader">
         <div class="av">MP</div>
         <div class="info">
           <h4>Mariana Pareja</h4>
@@ -253,7 +303,7 @@
           <a class="email" href="mailto:psicologiaprimaria@theodoro.edu.co">psicologiaprimaria@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">JB</div>
         <div class="info">
           <h4>Jennyfer Bedoya</h4>
@@ -261,7 +311,7 @@
           <a class="email" href="mailto:jennyfer.bedoya@theodoro.edu.co">jennyfer.bedoya@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">MO</div>
         <div class="info">
           <h4>Mariana Ortega</h4>
@@ -269,7 +319,7 @@
           <a class="email" href="mailto:mariana.ortega@theodoro.edu.co">mariana.ortega@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">LG</div>
         <div class="info">
           <h4>Laura González</h4>
@@ -277,7 +327,7 @@
           <a class="email" href="mailto:laura.gonzalez@theodoro.edu.co">laura.gonzalez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">JD</div>
         <div class="info">
           <h4>Jessica Dorrell</h4>
@@ -285,7 +335,7 @@
           <a class="email" href="mailto:jessica.dorrell@theodoro.edu.co">jessica.dorrell@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">DA</div>
         <div class="info">
           <h4>Diana Álvarez</h4>
@@ -293,7 +343,7 @@
           <a class="email" href="mailto:dalvarez@theodoro.edu.co">dalvarez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">LM</div>
         <div class="info">
           <h4>Lina Mazo</h4>
@@ -301,7 +351,7 @@
           <a class="email" href="mailto:lina.mazo@theodoro.edu.co">lina.mazo@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">AF</div>
         <div class="info">
           <h4>Andrés Felipe Melo</h4>
@@ -309,7 +359,7 @@
           <a class="email" href="mailto:andres.melo@theodoro.edu.co">andres.melo@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">SG</div>
         <div class="info">
           <h4>Sirley Gómez</h4>
@@ -317,7 +367,7 @@
           <a class="email" href="mailto:sirley.gomez@theodoro.edu.co">sirley.gomez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">MB</div>
         <div class="info">
           <h4>Marco Betancur</h4>
@@ -325,7 +375,7 @@
           <a class="email" href="mailto:marco.betancur@theodoro.edu.co">marco.betancur@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">AC</div>
         <div class="info">
           <h4>Alejandro Cartagena</h4>
@@ -334,43 +384,42 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+    </div><!-- /.wrap -->
+  </div><!-- /panel-primaria -->
 
-<!-- BACHILLERATO -->
-<section class="levels" id="bachillerato">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Bachillerato</span>
-      <h2>Autonomía, criterio y visión de mundo.</h2>
-      <p>Grados 7° a 12° · 12 a 18 años</p>
-    </div>
-
-    <div class="prog-cols">
-      <div class="prog-body reveal">
-        <p>En la sección de Bachillerato se da continuidad al proceso formativo de los estudiantes y por eso se hace énfasis en fortalecer la <strong>autonomía y la responsabilidad</strong>. La palabra autonomía (una expresión venida del griego) podría traducirse como "quien conoce la norma". Inspirados por este significado buscamos que el estudiante se haga consciente de la importancia que traen los deberes o situaciones delegadas. Y por responsabilidad entendemos una cualidad que los conduce a cumplir sus deberes y a asumir las consecuencias de sus acciones. A medida que los jóvenes avanzan en el proceso adquieren herramientas como la crítica y la habilidad para argumentar lo observado o visto.</p>
-        <p>El estudiante <strong>"Theodorista"</strong> se forma ante todo como un ser sensible a los demás y capaz de darse al otro desde lo que posee en sentido humano; logra desarrollar sentido de pertenencia por la institución y comprende la importancia y el respeto que se debe tener por este espacio.</p>
+  <!-- ── BACHILLERATO ── -->
+  <div class="prog-panel" id="panel-bachillerato" role="tabpanel">
+    <div class="panel-stripe ptab-green"></div>
+    <div class="wrap">
+      <div class="panel-head">
+        <span class="eyebrow">Bachillerato</span>
+        <h2>Autonomía, criterio y visión de mundo.</h2>
+        <p class="subhead">Grados 7° a 12° · 12 a 18 años</p>
       </div>
-      <div class="prog-body reveal">
-        <p>Los diseños académicos que hacen las diferentes asignaturas se basan en los lineamientos del Ministerio de Educación Nacional y tienen en cuenta el método israelí Horaá Mutemet, que busca desarrollar conciencia frente a la importancia de tener salones de clase <strong>heterogéneos</strong> donde se respetan los ritmos de aprendizaje y los maestros implementan vías diversas para perseguir un propósito en el que hay inclusión al momento de transmitir conocimientos.</p>
-        <p>A lo largo del Bachillerato, los estudiantes se preparan para las <strong>pruebas SABER 11°</strong> y las pruebas estandarizadas de Inglés. Desde hace tres años incursionamos en la importancia de fomentar en los profesores el espíritu del maestro investigador que además de las capacitaciones da vía libre al trabajo por proyectos — herramienta evaluativa y estrategia que permite a los estudiantes indagar sobre diferentes objetos de conocimiento.</p>
-        <p>También se implementa un <strong>programa de salidas al exterior</strong>: viaje a Canadá con los estudiantes de grado 7° y el viaje a Europa e Israel con los estudiantes de grado 11°.</p>
+      <div class="prog-cols">
+        <div class="prog-body">
+          <p>En la sección de Bachillerato se da continuidad al proceso formativo de los estudiantes y por eso se hace énfasis en fortalecer la <strong>autonomía y la responsabilidad</strong>. La palabra autonomía (una expresión venida del griego) podría traducirse como "quien conoce la norma". Inspirados por este significado buscamos que el estudiante se haga consciente de la importancia que traen los deberes o situaciones delegadas. Y por responsabilidad entendemos una cualidad que los conduce a cumplir sus deberes y a asumir las consecuencias de sus acciones. A medida que los jóvenes avanzan en el proceso adquieren herramientas como la crítica y la habilidad para argumentar lo observado o visto.</p>
+          <p>El estudiante <strong>"Theodorista"</strong> se forma ante todo como un ser sensible a los demás y capaz de darse al otro desde lo que posee en sentido humano; logra desarrollar sentido de pertenencia por la institución y comprende la importancia y el respeto que se debe tener por este espacio.</p>
+        </div>
+        <div class="prog-body">
+          <p>Los diseños académicos que hacen las diferentes asignaturas se basan en los lineamientos del Ministerio de Educación Nacional y tienen en cuenta el método israelí Horaá Mutemet, que busca desarrollar conciencia frente a la importancia de tener salones de clase <strong>heterogéneos</strong> donde se respetan los ritmos de aprendizaje y los maestros implementan vías diversas para perseguir un propósito en el que hay inclusión al momento de transmitir conocimientos.</p>
+          <p>A lo largo del Bachillerato, los estudiantes se preparan para las <strong>pruebas SABER 11°</strong> y las pruebas estandarizadas de Inglés. Desde hace tres años incursionamos en la importancia de fomentar en los profesores el espíritu del maestro investigador que además de las capacitaciones da vía libre al trabajo por proyectos — herramienta evaluativa y estrategia que permite a los estudiantes indagar sobre diferentes objetos de conocimiento.</p>
+          <p>También se implementa un <strong>programa de salidas al exterior</strong>: viaje a Canadá con los estudiantes de grado 7° y el viaje a Europa e Israel con los estudiantes de grado 11°.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="staff-intro reveal">
-      <span class="eyebrow">Equipo Bachillerato</span>
-    </div>
-    <div class="staff-grid">
-      <div class="staff-card leader reveal">
-        <div class="av">AZ</div>
+      <div class="staff-intro">
+        <span class="eyebrow">Equipo Bachillerato</span>
+      </div>
+      <div class="staff-grid">
+        <div class="staff-card leader">
+          <div class="av">AZ</div>
         <div class="info">
           <h4>Alexander Zuluaga Gil</h4>
           <div class="role">Coordinador Bachillerato</div>
           <a class="email" href="mailto:coordinacionbachillerato@theodoro.edu.co">coordinacionbachillerato@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card leader reveal">
+      <div class="staff-card leader">
         <div class="av">EO</div>
         <div class="info">
           <h4>Estefanía Ordoñez</h4>
@@ -378,7 +427,7 @@
           <a class="email" href="mailto:psicologiabachillerato@theodoro.edu.co">psicologiabachillerato@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">SS</div>
         <div class="info">
           <h4>Santiago Salazar</h4>
@@ -386,7 +435,7 @@
           <a class="email" href="mailto:santiago.salazar@theodoro.edu.co">santiago.salazar@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">LC</div>
         <div class="info">
           <h4>Liliana Castrillón</h4>
@@ -394,7 +443,7 @@
           <a class="email" href="mailto:lcastrillon@theodoro.edu.co">lcastrillon@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">MM</div>
         <div class="info">
           <h4>Manuela Macías</h4>
@@ -402,7 +451,7 @@
           <a class="email" href="mailto:manuela.macias@theodoro.edu.co">manuela.macias@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">DG</div>
         <div class="info">
           <h4>Dayron Garcés</h4>
@@ -410,7 +459,7 @@
           <a class="email" href="mailto:dayron.garces@theodoro.edu.co">dayron.garces@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">FR</div>
         <div class="info">
           <h4>Ferney Rave</h4>
@@ -418,7 +467,7 @@
           <a class="email" href="mailto:ferney.rave@theodoro.edu.co">ferney.rave@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">KM</div>
         <div class="info">
           <h4>Katty Marchena</h4>
@@ -426,7 +475,7 @@
           <a class="email" href="mailto:katty.corrales@theodoro.edu.co">katty.corrales@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">YS</div>
         <div class="info">
           <h4>Yuliana Suárez</h4>
@@ -434,7 +483,7 @@
           <a class="email" href="mailto:yuliana.suarez@theodoro.edu.co">yuliana.suarez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">JV</div>
         <div class="info">
           <h4>Juan Felipe Vélez</h4>
@@ -442,7 +491,7 @@
           <a class="email" href="mailto:juan.velez@theodoro.edu.co">juan.velez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">DG</div>
         <div class="info">
           <h4>Diana Gómez</h4>
@@ -450,7 +499,7 @@
           <a class="email" href="mailto:diana.gomez@theodoro.edu.co">diana.gomez@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">OC</div>
         <div class="info">
           <h4>Oscar Castañeda</h4>
@@ -458,7 +507,7 @@
           <a class="email" href="mailto:ocastaneda@theodoro.edu.co">ocastaneda@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">GT</div>
         <div class="info">
           <h4>Giovanni Torres</h4>
@@ -466,7 +515,7 @@
           <a class="email" href="mailto:gtorres@theodoro.edu.co">gtorres@theodoro.edu.co</a>
         </div>
       </div>
-      <div class="staff-card reveal">
+      <div class="staff-card">
         <div class="av">TL</div>
         <div class="info">
           <h4>Tahia Lorenzo</h4>
@@ -475,8 +524,10 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+    </div><!-- /.wrap -->
+  </div><!-- /panel-bachillerato -->
+
+</div><!-- /prog-panels-wrap -->
 
 <!-- CTA -->
 <section class="cta-band">
@@ -560,21 +611,22 @@
     document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
   }));
-  // highlight prog-nav link based on scroll
-  const sections = ['preescolar','primaria','bachillerato'];
-  const links = document.querySelectorAll('.prog-level-link');
-  const onScroll = ()=>{
-    let current = '';
-    sections.forEach(id=>{
-      const el = document.getElementById(id);
-      if(el && window.scrollY >= el.offsetTop - 160) current = id;
+
+  // ── Tab switching ──
+  const tabs = document.querySelectorAll('.ptab');
+  const panels = document.querySelectorAll('.prog-panel');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>{ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      panels.forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      const panel = document.getElementById('panel-'+tab.dataset.panel);
+      panel.classList.add('active');
+      // Smooth scroll to panel top
+      document.getElementById('prog-panels').scrollIntoView({behavior:'smooth',block:'start'});
     });
-    links.forEach(l=>{
-      l.classList.toggle('on', l.getAttribute('href')==='#'+current);
-    });
-  };
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
+  });
 </script>
 </body>
 </html>
