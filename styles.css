@@ -366,6 +366,50 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 @media(max-width:1000px){.fam-grid.cols-4{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.fam-grid.cols-4{grid-template-columns:1fr}}
 
+/* svc-grid variante 5 columnas */
+.svc-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1000px){.svc-grid.cols-5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.svc-grid.cols-5{grid-template-columns:1fr}}
+
+/* identidad fondo alternativo */
+.identity.alt{background:var(--paper-2)}
+
+/* grid reversed — foto a la izquierda */
+.grid.rev{direction:rtl}
+.grid.rev > *{direction:ltr}
+
+/* historia timeline vertical */
+.hist-tl{position:relative;margin-top:56px;padding-left:52px;max-width:780px}
+.hist-tl::before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(to bottom,var(--cyan),var(--gold))}
+.hist-item{position:relative;padding-bottom:32px}
+.hist-item:last-child{padding-bottom:0}
+.hist-item::before{content:"";position:absolute;left:-40px;top:8px;width:14px;height:14px;
+  border-radius:50%;background:var(--gold);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--gold)}
+.hist-item .year{font-family:var(--display);font-size:1.4rem;font-weight:600;color:var(--sapphire);line-height:1}
+.hist-item h4{font-weight:700;font-size:.97rem;color:var(--ink);margin-top:6px}
+.hist-item p{font-size:.9rem;color:var(--muted);margin-top:4px;line-height:1.6;max-width:52em}
+
+/* misión y visión */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.mv-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
+.mv-card:hover{box-shadow:0 18px 44px rgba(16,42,76,.12);transform:translateY(-4px)}
+.mv-card .mv-top{padding:28px 28px 22px;min-height:100px;display:flex;align-items:flex-end}
+.mv-card.mision .mv-top{background:linear-gradient(150deg,#1E5BB8,#102A4C)}
+.mv-card.vision .mv-top{background:linear-gradient(150deg,#1E8A5B,#0E5C3C)}
+.mv-card .mv-top h3{font-size:1.7rem;color:#fff}
+.mv-card .mv-body{padding:24px 28px 28px}
+.mv-card .mv-body p{color:var(--ink-2);font-size:.97rem;line-height:1.65}
+@media(max-width:760px){.mv-grid{grid-template-columns:1fr}}
+
+/* propuesta de valor */
+.propuesta-box{background:linear-gradient(135deg,var(--cyan-soft),var(--gold-soft));
+  border:1px solid var(--line);border-radius:22px;padding:56px 48px;text-align:center;margin-top:48px}
+.propuesta-box .eyebrow{justify-content:center;margin-bottom:22px}
+.propuesta-box blockquote{font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2.1rem);
+  font-weight:600;color:var(--ink);line-height:1.25;max-width:26em;margin:0 auto}
+@media(max-width:560px){.propuesta-box{padding:36px 22px}}
+
 /* reveal animation */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
