@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admisiones — Colegio Theodoro Herzl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- patrones decorativos reutilizables -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="star-lattice" width="80" height="92" patternUnits="userSpaceOnUse">
+      <path d="M40 6 L74 26 L74 66 L40 86 L6 66 L6 26 Z" fill="none" stroke="rgba(127,208,240,.25)" stroke-width="1"/>
+      <path d="M40 18 L40 -10 M40 86 L40 110 M6 26 L-18 12 M74 26 L98 12 M6 66 L-18 80 M74 66 L98 80" stroke="rgba(201,162,39,.18)" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- UTILITY BAR -->
+<div class="utility">
+  <div class="wrap">
+    <div class="util-left">
+      <a href="tel:+576043220180">📞 (+57) 604 322 0180</a>
+      <a href="mailto:admisiones@theodoro.edu.co">✉ admisiones@theodoro.edu.co</a>
+      <span class="lang-wrap" style="display:flex;align-items:center">
+        <span class="lang"><button class="on">ES</button><button>EN</button></span>
+      </span>
+    </div>
+    <div class="util-right">
+      <a class="pill-link" href="#">Plataforma Phidias</a>
+      <a class="pill-link gold" href="#">Intranet CTH</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 100 100" fill="none">
+        <path d="M50 6 L70 41 L50 41 Z" fill="#1E5BB8"/><path d="M50 94 L30 59 L50 59 Z" fill="#19A7DE"/>
+        <path d="M9 30 L49 30 L29 65 Z" fill="#102A4C"/><path d="M91 30 L51 30 L71 65 Z" fill="#1E5BB8"/>
+        <path d="M9 70 L49 70 L29 35 Z" fill="#19A7DE"/><path d="M91 70 L51 70 L71 35 Z" fill="#102A4C"/>
+        <circle cx="50" cy="50" r="13" fill="#C9A227"/>
+      </svg>
+      <span class="name">Theodoro Herzl<span>SCHOOL · ENVIGADO</span></span>
+    </a>
+    <nav class="main">
+      <a href="index.html#identidad">Quiénes Somos</a>
+      <a href="index.html#niveles">Programas</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="admisiones.html" class="active">Admisiones</a>
+      <a href="index.html#noticias">Egresados</a>
+      <a href="#">Contacto</a>
+      <a class="cta" href="#procesos">Inscríbete</a>
+    </nav>
+    <button class="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="lattice"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#star-lattice)"/></svg></div>
+  <div class="wrap">
+    <div class="breadcrumb reveal"><a href="index.html">Inicio</a> <span>›</span> Admisiones</div>
+    <h1 class="reveal">El siguiente capítulo de tu familia <em>empieza aquí</em>.</h1>
+    <p class="reveal">En el Colegio Theodoro Herzl los niños inician su escolaridad en Kínder 3, con 3 años cumplidos al 31 de julio. Te acompañamos en cada paso del proceso.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="identity">
+  <div class="wrap">
+    <div class="intro-split">
+      <div class="reveal">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);margin-top:14px">Un grado para cada edad y etapa.</h2>
+        <p class="lead-txt" style="margin-top:18px">La siguiente tabla muestra la <strong>edad requerida para cada nivel</strong>. De acuerdo con las evaluaciones y observaciones del comité de admisiones, y en caso de ser aceptado, la institución podrá decidir el grado al cual ingresa el estudiante.</p>
+        <p class="lead-txt" style="margin-top:14px">Nuestro plan de estudios está organizado según el <strong>pénsum internacional</strong>, homologado al pénsum colombiano.</p>
+      </div>
+      <div class="trust reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>¿Tienes dudas del proceso?</h3>
+        <p>Nuestro equipo de admisiones te orienta en todo momento. Escríbenos a <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> o llámanos al (+57) 604 322 0180.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLA DE EDADES -->
+<section class="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Edades por nivel</span>
+      <h2>Encuentra el grado que corresponde.</h2>
+    </div>
+    <div class="ages-wrap">
+      <div class="age-block a1 reveal">
+        <div class="head">Preescolar</div>
+        <table class="age-table">
+          <tr><th>Pénsum nacional</th><th>Internacional</th><th>Edad</th></tr>
+          <tr><td>Párvulos</td><td>Kínder 3</td><td>3 años</td></tr>
+          <tr><td>Pre-Jardín</td><td>Kínder 4</td><td>4 años</td></tr>
+          <tr><td>Jardín</td><td>Kínder 5</td><td>5 años</td></tr>
+          <tr><td>Transición</td><td>1°</td><td>6 años</td></tr>
+        </table>
+      </div>
+      <div class="age-block a2 reveal">
+        <div class="head">Primaria</div>
+        <table class="age-table">
+          <tr><th>Pénsum nacional</th><th>Internacional</th><th>Edad</th></tr>
+          <tr><td>1°</td><td>2°</td><td>7 años</td></tr>
+          <tr><td>2°</td><td>3°</td><td>8 años</td></tr>
+          <tr><td>3°</td><td>4°</td><td>9 años</td></tr>
+          <tr><td>4°</td><td>5°</td><td>10 años</td></tr>
+          <tr><td>5°</td><td>6°</td><td>11 años</td></tr>
+          <tr><td>6°</td><td>7°</td><td>12 años</td></tr>
+        </table>
+      </div>
+      <div class="age-block a3 reveal">
+        <div class="head">Bachillerato</div>
+        <table class="age-table">
+          <tr><th>Pénsum nacional</th><th>Internacional</th><th>Edad</th></tr>
+          <tr><td>7°</td><td>8°</td><td>12 años</td></tr>
+          <tr><td>8°</td><td>9°</td><td>13 años</td></tr>
+          <tr><td>9°</td><td>10°</td><td>14 años</td></tr>
+          <tr><td>10°</td><td>11°</td><td>15 años</td></tr>
+          <tr><td>11°</td><td>12°</td><td>16 años</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="age-note reveal">*El plan de estudios está organizado de acuerdo con el pénsum internacional, homologado al pénsum colombiano.</p>
+  </div>
+</section>
+
+<!-- PROCESOS ACTUALES -->
+<section class="levels" id="procesos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Procesos actuales</span>
+      <h2>Inscripciones abiertas.</h2>
+    </div>
+    <div class="tracks">
+
+      <!-- Track 1 -->
+      <div class="track reveal">
+        <div class="track-top">
+          <span class="track-badge open">● Abierto</span>
+        </div>
+        <h3>Familias nuevas · Kínder 3 · 2028–2029</h3>
+        <p class="sub">Niños nacidos entre el 1 de agosto de 2024 y el 31 de julio de 2025.</p>
+        <div class="track-grid">
+          <div class="track-col">
+            <h4>Apertura de inscripciones</h4>
+            <p class="big">Hasta agotar cupos</p>
+            <p>Cierre al completar el formulario de inscripción.</p>
+          </div>
+          <div class="track-col">
+            <h4>Grado y fecha de ingreso</h4>
+            <p class="big">Kínder 3</p>
+            <p>Año escolar 2028–2029.</p>
+          </div>
+          <div class="track-col">
+            <h4>Documentos para adjuntar</h4>
+            <ul class="doclist">
+              <li>Registro civil o pasaporte del aspirante</li>
+              <li>Fotocopia de la cédula o documento de los padres</li>
+              <li>Tres cartas de recomendación</li>
+              <li>Certificado laboral o de ingresos de ambos padres</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="#">Inscribirme a Kínder 3
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="track reveal">
+        <div class="track-top">
+          <span class="track-badge open">● Abierto</span>
+        </div>
+        <h3>Otros grados · Kínder 4 a 12°</h3>
+        <p class="sub">Sujeto a disponibilidad de cupos.</p>
+        <div class="track-grid">
+          <div class="track-col">
+            <h4>Apertura de inscripciones</h4>
+            <p class="big">Formulario en línea</p>
+            <p>Realiza el registro desde una cuenta de Gmail.</p>
+          </div>
+          <div class="track-col">
+            <h4>Grado y fecha de ingreso</h4>
+            <p class="big">Kínder 4 a 12°</p>
+            <p>Según disponibilidad y evaluación.</p>
+          </div>
+          <div class="track-col">
+            <h4>Documentos para adjuntar</h4>
+            <ul class="doclist">
+              <li>Documento de identidad, pasaporte o visa del aspirante</li>
+              <li>Fotocopia de la cédula o documento de los padres</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="#">Inscribirme a otro grado
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMO PROCESO -->
+<section class="timeline">
+  <div class="lattice"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#star-lattice)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Próximo proceso</span>
+      <h2>Kínder 3 · 2029–2030</h2>
+      <p style="color:#B9C9E0">Aspirantes: niños nacidos entre el 1 de agosto de 2025 y el 31 de julio de 2026.</p>
+    </div>
+    <div class="tl-grid">
+      <div class="tl-card reveal">
+        <h3>Aspirantes</h3>
+        <p>Niños nacidos entre agosto de 2025 y julio de 2026.</p>
+        <span class="date">Requisito de edad</span>
+      </div>
+      <div class="tl-card reveal">
+        <h3>Familias actuales</h3>
+        <p>Inscripción anticipada para familias que ya hacen parte del colegio.</p>
+        <span class="date">Del 1 al 30 de diciembre de 2026</span>
+      </div>
+      <div class="tl-card reveal">
+        <h3>Familias nuevas</h3>
+        <p>Apertura del proceso para nuevas familias interesadas.</p>
+        <span class="date">Miércoles 13 de enero de 2027</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA CONTACTO -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="box reveal">
+      <div class="glow"></div>
+      <h2>¿Tienes preguntas sobre admisiones?</h2>
+      <p>Escríbenos y te acompañamos en cada paso del proceso para que tu familia haga parte de la comunidad CTH.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="mailto:admisiones@theodoro.edu.co">Escribir a admisiones</a>
+        <a class="btn btn-ghost" href="index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg width="40" viewBox="0 0 100 100" fill="none">
+          <path d="M50 6 L70 41 L50 41 Z" fill="#fff"/><path d="M50 94 L30 59 L50 59 Z" fill="#19A7DE"/>
+          <path d="M9 30 L49 30 L29 65 Z" fill="#fff"/><path d="M91 30 L51 30 L71 65 Z" fill="#19A7DE"/>
+          <path d="M9 70 L49 70 L29 35 Z" fill="#19A7DE"/><path d="M91 70 L51 70 L71 35 Z" fill="#fff"/>
+          <circle cx="50" cy="50" r="13" fill="#C9A227"/>
+        </svg>
+        <div class="name">Colegio Theodoro Herzl</div>
+        <p>80 años formando seres humanos íntegros en la pluralidad y el respeto por las diferencias.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 002 8.2 31 31 0 002 12a31 31 0 00.1 3.8 3 3 0 002.1 2.1c1.9.6 7.8.6 7.8.6s6 0 7.9-.6a3 3 0 002.1-2.1A31 31 0 0022 12a31 31 0 00-.1-3.8zM10 15V9l5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Colegio</h4>
+        <a href="index.html#identidad">Quiénes somos</a>
+        <a href="index.html#niveles">Programas académicos</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#noticias">Theodoro al día</a>
+      </div>
+      <div class="foot-col">
+        <h4>Familias</h4>
+        <a href="admisiones.html">Admisiones</a>
+        <a href="#">Plataforma Phidias</a>
+        <a href="#">Calendario escolar</a>
+        <a href="#">Trabaja con nosotros</a>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4>Contacto</h4>
+        <p class="strong">Carrera 1 No. 36 D Sur 515</p>
+        <p>(Alto de las Palmas)</p>
+        <p>Envigado — Antioquia</p>
+        <p class="strong">(+57) 604 322 0180</p>
+        <p>admisiones@theodoro.edu.co</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Colegio Theodoro Herzl · בית ספר תאודור הרצל</span>
+      <span>
+        <a href="#">Política de protección de datos</a> &nbsp;·&nbsp;
+        <a href="#">Normas de uso de activos de información</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el)=>{
+    const sibs = el.parentElement.querySelectorAll(':scope > .reveal');
+    el.style.transitionDelay = (Array.from(sibs).indexOf(el)*70)+'ms';
+    io.observe(el);
+  });
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+  }));
+</script>
+</body>
+</html>
