@@ -335,6 +335,11 @@ footer{background:var(--ink);color:#A9BDD8;padding:72px 0 30px;position:relative
 .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;font-size:.8rem}
 .foot-bot a{text-decoration:underline;text-underline-offset:3px}
 
+/* fam-grid variante 4 columnas */
+.fam-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.fam-grid.cols-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fam-grid.cols-4{grid-template-columns:1fr}}
+
 /* reveal animation */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
