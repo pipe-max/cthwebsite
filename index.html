@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colegio Theodoro Herzl — Rediseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A1B33;          /* navy profundo */
+    --ink-2:#102A4C;        /* navy medio */
+    --sapphire:#1E5BB8;     /* azul real */
+    --cyan:#19A7DE;         /* cian de marca */
+    --cyan-soft:#D7EEFA;
+    --gold:#C9A227;         /* oro herencia */
+    --gold-soft:#F0E2B8;
+    --paper:#F6F8FC;        /* fondo claro fresco */
+    --paper-2:#ECF1F8;
+    --line:#DDE5F0;
+    --white:#FFFFFF;
+    --muted:#5A6B83;
+    --display:"Fraunces", Georgia, serif;
+    --sans:"Plus Jakarta Sans", system-ui, sans-serif;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+
+  /* ---------- TOP UTILITY BAR ---------- */
+  .utility{background:var(--ink);color:#C6D4E8;font-size:.78rem}
+  .utility .wrap{display:flex;justify-content:space-between;align-items:center;height:40px}
+  .utility a{display:inline-flex;align-items:center;gap:7px;padding:0 2px;transition:color .2s}
+  .utility a:hover{color:#fff}
+  .util-left{display:flex;gap:22px;align-items:center}
+  .util-right{display:flex;gap:10px;align-items:center}
+  .lang{display:flex;border:1px solid rgba(255,255,255,.18);border-radius:6px;overflow:hidden}
+  .lang button{background:none;border:0;color:#C6D4E8;font-family:var(--sans);font-size:.74rem;font-weight:600;padding:4px 10px;cursor:pointer}
+  .lang button.on{background:var(--cyan);color:#fff}
+  .pill-link{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:5px 14px;font-weight:600;color:#fff!important}
+  .pill-link.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)!important}
+  .pill-link:hover{background:rgba(255,255,255,.1)}
+  .pill-link.gold:hover{background:#d9b43a}
+
+  /* ---------- HEADER ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,248,252,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mark{width:42px;height:42px}
+  .brand .name{font-family:var(--display);font-weight:600;font-size:1.22rem;color:var(--ink);line-height:1}
+  .brand .name span{display:block;font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.34em;color:var(--cyan);margin-top:4px}
+  nav.main{display:flex;gap:6px;align-items:center}
+  nav.main a{font-size:.86rem;font-weight:600;color:var(--ink-2);padding:9px 13px;border-radius:8px;transition:.2s;position:relative}
+  nav.main a:hover{color:var(--sapphire);background:var(--paper-2)}
+  nav.main a.cta{background:var(--ink);color:#fff;padding:10px 18px}
+  nav.main a.cta:hover{background:var(--sapphire)}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px}
+  .burger span{width:26px;height:2px;background:var(--ink);border-radius:2px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:
+      radial-gradient(1100px 600px at 80% -10%, rgba(25,167,222,.20), transparent 60%),
+      linear-gradient(160deg,#0A1B33 0%, #0E2647 55%, #102A4C 100%);
+      color:#fff;overflow:hidden}
+  .hero .lattice{position:absolute;inset:0;opacity:.5;pointer-events:none}
+  .hero .glow{position:absolute;width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(201,162,39,.22),transparent 70%);
+      top:-120px;left:-120px;pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;
+      padding-top:84px;padding-bottom:90px;min-height:calc(100vh - 118px)}
+  .hero-eyebrow{color:#7FD0F0}
+  .hero-eyebrow::before{background:var(--gold)}
+  .hero h1{font-size:clamp(2.6rem,5.2vw,4.4rem);margin:22px 0 8px;font-weight:600}
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+  .hero p.lead{font-size:1.12rem;color:#C6D4E8;max-width:30em;margin-bottom:34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;
+      padding:15px 26px;border-radius:999px;transition:.25s;cursor:pointer;border:0}
+  .btn-gold{background:var(--gold);color:var(--ink)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,39,.34)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn svg{width:17px;height:17px}
+
+  /* hero side: photo slot + seal */
+  .hero-visual{position:relative}
+  .photo-slot{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;
+      background:linear-gradient(150deg,#14365f,#1E5BB8);border:1px solid rgba(255,255,255,.12);
+      display:flex;align-items:flex-end;padding:24px}
+  .photo-slot .ph-grid{position:absolute;inset:0;opacity:.35}
+  .photo-slot .ph-tag{position:relative;font-size:.74rem;font-weight:600;color:#BCD3EC;
+      background:rgba(10,27,51,.5);padding:7px 13px;border-radius:8px;backdrop-filter:blur(4px)}
+  .seal{position:absolute;width:128px;height:128px;right:-26px;bottom:-26px;filter:drop-shadow(0 14px 28px rgba(0,0,0,.3))}
+  .seal text{font-family:var(--sans);font-weight:700}
+  .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+      font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#7F93B5;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(#7F93B5,transparent)}
+
+  /* ---------- CREDENTIALS STRIP ---------- */
+  .creds{background:var(--white);border-bottom:1px solid var(--line)}
+  .creds .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .cred{padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
+  .cred:last-child{border-right:0}
+  .cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1}
+  .cred .num em{font-style:normal;color:var(--gold)}
+  .cred .lbl{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:8px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:42em}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);margin:18px 0 0}
+  .sec-head p{color:var(--muted);font-size:1.06rem;margin-top:16px}
+
+  /* identidad */
+  .identity{background:var(--paper)}
+  .identity .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:8px}
+  .identity .visual{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:5/4;
+      background:linear-gradient(150deg,var(--paper-2),#dfeaf6);border:1px solid var(--line);
+      display:flex;align-items:flex-end;padding:22px}
+  .identity .visual .ph-grid{position:absolute;inset:0;opacity:.5}
+  .identity .visual .ph-tag{position:relative;font-size:.74rem;font-weight:600;color:var(--ink-2);
+      background:rgba(255,255,255,.7);padding:7px 13px;border-radius:8px}
+  .identity p.body{color:var(--ink-2);font-size:1.05rem;margin-top:20px}
+  .identity p.body+p.body{margin-top:14px}
+  .quote{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--sapphire);
+      border-left:3px solid var(--gold);padding-left:20px;margin-top:26px}
+
+  /* pilares */
+  .pillars{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  .pillars .lattice{position:absolute;inset:0;opacity:.4}
+  .pillars .wrap{position:relative}
+  .pillars .eyebrow{color:#7FD0F0}
+  .pillars .sec-head h2{color:#fff}
+  .pillars .sec-head p{color:#B9C9E0}
+  .pill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+  .p-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:30px 26px;transition:.3s}
+  .p-card:hover{transform:translateY(-6px);border-color:rgba(201,162,39,.5);background:rgba(255,255,255,.07)}
+  .p-card .ic{width:50px;height:50px;border-radius:13px;background:rgba(25,167,222,.16);
+      display:grid;place-items:center;margin-bottom:20px;color:var(--cyan)}
+  .p-card .ic svg{width:26px;height:26px}
+  .p-card h3{font-size:1.22rem;color:#fff}
+  .p-card p{color:#B9C9E0;font-size:.93rem;margin-top:10px}
+
+  /* niveles */
+  .levels{background:var(--paper)}
+  .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .l-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
+  .l-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(16,42,76,.13)}
+  .l-card .top{height:150px;position:relative;display:flex;align-items:flex-end;padding:20px;color:#fff}
+  .l-card .top .ph-grid{position:absolute;inset:0;opacity:.4}
+  .l-card.l1 .top{background:linear-gradient(150deg,#19A7DE,#1E5BB8)}
+  .l-card.l2 .top{background:linear-gradient(150deg,#1E5BB8,#102A4C)}
+  .l-card.l3 .top{background:linear-gradient(150deg,#1E8A5B,#0E5C3C)}
+  .l-card .top h3{position:relative;color:#fff;font-size:1.55rem}
+  .l-card .body{padding:24px 26px 28px}
+  .l-card .body p{color:var(--muted);font-size:.94rem}
+  .l-card .ages{font-size:.8rem;font-weight:700;color:var(--sapphire);margin-top:16px;display:inline-block;
+      background:var(--cyan-soft);padding:5px 12px;border-radius:999px}
+  .l-card .more{margin-top:18px;font-weight:700;font-size:.88rem;color:var(--ink);display:inline-flex;gap:7px;align-items:center}
+  .l-card:hover .more{color:var(--sapphire)}
+
+  /* servicios */
+  .services{background:#fff;border-top:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+  .svc{border:1px solid var(--line);border-radius:16px;padding:26px 22px;transition:.25s;background:var(--paper)}
+  .svc:hover{background:#fff;border-color:var(--cyan);box-shadow:0 14px 34px rgba(16,42,76,.1);transform:translateY(-4px)}
+  .svc .ic{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;
+      background:var(--ink);color:#fff}
+  .svc .ic svg{width:22px;height:22px}
+  .svc h3{font-family:var(--sans);font-weight:700;font-size:1.02rem}
+  .svc p{font-size:.86rem;color:var(--muted);margin-top:7px}
+
+  /* noticias */
+  .news{background:var(--paper)}
+  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .n-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s}
+  .n-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(16,42,76,.12)}
+  .n-card .img{height:180px;position:relative;display:flex;align-items:flex-end;padding:16px;
+      background:linear-gradient(150deg,#1E5BB8,#102A4C);color:#fff}
+  .n-card .img .ph-grid{position:absolute;inset:0;opacity:.35}
+  .n-card .img .tagcat{position:relative;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      background:var(--gold);color:var(--ink);padding:5px 11px;border-radius:6px}
+  .n-card .body{padding:22px 24px 26px}
+  .n-card h3{font-size:1.18rem}
+  .n-card .meta{font-size:.78rem;color:var(--muted);margin-top:8px}
+  .n-card .more{margin-top:14px;font-weight:700;font-size:.85rem;color:var(--sapphire);display:inline-flex;gap:6px;align-items:center}
+
+  /* admisiones band */
+  .admissions{background:linear-gradient(150deg,#102A4C,#0A1B33);color:#fff;position:relative;overflow:hidden}
+  .admissions .glow{position:absolute;width:480px;height:480px;border-radius:50%;right:-160px;top:-160px;
+      background:radial-gradient(circle,rgba(201,162,39,.2),transparent 70%)}
+  .admissions .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .admissions .eyebrow{color:#7FD0F0}
+  .admissions h2{color:#fff;font-size:clamp(2rem,3.4vw,2.8rem);margin-top:16px}
+  .admissions p{color:#C6D4E8;margin-top:16px;font-size:1.05rem;max-width:32em}
+  .adm-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px}
+  .adm-row{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .adm-row:last-child{border-bottom:0}
+  .adm-row .k{font-weight:600;color:#B9C9E0;font-size:.9rem}
+  .adm-row .v{font-weight:700;text-align:right;font-size:.95rem}
+  .adm-row .v small{display:block;color:#7FD0F0;font-weight:600;font-size:.78rem}
+  .adm-card .btn{margin-top:24px;width:100%;justify-content:center}
+
+  /* familias actuales */
+  .families{background:#fff;border-top:1px solid var(--line)}
+  .fam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .fam{display:flex;gap:18px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:22px;transition:.25s}
+  .fam:hover{border-color:var(--sapphire);box-shadow:0 12px 30px rgba(16,42,76,.1)}
+  .fam .ic{width:50px;height:50px;border-radius:13px;flex-shrink:0;display:grid;place-items:center;background:var(--cyan-soft);color:var(--sapphire)}
+  .fam .ic svg{width:25px;height:25px}
+  .fam h3{font-family:var(--sans);font-weight:700;font-size:1rem}
+  .fam p{font-size:.82rem;color:var(--muted)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#A9BDD8;padding:72px 0 30px;position:relative}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand .name{font-family:var(--display);font-size:1.4rem;color:#fff;margin-top:14px}
+  .foot-brand p{font-size:.9rem;margin-top:14px;max-width:24em}
+  .foot-col h4{font-family:var(--sans);color:#fff;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+  .foot-col a{display:block;font-size:.9rem;padding:6px 0;transition:.2s}
+  .foot-col a:hover{color:#fff;padding-left:5px}
+  .foot-contact p{font-size:.9rem;margin-bottom:8px;color:#C6D4E8}
+  .foot-contact .strong{color:#fff;font-weight:700}
+  .socials{display:flex;gap:12px;margin-top:18px}
+  .socials a{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;transition:.2s}
+  .socials a:hover{background:var(--cyan);border-color:var(--cyan);color:#fff}
+  .socials svg{width:19px;height:19px}
+  .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;font-size:.8rem}
+  .foot-bot a{text-decoration:underline;text-underline-offset:3px}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1000px){
+    nav.main{display:none}
+    .burger{display:flex}
+    .hero .wrap{grid-template-columns:1fr;gap:44px;min-height:auto;padding-top:54px;padding-bottom:64px}
+    .hero-visual{max-width:380px}
+    .creds .wrap{grid-template-columns:1fr 1fr}
+    .cred{border-bottom:1px solid var(--line)}
+    .cred:nth-child(odd){border-right:1px solid var(--line)}
+    .identity .grid{grid-template-columns:1fr;gap:38px}
+    .pill-grid,.svc-grid{grid-template-columns:1fr 1fr}
+    .level-grid,.news-grid,.fam-grid{grid-template-columns:1fr}
+    .admissions .wrap{grid-template-columns:1fr;gap:36px}
+    .foot-top{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 18px}
+    .util-left{gap:14px}
+    .util-left a:not(.lang-wrap){display:none}
+    section{padding:64px 0}
+    .pill-grid,.svc-grid,.foot-top{grid-template-columns:1fr}
+    .hero h1{font-size:2.4rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- decorative star-lattice pattern (reused) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="star-lattice" width="80" height="92" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+      <path d="M40 6 L74 26 L74 66 L40 86 L6 66 L6 26 Z" fill="none" stroke="rgba(127,208,240,.25)" stroke-width="1"/>
+      <path d="M40 18 L40 -10 M40 86 L40 110 M6 26 L-18 12 M74 26 L98 12 M6 66 L-18 80 M74 66 L98 80" stroke="rgba(201,162,39,.18)" stroke-width="1"/>
+    </pattern>
+    <pattern id="ph-grid-d" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L0 34 M0 0 L34 0" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+    </pattern>
+    <pattern id="ph-grid-l" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L0 34 M0 0 L34 0" stroke="rgba(30,91,184,.14)" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- UTILITY BAR -->
+<div class="utility">
+  <div class="wrap">
+    <div class="util-left">
+      <a href="tel:+576043220180">📞 (+57) 604 322 0180</a>
+      <a href="mailto:admisiones@theodoro.edu.co">✉ admisiones@theodoro.edu.co</a>
+      <span class="lang-wrap" style="display:flex;align-items:center">
+        <span class="lang">
+          <button class="on">ES</button><button>EN</button>
+        </span>
+      </span>
+    </div>
+    <div class="util-right">
+      <a class="pill-link" href="#">Plataforma Phidias</a>
+      <a class="pill-link gold" href="#">Intranet CTH</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg class="mark" viewBox="0 0 100 100" fill="none">
+        <path d="M50 6 L70 41 L50 41 Z" fill="#1E5BB8"/>
+        <path d="M50 94 L30 59 L50 59 Z" fill="#19A7DE"/>
+        <path d="M9 30 L49 30 L29 65 Z" fill="#102A4C"/>
+        <path d="M91 30 L51 30 L71 65 Z" fill="#1E5BB8"/>
+        <path d="M9 70 L49 70 L29 35 Z" fill="#19A7DE"/>
+        <path d="M91 70 L51 70 L71 35 Z" fill="#102A4C"/>
+        <circle cx="50" cy="50" r="13" fill="#C9A227"/>
+      </svg>
+      <span class="name">Theodoro Herzl<span>SCHOOL · ENVIGADO</span></span>
+    </a>
+    <nav class="main">
+      <a href="#identidad">Quiénes Somos</a>
+      <a href="#niveles">Programas</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#admisiones">Admisiones</a>
+      <a href="#noticias">Egresados</a>
+      <a href="#">Contacto</a>
+      <a class="cta" href="#admisiones">Inscríbete</a>
+    </nav>
+    <button class="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="lattice"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#star-lattice)"/></svg></div>
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="hero-text reveal">
+      <span class="eyebrow hero-eyebrow">80 años formando · 1946 — 2026</span>
+      <h1>Educamos para la <em>diversidad</em>, la vida y el futuro.</h1>
+      <p class="lead">Un colegio bilingüe en Envigado donde la cultura del pueblo judío convive con el respeto por cada creencia. Aprendizaje con propósito desde Kínder 3 hasta grado 12°.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#admisiones">Proceso de admisión
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#identidad">Conoce el colegio</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="photo-slot">
+        <div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div>
+        <span class="ph-tag">📷 Foto: estudiantes en campus</span>
+      </div>
+      <!-- sello 80 años -->
+      <svg class="seal" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="58" fill="#0A1B33" stroke="#C9A227" stroke-width="2"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(201,162,39,.4)" stroke-width="1"/>
+        <path d="M60 38 L67 50 L60 50 Z M60 82 L53 70 L60 70 Z M41 49 L55 49 L48 61 Z M79 49 L65 49 L72 61 Z M41 71 L55 71 L48 59 Z M79 71 L65 71 L72 59 Z" fill="#C9A227" opacity=".9"/>
+        <text x="60" y="58" text-anchor="middle" font-size="2" fill="#fff"></text>
+        <defs><path id="seal-arc" d="M60 60 m-44 0 a44 44 0 1 1 88 0" fill="none"/></defs>
+        <text fill="#C9A227" font-size="10" letter-spacing="2"><textPath href="#seal-arc" startOffset="6%">OCHENTA AÑOS DE HISTORIA</textPath></text>
+        <text x="60" y="98" text-anchor="middle" fill="#fff" font-size="8" letter-spacing="3">1946·2026</text>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cue">Descubre</div>
+</section>
+
+<!-- CREDENTIALS -->
+<div class="creds">
+  <div class="wrap">
+    <div class="cred reveal"><div class="num"><em>80</em></div><div class="lbl">Años de trayectoria</div></div>
+    <div class="cred reveal"><div class="num">K3–12°</div><div class="lbl">Preescolar a bachillerato</div></div>
+    <div class="cred reveal"><div class="num">3</div><div class="lbl">Idiomas: español · inglés · hebreo</div></div>
+    <div class="cred reveal"><div class="num">G</div><div class="lbl">Google for Education Reference School</div></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<section class="identity" id="identidad">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 style="font-size:clamp(2rem,3.4vw,2.8rem);margin-top:16px">Una comunidad donde la diferencia se respeta y se celebra.</h2>
+        <p class="body">Partimos de los principios de la cultura judía, la pluralidad y el respeto por las diferencias. Hoy tenemos alumnos y familias que profesan diferentes religiones, nutriendo nuestro entorno en la diferencia y el respeto mutuo.</p>
+        <p class="body">Nuestro modelo pedagógico, <strong>Horaá Mutemet</strong> — educación para la diversidad —, respeta los ritmos de aprendizaje y forma seres humanos íntegros, curiosos y autónomos.</p>
+        <p class="quote">"Si lo deseas, no es un sueño." — Theodor Herzl</p>
+      </div>
+      <div class="visual reveal">
+        <div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-l)"/></svg></div>
+        <span class="ph-tag">📷 Foto: vida escolar / campus Alto de las Palmas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section class="pillars">
+  <div class="lattice"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#star-lattice)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Por qué CTH</span>
+      <h2>Lo que distingue a un estudiante Theodoro.</h2>
+      <p>Cuatro pilares que sostienen una formación pensada para la vida, no solo para el examen.</p>
+    </div>
+    <div class="pill-grid">
+      <div class="p-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L2 7 l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Bilingüismo real</h3>
+        <p>Inglés inmerso en proyectos y juego trabajo, para que los niños absorban el idioma sin temor a equivocarse.</p>
+      </div>
+      <div class="p-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Aprendizaje por proyectos</h3>
+        <p>Metodología que respeta la curiosidad natural y fomenta el espíritu investigativo desde preescolar.</p>
+      </div>
+      <div class="p-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.3-7-10a4 4 0 018-1 4 4 0 018 1c0 5.7-7 10-9 10z"/></svg></div>
+        <h3>Valores y pluralidad</h3>
+        <p>Raíces en la cultura judía y apertura a todas las creencias: hábitos, respeto y convivencia.</p>
+      </div>
+      <div class="p-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M9 16V9M14 16V6M19 16v-4"/></svg></div>
+        <h3>Tecnología educativa</h3>
+        <p>Google for Education Reference School: herramientas digitales al servicio del aprendizaje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NIVELES -->
+<section class="levels" id="niveles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Programas académicos</span>
+      <h2>Un camino continuo, de los 3 a los 18 años.</h2>
+    </div>
+    <div class="level-grid">
+      <div class="l-card l1 reveal">
+        <div class="top"><div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div><h3>Preescolar</h3></div>
+        <div class="body">
+          <p>Estrategia de "juego trabajo": los niños aprenden jugando, dialogando y descubriendo el mundo a su ritmo.</p>
+          <span class="ages">Kínder 3 a Transición · 3–6 años</span>
+          <div class="more">Ver programa <svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="l-card l2 reveal">
+        <div class="top"><div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div><h3>Primaria</h3></div>
+        <div class="body">
+          <p>Pénsum internacional homologado al colombiano, con énfasis en arte, música, expresión corporal y estudios judaicos.</p>
+          <span class="ages">1° a 6° · 7–12 años</span>
+          <div class="more">Ver programa <svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="l-card l3 reveal">
+        <div class="top"><div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div><h3>Bachillerato</h3></div>
+        <div class="body">
+          <p>Formación integral que prepara a los jóvenes para la universidad y la vida, con competencias para el siglo XXI.</p>
+          <span class="ages">7° a 12° · 12–18 años</span>
+          <div class="more">Ver programa <svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Todo lo que rodea el aprendizaje.</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="11" rx="2"/><circle cx="7.5" cy="18" r="1.5"/><circle cx="16.5" cy="18" r="1.5"/></svg></div><h3>Transporte</h3><p>Rutas seguras con seguimiento en tiempo real vía app Ruta Segura.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3v7a3 3 0 006 0V3M7 3v18M17 3c-1.5 1-2 3-2 6s.5 4 2 5v7"/></svg></div><h3>Restaurante</h3><p>Menú balanceado administrado por CRES &amp; Catering.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5a2 2 0 012-2h6v16H6a2 2 0 00-2 2zM20 5a2 2 0 00-2-2h-6v16h6a2 2 0 012 2z"/></svg></div><h3>Biblioteca</h3><p>Espacio para desarrollar competencias comunicativas y el gusto por leer.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 000 18M3 12h18"/></svg></div><h3>Club deportivo</h3><p>CTH Sports Club: actividades deportivas y culturales para todos.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 6 6.5.5-5 4.2 1.6 6.3L12 17l-5.6 3 1.6-6.3-5-4.2 6.5-.5z"/></svg></div><h3>Extracurriculares</h3><p>Arte, música y deporte después de clases para un desarrollo integral.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><h3>Interclases</h3><p>Torneo deportivo de integración: unión y sana competencia.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></div><h3>Theo's Camp</h3><p>Vacacional con actividades deportivas, artísticas y recreativas.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Bienestar</h3><p>Acompañamiento psicológico y formación en hábitos saludables.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICIAS -->
+<section class="news" id="noticias">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Theodoro al día</span>
+      <h2>Lo último de nuestra comunidad.</h2>
+      <p>Logros, eventos y experiencias que nos inspiran.</p>
+    </div>
+    <div class="news-grid">
+      <div class="n-card reveal">
+        <div class="img"><div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div><span class="tagcat">Deportes</span></div>
+        <div class="body"><h3>Macabeadas 2026</h3><div class="meta">Jazak Ve Ematz</div><div class="more">Leer más <svg viewBox="0 0 24 24" width="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+      <div class="n-card reveal">
+        <div class="img"><div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div><span class="tagcat">Escuela de padres</span></div>
+        <div class="body"><h3>Prevenir desde el hogar</h3><div class="meta">Adicciones en adolescentes</div><div class="more">Leer más <svg viewBox="0 0 24 24" width="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+      <div class="n-card reveal">
+        <div class="img"><div class="ph-grid"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#ph-grid-d)"/></svg></div><span class="tagcat">Celebración</span></div>
+        <div class="body"><h3>80 años creando memorias</h3><div class="meta">The World We Build — 80 Years</div><div class="more">Leer más <svg viewBox="0 0 24 24" width="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISIONES -->
+<section class="admissions" id="admisiones">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Admisiones</span>
+      <h2>El siguiente capítulo de tu familia empieza aquí.</h2>
+      <p>En CTH los niños empiezan su escolaridad en Kínder 3, con 3 años cumplidos al 31 de julio. El Colegio Theodoro Herzl no solicita dinero para participar en procesos de selección.</p>
+    </div>
+    <div class="adm-card reveal">
+      <div class="adm-row"><span class="k">Familias nuevas K3 2028–2029</span><span class="v">Abierto<small>Hasta agotar cupos</small></span></div>
+      <div class="adm-row"><span class="k">Otros grados (K4 a 12°)</span><span class="v">Abierto<small>Sujeto a disponibilidad</small></span></div>
+      <div class="adm-row"><span class="k">Próximo proceso K3 2029–2030</span><span class="v">Ene 2027<small>Familias nuevas: 13 de enero</small></span></div>
+      <a class="btn btn-gold" href="#">Iniciar inscripción
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILIAS ACTUALES -->
+<section class="families">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Familias actuales</span>
+      <h2>Acceso rápido a tus herramientas.</h2>
+    </div>
+    <div class="fam-grid">
+      <a class="fam reveal" href="#"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div><div><h3>Plataforma Phidias</h3><p>Notas, comunicados y pagos</p></div></a>
+      <a class="fam reveal" href="#"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><h3>Calendario escolar</h3><p>Fechas y eventos del año</p></div></a>
+      <a class="fam reveal" href="#"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h10l4 4v12a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div><div><h3>Indicadores de desempeño</h3><p>Seguimiento académico</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg width="40" viewBox="0 0 100 100" fill="none">
+          <path d="M50 6 L70 41 L50 41 Z" fill="#fff"/><path d="M50 94 L30 59 L50 59 Z" fill="#19A7DE"/>
+          <path d="M9 30 L49 30 L29 65 Z" fill="#fff"/><path d="M91 30 L51 30 L71 65 Z" fill="#19A7DE"/>
+          <path d="M9 70 L49 70 L29 35 Z" fill="#19A7DE"/><path d="M91 70 L51 70 L71 35 Z" fill="#fff"/>
+          <circle cx="50" cy="50" r="13" fill="#C9A227"/>
+        </svg>
+        <div class="name">Colegio Theodoro Herzl</div>
+        <p>80 años formando seres humanos íntegros en la pluralidad y el respeto por las diferencias.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 002 8.2 31 31 0 002 12a31 31 0 00.1 3.8 3 3 0 002.1 2.1c1.9.6 7.8.6 7.8.6s6 0 7.9-.6a3 3 0 002.1-2.1A31 31 0 0022 12a31 31 0 00-.1-3.8zM10 15V9l5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Colegio</h4>
+        <a href="#identidad">Quiénes somos</a>
+        <a href="#niveles">Programas académicos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#noticias">Theodoro al día</a>
+      </div>
+      <div class="foot-col">
+        <h4>Familias</h4>
+        <a href="#admisiones">Admisiones</a>
+        <a href="#">Plataforma Phidias</a>
+        <a href="#">Calendario escolar</a>
+        <a href="#">Trabaja con nosotros</a>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4>Contacto</h4>
+        <p class="strong">Carrera 1 No. 36 D Sur 515</p>
+        <p>(Alto de las Palmas)</p>
+        <p>Envigado — Antioquia</p>
+        <p class="strong">(+57) 604 322 0180</p>
+        <p>contacto@theodoro.edu.co</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Colegio Theodoro Herzl · בית ספר תאודור הרצל</span>
+      <span>
+        <a href="#">Política de protección de datos</a> &nbsp;·&nbsp;
+        <a href="#">Normas de uso de activos de información</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    // slight stagger for siblings
+    const sibs = el.parentElement.querySelectorAll(':scope > .reveal');
+    el.style.transitionDelay = (Array.from(sibs).indexOf(el)*70)+'ms';
+    io.observe(el);
+  });
+  // lang toggle (visual only)
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+  }));
+</script>
+</body>
+</html>
