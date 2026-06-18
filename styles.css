@@ -60,6 +60,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(246,248,252,.85);backdro
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
 .brand{display:flex;align-items:center;gap:13px}
 .brand .mark{width:42px;height:42px}
+.brand .mark-logo{height:64px;width:auto;display:block}
+@media(max-width:760px){.brand .mark-logo{height:48px}}
 .brand .name{font-family:var(--display);font-weight:600;font-size:1.22rem;color:var(--ink);line-height:1}
 .brand .name span{display:block;font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.34em;color:var(--cyan);margin-top:4px}
 nav.main{display:flex;gap:6px;align-items:center}
