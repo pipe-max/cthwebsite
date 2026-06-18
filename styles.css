@@ -177,7 +177,7 @@ section{padding:96px 0}
 /* niveles */
 .levels{background:var(--paper)}
 .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.l-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
+.l-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;display:block;text-decoration:none;color:inherit;cursor:pointer}
 .l-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(16,42,76,.13)}
 .l-card .top{height:150px;position:relative;display:flex;align-items:flex-end;padding:20px;color:#fff}
 .l-card .top .ph-grid{position:absolute;inset:0;opacity:.4}
