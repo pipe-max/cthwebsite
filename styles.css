@@ -410,6 +410,35 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   font-weight:600;color:var(--ink);line-height:1.25;max-width:26em;margin:0 auto}
 @media(max-width:560px){.propuesta-box{padding:36px 22px}}
 
+/* ---------- PROGRAMAS ACADÉMICOS ---------- */
+.prog-nav{background:#fff;border-bottom:2px solid var(--line)}
+.prog-nav .wrap{display:flex;gap:0;overflow-x:auto}
+.prog-nav a{display:block;padding:18px 28px;font-weight:700;font-size:.9rem;color:var(--muted);
+  border-bottom:3px solid transparent;margin-bottom:-2px;transition:.2s;white-space:nowrap}
+.prog-nav a:hover{color:var(--sapphire)}
+.prog-nav a.on{color:var(--sapphire);border-bottom-color:var(--gold)}
+
+.prog-body{margin-top:36px}
+.prog-body p{color:var(--ink-2);font-size:1rem;line-height:1.78;margin-bottom:14px}
+.prog-body p:last-child{margin-bottom:0}
+.prog-cols{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:36px}
+@media(max-width:760px){.prog-cols{grid-template-columns:1fr;gap:24px}}
+
+.staff-intro{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
+.staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px}
+.staff-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:18px 20px;transition:.2s}
+.staff-card:hover{border-color:var(--sapphire);box-shadow:0 8px 24px rgba(16,42,76,.08)}
+.staff-card .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+  font-family:var(--display);font-weight:600;font-size:.92rem;color:#fff;
+  background:linear-gradient(135deg,var(--ink-2),var(--sapphire))}
+.staff-card.leader .av{background:linear-gradient(135deg,var(--sapphire),var(--cyan))}
+.staff-card h4{font-weight:700;font-size:.94rem;color:var(--ink);line-height:1.2}
+.staff-card .role{font-size:.78rem;color:var(--muted);margin-top:3px}
+.staff-card .email{font-size:.76rem;color:var(--cyan);margin-top:6px;display:block;font-weight:600}
+.staff-card .email:hover{color:var(--sapphire)}
+@media(max-width:760px){.staff-grid{grid-template-columns:1fr}}
+
 /* reveal animation */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programas Académicos — Colegio Theodoro Herzl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="star-lattice" width="80" height="92" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+      <path d="M40 6 L74 26 L74 66 L40 86 L6 66 L6 26 Z" fill="none" stroke="rgba(127,208,240,.25)" stroke-width="1"/>
+      <path d="M40 18 L40 -10 M40 86 L40 110 M6 26 L-18 12 M74 26 L98 12 M6 66 L-18 80 M74 66 L98 80" stroke="rgba(201,162,39,.18)" stroke-width="1"/>
+    </pattern>
+    <pattern id="ph-grid-d" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L0 34 M0 0 L34 0" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+    </pattern>
+    <pattern id="ph-grid-l" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L0 34 M0 0 L34 0" stroke="rgba(30,91,184,.14)" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- UTILITY BAR -->
+<div class="utility">
+  <div class="wrap">
+    <div class="util-left">
+      <a href="tel:+576043220180">📞 (+57) 604 322 0180</a>
+      <a href="mailto:admisiones@theodoro.edu.co">✉ admisiones@theodoro.edu.co</a>
+      <span class="lang-wrap" style="display:flex;align-items:center">
+        <span class="lang"><button class="on">ES</button><button>EN</button></span>
+      </span>
+    </div>
+    <div class="util-right">
+      <a class="pill-link" href="#">Plataforma Phidias</a>
+      <a class="pill-link gold" href="#">Intranet CTH</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 100 100" fill="none">
+        <path d="M50 6 L70 41 L50 41 Z" fill="#1E5BB8"/><path d="M50 94 L30 59 L50 59 Z" fill="#19A7DE"/>
+        <path d="M9 30 L49 30 L29 65 Z" fill="#102A4C"/><path d="M91 30 L51 30 L71 65 Z" fill="#1E5BB8"/>
+        <path d="M9 70 L49 70 L29 35 Z" fill="#19A7DE"/><path d="M91 70 L51 70 L71 35 Z" fill="#102A4C"/>
+        <circle cx="50" cy="50" r="13" fill="#C9A227"/>
+      </svg>
+      <span class="name">Theodoro Herzl<span>SCHOOL · ENVIGADO</span></span>
+    </a>
+    <nav class="main">
+      <div class="has-dropdown">
+        <a href="quienes-somos.html">Quiénes Somos <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dropdown">
+          <a href="quienes-somos.html#historia">Historia</a>
+          <a href="quienes-somos.html#filosofia">Nuestra Filosofía</a>
+          <a href="quienes-somos.html#mision">Misión, Visión</a>
+          <a href="quienes-somos.html#propuesta">Propuesta de Valor</a>
+          <a href="quienes-somos.html#valores">Valores Institucionales</a>
+          <a href="quienes-somos.html#horaa-mutemet">Horaa Mutemet</a>
+          <a href="https://heyzine.com/flip-book/e5819b2f75.html" target="_blank" rel="noopener">Perfil CTH</a>
+          <a href="https://heyzine.com/flip-book/a559c8bf4b.html" target="_blank" rel="noopener">Manual de Convivencia</a>
+        </div>
+      </div>
+      <a href="programas.html" class="active">Programas</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="admisiones.html">Admisiones</a>
+      <a href="index.html#noticias">Egresados</a>
+      <a href="#">Contacto</a>
+      <a class="cta" href="admisiones.html">Inscríbete</a>
+    </nav>
+    <button class="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="lattice"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#star-lattice)"/></svg></div>
+  <div class="wrap">
+    <div class="breadcrumb reveal"><a href="index.html">Inicio</a> <span>›</span> Programas Académicos</div>
+    <h1 class="reveal">Un camino continuo, de los <em>3 a los 18 años.</em></h1>
+    <p class="reveal">Tres etapas académicas diseñadas bajo la metodología Horaá Mutemet, el bilingüismo real y la formación en valores, desde Preescolar hasta Bachillerato.</p>
+  </div>
+</section>
+
+<!-- NAV DE NIVELES -->
+<div class="prog-nav">
+  <div class="wrap">
+    <a href="#preescolar" class="prog-level-link">Preescolar · K3–Transición</a>
+    <a href="#primaria" class="prog-level-link">Primaria · 2°–6°</a>
+    <a href="#bachillerato" class="prog-level-link">Bachillerato · 7°–12°</a>
+  </div>
+</div>
+
+<!-- PREESCOLAR -->
+<section class="levels" id="preescolar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Preescolar</span>
+      <h2>Aprender jugando, descubrir el mundo.</h2>
+      <p>Kínder 3 a Transición · 3 a 6 años</p>
+    </div>
+
+    <div class="prog-cols">
+      <div class="prog-body reveal">
+        <p>Como nuestro colegio adoptó como modelo pedagógico la metodología Horaá Mutemet — educación para la diversidad —, hemos venido implementando en el Preescolar la estrategia del <strong>"juego trabajo"</strong>: que permite a las niñas y los niños aprender mientras juegan y potenciar habilidades en entornos cercanos a algunas de sus experiencias de vida.</p>
+        <p>En momentos de juego trabajo, los niños practican el diálogo, el trabajo en equipo y el valor de la coexistencia. Apoyándonos en estos planteamientos, estamos fortaleciendo en ellos la exploración, la curiosidad, la observación; de esta forma respetamos sus ritmos de aprendizaje y, de paso, fomentamos el espíritu investigativo tan necesario en nuestros días.</p>
+        <p>Otra de las herramientas en las que hemos venido trabajando es la <strong>metodología por proyectos</strong>, que encaja perfectamente con lo que nos propone Horaá Mutemet. El enfoque respeta la curiosidad natural de los niños y responde a su necesidad de explorar, investigar y hacer preguntas sobre lo que los rodea.</p>
+        <p>En relación con lo anterior está la importancia que le damos al <strong>inglés como segunda lengua</strong>. Con este objetivo buscamos impulsar las habilidades comunicativas de los niños mediante un acercamiento lo más natural posible al idioma, inmerso en los proyectos y en juego trabajo, lo que nos permite reconocer que ellos, en las edades que tienen, logran absorber el idioma sin presión o temor a equivocarse.</p>
+      </div>
+      <div class="prog-body reveal">
+        <p>El colegio también ha venido descubriendo las <strong>habilidades artísticas</strong> que poseen nuestros niños; por esa razón es importante para nosotros desarrollar esas destrezas desde la música y expresión corporal (danza y teatro), permitiéndonos potenciar desde las dimensiones corporales y estéticas la sensopercepción, la propiocepción, la disociación, entre otras.</p>
+        <p>Desde la dimensión corporal damos relevancia a la <strong>motricidad gruesa</strong> con la educación física: con esto trabajamos la coordinación, el seguimiento de instrucciones, lateralidad, etc.</p>
+        <p>Como nuestro colegio pertenece a la <strong>comunidad judía de Medellín</strong>, también relacionamos a los niños con la cultura judía a través de los estudios judaicos, en los que aprendemos y compartimos elementos valiosos del judaísmo. Nuestros estudiantes se forman como seres que logran introyectar hábitos y rutinas necesarios para sus diferentes etapas. Son niños que aprenden a respetar las diferencias.</p>
+        <p>Las dimensiones prescolares están fundamentadas en los lineamientos del Ministerio de Educación Nacional para la educación inicial, permitiéndonos estar en sintonía con los objetivos que persigue la educación en Colombia en lo relacionado con la adquisición de competencias para la vida.</p>
+      </div>
+    </div>
+
+    <div class="staff-intro reveal">
+      <span class="eyebrow">Equipo Preescolar</span>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card leader reveal">
+        <div class="av">PC</div>
+        <div class="info">
+          <h4>Paola Cardona</h4>
+          <div class="role">Coordinadora Preescolar</div>
+          <a class="email" href="mailto:coordinacionpreescolar@theodoro.edu.co">coordinacionpreescolar@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card leader reveal">
+        <div class="av">PM</div>
+        <div class="info">
+          <h4>Paula Monsalve</h4>
+          <div class="role">Psicóloga</div>
+          <a class="email" href="mailto:psicologiapreescolar@theodoro.edu.co">psicologiapreescolar@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">NH</div>
+        <div class="info">
+          <h4>Natalia Herrera</h4>
+          <div class="role">Directora de Grupo · K3 ALEF</div>
+          <a class="email" href="mailto:natalia.herrera@theodoro.edu.co">natalia.herrera@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">LS</div>
+        <div class="info">
+          <h4>Luisa Salinas</h4>
+          <div class="role">Directora de Grupo · K3 BET</div>
+          <a class="email" href="mailto:lsalinas@theodoro.edu.co">lsalinas@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">SA</div>
+        <div class="info">
+          <h4>Sara Arias</h4>
+          <div class="role">Directora de Grupo · K4 ALEF</div>
+          <a class="email" href="mailto:sara.arias@theodoro.edu.co">sara.arias@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">JB</div>
+        <div class="info">
+          <h4>Jennifer Betancur</h4>
+          <div class="role">Directora de Grupo · K4 BET</div>
+          <a class="email" href="mailto:jeniffer.betancur@theodoro.edu.co">jeniffer.betancur@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">SS</div>
+        <div class="info">
+          <h4>Sandra Solano</h4>
+          <div class="role">Directora de Grupo · K5 ALEF</div>
+          <a class="email" href="mailto:sandra.solano@theodoro.edu.co">sandra.solano@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">CL</div>
+        <div class="info">
+          <h4>Carolina López</h4>
+          <div class="role">Directora de Grupo · K5 BET</div>
+          <a class="email" href="mailto:carolina.lopez@theodoro.edu.co">carolina.lopez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">AM</div>
+        <div class="info">
+          <h4>Ana María Agudelo</h4>
+          <div class="role">Directora de Grupo · Primero ALEF</div>
+          <a class="email" href="mailto:anamaria.agudelo@theodoro.edu.co">anamaria.agudelo@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">PL</div>
+        <div class="info">
+          <h4>Patricia Larralde</h4>
+          <div class="role">Directora de Grupo · Primero BET</div>
+          <a class="email" href="mailto:patricialarralde@theodoro.edu.co">patricialarralde@theodoro.edu.co</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIMARIA -->
+<section class="services" id="primaria">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Primaria</span>
+      <h2>Ciudadanos del mundo con raíces profundas.</h2>
+      <p>Grados 2° a 6° · 7 a 11 años</p>
+    </div>
+
+    <div class="prog-cols">
+      <div class="prog-body reveal">
+        <p>La sección de Primaria abarca desde el grado Segundo hasta Sexto (niños desde los 7 hasta los 11 años de edad). Además de la aplicación de Horaá Mutemet dentro de todos los procesos pedagógicos, se cuenta con una <strong>participación activa y constante de la psicóloga</strong> de la sección, del programa United Within Difference (Unidos por la Diferencia) así como de la coordinación de la sección.</p>
+        <p>Se hace énfasis en los valores y en las enseñanzas impartidas por el rabino y los docentes de <strong>Cultura Judía</strong>. El aprendizaje y las experiencias cotidianas de los niños están guiadas por todo el equipo de docentes y los directores de grupo.</p>
+        <p>Tener docentes que aportan al conocimiento y las creencias desde puntos distintos (los estudiantes escogen cursos de Religión Judía, Católica, Cristiana o Desarrollo Humano) permite fomentar el <strong>respeto por la diferencia</strong> y lograr un desarrollo integral y una mente abierta hacia lo nuevo o distinto.</p>
+      </div>
+      <div class="prog-body reveal">
+        <p>Nuestro programa es <strong>bilingüe</strong> y a él se agrega el idioma hebreo, hecho que permite a nuestros estudiantes tener una visión cultural y social más amplia del mundo. Adicionalmente, los docentes desarrollan distintas plataformas que permiten la integración y la conectividad local y global.</p>
+        <p>Como formadores de ciudadanos del mundo que son, están en capacidad de asumir con liderazgo, integridad y respeto los retos y propuestas que la sociedad demanda.</p>
+        <p>Al finalizar la Escuela Primaria, nuestros estudiantes se enfrentan ante las <strong>pruebas Cambridge</strong> para definir sus avances y progresos en Inglés.</p>
+      </div>
+    </div>
+
+    <div class="staff-intro reveal">
+      <span class="eyebrow">Equipo Primaria</span>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card leader reveal">
+        <div class="av">OA</div>
+        <div class="info">
+          <h4>Olga Lucia Amar</h4>
+          <div class="role">Coordinadora Primaria</div>
+          <a class="email" href="mailto:coordinacionprimaria@theodoro.edu.co">coordinacionprimaria@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card leader reveal">
+        <div class="av">MP</div>
+        <div class="info">
+          <h4>Mariana Pareja</h4>
+          <div class="role">Psicóloga</div>
+          <a class="email" href="mailto:psicologiaprimaria@theodoro.edu.co">psicologiaprimaria@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">JB</div>
+        <div class="info">
+          <h4>Jennyfer Bedoya</h4>
+          <div class="role">Directora de Grupo · 2° ALEF</div>
+          <a class="email" href="mailto:jennyfer.bedoya@theodoro.edu.co">jennyfer.bedoya@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">MO</div>
+        <div class="info">
+          <h4>Mariana Ortega</h4>
+          <div class="role">Directora de Grupo · 2° BET</div>
+          <a class="email" href="mailto:mariana.ortega@theodoro.edu.co">mariana.ortega@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">LG</div>
+        <div class="info">
+          <h4>Laura González</h4>
+          <div class="role">Directora de Grupo · 3° ALEF</div>
+          <a class="email" href="mailto:laura.gonzalez@theodoro.edu.co">laura.gonzalez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">JD</div>
+        <div class="info">
+          <h4>Jessica Dorrell</h4>
+          <div class="role">Directora de Grupo · 3° BET</div>
+          <a class="email" href="mailto:jessica.dorrell@theodoro.edu.co">jessica.dorrell@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">DA</div>
+        <div class="info">
+          <h4>Diana Álvarez</h4>
+          <div class="role">Directora de Grupo · 4° ALEF</div>
+          <a class="email" href="mailto:dalvarez@theodoro.edu.co">dalvarez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">LM</div>
+        <div class="info">
+          <h4>Lina Mazo</h4>
+          <div class="role">Directora de Grupo · 4° BET</div>
+          <a class="email" href="mailto:lina.mazo@theodoro.edu.co">lina.mazo@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">AF</div>
+        <div class="info">
+          <h4>Andrés Felipe Melo</h4>
+          <div class="role">Director de Grupo · 5° ALEF</div>
+          <a class="email" href="mailto:andres.melo@theodoro.edu.co">andres.melo@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">SG</div>
+        <div class="info">
+          <h4>Sirley Gómez</h4>
+          <div class="role">Directora de Grupo · 5° BET</div>
+          <a class="email" href="mailto:sirley.gomez@theodoro.edu.co">sirley.gomez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">MB</div>
+        <div class="info">
+          <h4>Marco Betancur</h4>
+          <div class="role">Director de Grupo · 6° ALEF</div>
+          <a class="email" href="mailto:marco.betancur@theodoro.edu.co">marco.betancur@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">AC</div>
+        <div class="info">
+          <h4>Alejandro Cartagena</h4>
+          <div class="role">Director de Grupo · 6° BET</div>
+          <a class="email" href="mailto:cartagena@theodoro.edu.co">cartagena@theodoro.edu.co</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACHILLERATO -->
+<section class="levels" id="bachillerato">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Bachillerato</span>
+      <h2>Autonomía, criterio y visión de mundo.</h2>
+      <p>Grados 7° a 12° · 12 a 18 años</p>
+    </div>
+
+    <div class="prog-cols">
+      <div class="prog-body reveal">
+        <p>En la sección de Bachillerato se da continuidad al proceso formativo de los estudiantes y por eso se hace énfasis en fortalecer la <strong>autonomía y la responsabilidad</strong>. La palabra autonomía (una expresión venida del griego) podría traducirse como "quien conoce la norma". Inspirados por este significado buscamos que el estudiante se haga consciente de la importancia que traen los deberes o situaciones delegadas. Y por responsabilidad entendemos una cualidad que los conduce a cumplir sus deberes y a asumir las consecuencias de sus acciones. A medida que los jóvenes avanzan en el proceso adquieren herramientas como la crítica y la habilidad para argumentar lo observado o visto.</p>
+        <p>El estudiante <strong>"Theodorista"</strong> se forma ante todo como un ser sensible a los demás y capaz de darse al otro desde lo que posee en sentido humano; logra desarrollar sentido de pertenencia por la institución y comprende la importancia y el respeto que se debe tener por este espacio.</p>
+      </div>
+      <div class="prog-body reveal">
+        <p>Los diseños académicos que hacen las diferentes asignaturas se basan en los lineamientos del Ministerio de Educación Nacional y tienen en cuenta el método israelí Horaá Mutemet, que busca desarrollar conciencia frente a la importancia de tener salones de clase <strong>heterogéneos</strong> donde se respetan los ritmos de aprendizaje y los maestros implementan vías diversas para perseguir un propósito en el que hay inclusión al momento de transmitir conocimientos.</p>
+        <p>A lo largo del Bachillerato, los estudiantes se preparan para las <strong>pruebas SABER 11°</strong> y las pruebas estandarizadas de Inglés. Desde hace tres años incursionamos en la importancia de fomentar en los profesores el espíritu del maestro investigador que además de las capacitaciones da vía libre al trabajo por proyectos — herramienta evaluativa y estrategia que permite a los estudiantes indagar sobre diferentes objetos de conocimiento.</p>
+        <p>También se implementa un <strong>programa de salidas al exterior</strong>: viaje a Canadá con los estudiantes de grado 7° y el viaje a Europa e Israel con los estudiantes de grado 11°.</p>
+      </div>
+    </div>
+
+    <div class="staff-intro reveal">
+      <span class="eyebrow">Equipo Bachillerato</span>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card leader reveal">
+        <div class="av">AZ</div>
+        <div class="info">
+          <h4>Alexander Zuluaga Gil</h4>
+          <div class="role">Coordinador Bachillerato</div>
+          <a class="email" href="mailto:coordinacionbachillerato@theodoro.edu.co">coordinacionbachillerato@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card leader reveal">
+        <div class="av">EO</div>
+        <div class="info">
+          <h4>Estefanía Ordoñez</h4>
+          <div class="role">Psicóloga</div>
+          <a class="email" href="mailto:psicologiabachillerato@theodoro.edu.co">psicologiabachillerato@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">SS</div>
+        <div class="info">
+          <h4>Santiago Salazar</h4>
+          <div class="role">Director de Grupo · 7° ALEF</div>
+          <a class="email" href="mailto:santiago.salazar@theodoro.edu.co">santiago.salazar@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">LC</div>
+        <div class="info">
+          <h4>Liliana Castrillón</h4>
+          <div class="role">Directora de Grupo · 7° BET</div>
+          <a class="email" href="mailto:lcastrillon@theodoro.edu.co">lcastrillon@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">MM</div>
+        <div class="info">
+          <h4>Manuela Macías</h4>
+          <div class="role">Directora de Grupo · 8° ALEF</div>
+          <a class="email" href="mailto:manuela.macias@theodoro.edu.co">manuela.macias@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">DG</div>
+        <div class="info">
+          <h4>Dayron Garcés</h4>
+          <div class="role">Director de Grupo · 8° BET</div>
+          <a class="email" href="mailto:dayron.garces@theodoro.edu.co">dayron.garces@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">FR</div>
+        <div class="info">
+          <h4>Ferney Rave</h4>
+          <div class="role">Director de Grupo · 9° ALEF</div>
+          <a class="email" href="mailto:ferney.rave@theodoro.edu.co">ferney.rave@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">KM</div>
+        <div class="info">
+          <h4>Katty Marchena</h4>
+          <div class="role">Directora de Grupo · 9° BET</div>
+          <a class="email" href="mailto:katty.corrales@theodoro.edu.co">katty.corrales@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">YS</div>
+        <div class="info">
+          <h4>Yuliana Suárez</h4>
+          <div class="role">Directora de Grupo · 10° ALEF</div>
+          <a class="email" href="mailto:yuliana.suarez@theodoro.edu.co">yuliana.suarez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">JV</div>
+        <div class="info">
+          <h4>Juan Felipe Vélez</h4>
+          <div class="role">Director de Grupo · 10° BET</div>
+          <a class="email" href="mailto:juan.velez@theodoro.edu.co">juan.velez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">DG</div>
+        <div class="info">
+          <h4>Diana Gómez</h4>
+          <div class="role">Directora de Grupo · 11° ALEF</div>
+          <a class="email" href="mailto:diana.gomez@theodoro.edu.co">diana.gomez@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">OC</div>
+        <div class="info">
+          <h4>Oscar Castañeda</h4>
+          <div class="role">Director de Grupo · 11° BET</div>
+          <a class="email" href="mailto:ocastaneda@theodoro.edu.co">ocastaneda@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">GT</div>
+        <div class="info">
+          <h4>Giovanni Torres</h4>
+          <div class="role">Director de Grupo · 12° ALEF</div>
+          <a class="email" href="mailto:gtorres@theodoro.edu.co">gtorres@theodoro.edu.co</a>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="av">TL</div>
+        <div class="info">
+          <h4>Tahia Lorenzo</h4>
+          <div class="role">Directora de Grupo · 12° BET</div>
+          <a class="email" href="mailto:tahia.lorenzo@theodoro.edu.co">tahia.lorenzo@theodoro.edu.co</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="box reveal">
+      <div class="glow"></div>
+      <h2>¿Quieres que tu hijo haga parte del CTH?</h2>
+      <p>Conoce nuestro proceso de admisión y acompaña a tu familia desde el primer día en una comunidad que celebra la diversidad y el aprendizaje con propósito.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="admisiones.html">Ver admisiones
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg width="40" viewBox="0 0 100 100" fill="none">
+          <path d="M50 6 L70 41 L50 41 Z" fill="#fff"/><path d="M50 94 L30 59 L50 59 Z" fill="#19A7DE"/>
+          <path d="M9 30 L49 30 L29 65 Z" fill="#fff"/><path d="M91 30 L51 30 L71 65 Z" fill="#19A7DE"/>
+          <path d="M9 70 L49 70 L29 35 Z" fill="#19A7DE"/><path d="M91 70 L51 70 L71 35 Z" fill="#fff"/>
+          <circle cx="50" cy="50" r="13" fill="#C9A227"/>
+        </svg>
+        <div class="name">Colegio Theodoro Herzl</div>
+        <p>80 años formando seres humanos íntegros en la pluralidad y el respeto por las diferencias.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 002 8.2 31 31 0 002 12a31 31 0 00.1 3.8 3 3 0 002.1 2.1c1.9.6 7.8.6 7.8.6s6 0 7.9-.6a3 3 0 002.1-2.1A31 31 0 0022 12a31 31 0 00-.1-3.8zM10 15V9l5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Colegio</h4>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="programas.html">Programas académicos</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#noticias">Theodoro al día</a>
+      </div>
+      <div class="foot-col">
+        <h4>Familias</h4>
+        <a href="admisiones.html">Admisiones</a>
+        <a href="#">Plataforma Phidias</a>
+        <a href="#">Calendario escolar</a>
+        <a href="#">Trabaja con nosotros</a>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4>Contacto</h4>
+        <p class="strong">Carrera 1 No. 36 D Sur 515</p>
+        <p>(Alto de las Palmas)</p>
+        <p>Envigado — Antioquia</p>
+        <p class="strong">(+57) 604 322 0180</p>
+        <p>admisiones@theodoro.edu.co</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Colegio Theodoro Herzl · בית ספר תאודור הרצל</span>
+      <span>
+        <a href="#">Política de protección de datos</a> &nbsp;·&nbsp;
+        <a href="#">Normas de uso de activos de información</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el)=>{
+    const sibs = el.parentElement.querySelectorAll(':scope > .reveal');
+    el.style.transitionDelay = (Array.from(sibs).indexOf(el)*70)+'ms';
+    io.observe(el);
+  });
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+  }));
+  // highlight prog-nav link based on scroll
+  const sections = ['preescolar','primaria','bachillerato'];
+  const links = document.querySelectorAll('.prog-level-link');
+  const onScroll = ()=>{
+    let current = '';
+    sections.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el && window.scrollY >= el.offsetTop - 160) current = id;
+    });
+    links.forEach(l=>{
+      l.classList.toggle('on', l.getAttribute('href')==='#'+current);
+    });
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+</script>
+</body>
+</html>
