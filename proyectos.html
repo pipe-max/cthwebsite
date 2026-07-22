@@ -26,13 +26,6 @@
     <div class="util-left">
       <a href="tel:+576043220180">📞 (+57) 604 322 0180</a>
       <a href="mailto:admisiones@theodoro.edu.co">✉ admisiones@theodoro.edu.co</a>
-      <span class="lang-wrap" style="display:flex;align-items:center">
-        <span class="lang"><button class="on">ES</button><button>EN</button></span>
-      </span>
-    </div>
-    <div class="util-right">
-      <a class="pill-link" href="#">Plataforma Phidias</a>
-      <a class="pill-link gold" href="#">Intranet CTH</a>
     </div>
   </div>
 </div>
@@ -62,6 +55,10 @@
       <a href="admisiones.html">Admisiones</a>
       <a href="index.html#noticias">Egresados</a>
       <a href="#">Contacto</a>
+      <span class="nav-divider"></span>
+      <a class="pill-link" href="#">Plataforma Phidias</a>
+      <a class="pill-link gold" href="#">Intranet CTH</a>
+      <span class="lang"><button class="on">ES</button><button>EN</button></span>
       <a class="cta" href="admisiones.html">Inscríbete</a>
     </nav>
     <button class="burger" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -231,6 +228,17 @@
     document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
   }));
+
+  // mobile menu toggle
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navMain = document.querySelector('nav.main');
+    if(!burger || !navMain) return;
+    burger.addEventListener('click', ()=>{
+      burger.classList.toggle('open');
+      navMain.classList.toggle('open');
+    });
+  })();
 </script>
 </body>
 </html>
