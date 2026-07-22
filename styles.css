@@ -16,7 +16,7 @@
   --line:#DDE5F0;
   --white:#FFFFFF;
   --muted:#5A6B83;
-  --display:"Fraunces", Georgia, serif;
+  --display:"Poppins", system-ui, sans-serif;
   --sans:"Plus Jakarta Sans", system-ui, sans-serif;
   --maxw:1240px;
 }
@@ -38,7 +38,7 @@ img{max-width:100%;display:block}
   color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.01em}
 
 /* ---------- HEADER ---------- */
 header{position:sticky;top:0;z-index:50;background:rgba(246,248,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -115,7 +115,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .breadcrumb a{color:#9FB6D6}
 .breadcrumb a:hover{color:#fff}
 .page-hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
-.page-hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.page-hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
 .page-hero p{color:#C6D4E8;font-size:1.1rem;max-width:40em;margin-top:16px}
 
 /* ---------- CREDENTIALS STRIP ---------- */
