@@ -498,14 +498,14 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
     display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .quicklinks a{
   display:flex;align-items:center;gap:10px;height:52px;width:52px;padding:0 15px;
-  background:#fff;border:1.5px solid var(--cyan);border-right:0;border-radius:26px 0 0 26px;
-  color:var(--sapphire);font-weight:700;font-size:.86rem;
+  background:var(--cyan);border:1.5px solid var(--cyan);border-right:0;border-radius:26px 0 0 26px;
+  color:#fff;font-weight:700;font-size:.86rem;
   overflow:hidden;white-space:nowrap;
   box-shadow:-4px 4px 16px rgba(16,42,76,.14);
   transition:width .3s ease,background .2s,color .2s}
 .quicklinks a svg{width:22px;height:22px;flex-shrink:0}
 .quicklinks a span{opacity:0;transition:opacity .15s}
-.quicklinks a:hover{width:224px;background:var(--cyan-soft);color:var(--sapphire)}
+.quicklinks a:hover{width:224px;background:var(--sapphire);color:#fff}
 .quicklinks a:hover span{opacity:1;transition:opacity .2s .12s}
 @media(max-width:760px){
   .quicklinks{gap:8px}
