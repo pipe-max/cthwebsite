@@ -37,7 +37,7 @@ img{max-width:100%;display:block}
   font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
   color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
 }
-.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan)}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.01em}
 
 /* ---------- HEADER ---------- */
