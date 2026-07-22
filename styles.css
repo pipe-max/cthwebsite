@@ -86,23 +86,33 @@ nav.main a.cta.active::after{display:none}
 .btn-ink:hover{transform:translateY(-2px);background:var(--sapphire)}
 .btn svg{width:17px;height:17px}
 
-/* ---------- HERO (home) ---------- */
-.hero{position:relative;background:
+/* ---------- HERO SLIDER (home) ---------- */
+.hero-slider{position:relative;background:
     radial-gradient(1100px 600px at 80% -10%, rgba(25,167,222,.20), transparent 60%),
     linear-gradient(160deg,#0A1B33 0%, #0E2647 55%, #102A4C 100%);
     color:#fff;overflow:hidden}
-.hero .lattice{position:absolute;inset:0;opacity:.5;pointer-events:none}
-.hero .glow{position:absolute;width:520px;height:520px;border-radius:50%;
+.hero-slider .lattice{position:absolute;inset:0;opacity:.5;pointer-events:none}
+.hero-slider .glow{position:absolute;width:520px;height:520px;border-radius:50%;
     background:radial-gradient(circle,rgba(201,162,39,.22),transparent 70%);
-    top:-120px;left:-120px;pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;
+    top:-120px;left:-120px;pointer-events:none;z-index:1}
+
+.hs-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s ease;pointer-events:none}
+.hs-slide.active{position:relative;opacity:1;visibility:visible;pointer-events:auto}
+.hs-slide .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;
     padding-top:84px;padding-bottom:90px;min-height:calc(100vh - 118px)}
+
 .hero-eyebrow{color:#7FD0F0}
 .hero-eyebrow::before{background:var(--gold)}
-.hero h1{font-size:clamp(2.6rem,5.2vw,4.4rem);margin:22px 0 8px;font-weight:600}
-.hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
-.hero p.lead{font-size:1.12rem;color:#C6D4E8;max-width:30em;margin-bottom:34px}
+.hs-slide h1{font-size:clamp(2.6rem,5.2vw,4.4rem);margin:22px 0 8px;font-weight:600}
+.hs-slide h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.hs-slide p.lead{font-size:1.12rem;color:#C6D4E8;max-width:30em;margin-bottom:34px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
+.hs-dates{display:flex;flex-direction:column;gap:14px;margin:8px 0 30px}
+.hs-date{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:14px 18px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px}
+.hs-date .k{font-weight:700;font-size:.86rem;color:#7FD0F0}
+.hs-date .v{font-weight:600;font-size:.94rem;color:#fff}
 
 .hero-visual{position:relative}
 .photo-slot{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;
@@ -116,6 +126,20 @@ nav.main a.cta.active::after{display:none}
 .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
     font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#7F93B5;display:flex;flex-direction:column;align-items:center;gap:8px}
 .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(#7F93B5,transparent)}
+
+.hs-controls{position:absolute;left:0;right:0;bottom:64px;display:flex;align-items:center;justify-content:center;gap:22px;z-index:5}
+.hs-arrow{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;
+    width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:.2s;flex:none}
+.hs-arrow:hover{background:rgba(255,255,255,.18)}
+.hs-arrow svg{width:18px;height:18px}
+.hs-dots{display:flex;gap:10px}
+.hs-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);border:0;cursor:pointer;padding:0;transition:.25s}
+.hs-dots button.on{background:var(--gold);width:26px;border-radius:5px}
+@media(max-width:560px){
+  .hs-controls{bottom:26px}
+  .scroll-cue{display:none}
+}
 
 /* ---------- PAGE HERO (páginas internas) ---------- */
 .page-hero{position:relative;background:
@@ -499,7 +523,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 @media(max-width:1000px){
   nav.main{display:none}
   .burger{display:flex}
-  .hero .wrap{grid-template-columns:1fr;gap:44px;min-height:auto;padding-top:54px;padding-bottom:64px}
+  .hs-slide .wrap{grid-template-columns:1fr;gap:44px;min-height:auto;padding-top:54px;padding-bottom:64px}
   .hero-visual{max-width:380px}
   .creds .wrap{grid-template-columns:1fr 1fr}
   .cred{border-bottom:1px solid var(--line)}
@@ -520,7 +544,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .util-left a:not(.lang-wrap){display:none}
   section{padding:64px 0}
   .pill-grid,.svc-grid,.foot-top{grid-template-columns:1fr}
-  .hero h1{font-size:2.4rem}
+  .hs-slide h1{font-size:2.4rem}
+  .hs-date{flex-direction:column;gap:2px}
   .track{padding:24px}
   .cta-band .box{padding:36px 24px}
 }
