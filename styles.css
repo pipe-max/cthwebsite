@@ -38,6 +38,7 @@ img{max-width:100%;display:block}
   color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan)}
+.lattice{display:none}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.01em}
 
 /* ---------- HEADER ---------- */
@@ -106,9 +107,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 }
 
 /* ---------- PAGE HERO (páginas internas) ---------- */
-.page-hero{position:relative;background:
-    radial-gradient(900px 500px at 85% -20%, rgba(25,167,222,.18), transparent 60%),
-    linear-gradient(160deg,#0A1B33,#102A4C);color:#fff;overflow:hidden}
+.page-hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
 .page-hero .lattice{position:absolute;inset:0;opacity:.45;pointer-events:none}
 .page-hero .wrap{position:relative;padding:68px 28px 64px}
 .breadcrumb{font-size:.8rem;color:#7FD0F0;font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
@@ -524,6 +523,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .quicklinks a span{opacity:0;transition:opacity .15s}
 .quicklinks a:hover{width:224px}
 .quicklinks a:hover span{opacity:1;transition:opacity .2s .12s}
+.quicklinks a[aria-label="WhatsApp"]{background:#25D366;border-color:#25D366}
 @media(max-width:760px){
   .quicklinks{gap:8px}
   .quicklinks a{height:44px;width:44px;padding:0 12px}
