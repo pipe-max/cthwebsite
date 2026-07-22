@@ -142,6 +142,8 @@ section{padding:96px 0}
 .identity .visual .ph-grid{position:absolute;inset:0;opacity:.5}
 .identity .visual .ph-tag{position:relative;font-size:.74rem;font-weight:600;color:var(--ink-2);
     background:rgba(255,255,255,.7);padding:7px 13px;border-radius:8px}
+.identity .visual.has-video{aspect-ratio:16/9;padding:0;background:#000;border-color:var(--ink)}
+.identity .visual.has-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .identity p.body{color:var(--ink-2);font-size:1.05rem;margin-top:20px}
 .identity p.body+p.body{margin-top:14px}
 .quote{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--sapphire);
