@@ -268,6 +268,19 @@ section{padding:96px 0}
 .proj-card.pending .ph-tag{position:absolute;left:14px;bottom:14px;font-size:.74rem;font-weight:600;color:var(--ink-2);
     background:rgba(255,255,255,.8);padding:6px 12px;border-radius:8px}
 
+/* banners de servicios con marca propia */
+.svc-banner{position:relative;border-radius:16px;overflow:hidden;min-height:230px;padding:22px;
+    display:flex;flex-direction:column;color:#fff;
+    box-shadow:0 8px 24px rgba(16,42,76,.1);transition:.25s}
+.svc-banner:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,42,76,.16)}
+.svc-banner-text{position:relative;z-index:1;max-width:calc(100% - 60px);padding-bottom:70px}
+.svc-banner h3{font-size:1.3rem;font-weight:800;color:#fff;margin:0 0 8px}
+.svc-banner p{font-size:.82rem;color:rgba(255,255,255,.92);line-height:1.45}
+.svc-banner.gold h3,.svc-banner.gold p{color:var(--ink)}
+.svc-banner.gold p{color:var(--ink-2)}
+.svc-banner-logo{position:absolute;right:16px;bottom:16px;width:72px;height:72px;object-fit:contain}
+.svc-banner-logo.boxed{background:#fff;border-radius:12px;padding:8px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+
 /* ============================================================
    COMPONENTES PÁGINA ADMISIONES
    ============================================================ */
