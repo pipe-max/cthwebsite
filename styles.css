@@ -114,7 +114,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .breadcrumb a{color:#9FB6D6}
 .breadcrumb a:hover{color:#fff}
 .page-hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
-.page-hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
+.page-hero h1 em{font-style:italic;color:#8FD8F5;font-weight:600}
 .page-hero p{color:#C6D4E8;font-size:1.1rem;max-width:40em;margin-top:16px}
 
 /* ---------- CREDENTIALS STRIP ---------- */
