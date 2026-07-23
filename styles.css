@@ -250,6 +250,16 @@ section{padding:96px 0}
 .fam h3{font-family:var(--sans);font-weight:700;font-size:1rem}
 .fam p{font-size:.82rem;color:var(--muted)}
 
+/* tarjetas grandes de acceso rápido con imagen */
+.fam-grid-lg{grid-template-columns:repeat(4,1fr)}
+.fam-lg{flex-direction:column;align-items:flex-start;gap:22px;padding:30px 26px;border-radius:20px}
+.fam-lg .ic{width:64px;height:64px;border-radius:16px;background:var(--cyan-soft)}
+.fam-lg .ic img{width:34px;height:34px;object-fit:contain}
+.fam-lg h3{font-size:1.08rem;line-height:1.25}
+.fam-lg p{font-size:.86rem;margin-top:4px}
+@media(max-width:1000px){.fam-grid-lg{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fam-grid-lg{grid-template-columns:1fr}}
+
 /* alianzas y convenios */
 .partners{background:var(--paper);border-top:1px solid var(--line)}
 .partners-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:44px 56px;margin-top:36px}
