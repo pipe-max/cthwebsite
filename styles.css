@@ -470,6 +470,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .ptab-age{position:relative;font-size:.7rem;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px;max-width:62%}
 .ptab-top h3{position:relative;font-family:var(--display);font-size:1.65rem;font-weight:700;color:#fff;line-height:1.2;margin:0;max-width:62%}
+.ptab-top .prog-badge{position:relative;margin-top:14px;background:rgba(255,255,255,.18);color:#fff}
 
 /* Gradients per level */
 .ptab-cyan{background:linear-gradient(145deg,#24BCEF,#1E5BB8)}
@@ -479,7 +480,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 /* Tab body (white) */
 .ptab-body{flex:1;padding:22px 28px 24px;background:#fff;display:flex;flex-direction:column}
 .ptab-body>p{color:var(--muted);font-size:.88rem;line-height:1.65;margin:0 0 16px;flex:1}
-.ptab-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ptab-footer{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
 .ptab-link{font-size:.85rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:5px;transition:color .2s}
 .ptab:hover .ptab-link,.ptab.active .ptab-link{color:var(--sapphire)}
 .ptab-link svg{transition:transform .2s}
