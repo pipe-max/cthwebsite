@@ -274,7 +274,7 @@ section{padding:96px 0}
     display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff;
     box-shadow:0 8px 24px rgba(16,42,76,.1);transition:.25s}
 .svc-banner:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,42,76,.16)}
-.svc-banner-logo{width:84px;height:84px;object-fit:contain;margin-bottom:18px;flex-shrink:0}
+.svc-banner-logo{height:110px;width:auto;max-width:200px;object-fit:contain;margin-bottom:18px;flex-shrink:0}
 .svc-banner-text{position:relative;z-index:1;width:100%}
 .svc-banner h3{font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 12px;line-height:1.15;text-align:center}
 .svc-banner p{font-size:.88rem;color:rgba(255,255,255,.92);line-height:1.6;text-align:justify}
