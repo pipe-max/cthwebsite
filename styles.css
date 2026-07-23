@@ -495,12 +495,6 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .prog-panel.active{display:block;animation:fadePanel .45s cubic-bezier(.2,.8,.2,1)}
 @keyframes fadePanel{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
-/* Colored accent stripe at top of panel */
-.panel-stripe{height:5px}
-.panel-stripe.ptab-cyan{background:linear-gradient(90deg,#24BCEF,#1E5BB8)}
-.panel-stripe.ptab-navy{background:linear-gradient(90deg,#2568CC,#0A1B33)}
-.panel-stripe.ptab-green{background:linear-gradient(90deg,#1D9E6E,#0D4A38)}
-
 /* Panel header */
 .panel-head{padding:48px 0 36px;border-bottom:2px solid var(--line);margin-bottom:48px}
 .panel-head .eyebrow{margin-bottom:10px}
