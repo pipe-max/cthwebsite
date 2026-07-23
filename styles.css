@@ -509,25 +509,25 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 
 /* Staff */
 .staff-intro{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
-.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-.staff-card{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);
-  border-radius:12px;padding:12px 14px;transition:.2s}
+.staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px;
+  max-width:880px;margin-left:auto;margin-right:auto}
+.staff-card{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);
+  border-radius:16px;padding:20px 24px;transition:.2s}
 .staff-card:hover{border-color:var(--sapphire);box-shadow:0 8px 24px rgba(16,42,76,.08)}
-.staff-card .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
-  font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:-.02em;color:#fff;
+.staff-card .av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+  font-family:var(--display);font-weight:700;font-size:.92rem;letter-spacing:-.02em;color:#fff;
   background:linear-gradient(135deg,var(--ink-2),var(--sapphire))}
 .staff-card.leader .av{background:linear-gradient(135deg,var(--sapphire),var(--cyan))}
-.staff-card .av svg{width:18px;height:18px}
+.staff-card .av svg{width:24px;height:24px}
 .staff-card .info{min-width:0}
-.staff-card h4{font-weight:700;font-size:.86rem;color:var(--ink);line-height:1.2;
+.staff-card h4{font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.25;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.staff-card .role{font-size:.73rem;color:var(--muted);margin-top:2px;
+.staff-card .role{font-size:.84rem;color:var(--muted);margin-top:3px;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.staff-card .email{font-size:.7rem;color:var(--cyan);margin-top:4px;display:block;font-weight:600;
+.staff-card .email{font-size:.8rem;color:var(--cyan);margin-top:6px;display:block;font-weight:600;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .staff-card .email:hover{color:var(--sapphire)}
-@media(max-width:1000px){.staff-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.staff-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.staff-grid{grid-template-columns:1fr}}
 
 /* ---------- QUICKLINKS (menú lateral flotante) ---------- */
 .quicklinks{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:80;
