@@ -306,11 +306,9 @@ section{padding:96px 0}
 .age-block.a2 .head{background:linear-gradient(120deg,#19A7DE,#1E5BB8)}
 .age-block.a3 .head{background:linear-gradient(120deg,#1E8A5B,#0E5C3C)}
 .age-table{width:100%;border-collapse:collapse;font-size:.86rem}
-.age-table th{font-family:var(--sans);text-align:left;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+.age-table th{font-family:var(--sans);text-align:center;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
     color:var(--muted);padding:12px 20px;border-bottom:1px solid var(--line);font-weight:700;white-space:nowrap}
-.age-table th:nth-child(2),.age-table th:nth-child(3){text-align:center}
-.age-table td{padding:10px 20px;border-bottom:1px solid var(--paper-2);color:var(--ink-2)}
-.age-table td:nth-child(2){text-align:center}
+.age-table td{padding:10px 20px;border-bottom:1px solid var(--paper-2);color:var(--ink-2);text-align:center}
 .age-table tr:last-child td{border-bottom:0}
 .age-table td:last-child{font-weight:700;color:var(--sapphire);text-align:center;white-space:nowrap}
 .age-note{font-size:.85rem;color:var(--muted);margin-top:20px;font-style:italic;text-align:center}
