@@ -277,9 +277,9 @@ section{padding:96px 0}
 .svc-banner:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,42,76,.14)}
 .svc-banner-logo-wrap{height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex-shrink:0}
 .svc-banner-logo{height:100%;width:auto;max-width:200px;object-fit:contain}
-.svc-banner-text{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;flex:1;align-items:center}
+.svc-banner-text{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;flex:1;align-items:center;justify-content:center}
 .svc-banner h3{font-size:1.4rem;font-weight:800;color:var(--ink);margin:0 0 12px;line-height:1.15;text-align:center}
-.svc-banner p{font-size:.88rem;color:var(--ink-2);line-height:1.6;text-align:justify;flex:1}
+.svc-banner p{font-size:.88rem;color:var(--ink-2);line-height:1.6;text-align:justify}
 .svc-banner-mail{display:inline-block;margin-top:18px;background:#fff;color:var(--ink);
     font-weight:700;font-size:.8rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line)}
 
