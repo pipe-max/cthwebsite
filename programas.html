@@ -613,20 +613,31 @@
     const tab = document.querySelector('.ptab[data-panel="'+name+'"]');
     const panel = document.getElementById('panel-'+name);
     if(tab && panel){ tab.classList.add('active'); tab.setAttribute('aria-selected','true'); panel.classList.add('active'); }
+    return panel;
+  }
+
+  function scrollToPanelTitle(panel){
+    if(!panel) return;
+    const head = panel.querySelector('.panel-head') || panel;
+    const header = document.querySelector('header');
+    const offset = (header ? header.offsetHeight : 80) + 16;
+    const top = head.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({top, behavior:'smooth'});
   }
 
   tabs.forEach(tab=>{
     tab.addEventListener('click',()=>{
-      activateTab(tab.dataset.panel);
-      document.getElementById('prog-panels').scrollIntoView({behavior:'smooth',block:'start'});
+      const panel = activateTab(tab.dataset.panel);
+      // esperar un frame para que el panel sea visible antes de medir su posición
+      requestAnimationFrame(()=>scrollToPanelTitle(panel));
     });
   });
 
   // Activate panel from URL hash on load (e.g. programas.html#primaria)
   const hash = location.hash.replace('#','');
   if(hash && document.querySelector('.ptab[data-panel="'+hash+'"]')){
-    activateTab(hash);
-    setTimeout(()=>document.getElementById('prog-panels').scrollIntoView({behavior:'smooth',block:'start'}),200);
+    const panel = activateTab(hash);
+    window.addEventListener('load',()=>setTimeout(()=>scrollToPanelTitle(panel),150));
   }
 </script>
 <!-- QUICKLINKS -->
