@@ -270,19 +270,18 @@ section{padding:96px 0}
     background:rgba(255,255,255,.8);padding:6px 12px;border-radius:8px}
 
 /* banners de servicios con marca propia */
-.svc-banner{position:relative;border-radius:20px;overflow:hidden;min-height:280px;padding:30px 30px 100px;
-    display:flex;flex-direction:column;color:#fff;
+.svc-banner{position:relative;border-radius:20px;overflow:hidden;min-height:280px;padding:32px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff;
     box-shadow:0 8px 24px rgba(16,42,76,.1);transition:.25s}
 .svc-banner:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,42,76,.16)}
-.svc-banner-text{position:relative;z-index:1}
-.svc-banner h3{font-size:1.5rem;font-weight:800;color:#fff;margin:0 0 12px;line-height:1.15}
-.svc-banner p{font-size:.88rem;color:rgba(255,255,255,.92);line-height:1.55}
+.svc-banner-logo{width:84px;height:84px;object-fit:contain;margin-bottom:18px;flex-shrink:0}
+.svc-banner-text{position:relative;z-index:1;width:100%}
+.svc-banner h3{font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 12px;line-height:1.15;text-align:center}
+.svc-banner p{font-size:.88rem;color:rgba(255,255,255,.92);line-height:1.6;text-align:justify}
 .svc-banner.gold h3,.svc-banner.gold p{color:var(--ink)}
 .svc-banner.gold p{color:var(--ink-2)}
-.svc-banner-mail{display:inline-block;margin-top:16px;background:rgba(255,255,255,.95);color:var(--ink);
+.svc-banner-mail{display:inline-block;margin-top:18px;background:rgba(255,255,255,.95);color:var(--ink);
     font-weight:700;font-size:.8rem;padding:9px 18px;border-radius:999px}
-.svc-banner-logo{position:absolute;right:24px;bottom:24px;width:80px;height:80px;object-fit:contain}
-.svc-banner-logo.boxed{background:#fff;border-radius:14px;padding:10px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
 
 /* ============================================================
    COMPONENTES PÁGINA ADMISIONES
