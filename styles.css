@@ -468,8 +468,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .ptab-bg{position:absolute;inset:0;pointer-events:none}
 .ptab-avatar{position:absolute;right:-10px;bottom:-10px;height:150px;width:auto;max-width:none;pointer-events:none}
 .ptab-age{position:relative;font-size:.7rem;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px}
-.ptab-top h3{position:relative;font-family:var(--display);font-size:1.65rem;font-weight:700;color:#fff;line-height:1.2;margin:0}
+  text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px;max-width:62%}
+.ptab-top h3{position:relative;font-family:var(--display);font-size:1.65rem;font-weight:700;color:#fff;line-height:1.2;margin:0;max-width:62%}
 
 /* Gradients per level */
 .ptab-cyan{background:linear-gradient(145deg,#24BCEF,#1E5BB8)}
