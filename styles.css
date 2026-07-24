@@ -120,7 +120,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 /* ---------- CREDENTIALS STRIP ---------- */
 .creds{background:var(--white);border-bottom:1px solid var(--line)}
 .creds .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.cred{padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
+.cred{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
 .cred:last-child{border-right:0}
 .cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1;white-space:nowrap}
 .cred .num em{font-style:normal;color:#7FD0F0}
