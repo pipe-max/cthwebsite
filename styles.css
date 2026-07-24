@@ -588,8 +588,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   box-shadow:-4px 4px 16px rgba(16,42,76,.14);
   transition:width .3s ease,background .2s,color .2s}
 .quicklinks a svg{width:22px;height:22px;flex-shrink:0}
-.quicklinks a .ql-icon{display:inline-flex;width:22px;height:22px;flex-shrink:0;overflow:hidden;position:relative}
-.quicklinks a .ql-icon img{position:absolute;left:0;top:0;height:22px;width:auto;max-width:none;filter:brightness(0) invert(1)}
+.quicklinks a .ql-icon{display:inline-flex;width:22px;height:22px;flex-shrink:0}
+.quicklinks a .ql-icon img{width:22px;height:22px;display:block}
 .quicklinks a span{opacity:0;transition:opacity .15s}
 .quicklinks a:hover{width:224px}
 .quicklinks a:hover span{opacity:1;transition:opacity .2s .12s}
@@ -599,7 +599,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .quicklinks a{height:44px;width:44px;padding:0 12px}
   .quicklinks a svg{width:19px;height:19px}
   .quicklinks a .ql-icon{width:19px;height:19px}
-  .quicklinks a .ql-icon img{height:19px}
+  .quicklinks a .ql-icon img{width:19px;height:19px}
   .quicklinks a:hover{width:190px}
 }
 
