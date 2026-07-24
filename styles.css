@@ -125,9 +125,9 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1;white-space:nowrap}
 .cred .num em{font-style:normal;color:#7FD0F0}
 .cred .lbl{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:8px;white-space:nowrap}
-.cred-logo{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left}
-.cred-logo .cred-icon{height:48px;width:auto;max-width:70px;object-fit:contain;flex-shrink:0}
-.cred-logo .lbl{margin-top:6px}
+.cred-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.cred-logo .cred-icon{height:76px;width:auto;max-width:100%;object-fit:contain}
+.cred-logo .lbl{margin-top:0}
 
 /* ---------- SECTIONS ---------- */
 section{padding:96px 0}
