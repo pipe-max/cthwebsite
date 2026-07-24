@@ -485,5 +485,32 @@
   </a>
 </div>
 
+<!-- COOKIE CONSENT -->
+<div class="cookie-bar" id="cookie-bar">
+  <p>Usamos cookies en nuestra página web para ver cómo interactúas con ella. Al aceptarlas, estás de acuerdo con nuestro uso de dichas cookies. <a href="https://heyzine.com/flip-book/b39d348efc.html" target="_blank" rel="noopener">Política de privacidad</a></p>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-reject" id="cookie-reject">Rechazar todas</button>
+    <button type="button" class="cookie-accept" id="cookie-accept">Aceptar</button>
+    <button type="button" class="cookie-close" id="cookie-close" aria-label="Cerrar">✕</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var bar = document.getElementById('cookie-bar');
+    if(!bar) return;
+    var KEY = 'cth-cookie-consent';
+    if(!localStorage.getItem(KEY)){
+      setTimeout(function(){ bar.classList.add('show'); }, 600);
+    }
+    function hide(){ bar.classList.remove('show'); }
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem(KEY, 'accepted'); hide();
+    });
+    document.getElementById('cookie-reject').addEventListener('click', function(){
+      localStorage.setItem(KEY, 'rejected'); hide();
+    });
+    document.getElementById('cookie-close').addEventListener('click', hide);
+  })();
+</script>
 </body>
 </html>

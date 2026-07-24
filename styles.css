@@ -632,3 +632,32 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* COOKIE CONSENT */
+.cookie-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:9999;
+  background:#1E3A6E; color:#fff;
+  padding:16px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  box-shadow:0 -6px 24px rgba(0,0,0,.18);
+  transform:translateY(120%); transition:transform .45s ease;
+}
+.cookie-bar.show{transform:translateY(0)}
+.cookie-bar p{margin:0; flex:1 1 320px; font-size:.95rem; line-height:1.5; color:#EAF0FB}
+.cookie-bar a{color:#fff; text-decoration:underline}
+.cookie-bar .cookie-actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.cookie-bar button{
+  font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer;
+  border-radius:999px; padding:10px 20px; border:1px solid rgba(255,255,255,.5);
+  background:transparent; color:#fff; transition:background .2s,color .2s;
+}
+.cookie-bar button.cookie-accept{background:#fff; color:#1E3A6E; border-color:#fff}
+.cookie-bar button.cookie-accept:hover{background:#EAF0FB}
+.cookie-bar button.cookie-reject:hover{background:rgba(255,255,255,.12)}
+.cookie-bar .cookie-close{
+  border:none; background:none; padding:4px; color:#fff; opacity:.8; font-size:1.1rem; line-height:1;
+}
+.cookie-bar .cookie-close:hover{opacity:1}
+@media(max-width:560px){
+  .cookie-bar{padding:16px}
+  .cookie-bar .cookie-actions{width:100%; justify-content:flex-start}
+}
