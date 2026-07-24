@@ -190,6 +190,14 @@ section{padding:96px 0}
 .pill-grid-center .p-card .ic{background:none;margin:0 auto 12px}
 .pill-grid-center .p-card .step-number{height:56px;width:auto;display:block}
 
+/* tarjetas blancas para contrastar sobre fondo navy */
+.pill-grid-white .p-card{background:#fff;border-color:var(--line)}
+.pill-grid-white .p-card:hover{background:#fff;border-color:var(--gold)}
+.pill-grid-white .p-card .ic{background:none;margin-bottom:14px}
+.pill-grid-white .p-card .step-number{height:44px;width:auto;display:block}
+.pill-grid-white .p-card h3{color:var(--ink)}
+.pill-grid-white .p-card p{color:var(--muted)}
+
 /* niveles */
 .levels{background:var(--paper)}
 .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
