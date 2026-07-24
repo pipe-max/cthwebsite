@@ -258,31 +258,50 @@
       <h2>Las cinco C's que nos definen.</h2>
       <p>Cinco principios que guían la convivencia y la formación de cada estudiante del CTH.</p>
     </div>
-    <div class="svc-grid cols-5">
-      <div class="svc reveal">
-        <div class="ic" style="background:#9B1C1C"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 12.5C3 10 3 7.5 5 6c2-1.5 4 0 5 2 1-2 3-3.5 5-2 2 1.5 2 4 .5 6.5L12 20l-7.5-7.5z"/></svg></div>
-        <h3>Compasión</h3>
-        <p>Capacidad de ponerse en el lugar del otro y ayudarlo sin juzgar, con los brazos abiertos para acompañarlo en su camino.</p>
+    <div class="cfive reveal">
+      <div class="cfive-tabs" role="tablist">
+        <button class="cfive-tab active" style="--c:#9B1C1C" data-target="c-compasion">Compasión</button>
+        <button class="cfive-tab" style="--c:#2E7D32" data-target="c-comprension">Comprensión</button>
+        <button class="cfive-tab" style="--c:#6A1B9A" data-target="c-confianza">Confianza</button>
+        <button class="cfive-tab" style="--c:#B45309" data-target="c-civismo">Civismo</button>
+        <button class="cfive-tab" style="--c:#14213D" data-target="c-convivencia">Convivencia</button>
       </div>
-      <div class="svc reveal">
-        <div class="ic" style="background:#2E7D32"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M12 3a9 9 0 100 18A9 9 0 0012 3z"/></svg></div>
-        <h3>Comprensión</h3>
-        <p>Capacidad de darle sentido a las palabras e ideas del otro. Comprender incluye empatía, identificación y proyección.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="ic" style="background:#6A1B9A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M12 14v8M8 18h8"/></svg></div>
-        <h3>Confianza</h3>
-        <p>Creer en uno mismo, aceptar retos y plantearse metas cada vez más altas. La confianza te hace fuerte frente a la incertidumbre.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="ic" style="background:#B45309"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h3>Civismo</h3>
-        <p>Capacidad para la observación y práctica de pautas mínimas de comportamiento social que permitan vivir en colectividad.</p>
-      </div>
-      <div class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 000 18M3 12h18"/></svg></div>
-        <h3>Convivencia</h3>
-        <p>Tener apertura para coexistir de forma respetuosa y pacífica con todos los miembros de la comunidad educativa.</p>
+      <div class="cfive-panels">
+        <div class="cfive-panel active" id="c-compasion" style="--c:#9B1C1C">
+          <div class="cfive-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 4c-1.6 0-3 .8-4 2-1-1.2-2.4-2-4-2-2.5 0-4.5 2-4.5 4.5C5.5 12.6 9 15.7 12 18c3-2.3 6.5-5.4 6.5-9.5C18.5 6 16.5 4 18 4z"/></svg></div>
+          <div class="cfive-text">
+            <h3>Compasión</h3>
+            <p>Capacidad de ponerse en el lugar del otro y ayudarlo sin juzgar, con los brazos abiertos para acompañarlo en su camino.</p>
+          </div>
+        </div>
+        <div class="cfive-panel" id="c-comprension" style="--c:#2E7D32">
+          <div class="cfive-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 2a6 6 0 00-2 11.6V22l3-2 3 2v-8.4A6 6 0 009 2zm0 2a4 4 0 110 8 4 4 0 010-8z"/></svg></div>
+          <div class="cfive-text">
+            <h3>Comprensión</h3>
+            <p>Capacidad de darle sentido a las palabras e ideas del otro. Comprender incluye empatía, identificación y proyección.</p>
+          </div>
+        </div>
+        <div class="cfive-panel" id="c-confianza" style="--c:#6A1B9A">
+          <div class="cfive-ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
+          <div class="cfive-text">
+            <h3>Confianza</h3>
+            <p>Creer en uno mismo, aceptar retos y plantearse metas cada vez más altas. La confianza te hace fuerte frente a la incertidumbre.</p>
+          </div>
+        </div>
+        <div class="cfive-panel" id="c-civismo" style="--c:#B45309">
+          <div class="cfive-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 4 4 .6-3 3 .8 4.4L12 12l-3.8 2-.8-4.4-3-3L8.8 6z"/><circle cx="6" cy="20" r="2.4"/><circle cx="12" cy="20" r="2.4"/><circle cx="18" cy="20" r="2.4"/></svg></div>
+          <div class="cfive-text">
+            <h3>Civismo</h3>
+            <p>Capacidad para la observación y práctica de pautas mínimas de comportamiento social que permitan vivir en colectividad.</p>
+          </div>
+        </div>
+        <div class="cfive-panel" id="c-convivencia" style="--c:#14213D">
+          <div class="cfive-ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3a14 14 0 000 18M3 12h18" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 6.5c-.9 1.4-1.6 2.8-.6 3.9 1 1.1 2.5.4 3.9-.5M4.2 14.1c1.4-.9 2.8-1.6 3.9-.6 1.1 1 .4 2.5-.5 3.9"/></svg></div>
+          <div class="cfive-text">
+            <h3>Convivencia</h3>
+            <p>Tener apertura para coexistir de forma respetuosa y pacífica con todos los miembros de la comunidad educativa.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -453,6 +472,20 @@
     document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
   }));
+
+  // 5 C's tabs
+  (function(){
+    const tabs = document.querySelectorAll('.cfive-tab');
+    const panels = document.querySelectorAll('.cfive-panel');
+    tabs.forEach(tab=>{
+      tab.addEventListener('click', ()=>{
+        tabs.forEach(t=>t.classList.remove('active'));
+        panels.forEach(p=>p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  })();
 
   // mobile menu toggle
   (function(){
