@@ -44,6 +44,10 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spac
 /* ---------- HEADER ---------- */
 header{position:sticky;top:0;z-index:50;background:rgba(246,248,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 
+/* deja espacio para el header sticky al saltar a un ancla (#seccion) */
+section[id]{scroll-margin-top:230px}
+@media(max-width:900px){section[id]{scroll-margin-top:110px}}
+
 /* fila 1 — logo centrado + idioma */
 .header-top{position:relative;display:flex;justify-content:center;align-items:center;padding:20px 28px}
 .brand{display:flex;align-items:center;gap:13px}
