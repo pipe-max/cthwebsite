@@ -191,7 +191,7 @@ section{padding:96px 0}
 .pill-grid-center .p-card .step-number{height:56px;width:auto;display:block}
 
 /* tarjetas blancas para contrastar sobre fondo navy */
-.pill-grid-white{grid-template-columns:repeat(3,1fr)}
+#filosofia .pill-grid-white{grid-template-columns:repeat(3,1fr)}
 .pill-grid-white .p-card{background:#fff;border-color:var(--line);text-align:center;padding:36px 30px}
 .pill-grid-white .p-card:hover{background:#fff;border-color:var(--gold)}
 .pill-grid-white .p-card .ic{background:none;margin:0 auto 16px}
