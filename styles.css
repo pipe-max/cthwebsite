@@ -482,7 +482,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .mv-card:hover{box-shadow:0 18px 44px rgba(16,42,76,.12);transform:translateY(-4px)}
 .mv-card .mv-top{padding:28px 28px 22px;min-height:100px;display:flex;align-items:flex-end}
 .mv-card.mision .mv-top{background:linear-gradient(150deg,#1E5BB8,#102A4C)}
-.mv-card.vision .mv-top{background:linear-gradient(150deg,#1E8A5B,#0E5C3C)}
+.mv-card.vision .mv-top{background:linear-gradient(150deg,#19A7DE,#146E93)}
 .mv-card .mv-top h3{font-size:1.7rem;color:#fff}
 .mv-card .mv-body{padding:24px 28px 28px}
 .mv-card .mv-body p{color:var(--ink-2);font-size:.97rem;line-height:1.65}
@@ -522,7 +522,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 /* Gradients per level */
 .ptab-cyan{background:linear-gradient(145deg,#24BCEF,#1E5BB8)}
 .ptab-navy{background:linear-gradient(145deg,#2568CC,#0A1B33)}
-.ptab-green{background:linear-gradient(145deg,#1D9E6E,#0D4A38)}
+.ptab-green{background:linear-gradient(145deg,#14315C,#050C18)}
 
 /* Tab body (white) */
 .ptab-body{flex:1;padding:22px 28px 24px;background:#fff;display:flex;flex-direction:column}
