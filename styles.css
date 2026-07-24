@@ -697,7 +697,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .cfive-tab{flex:0 1 auto; min-width:0; border:2px solid transparent; background:transparent; color:#6B7A94;
   font-family:inherit; font-weight:700; font-size:.85rem; padding:12px 14px; border-radius:10px; cursor:pointer; transition:.25s}
 .cfive-tab:hover{color:var(--ink)}
-.cfive-tab.active{background:var(--c,#14213D); color:#fff; border-color:#2F6FE0; box-shadow:0 8px 18px rgba(16,42,76,.18)}
+.cfive-tab.active{background:var(--c,#14213D); color:#fff; border-color:transparent; box-shadow:0 8px 18px rgba(16,42,76,.18)}
 .cfive-panels{position:relative; margin-top:22px}
 .cfive-panel{display:none; flex-direction:column; align-items:center; text-align:center; gap:22px; background:var(--c,#14213D); color:#fff;
   border-radius:18px; padding:44px 40px; min-height:340px; justify-content:center}
