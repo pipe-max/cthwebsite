@@ -474,8 +474,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 
 /* propuesta de valor */
 .propuesta-box{background:linear-gradient(135deg,var(--cyan-soft),var(--gold-soft));
-  border:1px solid var(--line);border-radius:22px;padding:56px 48px;text-align:center;margin-top:48px}
-.propuesta-box .eyebrow{justify-content:center;margin-bottom:22px}
+  border:1px solid var(--line);border-radius:22px;padding:56px 48px;text-align:center;margin-top:48px;
+  min-height:260px;display:flex;align-items:center;justify-content:center}
 .propuesta-box blockquote{font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2.1rem);
   font-weight:600;color:var(--ink);line-height:1.25;max-width:26em;margin:0 auto}
 @media(max-width:560px){.propuesta-box{padding:36px 22px}}
