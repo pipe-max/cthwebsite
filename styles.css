@@ -589,7 +589,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   transition:width .3s ease,background .2s,color .2s}
 .quicklinks a svg{width:22px;height:22px;flex-shrink:0}
 .quicklinks a .ql-icon{width:22px;height:22px;flex-shrink:0;overflow:hidden;position:relative}
-.quicklinks a .ql-icon img{position:absolute;left:0;top:0;height:22px;width:auto;max-width:none}
+.quicklinks a .ql-icon img{position:absolute;left:0;top:0;height:22px;width:auto;max-width:none;filter:brightness(0) invert(1)}
 .quicklinks a span{opacity:0;transition:opacity .15s}
 .quicklinks a:hover{width:224px}
 .quicklinks a:hover span{opacity:1;transition:opacity .2s .12s}
