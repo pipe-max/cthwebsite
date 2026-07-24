@@ -676,22 +676,22 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .article-back:hover{text-decoration:underline}
 
 /* 5 C's tabs */
-.cfive{margin-top:48px}
+.cfive{margin-top:48px; max-width:1100px; margin-left:auto; margin-right:auto}
 .cfive-tabs{display:flex; flex-wrap:wrap; gap:6px; background:#EEF2F8; border-radius:14px; padding:6px}
-.cfive-tab{flex:1 1 auto; min-width:120px; border:none; background:transparent; color:#6B7A94;
-  font-family:inherit; font-weight:700; font-size:.95rem; padding:16px 18px; border-radius:10px; cursor:pointer; transition:.25s}
+.cfive-tab{flex:1 1 auto; min-width:120px; border:2px solid transparent; background:transparent; color:#6B7A94;
+  font-family:inherit; font-weight:700; font-size:.95rem; padding:14px 18px; border-radius:10px; cursor:pointer; transition:.25s}
 .cfive-tab:hover{color:var(--ink)}
-.cfive-tab.active{background:var(--c,#14213D); color:#fff; box-shadow:0 10px 22px rgba(16,42,76,.18)}
+.cfive-tab.active{background:var(--c,#14213D); color:#fff; border-color:#2F6FE0; box-shadow:0 8px 18px rgba(16,42,76,.18)}
 .cfive-panels{position:relative; margin-top:22px}
-.cfive-panel{display:none; align-items:center; gap:40px; background:var(--c,#14213D); color:#fff;
-  border-radius:20px; padding:44px 48px; min-height:260px}
+.cfive-panel{display:none; align-items:center; gap:32px; background:var(--c,#14213D); color:#fff;
+  border-radius:18px; padding:32px 40px; min-height:auto}
 .cfive-panel.active{display:flex}
-.cfive-ic{flex:0 0 auto; width:120px; height:120px; color:#fff; opacity:.95}
-.cfive-ic svg{width:100%; height:100%}
-.cfive-text h3{font-size:1.9rem; letter-spacing:.02em; text-transform:uppercase; margin-bottom:14px}
-.cfive-text p{font-size:1.05rem; line-height:1.6; color:rgba(255,255,255,.92); max-width:46em}
+.cfive-ic{flex:0 0 auto; width:76px; height:76px}
+.cfive-ic img{width:100%; height:100%; object-fit:contain; filter:brightness(0) invert(1)}
+.cfive-text h3{font-size:1.5rem; letter-spacing:.02em; text-transform:uppercase; margin-bottom:8px}
+.cfive-text p{font-size:.98rem; line-height:1.55; color:rgba(255,255,255,.92); max-width:46em}
 @media(max-width:760px){
-  .cfive-panel{flex-direction:column; text-align:center; padding:34px 26px}
-  .cfive-ic{width:84px; height:84px}
-  .cfive-tab{min-width:100px; font-size:.82rem; padding:12px 10px}
+  .cfive-panel{flex-direction:column; text-align:center; padding:28px 22px}
+  .cfive-ic{width:64px; height:64px}
+  .cfive-tab{min-width:100px; font-size:.82rem; padding:11px 10px}
 }
