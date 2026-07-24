@@ -265,9 +265,13 @@ section{padding:96px 0}
 
 /* alianzas y convenios */
 .partners{background:var(--paper);border-top:1px solid var(--line)}
-.partners-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:44px 56px;margin-top:36px}
-.partners-grid img{height:54px;width:auto;max-width:170px;object-fit:contain;filter:grayscale(1);opacity:.6;transition:.25s}
-.partners-grid img:hover{filter:grayscale(0);opacity:1}
+.partners-carousel{margin-top:36px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.partners-track{display:flex;align-items:center;gap:72px;width:max-content;animation:partnersScroll 28s linear infinite}
+.partners-carousel:hover .partners-track{animation-play-state:paused}
+.partners-track img{height:76px;width:auto;max-width:220px;object-fit:contain;filter:grayscale(1);opacity:.6;transition:.25s;flex-shrink:0}
+.partners-track img:hover{filter:grayscale(0);opacity:1}
+@keyframes partnersScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:700px){.partners-track img{height:56px}}
 
 /* ============================================================
    COMPONENTES PÁGINA PROYECTOS
