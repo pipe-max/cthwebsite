@@ -277,15 +277,20 @@ section{padding:96px 0}
 /* ============================================================
    COMPONENTES PÁGINA PROYECTOS
    ============================================================ */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:24px;margin-top:36px}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:24px;margin-top:36px;align-items:start}
 .banner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;margin-top:36px}
-.proj-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(16,42,76,.1);transition:.25s;background:#fff}
+.proj-card{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(16,42,76,.1);transition:.25s;background:#fff}
 .proj-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,42,76,.16)}
 .proj-card img{width:100%;height:auto;display:block}
+.proj-card .proj-desc{max-height:0;opacity:0;overflow:hidden;padding:0 16px;transition:max-height .4s ease,opacity .3s ease,padding .4s ease}
+.proj-card .proj-desc h4{font-family:var(--sans);font-weight:700;font-size:.88rem;color:var(--ink);margin-top:14px}
+.proj-card .proj-desc p{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:6px}
+.proj-card:hover .proj-desc{max-height:400px;opacity:1;padding:0 16px 16px}
 .proj-card.pending{position:relative;aspect-ratio:16/10;background:linear-gradient(150deg,var(--paper-2),#dfeaf6)}
 .proj-card.pending .ph-grid{position:absolute;inset:0;opacity:.5}
 .proj-card.pending .ph-tag{position:absolute;left:14px;bottom:14px;font-size:.74rem;font-weight:600;color:var(--ink-2);
     background:rgba(255,255,255,.8);padding:6px 12px;border-radius:8px}
+
 
 /* banners de servicios con marca propia */
 .banner-grid{align-items:stretch}
