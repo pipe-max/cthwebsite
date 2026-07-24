@@ -686,12 +686,12 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .cfive-panel{display:none; flex-direction:column; align-items:center; text-align:center; gap:22px; background:var(--c,#14213D); color:#fff;
   border-radius:18px; padding:44px 40px; min-height:340px; justify-content:center}
 .cfive-panel.active{display:flex}
-.cfive-ic{flex:0 0 auto; width:110px; height:110px}
+.cfive-ic{flex:0 0 auto; width:150px; height:150px}
 .cfive-ic img{width:100%; height:100%; object-fit:contain; filter:brightness(0) invert(1)}
-.cfive-text h3{font-size:1.5rem; letter-spacing:.02em; text-transform:uppercase; margin-bottom:10px}
-.cfive-text p{font-size:.98rem; line-height:1.55; color:rgba(255,255,255,.92); max-width:32em; margin:0 auto}
+.cfive-text h3{font-size:1.7rem; letter-spacing:.02em; text-transform:uppercase; margin-bottom:10px}
+.cfive-text p{font-size:1.08rem; line-height:1.6; color:rgba(255,255,255,.92); max-width:32em; margin:0 auto}
 @media(max-width:760px){
   .cfive-panel{padding:32px 22px; min-height:auto}
-  .cfive-ic{width:84px; height:84px}
+  .cfive-ic{width:104px; height:104px}
   .cfive-tab{font-size:.75rem; padding:10px 9px}
 }
