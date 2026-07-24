@@ -255,7 +255,7 @@ section{padding:96px 0}
 .fam-lg{flex-direction:column;align-items:center;text-align:center;gap:22px;padding:30px 26px;border-radius:20px}
 .fam-lg .ic{width:100%;height:110px;border-radius:16px;background:none;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .fam-lg .ic img{width:auto;max-width:100%;height:auto;max-height:100%;object-fit:contain}
-.fam-lg .ic img[src*="phidias"]{max-height:160px;max-width:130%}
+.fam-lg .ic img[src*="phidias"]{max-height:130px;max-width:100%}
 .fam-lg h3{font-size:1.08rem;line-height:1.25}
 .fam-lg p{font-size:.86rem;margin-top:4px}
 @media(max-width:1000px){.fam-grid-lg{grid-template-columns:1fr 1fr}}
