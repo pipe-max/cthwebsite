@@ -378,8 +378,10 @@ section{padding:96px 0}
 /* ---------- FOOTER ---------- */
 footer{background:var(--ink);color:#A9BDD8;padding:72px 0 30px;position:relative}
 .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;flex-direction:column;align-items:center;text-align:center}
 .foot-brand .name{font-family:var(--display);font-size:1.4rem;color:#fff;margin-top:14px}
 .foot-brand p{font-size:.9rem;margin-top:14px;max-width:24em}
+.foot-brand .socials{display:flex;justify-content:center}
 .foot-col h4{font-family:var(--sans);color:#fff;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
 .foot-col a{display:block;font-size:.9rem;padding:6px 0;transition:.2s}
 .foot-col a:hover{color:#fff;padding-left:5px}
