@@ -186,6 +186,9 @@ section{padding:96px 0}
 .p-card .ic svg{width:26px;height:26px}
 .p-card h3{font-size:1.22rem;color:#fff}
 .p-card p{color:#B9C9E0;font-size:.93rem;margin-top:10px}
+.pill-grid-center .p-card{text-align:center}
+.pill-grid-center .p-card .ic{background:none;margin:0 auto 12px}
+.pill-grid-center .p-card .step-number{height:56px;width:auto;display:block}
 
 /* niveles */
 .levels{background:var(--paper)}
@@ -374,9 +377,9 @@ section{padding:96px 0}
 .timeline .sec-head h2{color:#fff}
 .tl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
 .tl-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-    border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:30px 26px}
+    border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:30px 26px;text-align:center}
 .tl-card .step{font-family:var(--display);font-size:2rem;color:var(--gold);line-height:1}
-.tl-card .step-letter{height:64px;width:auto;display:block}
+.tl-card .step-letter{height:64px;width:auto;display:block;margin:0 auto}
 .tl-card h3{font-size:1.15rem;color:#fff;margin-top:14px}
 .tl-card p{color:#B9C9E0;font-size:.92rem;margin-top:8px}
 .tl-card .date{color:#7FD0F0;font-weight:700;font-size:.88rem;margin-top:12px;display:block}
