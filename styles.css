@@ -122,9 +122,12 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .creds .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .cred{padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
 .cred:last-child{border-right:0}
-.cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1}
-.cred .num em{font-style:normal;color:var(--gold)}
-.cred .lbl{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:8px}
+.cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1;white-space:nowrap}
+.cred .num em{font-style:normal;color:#7FD0F0}
+.cred .lbl{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:8px;white-space:nowrap}
+.cred-logo{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left}
+.cred-logo .cred-icon{height:48px;width:auto;max-width:70px;object-fit:contain;flex-shrink:0}
+.cred-logo .lbl{margin-top:6px}
 
 /* ---------- SECTIONS ---------- */
 section{padding:96px 0}
@@ -605,6 +608,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .creds .wrap{grid-template-columns:1fr 1fr}
   .cred{border-bottom:1px solid var(--line)}
   .cred:nth-child(odd){border-right:1px solid var(--line)}
+  .cred .lbl{white-space:normal}
+  .cred-logo{flex-direction:column;text-align:center}
   .identity .grid{grid-template-columns:1fr;gap:38px}
   .pill-grid,.svc-grid{grid-template-columns:1fr 1fr}
   .level-grid,.news-grid,.fam-grid{grid-template-columns:1fr}
