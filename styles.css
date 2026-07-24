@@ -376,6 +376,7 @@ section{padding:96px 0}
 .tl-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
     border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:30px 26px}
 .tl-card .step{font-family:var(--display);font-size:2rem;color:var(--gold);line-height:1}
+.tl-card .step-letter{height:64px;width:auto;display:block}
 .tl-card h3{font-size:1.15rem;color:#fff;margin-top:14px}
 .tl-card p{color:#B9C9E0;font-size:.92rem;margin-top:8px}
 .tl-card .date{color:#7FD0F0;font-weight:700;font-size:.88rem;margin-top:12px;display:block}
