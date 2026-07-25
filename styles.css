@@ -587,7 +587,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   overflow:hidden;white-space:nowrap;
   box-shadow:-4px 4px 16px rgba(16,42,76,.14);
   transition:width .3s ease,background .2s,color .2s}
-.quicklinks a svg{width:22px;height:22px;flex-shrink:0}
+.quicklinks a svg,.quicklinks a img{width:22px;height:22px;flex-shrink:0}
 .quicklinks a span{opacity:0;transition:opacity .15s}
 .quicklinks a:hover{width:224px}
 .quicklinks a:hover span{opacity:1;transition:opacity .2s .12s}
@@ -595,7 +595,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 @media(max-width:760px){
   .quicklinks{gap:8px}
   .quicklinks a{height:44px;width:44px;padding:0 12px}
-  .quicklinks a svg{width:19px;height:19px}
+  .quicklinks a svg,.quicklinks a img{width:19px;height:19px}
   .quicklinks a:hover{width:190px}
 }
 
