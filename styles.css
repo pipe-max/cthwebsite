@@ -659,7 +659,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .foot-col h4{font-size:.7rem;margin-bottom:10px}
   .foot-col a{font-size:.82rem;padding:4px 0}
   .foot-bot{flex-direction:column;text-align:center}
-  .foot-bot span:last-child{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .foot-bot span:last-child{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:0}
+  .foot-bot span:last-child a{font-size:.8rem}
   .track{padding:24px}
   .cta-band .box{padding:36px 24px}
 }
