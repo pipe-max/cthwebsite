@@ -95,6 +95,9 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .hs-slide.active{position:relative;opacity:1;visibility:visible;pointer-events:auto}
 .hs-media{display:block;width:100%;aspect-ratio:2400/731;overflow:hidden}
 .hs-media img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:700px){
+  .hs-media{aspect-ratio:4/3}
+}
 
 .hs-controls{position:relative;display:flex;align-items:center;justify-content:center;gap:22px;
     padding:16px 28px;background:var(--ink)}
@@ -594,6 +597,14 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .quicklinks a{height:44px;width:44px;padding:0 12px}
   .quicklinks a svg,.quicklinks a img{width:19px;height:19px}
   .quicklinks a:hover,.quicklinks a.open{width:190px}
+}
+@media(max-width:640px){
+  .creds .wrap{grid-template-columns:repeat(4,1fr)}
+  .cred{padding:14px 4px;border-bottom:0}
+  .cred:nth-child(odd){border-right:1px solid var(--line)}
+  .cred .num{font-size:1.05rem}
+  .cred .lbl{font-size:.58rem;margin-top:4px;white-space:normal;line-height:1.25}
+  .cred-logo .cred-icon{height:32px}
 }
 
 /* reveal animation */
