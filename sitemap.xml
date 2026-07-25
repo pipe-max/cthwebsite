@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://theodoro.edu.co/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/index-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/index-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/index-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/admisiones</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/admisiones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/admisiones-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/admisiones"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/admisiones-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/admisiones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/admisiones-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/admisiones"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/quienes-somos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/quienes-somos-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/quienes-somos"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/quienes-somos-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/quienes-somos-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/quienes-somos"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/programas</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/programas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/programas-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/programas"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/programas-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/programas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/programas-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/programas"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/servicios</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/servicios-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/servicios"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/servicios-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/servicios-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/servicios"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/egresados</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/egresados"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/egresados-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/egresados"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/egresados-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/egresados"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/egresados-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/egresados"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/trabaja</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/trabaja"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/trabaja-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/trabaja"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/trabaja-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/trabaja"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/trabaja-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/trabaja"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/proyectos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/proyectos-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/proyectos"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/proyectos-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/proyectos-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/proyectos"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/noticia-80-anios</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/noticia-80-anios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/noticia-80-anios-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/noticia-80-anios"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/noticia-80-anios-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/noticia-80-anios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/noticia-80-anios-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/noticia-80-anios"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/noticia-macabeadas</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/noticia-macabeadas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/noticia-macabeadas-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/noticia-macabeadas"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/noticia-macabeadas-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/noticia-macabeadas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/noticia-macabeadas-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/noticia-macabeadas"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/noticia-prevenir-hogar</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/noticia-prevenir-hogar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/noticia-prevenir-hogar-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/noticia-prevenir-hogar"/>
+  </url>
+  <url>
+    <loc>https://theodoro.edu.co/noticia-prevenir-hogar-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://theodoro.edu.co/noticia-prevenir-hogar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theodoro.edu.co/noticia-prevenir-hogar-en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/noticia-prevenir-hogar"/>
+  </url>
+</urlset>
