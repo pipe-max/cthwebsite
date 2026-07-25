@@ -31,6 +31,8 @@ body{
   overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
 img{max-width:100%;display:block}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .eyebrow{
@@ -534,6 +536,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   text-align:left;outline:3px solid transparent;width:100%;background:none}
 .ptab:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(10,27,51,.16)}
 .ptab.active{transform:translateY(-8px);box-shadow:0 20px 56px rgba(10,27,51,.22);outline-color:var(--gold)}
+.ptab:focus-visible{outline-color:var(--cyan);outline-offset:3px}
 
 /* Tab top colored header */
 .ptab-top{position:relative;padding:36px 28px 28px;height:178px;display:flex;
