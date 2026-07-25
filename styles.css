@@ -632,6 +632,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .cred-logo{flex-direction:column;text-align:center}
   .identity .grid{grid-template-columns:1fr;gap:38px}
   .pill-grid,.svc-grid{grid-template-columns:1fr 1fr}
+  #filosofia .pill-grid-white{grid-template-columns:1fr 1fr}
   .level-grid,.news-grid,.fam-grid{grid-template-columns:1fr}
   .admissions .wrap{grid-template-columns:1fr;gap:36px}
   .foot-top{grid-template-columns:1fr 1fr}
@@ -652,6 +653,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .wrap{padding:0 18px}
   section{padding:64px 0}
   .pill-grid,.svc-grid{grid-template-columns:1fr}
+  #filosofia .pill-grid-white{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr}
   .foot-brand{grid-column:1/-1}
   .foot-col:not(.foot-contact){display:none}
