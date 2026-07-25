@@ -127,16 +127,17 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 
 /* ---------- CREDENTIALS STRIP ---------- */
 .creds{background:var(--white);border-bottom:1px solid var(--line)}
-.creds .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.cred{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
-.cred:nth-child(3n){border-right:0}
-.cred:nth-child(-n+3){border-bottom:1px solid var(--line)}
-.cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1;white-space:nowrap}
-.cred .num em{font-style:normal;color:#7FD0F0}
-.cred .lbl{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:8px;white-space:nowrap}
-.cred-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-.cred-logo .cred-icon{height:76px;width:auto;max-width:100%;object-fit:contain}
-.cred-logo .lbl{margin-top:0}
+.cred-logos{display:flex;justify-content:center;align-items:center;gap:64px;padding:26px 28px;
+  border-bottom:1px solid var(--line);flex-wrap:wrap}
+.cred-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}
+.cred-logo .cred-icon{height:60px;width:auto;max-width:220px;object-fit:contain}
+.cred-logo .lbl{font-size:.78rem;color:var(--muted);font-weight:600;max-width:220px}
+.cred-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 18px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .num{font-family:var(--display);font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.2}
+.stat .num em{font-style:normal;color:#7FD0F0}
+.stat .lbl{font-size:.78rem;color:var(--muted);font-weight:600;margin-top:8px}
 
 /* ---------- SECTIONS ---------- */
 section{padding:96px 0}
@@ -655,11 +656,11 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   nav.main.open .dropdown::before{display:none}
   nav.main.open .dropdown a{padding:8px 0!important}
   .burger{display:flex}
-  .creds .wrap{grid-template-columns:1fr 1fr}
-  .cred{border-bottom:1px solid var(--line)}
-  .cred:nth-child(odd){border-right:1px solid var(--line)}
-  .cred .lbl{white-space:normal}
-  .cred-logo{flex-direction:column;text-align:center}
+  .cred-logos{gap:36px;padding:22px 24px}
+  .cred-stats{grid-template-columns:1fr 1fr}
+  .stat{border-bottom:1px solid var(--line)}
+  .stat:nth-child(odd){border-right:1px solid var(--line)}
+  .stat:nth-last-child(-n+2){border-bottom:0}
   .identity .grid{grid-template-columns:1fr;gap:38px}
   .pill-grid,.svc-grid{grid-template-columns:1fr 1fr}
   #filosofia .pill-grid-white{grid-template-columns:1fr 1fr}
@@ -672,10 +673,12 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .tl-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
-  .cred{padding:12px 3px}
-  .cred .num{font-size:.92rem}
-  .cred .lbl{font-size:.5rem;margin-top:3px;white-space:normal;line-height:1.2}
+  .cred-logos{gap:24px;padding:20px 18px}
   .cred-logo .cred-icon{height:44px}
+  .cred-logo .lbl{font-size:.7rem;max-width:150px}
+  .stat{padding:20px 12px}
+  .stat .num{font-size:1.15rem}
+  .stat .lbl{font-size:.68rem;margin-top:6px;line-height:1.25}
 }
 @media(max-width:560px){
   .wrap{padding:0 18px}
