@@ -16,7 +16,7 @@
   --line:#DDE5F0;
   --white:#FFFFFF;
   --muted:#5A6B83;
-  --display:"Poppins", system-ui, sans-serif;
+  --display:"Fraunces", Georgia, serif;
   --sans:"Plus Jakarta Sans", system-ui, sans-serif;
   --maxw:1240px;
 }
@@ -39,7 +39,7 @@ img{max-width:100%;display:block}
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan)}
 .lattice{display:none}
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;letter-spacing:-.005em;font-variation-settings:"opsz" 40}
 
 /* ---------- HEADER ---------- */
 header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
