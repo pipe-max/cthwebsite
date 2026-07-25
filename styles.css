@@ -329,9 +329,10 @@ section{padding:96px 0}
 .svc-banner-logo{height:100%;width:auto;max-width:200px;object-fit:contain}
 .svc-banner-text{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;flex:1;align-items:center;justify-content:center}
 .svc-banner h3{font-size:1.4rem;font-weight:800;color:var(--ink);margin:0 0 12px;line-height:1.15;text-align:center}
-.svc-banner p{font-size:.88rem;color:var(--ink-2);line-height:1.6;text-align:justify}
+.svc-banner p{font-size:.88rem;color:var(--ink-2);line-height:1.6;text-align:left;align-self:stretch}
 .svc-banner-mail{display:inline-block;margin-top:18px;background:#fff;color:var(--ink);
-    font-weight:700;font-size:.8rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line)}
+    font-weight:700;font-size:.8rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);transition:.2s}
+.svc-banner-mail:hover{background:var(--cyan);color:#fff;border-color:var(--cyan)}
 
 /* ============================================================
    COMPONENTES PÁGINA ADMISIONES
