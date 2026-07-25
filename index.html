@@ -299,6 +299,29 @@
     }));
   })();
 
+  // keep scroll position when switching language
+  (function(){
+    var KEY = 'cth-scroll-ratio';
+    document.querySelectorAll('.lang a').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        var ratio = max > 0 ? window.scrollY / max : 0;
+        sessionStorage.setItem(KEY, ratio);
+        window.location.href = a.href;
+      });
+    });
+    var saved = sessionStorage.getItem(KEY);
+    if(saved !== null){
+      sessionStorage.removeItem(KEY);
+      var restore = function(){
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo(0, parseFloat(saved) * max);
+      };
+      window.addEventListener('load', function(){ requestAnimationFrame(restore); });
+    }
+  })();
+
   // hero slider
   (function(){
     const root = document.getElementById('hero-slider');
