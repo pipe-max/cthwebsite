@@ -465,17 +465,32 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .grid.rev{direction:rtl}
 .grid.rev > *{direction:ltr}
 
-/* historia timeline vertical */
-.hist-tl{position:relative;margin-top:56px;padding-left:52px;max-width:780px}
-.hist-tl::before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;
-  background:var(--ink)}
-.hist-item{position:relative;padding-bottom:32px}
-.hist-item:last-child{padding-bottom:0}
-.hist-item::before{content:"";position:absolute;left:-40px;top:8px;width:14px;height:14px;
-  border-radius:50%;background:var(--cyan);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--cyan)}
-.hist-item .year{font-family:var(--display);font-size:1.4rem;font-weight:600;color:var(--sapphire);line-height:1}
-.hist-item h4{font-weight:700;font-size:.97rem;color:var(--ink);margin-top:6px}
-.hist-item p{font-size:.9rem;color:var(--muted);margin-top:4px;line-height:1.6;max-width:52em}
+/* historia timeline vertical — tarjetas alternadas */
+.hist-tl{position:relative;margin-top:64px;max-width:980px;margin-left:auto;margin-right:auto}
+.hist-tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,transparent,var(--line) 3%,var(--line) 97%,transparent);
+  transform:translateX(-50%)}
+.hist-item{position:relative;width:calc(50% - 44px);background:var(--white);
+  border:1px solid var(--line);border-radius:18px;padding:26px 30px;margin-bottom:26px;
+  box-shadow:0 4px 18px rgba(16,42,76,.05);transition:.3s cubic-bezier(.2,.7,.2,1)}
+.hist-item:hover{box-shadow:0 16px 38px rgba(16,42,76,.12);transform:translateY(-4px);border-color:var(--cyan)}
+.hist-item:last-child{margin-bottom:0}
+.hist-item:nth-child(odd){margin-right:calc(50% + 44px)}
+.hist-item:nth-child(even){margin-left:calc(50% + 44px)}
+.hist-item::before{content:"";position:absolute;top:30px;width:14px;height:14px;
+  border-radius:50%;background:var(--cyan);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--cyan);z-index:1}
+.hist-item:nth-child(odd)::before{right:-52px}
+.hist-item:nth-child(even)::before{left:-52px}
+.hist-item .year{display:inline-block;font-family:var(--display);font-size:1.3rem;font-weight:700;
+  color:var(--sapphire);line-height:1;background:var(--cyan-soft);padding:5px 16px;border-radius:20px;margin-bottom:12px}
+.hist-item h4{font-weight:700;font-size:1rem;color:var(--ink)}
+.hist-item p{font-size:.9rem;color:var(--muted);margin-top:6px;line-height:1.6}
+@media(max-width:820px){
+  .hist-tl{max-width:560px}
+  .hist-tl::before{left:18px;transform:none}
+  .hist-item{width:auto;margin-left:52px!important;margin-right:0!important}
+  .hist-item:nth-child(odd)::before,.hist-item:nth-child(even)::before{left:-52px;right:auto}
+}
 
 /* misión y visión */
 .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
