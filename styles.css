@@ -123,9 +123,10 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 
 /* ---------- CREDENTIALS STRIP ---------- */
 .creds{background:var(--white);border-bottom:1px solid var(--line)}
-.creds .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.creds .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .cred{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
-.cred:last-child{border-right:0}
+.cred:nth-child(3n){border-right:0}
+.cred:nth-child(-n+3){border-bottom:1px solid var(--line)}
 .cred .num{font-family:var(--display);font-size:2.5rem;font-weight:600;color:var(--ink);line-height:1;white-space:nowrap}
 .cred .num em{font-style:normal;color:#7FD0F0}
 .cred .lbl{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:8px;white-space:nowrap}
@@ -642,9 +643,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .tl-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
-  .creds .wrap{grid-template-columns:repeat(4,1fr)}
-  .cred{padding:12px 3px;border-bottom:0}
-  .cred:nth-child(odd){border-right:1px solid var(--line)}
+  .cred{padding:12px 3px}
   .cred .num{font-size:.92rem}
   .cred .lbl{font-size:.5rem;margin-top:3px;white-space:normal;line-height:1.2}
   .cred-logo .cred-icon{height:26px}
