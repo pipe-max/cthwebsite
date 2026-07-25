@@ -490,7 +490,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 @media(max-width:760px){.mv-grid{grid-template-columns:1fr}}
 
 /* propuesta de valor */
-.propuesta-box{background:linear-gradient(135deg,var(--cyan-soft),var(--gold-soft));
+.propuesta-box{background:linear-gradient(135deg,var(--cyan-soft),rgba(30,91,184,.16));
   border:1px solid var(--line);border-radius:22px;padding:56px 48px;text-align:center;margin-top:48px;
   min-height:260px;display:flex;align-items:center;justify-content:center}
 .propuesta-box blockquote{font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2.1rem);
