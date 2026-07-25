@@ -47,15 +47,15 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;letter-spac
 header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
 
 /* deja espacio para el header sticky al saltar a un ancla (#seccion) */
-section[id]{scroll-margin-top:230px}
-@media(max-width:900px){section[id]{scroll-margin-top:110px}}
+section[id]{scroll-margin-top:150px}
+@media(max-width:900px){section[id]{scroll-margin-top:96px}}
 
 /* fila 1 — logo centrado + idioma */
-.header-top{position:relative;display:flex;justify-content:center;align-items:center;padding:20px 28px}
+.header-top{position:relative;display:flex;justify-content:center;align-items:center;padding:14px 28px}
 .brand{display:flex;align-items:center;gap:13px}
 .brand .mark{width:42px;height:42px}
-.brand .mark-logo{height:140px;width:auto;display:block}
-@media(max-width:760px){.brand .mark-logo{height:84px}}
+.brand .mark-logo{height:64px;width:auto;display:block}
+@media(max-width:760px){.brand .mark-logo{height:50px}}
 .brand .name{font-family:var(--display);font-weight:600;font-size:1.22rem;color:var(--ink);line-height:1}
 .brand .name span{display:block;font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.34em;color:var(--cyan);margin-top:4px}
 
