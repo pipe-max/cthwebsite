@@ -106,9 +106,6 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .hs-dots{display:flex;gap:10px}
 .hs-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);border:0;cursor:pointer;padding:0;transition:.25s}
 .hs-dots button.on{background:var(--gold);width:26px;border-radius:5px}
-@media(max-width:700px){
-  .hs-media{aspect-ratio:auto;height:220px}
-}
 
 /* ---------- PAGE HERO (páginas internas) ---------- */
 .page-hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
@@ -589,14 +586,14 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   transition:width .3s ease,background .2s,color .2s}
 .quicklinks a svg,.quicklinks a img{width:22px;height:22px;flex-shrink:0}
 .quicklinks a span{opacity:0;transition:opacity .15s}
-.quicklinks a:hover{width:224px}
-.quicklinks a:hover span{opacity:1;transition:opacity .2s .12s}
+.quicklinks a:hover,.quicklinks a.open{width:224px}
+.quicklinks a:hover span,.quicklinks a.open span{opacity:1;transition:opacity .2s .12s}
 .quicklinks a[aria-label="WhatsApp"]{background:#25D366;border-color:#25D366}
 @media(max-width:760px){
   .quicklinks{gap:8px}
   .quicklinks a{height:44px;width:44px;padding:0 12px}
   .quicklinks a svg,.quicklinks a img{width:19px;height:19px}
-  .quicklinks a:hover{width:190px}
+  .quicklinks a:hover,.quicklinks a.open{width:190px}
 }
 
 /* reveal animation */

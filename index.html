@@ -342,6 +342,26 @@
     <span>WhatsApp</span>
   </a>
 </div>
+<script>
+  (function(){
+    var links = document.querySelectorAll(".quicklinks a");
+    if(!window.matchMedia("(hover: none)").matches) return;
+    links.forEach(function(a){
+      a.addEventListener("click", function(e){
+        if(!a.classList.contains("open")){
+          e.preventDefault();
+          links.forEach(function(l){ l.classList.remove("open"); });
+          a.classList.add("open");
+        }
+      });
+    });
+    document.addEventListener("click", function(e){
+      if(!e.target.closest(".quicklinks")){
+        links.forEach(function(l){ l.classList.remove("open"); });
+      }
+    });
+  })();
+</script>
 
 <!-- COOKIE CONSENT -->
 <div class="cookie-bar" id="cookie-bar">
