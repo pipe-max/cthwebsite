@@ -646,7 +646,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .cred{padding:12px 3px}
   .cred .num{font-size:.92rem}
   .cred .lbl{font-size:.5rem;margin-top:3px;white-space:normal;line-height:1.2}
-  .cred-logo .cred-icon{height:26px}
+  .cred-logo .cred-icon{height:44px}
 }
 @media(max-width:560px){
   .wrap{padding:0 18px}
