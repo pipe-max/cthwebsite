@@ -365,8 +365,12 @@ section{padding:96px 0}
 .track:hover{box-shadow:0 18px 44px rgba(16,42,76,.1)}
 .track-top{display:flex;align-items:center;gap:14px;margin-bottom:6px}
 .track-badge{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
-.track-badge.open{background:#DDF3E6;color:#0E5C3C}
+.track-badge.open{background:#DDF3E6;color:#0E5C3C;animation:badgePulse 2s ease-in-out infinite}
 .track-badge.soon{background:var(--gold-soft);color:#7a5e0e}
+@keyframes badgePulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(14,92,60,.35)}
+  50%{box-shadow:0 0 0 6px rgba(14,92,60,0)}
+}
 .track h3{font-size:1.5rem}
 .track .sub{color:var(--muted);font-size:.92rem;margin-top:4px}
 .track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
