@@ -485,11 +485,15 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   color:var(--sapphire);line-height:1;background:var(--cyan-soft);padding:5px 16px;border-radius:20px;margin-bottom:12px}
 .hist-item h4{font-weight:700;font-size:1rem;color:var(--ink)}
 .hist-item p{font-size:.9rem;color:var(--muted);margin-top:6px;line-height:1.6}
+.hist-tl .hist-item.reveal{transform:translateY(0) translateX(-36px)}
+.hist-tl .hist-item:nth-child(even).reveal{transform:translateY(0) translateX(36px)}
+.hist-tl .hist-item.reveal.in{transform:none}
 @media(max-width:820px){
   .hist-tl{max-width:560px}
   .hist-tl::before{left:18px;transform:none}
   .hist-item{width:auto;margin-left:52px!important;margin-right:0!important}
   .hist-item:nth-child(odd)::before,.hist-item:nth-child(even)::before{left:-52px;right:auto}
+  .hist-tl .hist-item.reveal,.hist-tl .hist-item:nth-child(even).reveal{transform:translateY(26px)}
 }
 
 /* misión y visión */
