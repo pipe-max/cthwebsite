@@ -39,6 +39,8 @@ img{max-width:100%;display:block}
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan)}
 .lattice{display:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;letter-spacing:-.005em;font-variation-settings:"opsz" 40}
 
 /* ---------- HEADER ---------- */
