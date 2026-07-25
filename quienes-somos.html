@@ -461,6 +461,10 @@
       burger.classList.toggle('open');
       navMain.classList.toggle('open');
     });
+    navMain.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+      burger.classList.remove('open');
+      navMain.classList.remove('open');
+    }));
   })();
 </script>
 <!-- QUICKLINKS -->
