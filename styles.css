@@ -468,11 +468,11 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 /* historia timeline vertical */
 .hist-tl{position:relative;margin-top:56px;padding-left:52px;max-width:780px}
 .hist-tl::before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;
-  background:linear-gradient(to bottom,var(--cyan),var(--gold))}
+  background:var(--ink)}
 .hist-item{position:relative;padding-bottom:32px}
 .hist-item:last-child{padding-bottom:0}
 .hist-item::before{content:"";position:absolute;left:-40px;top:8px;width:14px;height:14px;
-  border-radius:50%;background:var(--gold);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--gold)}
+  border-radius:50%;background:var(--cyan);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--cyan)}
 .hist-item .year{font-family:var(--display);font-size:1.4rem;font-weight:600;color:var(--sapphire);line-height:1}
 .hist-item h4{font-weight:700;font-size:.97rem;color:var(--ink);margin-top:6px}
 .hist-item p{font-size:.9rem;color:var(--muted);margin-top:4px;line-height:1.6;max-width:52em}
