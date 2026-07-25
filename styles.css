@@ -530,7 +530,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .ptab.active{transform:translateY(-8px);box-shadow:0 20px 56px rgba(10,27,51,.22);outline-color:var(--gold)}
 
 /* Tab top colored header */
-.ptab-top{position:relative;padding:36px 28px 28px;min-height:150px;display:flex;
+.ptab-top{position:relative;padding:36px 28px 28px;height:178px;display:flex;
   flex-direction:column;justify-content:flex-end;overflow:hidden}
 .ptab-bg{position:absolute;inset:0;pointer-events:none}
 .ptab-avatar{position:absolute;right:10px;bottom:0;height:140px;width:auto;max-width:none;pointer-events:none}
