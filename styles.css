@@ -771,3 +771,32 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .cfive-ic{width:104px; height:104px}
   .cfive-tab{font-size:.75rem; padding:10px 9px}
 }
+
+/* ---------- INDICADORES DE DESEMPEÑO ---------- */
+.perf-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;background:var(--paper-2);
+  border-radius:14px;padding:6px;max-width:640px;margin:0 auto}
+.perf-tab{flex:1 1 0;border:0;background:transparent;color:var(--muted);font-family:var(--sans);
+  font-weight:700;font-size:.9rem;padding:13px 16px;border-radius:10px;cursor:pointer;transition:.25s}
+.perf-tab:hover{color:var(--ink)}
+.perf-tab.active{background:var(--ink);color:#fff;box-shadow:0 8px 18px rgba(16,42,76,.18)}
+.perf-panel{display:none;margin-top:40px}
+.perf-panel.active{display:block}
+.perf-period{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 30px;margin-bottom:22px}
+.perf-period:last-child{margin-bottom:0}
+.perf-period-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.perf-period-num{flex:none;width:40px;height:40px;border-radius:50%;background:var(--cyan-soft);
+  color:var(--sapphire);font-family:var(--display);font-weight:700;font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center}
+.perf-period h3{font-size:1.15rem;color:var(--ink)}
+.perf-grades{display:flex;flex-wrap:wrap;gap:10px}
+.perf-grade{display:inline-flex;align-items:center;justify-content:center;min-width:56px;
+  padding:11px 16px;border-radius:12px;background:var(--paper-2);color:var(--ink);
+  font-weight:700;font-size:.92rem;border:1px solid transparent;transition:.2s}
+.perf-grade:hover{background:var(--cyan);color:#fff;transform:translateY(-2px)}
+.perf-grade.pending{background:var(--paper);color:var(--muted);cursor:not-allowed;opacity:.55}
+.perf-grade.pending:hover{background:var(--paper);color:var(--muted);transform:none}
+@media(max-width:640px){
+  .perf-tabs{max-width:100%}
+  .perf-tab{font-size:.78rem;padding:11px 8px}
+  .perf-period{padding:22px 20px}
+}
