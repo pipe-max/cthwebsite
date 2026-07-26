@@ -782,27 +782,27 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .perf-tab.active{background:var(--ink);color:#fff;box-shadow:0 8px 18px rgba(16,42,76,.18)}
 .perf-panel{display:none;margin-top:8px}
 .perf-panel.active{display:block}
-.perf-period{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 28px;
-  margin:0 auto 18px;display:flex;align-items:center;justify-content:center;gap:26px;
+.perf-period{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px 40px;
+  margin:0 auto 24px;display:flex;align-items:flex-end;justify-content:center;gap:36px;
   width:fit-content;max-width:100%}
 .perf-period:last-child{margin-bottom:0}
-.perf-sec-mascot{flex:none;height:70px;width:auto}
-.perf-period-ic{flex:none;width:70px;display:flex;flex-direction:column;align-items:center;gap:4px}
-.perf-period-ic img{height:50px;width:auto}
-.perf-period-ic span{font-family:var(--display);font-weight:700;font-size:.7rem;
+.perf-sec-mascot{flex:none;height:100px;width:auto}
+.perf-period-ic{flex:none;width:96px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.perf-period-ic img{height:72px;width:auto}
+.perf-period-ic span{font-family:var(--display);font-weight:700;font-size:.85rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
-.perf-grades{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.perf-grade{display:inline-flex;align-items:center;justify-content:center;min-width:56px;
-  padding:11px 16px;border-radius:12px;background:var(--paper-2);color:var(--ink);
-  font-weight:700;font-size:.92rem;border:1px solid transparent;transition:.2s}
+.perf-grades{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px}
+.perf-grade{display:inline-flex;align-items:center;justify-content:center;min-width:68px;
+  padding:14px 22px;border-radius:14px;background:var(--paper-2);color:var(--ink);
+  font-weight:700;font-size:1.08rem;border:1px solid transparent;transition:.2s}
 .perf-grade:hover{background:var(--cyan);color:#fff;transform:translateY(-2px)}
 .perf-grade.pending{background:var(--paper);color:var(--muted);cursor:not-allowed;opacity:.55}
 .perf-grade.pending:hover{background:var(--paper);color:var(--muted);transform:none}
 @media(max-width:640px){
   .perf-tabs{max-width:100%}
   .perf-tab{font-size:.78rem;padding:11px 8px}
-  .perf-period{padding:22px 20px;flex-wrap:wrap;gap:16px;justify-content:center}
-  .perf-sec-mascot{height:60px}
+  .perf-period{padding:24px 20px;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center}
+  .perf-sec-mascot{height:72px}
   .perf-period-ic{flex-direction:row;width:auto}
-  .perf-period-ic img{height:40px}
+  .perf-period-ic img{height:48px}
 }
