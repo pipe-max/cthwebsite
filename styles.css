@@ -788,7 +788,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .perf-period:last-child{margin-bottom:0}
 .perf-sec-mascot{flex:none;height:172px;width:auto;margin:-32px 0 -32px}
 .perf-period-ic{flex:none;width:96px;display:flex;flex-direction:column;align-items:center;gap:6px}
-.perf-period-ic img{height:72px;width:auto}
+.perf-period-ic img{height:72px;width:auto;transform:translateX(-6px)}
 .perf-period-ic span{font-family:var(--display);font-weight:700;font-size:.85rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 .perf-grades{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;align-self:center}
