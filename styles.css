@@ -785,9 +785,9 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .perf-period{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 30px;
   margin-bottom:22px;display:flex;align-items:center;gap:32px}
 .perf-period:last-child{margin-bottom:0}
-.perf-period-ic{flex:none;width:120px;display:flex;flex-direction:column;align-items:center;gap:6px}
-.perf-period-ic img{height:64px;width:auto}
-.perf-period-ic .perf-sec-mascot{height:auto;width:100%;max-width:120px;margin-bottom:2px}
+.perf-sec-mascot{flex:none;height:80px;width:auto}
+.perf-period-ic{flex:none;width:90px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.perf-period-ic img{height:56px;width:auto}
 .perf-period-ic span{font-family:var(--display);font-weight:700;font-size:.72rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 .perf-grades{display:flex;flex-wrap:wrap;gap:10px;flex:1}
@@ -800,8 +800,8 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 @media(max-width:640px){
   .perf-tabs{max-width:100%}
   .perf-tab{font-size:.78rem;padding:11px 8px}
-  .perf-period{padding:22px 20px;flex-direction:column;gap:16px}
-  .perf-period-ic{flex-direction:column;width:auto}
+  .perf-period{padding:22px 20px;flex-wrap:wrap;gap:16px;justify-content:center}
+  .perf-sec-mascot{height:60px}
+  .perf-period-ic{flex-direction:row;width:auto}
   .perf-period-ic img{height:40px}
-  .perf-period-ic .perf-sec-mascot{width:120px;max-width:60%;height:auto}
 }
