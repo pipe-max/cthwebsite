@@ -131,7 +131,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
   border-bottom:1px solid var(--line);flex-wrap:wrap}
 .cred-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}
 .cred-logo .cred-icon{height:60px;width:auto;max-width:220px;object-fit:contain}
-.cred-logo .lbl{font-size:.78rem;color:var(--muted);font-weight:600;max-width:220px}
+.cred-logo .lbl{font-size:.78rem;color:var(--muted);font-weight:600;white-space:nowrap}
 .cred-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .stat{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 18px;text-align:center;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
