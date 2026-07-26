@@ -782,15 +782,16 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .perf-tab.active{background:var(--ink);color:#fff;box-shadow:0 8px 18px rgba(16,42,76,.18)}
 .perf-panel{display:none;margin-top:8px}
 .perf-panel.active{display:block}
-.perf-period{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 30px;
-  margin-bottom:22px;display:flex;align-items:center;gap:32px}
+.perf-period{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 28px;
+  margin:0 auto 18px;display:flex;align-items:center;justify-content:center;gap:26px;
+  width:fit-content;max-width:100%}
 .perf-period:last-child{margin-bottom:0}
-.perf-sec-mascot{flex:none;height:80px;width:auto}
-.perf-period-ic{flex:none;width:90px;display:flex;flex-direction:column;align-items:center;gap:6px}
-.perf-period-ic img{height:56px;width:auto}
-.perf-period-ic span{font-family:var(--display);font-weight:700;font-size:.72rem;
+.perf-sec-mascot{flex:none;height:70px;width:auto}
+.perf-period-ic{flex:none;width:70px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.perf-period-ic img{height:50px;width:auto}
+.perf-period-ic span{font-family:var(--display);font-weight:700;font-size:.7rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
-.perf-grades{display:flex;flex-wrap:wrap;gap:10px;flex:1}
+.perf-grades{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .perf-grade{display:inline-flex;align-items:center;justify-content:center;min-width:56px;
   padding:11px 16px;border-radius:12px;background:var(--paper-2);color:var(--ink);
   font-weight:700;font-size:.92rem;border:1px solid transparent;transition:.2s}
