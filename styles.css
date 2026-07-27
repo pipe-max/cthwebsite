@@ -385,7 +385,7 @@ section{padding:96px 0}
 }
 .track h3{font-size:1.5rem}
 .track .sub{color:var(--muted);font-size:.92rem;margin-top:4px}
-.track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.track-grid{display:grid;grid-template-columns:.85fr .85fr 1.3fr;gap:16px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
 .track-col h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:10px}
 .track-col p{font-size:.92rem;color:var(--ink-2)}
 .track-col .big{font-family:var(--display);font-size:1.15rem;color:var(--ink);font-weight:600}
