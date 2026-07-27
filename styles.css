@@ -152,6 +152,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero.hero-sky{--acc:#0F6FC7}
 .page-hero.hero-goldbright{--acc:#93700C}
 .page-hero.hero-rose{--acc:#C21E56}
+.page-hero.hero-navy{--acc:var(--ink-2)}
 
 /* variantes claras: fondo pastel/brillante + texto oscuro, em más oscuro que el fondo */
 .page-hero.hero-yellow,
