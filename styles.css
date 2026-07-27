@@ -151,6 +151,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero.hero-red{--acc:#C43A24}
 .page-hero.hero-sky{--acc:#0F6FC7}
 .page-hero.hero-goldbright{--acc:#93700C}
+.page-hero.hero-rose{--acc:#C21E56}
 
 /* variantes claras: fondo pastel/brillante + texto oscuro, em más oscuro que el fondo */
 .page-hero.hero-yellow,
@@ -212,6 +213,22 @@ section{padding:96px 0}
 .alumni-form .submit-row{text-align:center;margin-top:30px}
 .alumni-form .submit-row .btn{width:100%;justify-content:center}
 @media(max-width:560px){.alumni-form .row{flex-direction:column;gap:0}}
+
+/* formulario de contacto — mismo lenguaje visual + textarea y checkbox */
+.contact-form{max-width:560px;margin:0 auto}
+.contact-form h2{text-align:center;font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:38px}
+.contact-form .field{margin-bottom:22px}
+.contact-form label{display:block;text-align:center;font-size:.86rem;font-weight:600;color:var(--muted);margin-bottom:8px}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);
+    background:var(--paper-2);font-family:var(--sans);font-size:.95rem;color:var(--ink);transition:.2s}
+.contact-form input{height:52px;border-radius:999px;padding:0 22px;text-align:center}
+.contact-form textarea{border-radius:22px;padding:16px 22px;min-height:140px;resize:vertical;line-height:1.6}
+.contact-form input:focus,.contact-form textarea:focus{outline:0;border-color:var(--cyan);background:#fff;box-shadow:0 0 0 3px var(--cyan-soft)}
+.contact-form .consent{display:flex;align-items:flex-start;gap:12px;font-size:.86rem;color:var(--muted);line-height:1.5;margin-top:8px}
+.contact-form .consent input{width:auto;height:auto;flex-shrink:0;margin-top:3px;accent-color:var(--sapphire)}
+.contact-form .consent a{color:var(--sapphire);font-weight:600}
+.contact-form .submit-row{text-align:center;margin-top:30px}
+.contact-form .submit-row .btn{width:100%;justify-content:center}
 
 /* pilares */
 .pillars{background:var(--ink);color:#fff;position:relative;overflow:hidden}

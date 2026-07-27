@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indicadores de Desempeño — Colegio Theodoro Herzl</title>
+<title>Contáctanos — Colegio Theodoro Herzl</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<meta name="description" content="Indicadores de desempeño académico por grado y período del Colegio Theodoro Herzl.">
-<link rel="canonical" href="https://theodoro.edu.co/indicadores">
-<link rel="alternate" hreflang="es" href="https://theodoro.edu.co/indicadores">
-<link rel="alternate" hreflang="en" href="https://theodoro.edu.co/indicadores-en">
-<link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/indicadores">
+<meta name="description" content="Escríbenos al Colegio Theodoro Herzl. Resolvemos tus dudas sobre admisiones, programas académicos y vida escolar.">
+<link rel="canonical" href="https://theodoro.edu.co/contacto">
+<link rel="alternate" hreflang="es" href="https://theodoro.edu.co/contacto">
+<link rel="alternate" hreflang="en" href="https://theodoro.edu.co/contacto-en">
+<link rel="alternate" hreflang="x-default" href="https://theodoro.edu.co/contacto">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
@@ -36,7 +36,7 @@
     <a class="brand" href="index.html">
       <img class="mark-logo" src="logo.png" alt="Colegio Theodoro Herzl">
     </a>
-    <span class="lang"><a class="on" href="indicadores.html">ES</a><a href="indicadores-en.html">EN</a></span>
+    <span class="lang"><a class="on" href="contacto.html">ES</a><a href="contacto-en.html">EN</a></span>
   </div>
   <div class="wrap header-nav">
     <nav class="main">
@@ -59,142 +59,54 @@
       <a href="admisiones.html">Admisiones</a>
       <a href="egresados.html">Egresados</a>
       <a href="trabaja.html">Trabaja con nosotros</a>
-      <a href="contacto.html">Contáctanos</a>
+      <a href="contacto.html" class="active">Contáctanos</a>
       <a href="https://intranet-cth.pages.dev/dashboard" target="_blank" rel="noopener">Intranet</a>
     </nav>
   </div>
 </header>
 
 <!-- PAGE HERO -->
-<section class="page-hero hero-indigo">
+<section class="page-hero hero-rose">
   <div class="lattice"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#star-lattice)"/></svg></div>
   <div class="wrap">
-    <div class="breadcrumb reveal"><a href="index.html">Inicio</a> <span>›</span> Indicadores de desempeño</div>
-    <h1 class="reveal">Indicadores de <em>desempeño</em>.</h1>
-    <p class="reveal">Consulta los indicadores de logro por asignatura, grado y período académico. Elige la sección, el período y el grado para ver el documento correspondiente.</p>
+    <div class="breadcrumb reveal"><a href="index.html">Inicio</a> <span>›</span> Contáctanos</div>
+    <h1 class="reveal">Hablemos, <em>estamos para ayudarte</em>.</h1>
+    <p class="reveal">Escríbenos y un miembro de nuestro equipo te responderá lo antes posible.</p>
   </div>
 </section>
 
-<!-- INDICADORES -->
-<section class="identity" style="padding-top:36px">
+<!-- FORMULARIO DE CONTACTO -->
+<section class="identity">
   <div class="wrap">
-    <p class="perf-note reveal">Los indicadores se publican a medida que avanza el año escolar (inicio: 11 de agosto). Los grados en gris aún no tienen documento disponible.</p>
-    <div class="perf-tabs reveal">
-      <button class="perf-tab active" data-panel="preescolar">Preescolar</button>
-      <button class="perf-tab" data-panel="primaria">Primaria</button>
-      <button class="perf-tab" data-panel="bachillerato">Bachillerato</button>
-    </div>
-
-    <!-- PREESCOLAR -->
-    <div class="perf-panel active" id="panel-preescolar">
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/preeescolar.png" alt="Preescolar">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-05.png" alt="1"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">K3</a>
-          <a class="perf-grade pending" href="#">K4</a>
-          <a class="perf-grade pending" href="#">K5</a>
-          <a class="perf-grade pending" href="#">1°</a>
-        </div>
+    <!-- TODO: reemplazar por el endpoint real de Formspree (formspree.io/f/XXXXXXX) apuntando a comunicaciones@theodoro.edu.co -->
+    <form class="contact-form reveal" action="https://formspree.io/f/TU_FORM_ID" method="POST">
+      <h2>Envíanos un mensaje y pronto nos pondremos en contacto contigo.</h2>
+      <input type="hidden" name="_subject" value="Nuevo mensaje de contacto — Sitio web CTH">
+      <input type="hidden" name="_next" value="https://cthwebsite.pages.dev/index.html">
+      <div class="field">
+        <label for="ct-nombre">Nombres y Apellidos</label>
+        <input id="ct-nombre" type="text" name="nombre" required>
       </div>
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/preeescolar.png" alt="Preescolar">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-06.png" alt="2"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">K3</a>
-          <a class="perf-grade pending" href="#">K4</a>
-          <a class="perf-grade pending" href="#">K5</a>
-          <a class="perf-grade pending" href="#">1°</a>
-        </div>
+      <div class="field">
+        <label for="ct-email">Email *</label>
+        <input id="ct-email" type="email" name="email" required>
       </div>
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/preeescolar.png" alt="Preescolar">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-07.png" alt="3"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">K3</a>
-          <a class="perf-grade pending" href="#">K4</a>
-          <a class="perf-grade pending" href="#">K5</a>
-          <a class="perf-grade pending" href="#">1°</a>
-        </div>
+      <div class="field">
+        <label for="ct-asunto">Asunto</label>
+        <input id="ct-asunto" type="text" name="asunto">
       </div>
-    </div>
-
-    <!-- PRIMARIA -->
-    <div class="perf-panel" id="panel-primaria">
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/primaria.png" alt="Primaria">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-05.png" alt="1"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade" href="https://docs.google.com/document/d/1OQkiZHwQOPRQIK-kljbkd6Flz0PgeQiaJqdc-tp54pA/edit?tab=t.1xte09nqqfhv" target="_blank" rel="noopener">2°</a>
-          <a class="perf-grade pending" href="#">3°</a>
-          <a class="perf-grade pending" href="#">4°</a>
-          <a class="perf-grade pending" href="#">5°</a>
-          <a class="perf-grade pending" href="#">6°</a>
-        </div>
+      <div class="field">
+        <label for="ct-mensaje">Tu mensaje</label>
+        <textarea id="ct-mensaje" name="mensaje" placeholder="Escribe aquí" required></textarea>
       </div>
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/primaria.png" alt="Primaria">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-06.png" alt="2"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">2°</a>
-          <a class="perf-grade pending" href="#">3°</a>
-          <a class="perf-grade pending" href="#">4°</a>
-          <a class="perf-grade pending" href="#">5°</a>
-          <a class="perf-grade pending" href="#">6°</a>
-        </div>
+      <label class="consent">
+        <input type="checkbox" name="autorizacion" value="Sí, autorizo el tratamiento de datos" required>
+        <span>Autorizo el tratamiento de mis datos personales, de acuerdo con la <a href="https://heyzine.com/flip-book/b39d348efc.html" target="_blank" rel="noopener">política de protección de datos</a>.</span>
+      </label>
+      <div class="submit-row">
+        <button type="submit" class="btn btn-ink">Enviar</button>
       </div>
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/primaria.png" alt="Primaria">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-07.png" alt="3"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">2°</a>
-          <a class="perf-grade pending" href="#">3°</a>
-          <a class="perf-grade pending" href="#">4°</a>
-          <a class="perf-grade pending" href="#">5°</a>
-          <a class="perf-grade pending" href="#">6°</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- BACHILLERATO -->
-    <div class="perf-panel" id="panel-bachillerato">
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/bachillearto.png" alt="Bachillerato">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-05.png" alt="1"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">7°</a>
-          <a class="perf-grade pending" href="#">8°</a>
-          <a class="perf-grade pending" href="#">9°</a>
-          <a class="perf-grade pending" href="#">10°</a>
-          <a class="perf-grade pending" href="#">11°</a>
-          <a class="perf-grade pending" href="#">12°</a>
-        </div>
-      </div>
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/bachillearto.png" alt="Bachillerato">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-06.png" alt="2"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">7°</a>
-          <a class="perf-grade pending" href="#">8°</a>
-          <a class="perf-grade pending" href="#">9°</a>
-          <a class="perf-grade pending" href="#">10°</a>
-          <a class="perf-grade pending" href="#">11°</a>
-          <a class="perf-grade pending" href="#">12°</a>
-        </div>
-      </div>
-      <div class="perf-period reveal">
-        <img class="perf-sec-mascot" src="assets/secciones/web/bachillearto.png" alt="Bachillerato">
-        <div class="perf-period-ic"><img src="assets/horaamutemet/Hora Mutemet-07.png" alt="3"><span>Período</span></div>
-        <div class="perf-grades">
-          <a class="perf-grade pending" href="#">7°</a>
-          <a class="perf-grade pending" href="#">8°</a>
-          <a class="perf-grade pending" href="#">9°</a>
-          <a class="perf-grade pending" href="#">10°</a>
-          <a class="perf-grade pending" href="#">11°</a>
-          <a class="perf-grade pending" href="#">12°</a>
-        </div>
-      </div>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -254,25 +166,10 @@
     el.style.transitionDelay = (Array.from(sibs).indexOf(el)*70)+'ms';
     io.observe(el);
   });
-
-  // section tabs
-  (function(){
-    const tabs = document.querySelectorAll('.perf-tab');
-    const panels = document.querySelectorAll('.perf-panel');
-    tabs.forEach(tab=>{
-      tab.addEventListener('click', ()=>{
-        tabs.forEach(t=>t.classList.remove('active'));
-        panels.forEach(p=>p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
-      });
-    });
-  })();
-
-  // pending grade links (documento aún no publicado)
-  document.querySelectorAll('.perf-grade.pending').forEach(a=>{
-    a.addEventListener('click', (e)=>{ e.preventDefault(); });
-  });
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+  }));
 
   // mobile menu toggle
   (function(){
