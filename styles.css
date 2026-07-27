@@ -117,7 +117,9 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 /* ---------- PAGE HERO (páginas internas) ---------- */
 .page-hero{
   --acc:var(--sapphire);
-  position:relative;color:#fff;overflow:hidden;
+  --fg:#fff;--fg-soft:rgba(255,255,255,.9);--fg-em:#FFF3D6;
+  --fg-crumb:#fff;--fg-crumb-link:rgba(255,255,255,.68);
+  position:relative;color:var(--fg);overflow:hidden;
   background:var(--acc);
 }
 .page-hero::before{
@@ -128,18 +130,22 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 }
 .page-hero .lattice{position:absolute;inset:0;opacity:.3;pointer-events:none;mix-blend-mode:overlay}
 .page-hero .wrap{position:relative;padding:68px 28px 64px}
-.breadcrumb{font-size:.8rem;color:#fff;font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
-.breadcrumb a{color:rgba(255,255,255,.68)}
-.breadcrumb a:hover{color:#fff}
+.breadcrumb{font-size:.8rem;color:var(--fg-crumb);font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
+.breadcrumb a{color:var(--fg-crumb-link)}
+.breadcrumb a:hover{color:var(--fg)}
 .page-hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
-.page-hero h1 em{font-style:italic;color:#FFF3D6;font-weight:600}
-.page-hero p{color:rgba(255,255,255,.9);font-size:1.1rem;max-width:40em;margin-top:16px}
+.page-hero h1 em{font-style:italic;color:var(--fg-em);font-weight:600}
+.page-hero p{color:var(--fg-soft);font-size:1.1rem;max-width:40em;margin-top:16px}
 
 /* variantes de color vivo por sección — tonos joya, saturados y con buen contraste para texto blanco */
 .page-hero.hero-celeste{--acc:#0D7AA8}
 .page-hero.hero-emerald{--acc:#0C7A50}
 .page-hero.hero-orange{--acc:#B8500F}
-.page-hero.hero-amber{--acc:#96650A}
+.page-hero.hero-yellow{
+  --acc:#F5B300;
+  --fg:var(--ink);--fg-soft:rgba(10,27,51,.78);--fg-em:var(--sapphire);
+  --fg-crumb:var(--ink);--fg-crumb-link:rgba(10,27,51,.62);
+}
 .page-hero.hero-violet{--acc:#7038C7}
 .page-hero.hero-teal{--acc:#0B7268}
 .page-hero.hero-indigo{--acc:#3C4CC7}
