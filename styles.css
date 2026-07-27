@@ -599,10 +599,11 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .ptab-top h3{position:relative;font-family:var(--display);font-size:1.4rem;font-weight:700;color:#fff;line-height:1.2;margin:0;max-width:70%}
 .ptab-top .prog-badge{position:relative;margin-top:14px;background:rgba(255,255,255,.18);color:#fff}
 
-/* Gradients per level */
-.ptab-cyan{background:linear-gradient(145deg,#24BCEF,#1E5BB8)}
-.ptab-navy{background:linear-gradient(145deg,#2568CC,#0A1B33)}
-.ptab-green{background:linear-gradient(145deg,#14315C,#050C18)}
+/* Gradientes por nivel — verde de más claro (Preescolar) a más oscuro (Bachillerato),
+   en la misma familia del verde del hero de Programas */
+.ptab-cyan{background:linear-gradient(145deg,#66CC67,#3E9E52)}
+.ptab-navy{background:linear-gradient(145deg,#3E9E52,#227A45)}
+.ptab-green{background:linear-gradient(145deg,#227A45,#145C36)}
 
 /* Tab body (white) */
 .ptab-body{flex:1;padding:22px 28px 24px;background:#fff;display:flex;flex-direction:column}
@@ -656,6 +657,19 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .staff-card .email:hover{color:var(--sapphire)}
 @media(max-width:640px){.staff-grid{grid-template-columns:1fr}}
+
+/* Fichas de equipo tintadas con el verde de cada nivel (más claro a más oscuro) */
+#panel-preescolar .staff-card{background:#EFFAF0;border-color:#CFEFD2}
+#panel-preescolar .staff-card .av{background:linear-gradient(135deg,#66CC67,#3E9E52)}
+#panel-preescolar .staff-card.leader .av{background:linear-gradient(135deg,#8FE39B,#66CC67)}
+
+#panel-primaria .staff-card{background:#E1F3E3;border-color:#B9E2BE}
+#panel-primaria .staff-card .av{background:linear-gradient(135deg,#3E9E52,#227A45)}
+#panel-primaria .staff-card.leader .av{background:linear-gradient(135deg,#66CC67,#3E9E52)}
+
+#panel-bachillerato .staff-card{background:#CFEAD4;border-color:#9FD1A8}
+#panel-bachillerato .staff-card .av{background:linear-gradient(135deg,#227A45,#145C36)}
+#panel-bachillerato .staff-card.leader .av{background:linear-gradient(135deg,#3E9E52,#227A45)}
 
 /* ---------- QUICKLINKS (menú lateral flotante) ---------- */
 .quicklinks{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:80;
