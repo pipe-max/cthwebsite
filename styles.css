@@ -103,6 +103,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .hs-media img.hs-media-bottom{object-position:center bottom}
 @media(max-width:700px){
   .hs-media{aspect-ratio:2/1}
+  .hs-media.hs-media-tall{aspect-ratio:1920/719}
 }
 
 .hs-controls{position:relative;display:flex;align-items:center;justify-content:center;gap:22px;
