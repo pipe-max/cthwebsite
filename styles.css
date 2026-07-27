@@ -136,7 +136,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero p{color:rgba(255,255,255,.9);font-size:1.1rem;max-width:40em;margin-top:16px}
 
 /* variantes de color vivo por sección — tonos joya, saturados y con buen contraste para texto blanco */
-.page-hero.hero-coral{--acc:#B8305A}
+.page-hero.hero-celeste{--acc:#0D7AA8}
 .page-hero.hero-emerald{--acc:#0C7A50}
 .page-hero.hero-orange{--acc:#B8500F}
 .page-hero.hero-amber{--acc:#96650A}
