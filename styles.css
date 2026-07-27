@@ -115,15 +115,32 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .hs-dots button.on{background:var(--gold);width:26px;border-radius:5px}
 
 /* ---------- PAGE HERO (páginas internas) ---------- */
-.page-hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.page-hero{
+  --acc:var(--cyan);--acc-tint:#8FD8F5;--acc-line:#7FD0F0;
+  position:relative;color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,var(--ink) 0%,color-mix(in srgb,var(--ink) 45%,var(--acc) 55%) 78%,var(--acc) 165%);
+}
 .page-hero .lattice{position:absolute;inset:0;opacity:.45;pointer-events:none}
 .page-hero .wrap{position:relative;padding:68px 28px 64px}
-.breadcrumb{font-size:.8rem;color:#7FD0F0;font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
+.breadcrumb{font-size:.8rem;color:var(--acc-line);font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
 .breadcrumb a{color:#9FB6D6}
 .breadcrumb a:hover{color:#fff}
-.page-hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
-.page-hero h1 em{font-style:italic;color:#8FD8F5;font-weight:600}
+.page-hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem);text-shadow:0 2px 22px rgba(0,0,0,.28)}
+.page-hero h1 em{font-style:italic;color:var(--acc-tint);font-weight:600}
 .page-hero p{color:#C6D4E8;font-size:1.1rem;max-width:40em;margin-top:16px}
+
+/* variantes de color vivo por sección */
+.page-hero.hero-coral{--acc:#FF6B7A;--acc-tint:#FFC2C9;--acc-line:#FFB3BD}
+.page-hero.hero-emerald{--acc:#16C784;--acc-tint:#B6F2D9;--acc-line:#8FEAC2}
+.page-hero.hero-orange{--acc:#FF8A3D;--acc-tint:#FFD3A8;--acc-line:#FFC28A}
+.page-hero.hero-amber{--acc:#FFB020;--acc-tint:#FFE3A8;--acc-line:#FFD584}
+.page-hero.hero-violet{--acc:#9B6BFF;--acc-tint:#D9C8FF;--acc-line:#C7B3FF}
+.page-hero.hero-teal{--acc:#1FCFC0;--acc-tint:#A8F0EA;--acc-line:#8FE8E0}
+.page-hero.hero-indigo{--acc:#5B6EF5;--acc-tint:#C7CDFC;--acc-line:#AAB4FA}
+.page-hero.hero-lime{--acc:#8BD346;--acc-tint:#DCF2BE;--acc-line:#C7EB9C}
+.page-hero.hero-red{--acc:#FF5D3A;--acc-tint:#FFC7B8;--acc-line:#FFB2A0}
+.page-hero.hero-sky{--acc:#2E9BFF;--acc-tint:#BFE3FF;--acc-line:#A3D7FF}
+.page-hero.hero-goldbright{--acc:#FFC93C;--acc-tint:#FFF0C2;--acc-line:#FFE699}
 
 /* ---------- CREDENTIALS STRIP ---------- */
 .creds{background:var(--white);border-bottom:1px solid var(--line)}
