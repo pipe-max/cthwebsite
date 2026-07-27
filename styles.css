@@ -117,7 +117,8 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 /* ---------- PAGE HERO (páginas internas) ---------- */
 .page-hero{
   --acc:var(--sapphire);
-  --fg:#fff;--fg-soft:rgba(255,255,255,.9);--fg-em:#FFF3D6;
+  --fg:#fff;--fg-soft:rgba(255,255,255,.9);
+  --fg-em:color-mix(in srgb,var(--acc) 30%,white 70%);
   --fg-crumb:#fff;--fg-crumb-link:rgba(255,255,255,.68);
   position:relative;color:var(--fg);overflow:hidden;
   background:var(--acc);
@@ -137,15 +138,11 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero h1 em{font-style:italic;color:var(--fg-em);font-weight:600}
 .page-hero p{color:var(--fg-soft);font-size:1.1rem;max-width:40em;margin-top:16px}
 
-/* variantes de color vivo por sección — tonos joya, saturados y con buen contraste para texto blanco */
+/* variantes de color vivo por sección — tonos joya, saturados y con buen contraste para texto blanco.
+   --fg-em se deriva automáticamente de --acc (más clara sobre fondos oscuros, más oscura
+   sobre fondos claros) para que la palabra en cursiva sea siempre un matiz del mismo color. */
 .page-hero.hero-celeste{--acc:#0D7AA8}
-.page-hero.hero-emerald{--acc:#0C7A50}
 .page-hero.hero-orange{--acc:#B8500F}
-.page-hero.hero-yellow{
-  --acc:#F5B300;
-  --fg:var(--ink);--fg-soft:rgba(10,27,51,.78);--fg-em:var(--sapphire);
-  --fg-crumb:var(--ink);--fg-crumb-link:rgba(10,27,51,.62);
-}
 .page-hero.hero-violet{--acc:#7038C7}
 .page-hero.hero-teal{--acc:#0B7268}
 .page-hero.hero-indigo{--acc:#3C4CC7}
@@ -153,6 +150,16 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero.hero-red{--acc:#C43A24}
 .page-hero.hero-sky{--acc:#0F6FC7}
 .page-hero.hero-goldbright{--acc:#93700C}
+
+/* variantes claras: fondo pastel/brillante + texto oscuro, em más oscuro que el fondo */
+.page-hero.hero-yellow,
+.page-hero.hero-mint{
+  --fg:var(--ink);--fg-soft:rgba(10,27,51,.78);
+  --fg-em:color-mix(in srgb,var(--acc) 55%,black 45%);
+  --fg-crumb:var(--ink);--fg-crumb-link:rgba(10,27,51,.62);
+}
+.page-hero.hero-yellow{--acc:#F5B300}
+.page-hero.hero-mint{--acc:#66CC67}
 
 /* ---------- CREDENTIALS STRIP ---------- */
 .creds{background:var(--white);border-bottom:1px solid var(--line)}
