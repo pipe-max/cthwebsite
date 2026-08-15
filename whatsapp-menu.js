@@ -7,43 +7,43 @@
       name: 'Recepción o asesoría general',
       icon: '💬',
       phone: '573223706702',
-      message: 'Hola, gracias por comunicarte con Recepción, soy Sonia Franco. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, Sonia Franco. Quisiera realizar una consulta, por favor.'
     },
     {
       name: 'Admisiones',
       icon: '🎓',
       phone: '573206452599',
-      message: 'Hola, gracias por comunicarte con Admisiones, soy Luz Elena Ostrovsky, líder de admisiones. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, Luz Elena Ostrovsky. Quisiera realizar una consulta, por favor.'
     },
     {
       name: 'Secretaría Académica',
       icon: '📚',
       phone: '573107152956',
-      message: 'Hola, gracias por comunicarte con Secretaría Académica, soy Diana Restrepo, Secretaria Académica. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, Diana Restrepo. Quisiera realizar una consulta, por favor.'
     },
     {
       name: 'Enfermería',
       icon: '🩺',
       phone: '573107888372',
-      message: 'Hola, gracias por comunicarte con Enfermería, soy Verónica Hoyos, Enfermera. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, Verónica Hoyos. Quisiera realizar una consulta, por favor.'
     },
     {
       name: 'Transporte Escolar',
       icon: '🚌',
       phone: '573104969716',
-      message: 'Hola, gracias por comunicarte con el servicio de Transporte Escolar, soy Camilo López, Coordinador de Transporte. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, Camilo López. Quisiera realizar una consulta, por favor.'
     },
     {
       name: 'Sistemas y soporte tecnológico',
       icon: '💻',
       phone: '573156043903',
-      message: 'Hola, gracias por comunicarte con Sistemas y Soporte Tecnológico, soy Juan Camilo Ramírez, líder de Sistemas. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, Juan Camilo Ramírez. Quisiera realizar una consulta, por favor.'
     },
     {
       name: 'Restaurante Escolar',
       icon: '🍽️',
       phone: '573104149958',
-      message: 'Hola, gracias por comunicarte con el servicio de Restaurante Escolar. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: '👋 Hola, equipo de Restaurante Escolar. Quisiera realizar una consulta, por favor.'
     }
   ];
 
