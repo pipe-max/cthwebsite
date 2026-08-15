@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Theodoro Herzl School — Education for Diversity</title>
+<title>Theodoro Herzl School — Redesign</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260814-6">
+<link rel="stylesheet" href="styles.css?v=20260814-5">
 <meta name="description" content="Theodoro Herzl School in Envigado, Colombia: 80 years nurturing well-rounded individuals through pluralism and respect for differences. K3–12th grade education in Spanish, English, and Hebrew.">
 <link rel="canonical" href="https://theodoro.edu.co/index-en">
 <link rel="alternate" hreflang="es" href="https://theodoro.edu.co/">
@@ -72,33 +72,44 @@
   </div>
 </header>
 
-<!-- HOME HERO -->
-<section class="home-hero" aria-labelledby="home-hero-title">
-  <div class="home-hero-photo" aria-hidden="true">
-    <img src="assets/banners/web/Valla 3.jpg" alt="">
+<h1 class="sr-only">Theodoro Herzl School — 80 years shaping well-rounded human beings through pluralism and respect for differences</h1>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider" id="hero-slider" style="padding:0">
+
+  <!-- Slide 1 — Admissions 2028-2029 -->
+  <div class="hs-slide active" data-slide="0">
+    <a class="hs-media" href="admisiones-en.html" aria-label="Upcoming admissions process: children born between August 1, 2025 and July 31, 2026. Current and community families: December 1–30, 2026. New families: Wednesday, January 13, 2027. Go to enrollment.">
+      <img src="assets/banners/web/Banner Admisiones 2028-2029-02.jpg" alt="Upcoming admissions process, children born between August 1, 2025 and July 31, 2026">
+    </a>
   </div>
-  <div class="wrap home-hero-inner">
-    <div class="home-hero-copy">
-      <span class="home-hero-kicker">80 years · Education for diversity</span>
-      <h1 id="home-hero-title">A place where every student can dream big.</h1>
-      <p>A plural, caring educational community committed to the holistic development of every student, from K3 through 12th grade.</p>
-      <div class="home-hero-actions">
-        <a class="btn btn-gold" href="admisiones-en.html">Explore admissions <span aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#identidad">Discover our school</a>
-      </div>
+
+  <!-- Slide 2 — Brand -->
+  <div class="hs-slide" data-slide="1">
+    <a class="hs-media hs-media-tall" href="#identidad" aria-label="Learn about Theodoro Herzl School">
+      <img class="hs-media-bottom" src="assets/banners/web/Valla 3.jpg" alt="Here is where we dream big — Theodoro Herzl School students">
+    </a>
+  </div>
+
+  <!-- Slide 3 — El Encuentro (external partner) -->
+  <div class="hs-slide" data-slide="2">
+    <a class="hs-media" href="https://www.elencuentro.edu.co/" target="_blank" rel="noopener" aria-label="El Encuentro Centro Infantil, learn more">
+      <img src="assets/banners/web/El Encuentro.jpg" alt="El Encuentro Centro Infantil">
+    </a>
+  </div>
+
+  <div class="hs-controls wrap">
+    <button class="hs-arrow prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <div class="hs-dots">
+      <button class="on" data-goto="0" aria-label="Go to slide 1"></button>
+      <button data-goto="1" aria-label="Go to slide 2"></button>
+      <button data-goto="2" aria-label="Go to slide 3"></button>
     </div>
-  </div>
-  <div class="wrap home-hero-notices" aria-label="Featured information">
-    <a class="home-notice home-notice-primary" href="admisiones-en.html">
-      <span class="home-notice-icon" aria-hidden="true">✦</span>
-      <span><strong>Admissions 2028–2029</strong><small>See the dates and requirements for our upcoming process.</small></span>
-      <span class="home-notice-arrow" aria-hidden="true">→</span>
-    </a>
-    <a class="home-notice" href="https://www.elencuentro.edu.co/" target="_blank" rel="noopener">
-      <span class="home-notice-icon" aria-hidden="true">↗</span>
-      <span><strong>El Encuentro</strong><small>Discover our partner early childhood center.</small></span>
-      <span class="home-notice-arrow" aria-hidden="true">→</span>
-    </a>
+    <button class="hs-arrow next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
   </div>
 </section>
 
@@ -304,6 +315,29 @@
     }
   })();
 
+  // hero slider
+  (function(){
+    const root = document.getElementById('hero-slider');
+    if(!root) return;
+    const slides = Array.from(root.querySelectorAll('.hs-slide'));
+    const dots = Array.from(root.querySelectorAll('.hs-dots button'));
+    let current = 0, timer;
+
+    function goTo(i){
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('on');
+      current = (i+slides.length)%slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('on');
+    }
+    function next(){ goTo(current+1); }
+    function restart(){ clearInterval(timer); timer = setInterval(next, 7000); }
+
+    dots.forEach((d,i)=>d.addEventListener('click',()=>{ goTo(i); restart(); }));
+    root.querySelector('.hs-arrow.next').addEventListener('click',()=>{ next(); restart(); });
+    root.querySelector('.hs-arrow.prev').addEventListener('click',()=>{ goTo(current-1); restart(); });
+    restart();
+  })();
 </script>
 <!-- QUICKLINKS -->
 <div class="quicklinks">
