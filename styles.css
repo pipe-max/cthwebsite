@@ -332,7 +332,23 @@ section{padding:96px 0}
 .families{background:var(--yellow-vivid);border-top:1px solid var(--line)}
 .families .eyebrow{color:var(--ink)}
 .families .eyebrow::before{background:var(--ink)}
-.families .fam-lg{background:#fff}
+.families .fam-lg{
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+  transition:transform 180ms cubic-bezier(.23,1,.32,1),background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;
+}
+.families .fam-lg:hover{animation:none;border-color:transparent;box-shadow:none}
+.families .fam-lg:active{transform:scale(.98)}
+.families .fam-lg:focus-visible{outline:3px solid var(--sapphire);outline-offset:4px;background:rgba(255,255,255,.16)}
+@media(hover:hover) and (pointer:fine){
+  .families .fam-lg:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.16);
+    border-color:rgba(16,42,76,.12);
+    box-shadow:0 12px 30px rgba(16,42,76,.08);
+  }
+}
 .families .fam-lg p{color:var(--ink-2)}
 .fam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:44px}
 .fam{display:flex;gap:18px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:22px;transition:.25s}
@@ -350,8 +366,6 @@ section{padding:96px 0}
 .fam-lg .ic img[src*="phidias"]{max-height:130px;max-width:100%}
 .fam-lg h3{font-size:1.08rem;line-height:1.25}
 .fam-lg p{font-size:.86rem;margin-top:4px}
-.fam-lg:hover{animation:cardPulse 1.1s ease-in-out infinite}
-@keyframes cardPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
 @media(max-width:1000px){.fam-grid-lg{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.fam-grid-lg{grid-template-columns:1fr}}
 
