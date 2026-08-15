@@ -5,36 +5,43 @@
   var areas = [
     {
       name: 'Recepción o asesoría general',
+      icon: '💬',
       phone: '573223706702',
       reply: 'Gracias por comunicarte con Recepción, te escribe Sonia Franco. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     },
     {
       name: 'Admisiones',
+      icon: '🎓',
       phone: '573206452599',
       reply: 'Gracias por comunicarte con Admisiones, te escribe Luz Elena Ostrovsky, líder de admisiones. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     },
     {
       name: 'Secretaría Académica',
+      icon: '📚',
       phone: '573107152956',
       reply: 'Gracias por comunicarte con Secretaría Académica, te escribe Diana Restrepo, Secretaria Académica. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     },
     {
       name: 'Enfermería',
+      icon: '🩺',
       phone: '573107888372',
       reply: 'Gracias por comunicarte con Enfermería, te escribe Verónica Hoyos, Enfermera. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     },
     {
       name: 'Transporte Escolar',
+      icon: '🚌',
       phone: '573104969716',
       reply: 'Gracias por comunicarte con el servicio de Transporte Escolar, te escribe Camilo López, Coordinador de Transporte. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     },
     {
       name: 'Sistemas y soporte tecnológico',
+      icon: '💻',
       phone: '573156043903',
       reply: 'Gracias por comunicarte con Sistemas y Soporte Tecnológico, te escribe Juan Camilo Ramírez, líder de Sistemas. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     },
     {
       name: 'Restaurante Escolar',
+      icon: '🍽️',
       phone: '573104149958',
       reply: 'Gracias por comunicarte con el servicio de Restaurante Escolar. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
     }
@@ -80,7 +87,7 @@
 
   function showAreas() {
     var buttons = areas.map(function (area, index) {
-      return '<button class="wa-area" type="button" data-area="' + index + '"><span>' + (index + 1) + '</span>' + escapeHtml(area.name) + '<b>›</b></button>';
+      return '<button class="wa-area" type="button" data-area="' + index + '"><span aria-hidden="true">' + area.icon + '</span><span class="wa-area-copy"><small>Opción ' + (index + 1) + '</small>' + escapeHtml(area.name) + '</span><b>›</b></button>';
     }).join('');
     shell(
       '<p class="wa-bubble">Selecciona una de las siguientes opciones para ser atendido:</p>' +
@@ -100,7 +107,7 @@
     var firstMessage = 'Hola, deseo comunicarme con ' + area.name + '.';
     var whatsappUrl = 'https://wa.me/' + area.phone + '?text=' + encodeURIComponent(firstMessage);
     shell(
-      '<span class="wa-selected">' + escapeHtml(area.name) + '</span>' +
+      '<span class="wa-selected"><span aria-hidden="true">' + area.icon + '</span>' + escapeHtml(area.name) + '</span>' +
       '<p class="wa-bubble">' + escapeHtml(area.reply) + '</p>' +
       '<a class="wa-primary wa-open" href="' + whatsappUrl + '" target="_blank" rel="noopener">Continuar en WhatsApp</a>' +
       '<button class="wa-back" type="button">← Elegir otra opción</button>',
