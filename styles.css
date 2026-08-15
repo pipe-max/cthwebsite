@@ -712,7 +712,7 @@ body.wa-menu-open{overflow:hidden}
 .wa-menu-overlay{position:fixed;inset:0;z-index:300;background:rgba(9,29,54,.55);backdrop-filter:blur(5px);
   display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;visibility:hidden;transition:.22s ease}
 .wa-menu-overlay.open{opacity:1;visibility:visible}
-.wa-menu-panel{width:min(520px,100%);max-height:min(760px,calc(100vh - 44px));overflow:auto;background:#f7faf8;
+.wa-menu-panel{width:min(520px,100%);max-height:min(760px,calc(100vh - 44px));overflow:auto;background:#f7faf8;padding:0;
   border-radius:24px;box-shadow:0 28px 80px rgba(9,29,54,.28);transform:translateY(14px) scale(.98);transition:.22s ease}
 .wa-menu-overlay.open .wa-menu-panel{transform:none}
 .wa-menu-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;
