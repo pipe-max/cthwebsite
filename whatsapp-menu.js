@@ -65,7 +65,7 @@
         '</span><span><strong>Colegio Theodoro Herzl</strong><small>Atención por WhatsApp</small></span></div>' +
         '<button class="wa-menu-close" type="button" aria-label="Cerrar">×</button>' +
       '</div>' +
-      '<div class="wa-menu-progress" aria-label="Paso ' + step + ' de 3"><span style="width:' + (step * 33.333) + '%"></span></div>' +
+      '<div class="wa-menu-progress" aria-label="Paso ' + step + ' de 2"><span style="width:' + (step * 50) + '%"></span></div>' +
       '<div class="wa-menu-body">' + content + '</div>';
     panel.querySelector('.wa-menu-close').addEventListener('click', closeMenu);
   }
@@ -96,25 +96,16 @@
       2
     );
     panel.querySelectorAll('.wa-area').forEach(function (button) {
-      button.addEventListener('click', function () { showArea(Number(button.dataset.area)); });
+      button.addEventListener('click', function () { openAreaWhatsApp(Number(button.dataset.area)); });
     });
     panel.querySelector('.wa-back').addEventListener('click', showConsent);
     panel.querySelector('.wa-area').focus();
   }
 
-  function showArea(index) {
+  function openAreaWhatsApp(index) {
     var area = areas[index];
-    var firstMessage = 'Hola, deseo comunicarme con ' + area.name + '.';
-    var whatsappUrl = 'https://wa.me/' + area.phone + '?text=' + encodeURIComponent(firstMessage);
-    shell(
-      '<span class="wa-selected"><span aria-hidden="true">' + area.icon + '</span>' + escapeHtml(area.name) + '</span>' +
-      '<p class="wa-bubble">' + escapeHtml(area.reply) + '</p>' +
-      '<a class="wa-primary wa-open" href="' + whatsappUrl + '" target="_blank" rel="noopener">Continuar en WhatsApp</a>' +
-      '<button class="wa-back" type="button">← Elegir otra opción</button>',
-      3
-    );
-    panel.querySelector('.wa-back').addEventListener('click', showAreas);
-    panel.querySelector('.wa-open').focus();
+    var whatsappUrl = 'https://wa.me/' + area.phone + '?text=' + encodeURIComponent(area.reply);
+    window.location.href = whatsappUrl;
   }
 
   function openMenu(event) {
