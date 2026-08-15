@@ -7,43 +7,43 @@
       name: 'Recepción o asesoría general',
       icon: '💬',
       phone: '573223706702',
-      reply: 'Gracias por comunicarte con Recepción, te escribe Sonia Franco. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con Recepción o recibir asesoría general. ¿Podrían ayudarme, por favor?'
     },
     {
       name: 'Admisiones',
       icon: '🎓',
       phone: '573206452599',
-      reply: 'Gracias por comunicarte con Admisiones, te escribe Luz Elena Ostrovsky, líder de admisiones. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con Admisiones. ¿Podrían ayudarme, por favor?'
     },
     {
       name: 'Secretaría Académica',
       icon: '📚',
       phone: '573107152956',
-      reply: 'Gracias por comunicarte con Secretaría Académica, te escribe Diana Restrepo, Secretaria Académica. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con Secretaría Académica. ¿Podrían ayudarme, por favor?'
     },
     {
       name: 'Enfermería',
       icon: '🩺',
       phone: '573107888372',
-      reply: 'Gracias por comunicarte con Enfermería, te escribe Verónica Hoyos, Enfermera. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con Enfermería. ¿Podrían ayudarme, por favor?'
     },
     {
       name: 'Transporte Escolar',
       icon: '🚌',
       phone: '573104969716',
-      reply: 'Gracias por comunicarte con el servicio de Transporte Escolar, te escribe Camilo López, Coordinador de Transporte. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con el servicio de Transporte Escolar. ¿Podrían ayudarme, por favor?'
     },
     {
       name: 'Sistemas y soporte tecnológico',
       icon: '💻',
       phone: '573156043903',
-      reply: 'Gracias por comunicarte con Sistemas y Soporte Tecnológico, te escribe Juan Camilo Ramírez, líder de Sistemas. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con Sistemas y Soporte Tecnológico. ¿Podrían ayudarme, por favor?'
     },
     {
       name: 'Restaurante Escolar',
       icon: '🍽️',
       phone: '573104149958',
-      reply: 'Gracias por comunicarte con el servicio de Restaurante Escolar. Por favor indícame tu nombre completo y cómo puedo apoyarte.'
+      message: 'Hola, mi nombre es ____. Deseo comunicarme con el servicio de Restaurante Escolar. ¿Podrían ayudarme, por favor?'
     }
   ];
 
@@ -104,7 +104,7 @@
 
   function openAreaWhatsApp(index) {
     var area = areas[index];
-    var whatsappUrl = 'https://wa.me/' + area.phone + '?text=' + encodeURIComponent(area.reply);
+    var whatsappUrl = 'https://wa.me/' + area.phone + '?text=' + encodeURIComponent(area.message);
     window.location.href = whatsappUrl;
   }
 
