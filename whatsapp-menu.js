@@ -10,12 +10,6 @@
       message: '👋 Hola, Sonia Franco. Quisiera realizar una consulta, por favor.'
     },
     {
-      name: 'Admisiones',
-      icon: '🎓',
-      phone: '573206452599',
-      message: '👋 Hola, Luz Elena Ostrovsky. Quisiera realizar una consulta, por favor.'
-    },
-    {
       name: 'Secretaría Académica',
       icon: '📚',
       phone: '573107152956',
@@ -92,6 +86,7 @@
     shell(
       '<p class="wa-bubble">Selecciona una de las siguientes opciones para ser atendido:</p>' +
       '<div class="wa-area-list">' + buttons + '</div>' +
+      '<p class="wa-note">¿Deseas solicitar información sobre admisiones? Por favor escríbenos a <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a>.</p>' +
       '<button class="wa-back" type="button">← Volver</button>',
       2
     );

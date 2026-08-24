@@ -755,6 +755,8 @@ body.wa-menu-open{overflow:hidden}
 .wa-area-copy{display:flex;flex-direction:column;gap:2px}.wa-area-copy small{color:#6f8179;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .wa-area b{font-size:1.4rem;color:#128c7e}
 .wa-selected{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;margin-bottom:14px;border-radius:999px;background:#dcf8e7;color:#08785f;font-size:.78rem;font-weight:800}
+.wa-note{margin-top:16px;padding:12px 14px;border-radius:12px;background:#eef6f1;border:1px solid #dce8e2;color:#3f5148;font-size:.82rem;line-height:1.45;text-align:center}
+.wa-note a{color:#0878bd;font-weight:700;text-decoration:underline}
 .wa-back{display:block;margin:16px auto 0;padding:8px 12px;border:0;background:transparent;color:#52677c;font:600 .84rem var(--sans);cursor:pointer}.wa-back:hover{color:#08785f}
 @media(max-width:560px){
   .wa-menu-overlay{padding:0;align-items:flex-end;background:rgba(9,29,54,.48);backdrop-filter:blur(3px)}
