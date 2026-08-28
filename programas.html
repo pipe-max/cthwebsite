@@ -672,7 +672,8 @@
 
   // Activate panel from URL hash on load (e.g. programas.html#primaria)
   const hash = location.hash.replace('#','');
-  if(hash && document.querySelector('.ptab[data-panel="'+hash+'"]')){
+  const hashIsValidPanel = hash && Array.from(tabs).some(t => t.dataset.panel === hash);
+  if(hashIsValidPanel){
     const panel = activateTab(hash);
     window.addEventListener('load',()=>setTimeout(()=>scrollToPanelTitle(panel),150));
   }
