@@ -514,6 +514,8 @@ footer{background:var(--ink);color:#A9BDD8;padding:72px 0 30px;position:relative
 .socials svg{width:19px;height:19px}
 .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;font-size:.8rem}
 .foot-bot a{text-decoration:underline;text-underline-offset:3px}
+.foot-bot a.ethics-link{color:#00C2FF;font-weight:600}
+.foot-bot a.ethics-link:hover{color:#5CDBFF}
 
 /* ---------- NAV DROPDOWN ---------- */
 nav.main .has-dropdown{position:relative}
