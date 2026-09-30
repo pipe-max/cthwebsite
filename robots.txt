@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theodoro.edu.co/sitemap.xml
+Sitemap: https://www.theodoro.edu.co/sitemap.xml
