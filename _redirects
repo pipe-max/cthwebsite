@@ -1,0 +1,30 @@
+# Redirecciones 301 de URLs del sitio anterior (reportadas como 404 en Search Console)
+
+# Sitio anterior en español
+/index.php                            /                              301
+/es                                   /                              301
+/es/                                  /                              301
+/es/admisiones                        /admisiones                    301
+/es/admisiones/                       /admisiones                    301
+/misionyvision                        /quienes-somos#mision          301
+/copia-de-misi%C3%B3n-visi%C3%B3n     /quienes-somos#mision          301
+/historia                             /quienes-somos#historia        301
+/nuestrafilosofia                     /quienes-somos#filosofia       301
+/horaamutemet                         /quienes-somos#horaa-mutemet   301
+/programasacademicos                  /programas                     301
+/trabajaconnosotros                   /trabaja                       301
+/pqrs                                 /contacto                      301
+
+# Sitio anterior en inglés
+/en                                   /index-en                      301
+/en/                                  /index-en                      301
+/en/admisiones                        /admisiones-en                 301
+/en/misionyvision                     /quienes-somos-en#mision       301
+/en/nuestrafilosofia                  /quienes-somos-en#filosofia    301
+/en/programasacademicos               /programas-en                  301
+/en/trabajaconnosotros                /trabaja-en                    301
+/en/copia-de-noticia-2                /index-en#noticias             301
+
+# Eventos y rutas antiguas del CMS
+/events/*                             /                              301
+/cth/*                                /                              301
