@@ -678,7 +678,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 .staff-intro>.eyebrow{display:flex;max-width:880px;margin:0 auto}
 .staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px;
   max-width:880px;margin-left:auto;margin-right:auto}
-.staff-card{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);
+.staff-card{display:flex;gap:18px;align-items:center;background:var(--sc-bg,#fff);border:1px solid var(--sc-bd,var(--line));
   border-radius:16px;padding:20px 24px;transition:.2s}
 .staff-card:hover{border-color:var(--sapphire);box-shadow:0 8px 24px rgba(16,42,76,.08)}
 .staff-card .av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
@@ -697,15 +697,15 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 @media(max-width:640px){.staff-grid{grid-template-columns:1fr}}
 
 /* Fichas de equipo tintadas con el verde de cada nivel (más claro a más oscuro) */
-#panel-preescolar .staff-card{background:#EFFAF0;border-color:#CFEFD2}
+#panel-preescolar .staff-card{--sc-bg:#EFFAF0;--sc-bd:#CFEFD2}
 #panel-preescolar .staff-card .av{background:linear-gradient(135deg,#66CC67,#3E9E52)}
 #panel-preescolar .staff-card.leader .av{background:linear-gradient(135deg,#8FE39B,#66CC67)}
 
-#panel-primaria .staff-card{background:#E1F3E3;border-color:#B9E2BE}
+#panel-primaria .staff-card{--sc-bg:#E1F3E3;--sc-bd:#B9E2BE}
 #panel-primaria .staff-card .av{background:linear-gradient(135deg,#3E9E52,#227A45)}
 #panel-primaria .staff-card.leader .av{background:linear-gradient(135deg,#66CC67,#3E9E52)}
 
-#panel-bachillerato .staff-card{background:#CFEAD4;border-color:#9FD1A8}
+#panel-bachillerato .staff-card{--sc-bg:#CFEAD4;--sc-bd:#9FD1A8}
 #panel-bachillerato .staff-card .av{background:linear-gradient(135deg,#227A45,#145C36)}
 #panel-bachillerato .staff-card.leader .av{background:linear-gradient(135deg,#3E9E52,#227A45)}
 
@@ -825,7 +825,8 @@ body.wa-menu-open{overflow:hidden}
 .stagger:not(.in) > *{opacity:0}
 .stagger.in > *{animation:staggerIn .85s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0) * 110ms)}
 @keyframes staggerIn{from{opacity:0;transform:translateY(46px) scale(.96)}}
-.staff-grid.stagger.in > *{animation-duration:.6s;animation-delay:calc(var(--i,0) * 55ms)}
+.staff-grid.stagger.in > *{animation-name:staffIn;animation-duration:.6s;animation-delay:calc(var(--i,0) * 55ms)}
+@keyframes staffIn{from{opacity:0;translate:0 30px}}
 
 /* tarjetas de programa: inclinación 3D, brillo y personajes */
 .ptab.tilting{transition:transform .12s linear,box-shadow .28s,outline-color .2s}
@@ -848,19 +849,30 @@ body.wa-menu-open{overflow:hidden}
 @keyframes glowDrift{to{transform:translate(160px,-60px) scale(1.25)}}
 .cta-band .btn{transition:.25s,translate .35s cubic-bezier(.2,.8,.2,1)}
 
-/* tarjetas del equipo: borde iluminado, círculo que gira, correo que se copia */
+/* tarjetas del equipo: borde iluminado, la tarjeta gira y muestra el correo, que se copia con un clic */
 .staff-card{position:relative}
-.staff-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;
+.staff-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:2;
   background:radial-gradient(260px circle at var(--gx,-999px) var(--gy,-999px),rgba(46,139,87,.95),transparent 60%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
   mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transition:opacity .35s}
 .staff-grid:hover .staff-card::before{opacity:1}
-.staff-card .av.flip{position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,1.4,.5,1)}
-.av-face{position:absolute;inset:0;display:grid;place-items:center;border-radius:50%;
-  -webkit-backface-visibility:hidden;backface-visibility:hidden}
-.av-back{transform:rotateY(180deg);background:linear-gradient(135deg,#E2BC3F,var(--gold))}
-.av-back svg{width:22px;height:22px}
-.staff-card:hover .av.flip,.staff-card.copied .av.flip{transform:rotateY(180deg)}
+.staff-card.flipcard{display:block;padding:0;background:none;border-color:transparent;perspective:1100px;cursor:pointer}
+.staff-card.flipcard::before{inset:0}
+.staff-card.flipcard:hover{box-shadow:none;border-color:transparent}
+.sc-inner{display:grid;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.25,.5,1)}
+.sc-face{grid-area:1/1;display:flex;gap:18px;align-items:center;padding:20px 24px;border-radius:16px;min-width:0;
+  background:var(--sc-bg,#fff);border:1px solid var(--sc-bd,var(--line));
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;transition:box-shadow .3s}
+.sc-back{transform:rotateY(180deg)}
+.sc-back .av{background:linear-gradient(135deg,#E2BC3F,var(--gold))!important}
+.sc-back .av svg{width:22px;height:22px}
+.sc-back .hint{font-size:.78rem;color:var(--muted);font-weight:600}
+.sc-back .email{font-size:.9rem;margin-top:4px}
+@media(hover:hover){
+  .staff-card.flipcard:hover .sc-inner{transform:rotateY(180deg);transition-delay:.12s}
+  .staff-card.flipcard:hover .sc-face{box-shadow:0 10px 28px rgba(16,42,76,.1)}
+}
+.staff-card.flipcard.flipped .sc-inner,.staff-card.flipcard:has(.email:focus-visible) .sc-inner{transform:rotateY(180deg)}
 .staff-card .email{cursor:copy}
 .staff-card.copied .email{color:#2E8B57}
 
