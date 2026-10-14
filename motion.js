@@ -68,7 +68,7 @@
       sio.unobserve(e.target);
     });
   }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, #filosofia .pill-grid, .mv-grid').forEach(function(el){
+  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, #filosofia .pill-grid, .mv-grid, .fam-grid-lg, .news-grid').forEach(function(el){
     el.classList.remove('reveal');   // el contenedor ya no se anima entero; lo hacen sus tarjetas
     el.classList.add('stagger');
     Array.prototype.forEach.call(el.children, function(c){ c.classList.remove('reveal'); sio.observe(c); });
@@ -78,6 +78,44 @@
   document.querySelectorAll('#perfil .fam .ic svg').forEach(function(svg){
     svg.querySelectorAll('path, rect, circle, line, polyline').forEach(function(sh){ sh.setAttribute('pathLength', '1'); });
   });
+
+  /* ── Portada ── */
+  // noticias: la foto pasa a una capa interna para poder hacer zoom sin salirse de su caja
+  document.querySelectorAll('.n-card .img').forEach(function(img){
+    var bg = document.createElement('span');
+    bg.className = 'img-bg';
+    bg.setAttribute('aria-hidden', 'true');
+    bg.style.backgroundImage = img.style.backgroundImage || getComputedStyle(img).backgroundImage;
+    img.style.background = 'none';
+    img.insertBefore(bg, img.firstChild);
+  });
+  // identidad: título palabra por palabra cuando aparece
+  document.querySelectorAll('#identidad h2').forEach(function(h){
+    var i = 0;
+    h.innerHTML = h.textContent.trim().split(/\s+/).map(function(w){
+      return '<span class="w" style="--i:' + (i++) + '">' + w.replace(/</g, '&lt;') + '</span>';
+    }).join(' ');
+    h.classList.add('split-in');
+  });
+  // datos de la franja: los números cuentan desde cero al aparecer
+  var countUp = function(el){
+    var parts = el.textContent.split(/(\d+)/);
+    if(parts.length < 2) return;
+    el.innerHTML = parts.map(function(p){ return /^\d+$/.test(p) ? '<span class="cu" data-n="' + p + '">0</span>' : p.replace(/</g, '&lt;'); }).join('');
+    var cus = el.querySelectorAll('.cu');
+    var t0 = null;
+    var step = function(t){
+      if(t0 === null) t0 = t;
+      var k = Math.min((t - t0) / 1100, 1), e = 1 - Math.pow(1 - k, 3);
+      cus.forEach(function(c){ c.textContent = Math.round(+c.dataset.n * e); });
+      if(k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ cio.unobserve(e.target); if(!reduce) setTimeout(function(){ countUp(e.target); }, 250); } });
+  }, {threshold: .6});
+  document.querySelectorAll('.cred-stats .stat .num').forEach(function(n){ cio.observe(n); });
 
   /* ── Tarjetas del equipo: el círculo gira y muestra un sobre; clic en el correo lo copia ── */
   var en = document.documentElement.lang === 'en';
@@ -174,7 +212,7 @@
   }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card, .fam-lg, .n-card').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();
