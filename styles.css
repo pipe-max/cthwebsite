@@ -1493,25 +1493,35 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 }
 
 /* ---------- INDICADORES · NEUMORFISMO ---------- */
-/* tarjetas y botones del mismo color del fondo; el relieve lo dan dos sombras (luz arriba-izquierda, sombra abajo-derecha) */
-.identity:has(.perf-tabs){--neu-bg:#E9EEF5;--neu-dark:#C5CEDC;--neu-light:#FFFFFF;background:var(--neu-bg)}
-.perf-tabs{background:var(--neu-bg);box-shadow:inset 5px 5px 10px var(--neu-dark),inset -5px -5px 10px var(--neu-light)}
-.perf-period{background:var(--neu-bg);border:0;
-  box-shadow:14px 14px 30px var(--neu-dark),-14px -14px 30px var(--neu-light)}
-.perf-period-ic{width:112px;height:112px;justify-content:center;border-radius:50%;align-self:center;
-  background:linear-gradient(145deg,#F2F6FB,#DEE5EF);box-shadow:8px 8px 16px var(--neu-dark),-8px -8px 16px var(--neu-light)}
-.perf-period-ic img{height:52px}
+/* superficies del color del fondo; relieve = brillo blanco arriba-izquierda + sombra abajo-derecha,
+   degradado de luz sutil y filo blanco en el borde superior */
+.identity:has(.perf-tabs){--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;
+  --neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);background:var(--neu-bg)}
+.perf-tabs{background:var(--neu-bg);box-shadow:inset 6px 6px 12px var(--neu-dark),inset -6px -6px 12px var(--neu-light)}
+.perf-period{background:var(--neu-face);border:0;
+  box-shadow:16px 16px 32px var(--neu-dark),-16px -16px 32px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.9)}
+
+/* período: aro en relieve con círculo interior hundido (como el botón de play) */
+.perf-period-ic{position:relative;width:140px;height:140px;gap:4px;justify-content:center;border-radius:50%;align-self:center;
+  background:var(--neu-face);
+  box-shadow:10px 10px 20px var(--neu-dark),-10px -10px 20px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+.perf-period-ic::before{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--neu-bg);
+  box-shadow:inset 5px 5px 10px var(--neu-dark),inset -5px -5px 10px var(--neu-light)}
+.perf-period-ic > *{position:relative}
+.perf-period-ic img{height:58px}
 .perf-period-ic span{font-size:.7rem}
-.perf-grade{background:var(--neu-bg);border:0;color:var(--ink);
-  box-shadow:6px 6px 12px var(--neu-dark),-6px -6px 12px var(--neu-light);
+
+/* grados: botones en relieve; al pasar el mouse se hunden */
+.perf-grade{background:var(--neu-face);border:0;color:var(--ink);
+  box-shadow:7px 7px 14px var(--neu-dark),-7px -7px 14px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95);
   transition:box-shadow .25s ease,color .25s ease,transform .25s ease}
 .perf-grade:hover{background:var(--neu-bg);color:var(--sapphire);transform:none;
-  box-shadow:inset 4px 4px 9px var(--neu-dark),inset -4px -4px 9px var(--neu-light)}
-.perf-grade:active{box-shadow:inset 6px 6px 12px var(--neu-dark),inset -6px -6px 12px var(--neu-light)}
-.perf-grade.pending,.perf-grade.pending:hover{background:var(--neu-bg);color:#A7B3C5;opacity:1;
-  box-shadow:4px 4px 9px var(--neu-dark),-4px -4px 9px var(--neu-light)}
+  box-shadow:inset 5px 5px 10px var(--neu-dark),inset -5px -5px 10px var(--neu-light)}
+.perf-grade:active{box-shadow:inset 7px 7px 14px var(--neu-dark),inset -7px -7px 14px var(--neu-light)}
+.perf-grade.pending,.perf-grade.pending:hover{background:var(--neu-face);color:#A9B4C4;opacity:1;
+  box-shadow:5px 5px 10px var(--neu-dark),-5px -5px 10px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
 @media(max-width:640px){
-  .perf-period{box-shadow:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light)}
-  .perf-period-ic{width:auto;height:auto;padding:10px 16px;border-radius:999px}
+  .perf-period{box-shadow:10px 10px 22px var(--neu-dark),-10px -10px 22px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.9)}
+  .perf-period-ic{width:auto;height:auto;padding:12px 18px;border-radius:999px}
+  .perf-period-ic::before{inset:6px;border-radius:999px}
 }
-
