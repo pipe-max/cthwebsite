@@ -924,6 +924,71 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
 .svc-banner-mail:hover .mail-ic,.svc-banner.copied .mail-ic{width:15px;opacity:1;margin-right:8px}
 .svc-banner.copied .svc-banner-mail{background:#2E8B57;border-color:#2E8B57;color:#fff}
 
+/* ---------- ADMISIONES INTERACTIVO (admisiones.js) ---------- */
+/* calculadora de grado */
+.age-calc{display:flex;gap:22px;align-items:flex-start;margin-top:32px;padding:26px 28px;background:#fff;
+  border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px rgba(16,42,76,.06)}
+.age-calc-ic{width:52px;height:52px;border-radius:14px;flex-shrink:0;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(135deg,var(--cyan),var(--sapphire))}
+.age-calc-ic svg{width:26px;height:26px}
+.age-calc-main{flex:1;min-width:0}
+.age-calc h3{font-size:1.25rem;color:var(--ink)}
+.age-calc-fields{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+.age-calc-fields label{display:flex;flex-direction:column;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted)}
+.age-calc-fields input,.age-calc-fields select{font:600 .95rem var(--sans);color:var(--ink);background:var(--paper);
+  border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;min-width:200px;transition:border-color .2s,box-shadow .2s}
+.age-calc-fields input:focus,.age-calc-fields select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px var(--cyan-soft)}
+.age-calc-out{margin-top:16px;font-size:.95rem;color:var(--ink-2);line-height:1.6}
+.age-calc-out b{color:var(--ink)}
+.age-calc-out small{display:block;margin-top:4px;font-size:.78rem;color:var(--muted)}
+.age-calc-out.has-result{background:#FDF5DC;border:1px solid #F0DC9A;border-radius:12px;padding:12px 16px;
+  animation:calcIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes calcIn{from{opacity:0;transform:translateY(8px)}}
+@media(max-width:640px){.age-calc{flex-direction:column;padding:22px}.age-calc-fields input,.age-calc-fields select{min-width:0;width:100%}.age-calc-fields label{flex:1 1 100%}}
+
+/* tablas: filas en cascada, misma edad resaltada, fila de la calculadora */
+.age-table td{transition:background-color .25s}
+.age-block.in .age-table tr[style] td{animation:rowIn .5s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(250ms + var(--r,0) * 70ms)}
+@keyframes rowIn{from{opacity:0;transform:translateX(-12px)}}
+.age-table tr.age-hl td{background:var(--cyan-soft)}
+.age-table tr.age-match td{background:#FBE9B0;color:var(--ink);font-weight:700}
+.age-table tr.age-match td:first-child{box-shadow:inset 4px 0 0 var(--gold)}
+
+/* próximo proceso: cuenta regresiva y estado de cada tarjeta */
+.tl-countdown{display:flex;align-items:center;gap:18px;margin-top:32px;padding:18px 24px;border-radius:16px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#C6D4E8;font-size:1rem}
+.tl-countdown b{color:#fff}
+.cd-num{font-family:var(--display);font-size:3rem;font-weight:700;line-height:1;color:var(--gold);min-width:1.4em;text-align:center;
+  font-variant-numeric:tabular-nums}
+.cd-live{width:12px;height:12px;border-radius:50%;background:#3DDC84;flex-shrink:0;animation:liveDot 1.6s ease-in-out infinite}
+@keyframes liveDot{50%{box-shadow:0 0 0 8px rgba(61,220,132,0)}0%,100%{box-shadow:0 0 0 0 rgba(61,220,132,.5)}}
+.tl-card{position:relative}
+.tl-card.is-next,.tl-card.is-open{box-shadow:0 0 0 3px var(--gold),0 18px 44px rgba(0,0,0,.25)}
+.tl-chip{position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+  background:var(--gold);color:var(--ink)}
+.tl-chip.open{background:#3DDC84}
+@media(max-width:640px){.tl-countdown{flex-direction:column;text-align:center;gap:8px}}
+
+/* documentos: lista que se puede marcar */
+.doclist.checklist li{padding-left:0}
+.doclist.checklist li::before{display:none}
+.doclist.checklist label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.doclist.checklist input{appearance:none;-webkit-appearance:none;flex-shrink:0;width:18px;height:18px;margin-top:2px;
+  border-radius:5px;border:1.5px solid var(--cyan);background:var(--cyan-soft);cursor:pointer;display:grid;place-items:center;
+  transition:background-color .2s,border-color .2s,transform .2s}
+.doclist.checklist input::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2.5px 2.5px 0;
+  transform:translateY(-1px) rotate(45deg) scale(0);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.doclist.checklist input:checked{background:#2E8B57;border-color:#2E8B57}
+.doclist.checklist input:checked::after{transform:translateY(-1px) rotate(45deg) scale(1)}
+.doclist.checklist input:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.doclist.checklist li.done span{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(46,139,87,.5)}
+.doc-progress{margin-top:12px;font-size:.82rem;font-weight:700;color:var(--muted)}
+.track.docs-ready .doc-progress{color:#2E8B57}
+.track.docs-ready .cta-row .btn{animation:readyPulse 1.8s ease-in-out infinite}
+@keyframes readyPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,162,39,.6)}50%{box-shadow:0 0 0 10px rgba(201,162,39,0)}}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
   header{padding-bottom:14px;border-bottom:0}

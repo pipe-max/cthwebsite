@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261014-16">
+<link rel="stylesheet" href="styles.css?v=20261014-18">
 <meta name="description" content="Admissions now open at Theodoro Herzl School for 2028–2029. Learn about the enrollment process, dates, and requirements for K3 through 12th grade.">
 <link rel="canonical" href="https://www.theodoro.edu.co/admisiones-en">
 <link rel="alternate" hreflang="es" href="https://www.theodoro.edu.co/admisiones">
@@ -101,6 +101,17 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Ages by level</span>
       <h2>Find the right grade.</h2>
+    </div>
+    <div class="age-calc reveal">
+      <div class="age-calc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+      <div class="age-calc-main">
+        <h3>Find your child's grade</h3>
+        <div class="age-calc-fields">
+          <label>Date of birth<input type="date" id="age-dob" min="2005-01-01"></label>
+          <label>School year<select id="age-year"></select></label>
+        </div>
+        <p class="age-calc-out" id="age-out" aria-live="polite">Enter the date of birth and we'll show the grade your child would enter, based on their age on July 31.</p>
+      </div>
     </div>
     <div class="ages-wrap">
       <div class="age-block a1 reveal">
@@ -232,17 +243,18 @@
       <span class="eyebrow">Upcoming admissions</span>
       <h2>K3 · 2029–2030</h2>
     </div>
+    <div class="tl-countdown" id="tl-countdown" hidden aria-live="polite"></div>
     <div class="tl-grid">
       <div class="tl-card reveal">
         <h3>Eligibility</h3>
         <p>Children born between August 1, 2025, and July 31, 2026.</p>
       </div>
-      <div class="tl-card reveal">
+      <div class="tl-card reveal" data-start="2026-12-01" data-end="2026-12-30">
         <h3>Current CTH Families</h3>
         <p>Priority application period for families already part of the CTH community.</p>
         <span class="date">December 1–30, 2026</span>
       </div>
-      <div class="tl-card reveal">
+      <div class="tl-card reveal" data-start="2027-01-13">
         <h3>New Families</h3>
         <p>Applications will open for interested new families.</p>
         <span class="date">January 13, 2027</span>
@@ -430,6 +442,7 @@
     document.getElementById('cookie-close').addEventListener('click', hide);
   })();
 </script>
+<script src="admisiones.js?v=1"></script>
 <script src="motion.js?v=9"></script>
 <script src="nav.js?v=5"></script>
 <script src="whatsapp-menu.js?v=20260814-8"></script>
