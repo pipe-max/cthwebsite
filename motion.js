@@ -267,6 +267,15 @@
     });
   });
 
+  /* ── Aviso de Trabaja con nosotros: borde que se ilumina cerca del cursor ── */
+  document.querySelectorAll('.safety-alert').forEach(function(box){
+    box.addEventListener('pointermove', function(e){
+      var r = box.getBoundingClientRect();
+      box.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+      box.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+    });
+  });
+
   /* ── Botones magnéticos ── */
   document.querySelectorAll('.cta-band .btn').forEach(function(btn){
     btn.addEventListener('pointermove', function(e){
