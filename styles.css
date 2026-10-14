@@ -405,8 +405,9 @@ section{padding:96px 0}
 .banner-grid{align-items:stretch}
 .svc-banner{position:relative;border-radius:20px;overflow:hidden;min-height:280px;padding:32px;
     display:flex;flex-direction:column;align-items:center;text-align:center;color:var(--ink);
-    background:#FBEADD;box-shadow:0 8px 24px rgba(16,42,76,.08);transition:.25s}
-.svc-banner:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,42,76,.14)}
+    background:#FBEADD;box-shadow:0 8px 24px rgba(16,42,76,.08);transition:.25s;--svc-acc:#B8500F;
+    transform:translateY(var(--lift,0px)) perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.svc-banner:hover{--lift:-4px;box-shadow:0 16px 34px rgba(16,42,76,.14)}
 .svc-banner-logo-wrap{height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex-shrink:0}
 .svc-banner-logo{height:100%;width:auto;max-width:200px;object-fit:contain}
 .svc-banner-text{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;flex:1;align-items:center;justify-content:center}
@@ -414,7 +415,7 @@ section{padding:96px 0}
 .svc-banner p{font-size:.88rem;color:var(--ink-2);line-height:1.6;text-align:left;align-self:stretch}
 .svc-banner-mail{display:inline-block;margin-top:18px;background:#fff;color:var(--ink);
     font-weight:700;font-size:.8rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);transition:.2s}
-.svc-banner-mail:hover{background:var(--cyan);color:#fff;border-color:var(--cyan)}
+.svc-banner-mail:hover{background:var(--svc-acc);color:#fff;border-color:var(--svc-acc)}
 
 /* ============================================================
    COMPONENTES PÁGINA ADMISIONES
@@ -828,10 +829,10 @@ body.wa-menu-open{overflow:hidden}
 .staff-grid.stagger.in > *{animation-duration:.6s;animation-delay:calc(var(--i,0) * 55ms)}
 
 /* tarjetas de programa: inclinación 3D, brillo y personajes */
-.ptab.tilting{transition:transform .12s linear,box-shadow .28s,outline-color .2s}
-.ptab.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
+.tilt.tilting{transition:transform .12s linear,box-shadow .28s,outline-color .2s}
+.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
   background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.32),transparent 46%)}
-.ptab.tilt:hover::after{opacity:1}
+.tilt:hover::after{opacity:1}
 /* capas con profundidad: el personaje se desplaza más que la retícula del fondo */
 .ptab-avatar,.ptab-bg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .ptab-avatar{transform-origin:50% 100%;
@@ -910,6 +911,18 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
   .dropdown a:nth-child(10){animation-delay:315ms!important}
 }
 @keyframes ddItem{from{opacity:0;transform:translateX(-10px)}}
+
+/* servicios: logo en una capa más cercana + botón de correo con sobre */
+.svc-banner-logo{transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  transform:translate(calc(var(--tx,0) * 22px),calc(var(--ty,0) * 14px)) scale(var(--av-s,1))}
+.svc-banner.tilt:hover{--av-s:1.06}
+.svc-banner.tilting .svc-banner-logo{transition:transform .12s linear}
+.svc-banner-mail{display:inline-flex;align-items:center;cursor:copy}
+.svc-banner-mail .mail-ic{display:inline-flex;width:0;opacity:0;margin-right:0;overflow:hidden;
+  transition:width .25s ease,opacity .25s ease,margin-right .25s ease}
+.svc-banner-mail .mail-ic svg{width:15px;height:15px;flex-shrink:0}
+.svc-banner-mail:hover .mail-ic,.svc-banner.copied .mail-ic{width:15px;opacity:1;margin-right:8px}
+.svc-banner.copied .svc-banner-mail{background:#2E8B57;border-color:#2E8B57;color:#fff}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){

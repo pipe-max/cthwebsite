@@ -62,8 +62,8 @@
     Array.prototype.forEach.call(el.children, function(c, i){ c.style.setProperty('--i', i); });
     el.classList.add('stagger');
   }
-  // .prog-tabs ya es .reveal: el observer existente le pone .in
-  document.querySelectorAll('.prog-tabs').forEach(function(el){
+  // .prog-tabs y .banner-grid ya son .reveal: el observer existente les pone .in
+  document.querySelectorAll('.prog-tabs, .banner-grid').forEach(function(el){
     el.classList.remove('reveal');
     stagger(el);
   });
@@ -81,6 +81,29 @@
   live.setAttribute('role', 'status');
   document.body.appendChild(live);
 
+  // clic en un correo → se copia, el texto cambia a "¡Correo copiado! ✓" y vuelve a los 1.8 s
+  function copyOnClick(link, label, card, onCopied, onReset){
+    if(!navigator.clipboard) return;
+    var addr = label.textContent.trim();
+    link.title = en ? 'Click to copy' : 'Clic para copiar';
+    var timer;
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText(addr).then(function(){
+        clearTimeout(timer);
+        label.textContent = en ? 'Email copied ✓' : '¡Correo copiado! ✓';
+        card.classList.add('copied');
+        if(onCopied) onCopied();
+        live.textContent = (en ? 'Copied: ' : 'Copiado: ') + addr;
+        timer = setTimeout(function(){
+          label.textContent = addr;
+          card.classList.remove('copied');
+          if(onReset) onReset();
+        }, 1800);
+      }, function(){ window.location.href = link.href; });
+    });
+  }
+
   document.querySelectorAll('.staff-card').forEach(function(card){
     var av = card.querySelector('.av');
     if(av){
@@ -89,25 +112,24 @@
       av.classList.add('flip');
     }
     var link = card.querySelector('a.email');
-    if(!link || !navigator.clipboard) return;
+    if(!link) return;
+    copyOnClick(link, link, card,
+      function(){ if(av) av.querySelector('.av-back').innerHTML = ICON_CHECK; },
+      function(){ if(av) av.querySelector('.av-back').innerHTML = ICON_MAIL; });
+  });
+
+  /* ── Servicios: botón de correo con sobre que aparece y copia con un clic ── */
+  document.querySelectorAll('.svc-banner').forEach(function(card){
+    var link = card.querySelector('a.svc-banner-mail');
+    if(!link) return;
     var addr = link.textContent.trim();
-    link.title = en ? 'Click to copy' : 'Clic para copiar';
-    var timer;
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText(addr).then(function(){
-        clearTimeout(timer);
-        link.textContent = en ? 'Email copied ✓' : '¡Correo copiado! ✓';
-        card.classList.add('copied');
-        if(av) av.querySelector('.av-back').innerHTML = ICON_CHECK;
-        live.textContent = (en ? 'Copied: ' : 'Copiado: ') + addr;
-        timer = setTimeout(function(){
-          link.textContent = addr;
-          card.classList.remove('copied');
-          if(av) av.querySelector('.av-back').innerHTML = ICON_MAIL;
-        }, 1800);
-      }, function(){ window.location.href = link.href; });
-    });
+    link.innerHTML = '<span class="mail-ic">' + ICON_MAIL + '</span><span class="lbl"></span>';
+    var label = link.querySelector('.lbl');
+    label.textContent = addr;
+    var ic = link.querySelector('.mail-ic');
+    copyOnClick(link, label, card,
+      function(){ ic.innerHTML = ICON_CHECK; },
+      function(){ ic.innerHTML = ICON_MAIL; });
   });
 
   if(reduce){ return; }
@@ -145,7 +167,7 @@
   }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();
