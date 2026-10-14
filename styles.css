@@ -675,6 +675,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 
 /* Staff */
 .staff-intro{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
+.staff-intro>.eyebrow{display:flex;max-width:880px;margin:0 auto}
 .staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px;
   max-width:880px;margin-left:auto;margin-right:auto}
 .staff-card{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);
@@ -846,6 +847,22 @@ body.wa-menu-open{overflow:hidden}
 .motion .cta-band .box .glow{animation:glowDrift 14s ease-in-out infinite alternate}
 @keyframes glowDrift{to{transform:translate(160px,-60px) scale(1.25)}}
 .cta-band .btn{transition:.25s,translate .35s cubic-bezier(.2,.8,.2,1)}
+
+/* tarjetas del equipo: borde iluminado, círculo que gira, correo que se copia */
+.staff-card{position:relative}
+.staff-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;
+  background:radial-gradient(260px circle at var(--gx,-999px) var(--gy,-999px),rgba(46,139,87,.95),transparent 60%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transition:opacity .35s}
+.staff-grid:hover .staff-card::before{opacity:1}
+.staff-card .av.flip{position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,1.4,.5,1)}
+.av-face{position:absolute;inset:0;display:grid;place-items:center;border-radius:50%;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden}
+.av-back{transform:rotateY(180deg);background:linear-gradient(135deg,#E2BC3F,var(--gold))}
+.av-back svg{width:22px;height:22px}
+.staff-card:hover .av.flip,.staff-card.copied .av.flip{transform:rotateY(180deg)}
+.staff-card .email{cursor:copy}
+.staff-card.copied .email{color:#2E8B57}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){

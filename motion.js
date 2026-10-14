@@ -71,6 +71,44 @@
   }, {threshold: .08});
   document.querySelectorAll('.staff-grid').forEach(function(el){ stagger(el); sio.observe(el); });
 
+  /* ── Tarjetas del equipo: el círculo gira y muestra un sobre; clic en el correo lo copia ── */
+  var en = document.documentElement.lang === 'en';
+  var ICON_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>';
+  var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+  var live = document.createElement('div');
+  live.className = 'sr-only';
+  live.setAttribute('role', 'status');
+  document.body.appendChild(live);
+
+  document.querySelectorAll('.staff-card').forEach(function(card){
+    var av = card.querySelector('.av');
+    if(av){
+      av.innerHTML = '<span class="av-face av-front">' + av.innerHTML + '</span>' +
+                     '<span class="av-face av-back">' + ICON_MAIL + '</span>';
+      av.classList.add('flip');
+    }
+    var link = card.querySelector('a.email');
+    if(!link || !navigator.clipboard) return;
+    var addr = link.textContent.trim();
+    link.title = en ? 'Click to copy' : 'Clic para copiar';
+    var timer;
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText(addr).then(function(){
+        clearTimeout(timer);
+        link.textContent = en ? 'Email copied ✓' : '¡Correo copiado! ✓';
+        card.classList.add('copied');
+        if(av) av.querySelector('.av-back').innerHTML = ICON_CHECK;
+        live.textContent = (en ? 'Copied: ' : 'Copiado: ') + addr;
+        timer = setTimeout(function(){
+          link.textContent = addr;
+          card.classList.remove('copied');
+          if(av) av.querySelector('.av-back').innerHTML = ICON_MAIL;
+        }, 1800);
+      }, function(){ window.location.href = link.href; });
+    });
+  });
+
   if(reduce){ return; }
 
   /* ── Scroll: progreso + parallax del hero ── */
@@ -126,6 +164,18 @@
       card.style.setProperty('--ry', '0deg');
       card.style.setProperty('--tx', '0');
       card.style.setProperty('--ty', '0');
+    });
+  });
+
+  /* ── Equipo: el borde se ilumina cerca del cursor ── */
+  document.querySelectorAll('.staff-grid').forEach(function(grid){
+    var cards = grid.querySelectorAll('.staff-card');
+    grid.addEventListener('pointermove', function(e){
+      cards.forEach(function(c){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+      });
     });
   });
 
