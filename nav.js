@@ -33,6 +33,20 @@
   nav.classList.add('has-pill');
 
   function linkOf(item){ return item.matches('a') ? item : item.querySelector(':scope > a'); }
+
+  // color de cada opción = color del encabezado de su página (se lee de las clases .hero-* del CSS)
+  var HERO = {'quienes-somos':'hero-yellow','programas':'hero-mint','servicios':'hero-orange','admisiones':'hero-celeste',
+              'egresados':'hero-violet','trabaja':'hero-teal','contacto':'hero-navy','proyectos':'hero-lime'};
+  var probe = document.createElement('div');
+  probe.style.display = 'none';
+  document.body.appendChild(probe);
+  items.forEach(function(it){
+    var m = (linkOf(it).getAttribute('href') || '').match(/^([a-z-]+?)(?:-en)?\.html/);
+    if(!m || !HERO[m[1]]) return;
+    probe.className = 'page-hero ' + HERO[m[1]];
+    it.dataset.acc = getComputedStyle(probe).getPropertyValue('--acc').trim();
+  });
+  probe.remove();
   var active = null;
   items.forEach(function(it){ if(linkOf(it).classList.contains('active')) active = it; });
 
@@ -47,6 +61,8 @@
     var x = item === a ? a.offsetLeft : item.offsetLeft + a.offsetLeft;
     var y = item === a ? a.offsetTop : item.offsetTop + a.offsetTop;
     pill.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+    if(item.dataset.acc) pill.style.setProperty('--pill-acc', item.dataset.acc);
+    else pill.style.removeProperty('--pill-acc');
     pill.classList.add('on');
     pill.classList.toggle('is-active', item === active);
     if(instant){ pill.offsetWidth; pill.classList.remove('instant'); }

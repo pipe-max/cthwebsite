@@ -882,10 +882,10 @@ header[style*="--nav-acc"]{--nav-pill-bg:color-mix(in oklch,var(--nav-acc) 16%,w
   nav.main.has-pill a:hover,nav.main.has-pill a.active{background:none}
   nav.main.has-pill a.active::after{display:none}
   .nav-pill{display:block;position:absolute;top:0;left:0;z-index:0;pointer-events:none;
-    border-radius:8px;background:var(--nav-pill-bg,var(--cyan-soft));opacity:0;
-    transition:transform .45s cubic-bezier(.3,1.25,.5,1),width .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
+    border-radius:8px;background:color-mix(in oklch,var(--pill-acc,var(--cyan)) 16%,white);opacity:0;
+    transition:transform .45s cubic-bezier(.3,1.25,.5,1),width .45s cubic-bezier(.3,1.25,.5,1),opacity .25s,background-color .35s}
   .nav-pill::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:3px;
-    background:var(--nav-acc,var(--cyan));transform:scaleX(.4);opacity:0;transition:transform .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
+    background:var(--pill-acc,var(--cyan));transform:scaleX(.4);opacity:0;transition:transform .45s cubic-bezier(.3,1.25,.5,1),opacity .25s,background-color .35s}
   .nav-pill.on{opacity:1}
   .nav-pill.on::after{transform:none;opacity:1}
   .nav-pill.instant,.nav-pill.instant::after{transition:none}
