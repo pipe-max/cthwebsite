@@ -36,6 +36,7 @@
   });
 
   /* ── Calculadora de grado: edad cumplida al 31 de julio del año escolar ── */
+  var ICON_MAIL_SM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>';
   var dob = document.getElementById('age-dob');
   var yearSel = document.getElementById('age-year');
   var out = document.getElementById('age-out');
@@ -61,21 +62,33 @@
       var age = Y - p[0] - (p[1] >= 8 ? 1 : 0);           // cumple después del 31 de julio → un año menos
       var note = '<small class="acr-note">' + (en ? 'Final placement is decided by the Admissions Committee.'
                                                   : 'La decisión final la toma el comité de admisiones.') + '</small>';
-      var msg = function(text){ return '<div class="acr-msg"><p>' + text + '</p>' + note + '</div>'; };
+      // mensajes especiales: misma jerarquía que el resultado (título grande + texto + acción)
+      var msg = function(title, text, extra){
+        return '<div class="acr-res acr-msg"><span class="acr-title">' + title + '</span><p>' + text + '</p>' + (extra || '') + note + '</div>';
+      };
+      var MAIL = '<a class="acr-btn" href="mailto:admisiones@theodoro.edu.co">' + ICON_MAIL_SM + (en ? 'Email Admissions' : 'Escribir a admisiones') + '</a>';
+      var yearsTxt = function(n){ return en ? n + (n === 1 ? ' year old' : ' years old') : n + (n === 1 ? ' año' : ' años'); };
       if(new Date(p[0], p[1] - 1, p[2]) > today){
-        out.innerHTML = msg(en ? 'Please check the date of birth.' : 'Revisa la fecha de nacimiento.');
+        out.innerHTML = msg(en ? 'Check the date' : 'Revisa la fecha',
+                            en ? 'The date of birth can\'t be in the future.' : 'La fecha de nacimiento no puede ser futura.');
+        out.classList.add('has-result');
         return;
       }
       if(age < 3){
         var ok = Y + (3 - age);
-        out.innerHTML = msg(en ? 'In ' + yr + ' your child would be <b>' + age + '</b> on July 31 — not yet old enough for K3. They could start in <b>' + ok + '–' + (ok + 1) + '</b>.'
-                               : 'En ' + yr + ' tendría <b>' + age + (age === 1 ? ' año' : ' años') + '</b> al 31 de julio: aún no alcanza la edad para Kínder 3. Podría ingresar en <b>' + ok + '–' + (ok + 1) + '</b>.');
+        out.innerHTML = msg(en ? 'Not old enough yet' : 'Aún no tiene la edad',
+                            (en ? 'In ' + yr + ' your child would be ' + yearsTxt(age) + ' on July 31. K3 starts at 3. They could start in:'
+                                : 'En ' + yr + ' tendría ' + yearsTxt(age) + ' al 31 de julio, y Kínder 3 inicia a los 3. Podría ingresar en:'),
+                            '<span class="acr-age">' + ok + '–' + (ok + 1) + '</span>');
+        out.classList.add('has-result');
         return;
       }
       var m = rowsOfAge(age);
       if(!m.length){
-        out.innerHTML = msg(en ? 'In ' + yr + ' your child would be <b>' + age + '</b>. Write to us at <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> and we\'ll guide you.'
-                               : 'En ' + yr + ' tendría <b>' + age + ' años</b>. Escríbenos a <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> y te orientamos.');
+        out.innerHTML = msg(yearsTxt(age) + (en ? ' in ' : ' en ') + yr,
+                            en ? 'That\'s outside the ages in our table. Write to us and we\'ll guide you.'
+                               : 'Está fuera de las edades de la tabla. Escríbenos y te orientamos.', MAIL);
+        out.classList.add('has-result');
         return;
       }
       m.forEach(function(x){ x.tr.classList.add('age-match'); });
