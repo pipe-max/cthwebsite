@@ -864,6 +864,48 @@ body.wa-menu-open{overflow:hidden}
 .staff-card .email{cursor:copy}
 .staff-card.copied .email{color:#2E8B57}
 
+/* ---------- NAV MOTION (nav.js) ---------- */
+/* barra de vidrio al hacer scroll */
+header{transition:background-color .35s ease,box-shadow .35s ease,border-color .35s ease}
+header.scrolled{background:rgba(246,248,252,.72);border-bottom-color:rgba(221,229,240,.6);
+  -webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
+  box-shadow:0 10px 30px rgba(16,42,76,.08)}
+
+/* píldora que se desliza entre las opciones del menú */
+.nav-pill{display:none}
+@media(min-width:1181px){
+  nav.main.has-pill{position:relative}
+  nav.main.has-pill > a,nav.main.has-pill > .has-dropdown{position:relative;z-index:1}
+  nav.main.has-pill a:hover,nav.main.has-pill a.active{background:none}
+  nav.main.has-pill a.active::after{display:none}
+  .nav-pill{display:block;position:absolute;top:0;left:0;z-index:0;pointer-events:none;
+    border-radius:8px;background:var(--cyan-soft);opacity:0;
+    transition:transform .45s cubic-bezier(.3,1.25,.5,1),width .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
+  .nav-pill::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:3px;
+    background:var(--cyan);transform:scaleX(.4);opacity:0;transition:transform .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
+  .nav-pill.on{opacity:1}
+  .nav-pill.on::after{transform:none;opacity:1}
+  .nav-pill.instant,.nav-pill.instant::after{transition:none}
+
+  /* submenú: entra con rebote y sus opciones en cascada */
+  .dropdown{transform:translateY(-10px) scale(.97);transform-origin:30px 0;
+    transition:opacity .2s,transform .4s cubic-bezier(.3,1.35,.5,1),visibility .2s}
+  nav.main .has-dropdown:hover .dropdown,
+  nav.main .has-dropdown:focus-within .dropdown{transform:none}
+  nav.main .has-dropdown:hover .dropdown a,
+  nav.main .has-dropdown:focus-within .dropdown a{animation:ddItem .4s cubic-bezier(.2,.8,.2,1) backwards}
+  .dropdown a:nth-child(2){animation-delay:35ms!important}
+  .dropdown a:nth-child(3){animation-delay:70ms!important}
+  .dropdown a:nth-child(4){animation-delay:105ms!important}
+  .dropdown a:nth-child(5){animation-delay:140ms!important}
+  .dropdown a:nth-child(6){animation-delay:175ms!important}
+  .dropdown a:nth-child(7){animation-delay:210ms!important}
+  .dropdown a:nth-child(8){animation-delay:245ms!important}
+  .dropdown a:nth-child(9){animation-delay:280ms!important}
+  .dropdown a:nth-child(10){animation-delay:315ms!important}
+}
+@keyframes ddItem{from{opacity:0;transform:translateX(-10px)}}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
   header{padding-bottom:14px;border-bottom:0}
