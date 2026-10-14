@@ -68,10 +68,15 @@
       sio.unobserve(e.target);
     });
   }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid').forEach(function(el){
+  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid').forEach(function(el){
     el.classList.remove('reveal');   // el contenedor ya no se anima entero; lo hacen sus tarjetas
     el.classList.add('stagger');
-    Array.prototype.forEach.call(el.children, function(c){ sio.observe(c); });
+    Array.prototype.forEach.call(el.children, function(c){ c.classList.remove('reveal'); sio.observe(c); });
+  });
+
+  // documentos: los íconos se "dibujan" al pasar el mouse (cada trazo mide 1 para animar el dash)
+  document.querySelectorAll('#perfil .fam .ic svg').forEach(function(svg){
+    svg.querySelectorAll('path, rect, circle, line, polyline').forEach(function(sh){ sh.setAttribute('pathLength', '1'); });
   });
 
   /* ── Tarjetas del equipo: el círculo gira y muestra un sobre; clic en el correo lo copia ── */
@@ -169,7 +174,7 @@
   }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab, .svc-banner').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();

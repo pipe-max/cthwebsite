@@ -1067,6 +1067,34 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
 .side-index a.active .si-dot{background:#F5B300;transform:scale(1.35);box-shadow:0 0 0 4px rgba(245,179,0,.22)}
 @media(max-width:1100px){.side-index{display:none}}
 
+/* horaá mutemet: letras A·B·C que caen y rebotan; tarjetas con inclinación 3D */
+#horaa-mutemet .stagger > .st-in .step-letter{animation:letterDrop .9s cubic-bezier(.3,1.6,.5,1) backwards;
+  animation-delay:calc(var(--d,0ms) + 250ms)}
+@keyframes letterDrop{from{opacity:0;transform:translateY(-70px) rotate(-18deg) scale(.7)}}
+#horaa-mutemet .tl-card:hover .step-letter{animation:letterWiggle .6s ease-in-out}
+@keyframes letterWiggle{25%{transform:rotate(-10deg) scale(1.08)}75%{transform:rotate(8deg) scale(1.08)}}
+.p-card.tilt{position:relative;overflow:hidden;
+  transform:translateY(var(--lift,0px)) perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.p-card.tilt:hover{--lift:-6px}
+.p-card.tilt::after{background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(25,167,222,.12),transparent 50%)}
+.p-card .step-number{transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
+.p-card:hover .step-number{transform:rotate(-8deg) scale(1.12)}
+
+/* documentos: la tarjeta se levanta y el ícono se dibuja trazo por trazo */
+#perfil .fam{background:rgba(255,255,255,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s,box-shadow .3s,border-color .3s}
+#perfil .fam:hover{transform:translateY(-5px);background:#fff;border-color:transparent;box-shadow:0 18px 40px rgba(122,94,14,.25)}
+#perfil .fam .ic{transition:background-color .3s,color .3s,transform .4s cubic-bezier(.3,1.5,.5,1)}
+#perfil .fam:hover .ic{background:var(--ink);color:#fff;transform:rotate(-6deg) scale(1.08)}
+#perfil .fam:hover .ic svg *{stroke-dasharray:1;animation:iconDraw .9s cubic-bezier(.6,0,.3,1) backwards}
+#perfil .fam:hover .ic svg *:nth-child(2){animation-delay:.12s}
+#perfil .fam:hover .ic svg *:nth-child(3){animation-delay:.24s}
+#perfil .fam:hover .ic svg *:nth-child(4){animation-delay:.36s}
+@keyframes iconDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+
+/* índice lateral: puntos visibles sobre cualquier fondo */
+.si-dot{box-shadow:0 0 0 2px #fff,0 2px 6px rgba(16,42,76,.25)}
+.side-index a.active .si-dot{box-shadow:0 0 0 2px #fff,0 0 0 6px rgba(245,179,0,.3)}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
   header{padding-bottom:14px;border-bottom:0}
