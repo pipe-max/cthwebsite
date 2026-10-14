@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261014-29">
+<link rel="stylesheet" href="styles.css?v=20261014-30">
 <meta name="description" content="Theodoro Herzl School in Envigado, Colombia: 80 years nurturing well-rounded individuals through pluralism and respect for differences. K3–12th grade education in Spanish, English, and Hebrew.">
 <link rel="canonical" href="https://www.theodoro.edu.co/index-en">
 <link rel="alternate" hreflang="es" href="https://www.theodoro.edu.co/">
@@ -365,10 +365,16 @@
     let current = 0, timer;
 
     function goTo(i){
+      if((i+slides.length)%slides.length === current) return;
+      // cortina diagonal: el anterior queda debajo mientras el nuevo entra barriendo
+      slides.forEach(s=>s.classList.remove('prev','wipe'));
+      slides[current].classList.add('prev');
       slides[current].classList.remove('active');
       dots[current].classList.remove('on');
       current = (i+slides.length)%slides.length;
-      slides[current].classList.add('active');
+      slides[current].classList.add('active','wipe');
+      const leaving = root.querySelector('.hs-slide.prev');
+      clearTimeout(goTo.t); goTo.t = setTimeout(()=>leaving && leaving.classList.remove('prev'), 1100);
       dots[current].classList.add('on');
     }
     function next(){ goTo(current+1); }
