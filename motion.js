@@ -68,7 +68,7 @@
       sio.unobserve(e.target);
     });
   }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, #filosofia .pill-grid, .mv-grid, .fam-grid-lg, .news-grid').forEach(function(el){
+  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, #filosofia .pill-grid, .mv-grid, .fam-grid-lg, .news-grid, .proj-grid').forEach(function(el){
     el.classList.remove('reveal');   // el contenedor ya no se anima entero; lo hacen sus tarjetas
     el.classList.add('stagger');
     Array.prototype.forEach.call(el.children, function(c){ c.classList.remove('reveal'); sio.observe(c); });
@@ -116,6 +116,26 @@
     es.forEach(function(e){ if(e.isIntersecting){ cio.unobserve(e.target); if(!reduce) setTimeout(function(){ countUp(e.target); }, 250); } });
   }, {threshold: .6});
   document.querySelectorAll('.cred-stats .stat .num').forEach(function(n){ cio.observe(n); });
+
+  /* ── Indicadores: píldora que se desliza entre pestañas y períodos que entran en cascada ── */
+  document.querySelectorAll('.perf-tabs').forEach(function(bar){
+    var pill = document.createElement('span');
+    pill.className = 'perf-pill';
+    pill.setAttribute('aria-hidden', 'true');
+    bar.insertBefore(pill, bar.firstChild);
+    bar.classList.add('has-pill');
+    var place = function(){
+      var a = bar.querySelector('.perf-tab.active');
+      if(!a) return;
+      pill.style.width = a.offsetWidth + 'px';
+      pill.style.height = a.offsetHeight + 'px';
+      pill.style.transform = 'translate(' + a.offsetLeft + 'px,' + a.offsetTop + 'px)';
+    };
+    bar.addEventListener('click', function(){ requestAnimationFrame(place); });
+    window.addEventListener('resize', place);
+    window.addEventListener('load', place);
+    place();
+  });
 
   /* ── Tarjetas del equipo: el círculo gira y muestra un sobre; clic en el correo lo copia ── */
   var en = document.documentElement.lang === 'en';
@@ -212,7 +232,7 @@
   }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card, .fam-lg, .n-card').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card, .fam-lg, .n-card, .proj-card').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();
