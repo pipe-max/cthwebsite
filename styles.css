@@ -1243,6 +1243,77 @@ html.pm-lock{overflow:hidden}
   .pm-body{padding:22px 22px 18px}
 }
 
+/* ---------- FORMULARIOS (forms.js) ---------- */
+/* campos con el color de la página, ✓ al quedar bien y aviso amable si falta algo */
+.smart-form{--form-acc:var(--cyan)}
+.smart-form .field{position:relative}
+.smart-form label{transition:color .25s}
+.smart-form .field:focus-within label{color:var(--form-acc)}
+.smart-form input:not([type=checkbox]):focus,.smart-form textarea:focus{border-color:var(--form-acc);
+  box-shadow:0 0 0 4px color-mix(in oklch,var(--form-acc) 18%,transparent)}
+.smart-form .field::after{content:"";position:absolute;right:18px;bottom:17px;width:18px;height:18px;border-radius:50%;
+  background:#2E8B57 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/11px no-repeat;
+  transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+.smart-form .field:has(textarea)::after{bottom:auto;top:44px}
+.smart-form .field.ok::after{transform:scale(1)}
+.smart-form .field.bad input,.smart-form .field.bad textarea{border-color:#D9534F;background:#FFF6F5}
+.f-err{display:block;margin-top:7px;text-align:center;font-size:.8rem;font-weight:600;color:#C0392B;animation:calcIn .3s ease}
+.smart-form .consent{flex-wrap:wrap}
+.smart-form .consent .f-err{flex-basis:100%;text-align:left;margin-top:2px}
+.smart-form .consent.bad span{color:#C0392B}
+.smart-form .consent input{accent-color:var(--form-acc)}
+
+/* botón enviar: cargando → ¡Enviado! */
+.smart-form .submit-row .btn{transition:background-color .3s,transform .2s}
+.smart-form .btn.is-sending{opacity:.85;cursor:wait}
+.smart-form .btn.is-sent{background:#2E8B57;animation:sentPop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes sentPop{50%{transform:scale(1.04)}}
+.spin{width:16px;height:16px;border-radius:50%;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-error{margin-top:12px;text-align:center;font-size:.86rem;font-weight:600;color:#C0392B}
+.smart-form.is-done > :not(.form-done){display:none}
+.form-done{text-align:center;padding:48px 24px;background:#fff;border:1px solid var(--line);border-radius:24px;
+  box-shadow:0 18px 44px rgba(16,42,76,.08);animation:calcIn .5s cubic-bezier(.2,.8,.2,1)}
+.fd-ic{display:grid;place-items:center;width:72px;height:72px;margin:0 auto 18px;border-radius:50%;color:#fff;
+  background:var(--form-acc);animation:gradePop .6s cubic-bezier(.3,1.5,.5,1)}
+.fd-ic svg{width:34px;height:34px}
+.form-done h3{font-size:1.8rem;color:var(--ink)}
+.form-done p{color:var(--muted);margin:10px auto 24px;max-width:26em}
+
+/* trabaja con nosotros: aviso de seguridad como tarjeta de alerta */
+.safety-alert{display:flex;gap:28px;align-items:flex-start;max-width:900px;padding:36px 40px;border-radius:24px;
+  background:linear-gradient(135deg,#E8F5EC,#F4FAF6);border:1px solid #BFE3CB;border-left:6px solid #2E8B57}
+.sa-ic{flex-shrink:0;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(135deg,#3AA36A,#2E8B57);box-shadow:0 10px 24px rgba(46,139,87,.3)}
+.sa-ic svg{width:34px;height:34px}
+.safety-alert.in .sa-ic{animation:gradePop .7s .2s cubic-bezier(.3,1.5,.5,1) backwards}
+.safety-alert .eyebrow{color:#2E8B57}
+.safety-alert .eyebrow::before{background:#2E8B57}
+.safety-alert h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-top:12px}
+.safety-alert .body{margin-top:14px}
+a.copy-mail{cursor:copy;border-bottom:1.5px dashed currentColor;transition:color .2s}
+a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
+@media(max-width:640px){.safety-alert{flex-direction:column;padding:26px 22px;gap:18px}}
+
+/* contáctanos: datos de contacto + mapa */
+.contact-info{border-top:1px solid var(--line)}
+.ci-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;margin-top:40px;align-items:stretch}
+.ci-cards{display:grid;gap:14px}
+.ci-card{display:flex;gap:16px;align-items:center;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:18px;
+  color:inherit;text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+.ci-card:hover{transform:translateX(6px);border-color:var(--ink-2);box-shadow:0 14px 30px rgba(16,42,76,.1)}
+.ci-ic{flex-shrink:0;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--ink-2);color:#fff;
+  transition:transform .4s cubic-bezier(.3,1.5,.5,1)}
+.ci-card:hover .ci-ic{transform:rotate(-8deg) scale(1.08)}
+.ci-ic svg{width:22px;height:22px}
+.ci-ic.ci-wa{background:#25D366}
+.ci-lbl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ci-val{display:block;font-weight:700;color:var(--ink);margin-top:3px;line-height:1.4}
+.ci-more{display:block;font-size:.8rem;font-weight:700;color:var(--sapphire);margin-top:4px}
+.ci-map{border-radius:22px;overflow:hidden;border:1px solid var(--line);min-height:340px;box-shadow:0 14px 34px rgba(16,42,76,.08)}
+.ci-map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+@media(max-width:860px){.ci-grid{grid-template-columns:1fr}}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
   header{padding-bottom:14px;border-bottom:0}

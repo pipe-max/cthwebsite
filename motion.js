@@ -68,7 +68,7 @@
       sio.unobserve(e.target);
     });
   }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, #filosofia .pill-grid, .mv-grid, .fam-grid-lg, .news-grid, .proj-grid').forEach(function(el){
+  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, #filosofia .pill-grid, .mv-grid, .fam-grid-lg, .news-grid, .proj-grid, .ci-cards').forEach(function(el){
     el.classList.remove('reveal');   // el contenedor ya no se anima entero; lo hacen sus tarjetas
     el.classList.add('stagger');
     Array.prototype.forEach.call(el.children, function(c){ c.classList.remove('reveal'); sio.observe(c); });
