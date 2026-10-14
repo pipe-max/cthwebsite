@@ -873,6 +873,8 @@ header.scrolled{background:rgba(246,248,252,.72);border-bottom-color:rgba(221,22
 
 /* color de la página en el menú: nav.js copia el --acc del encabezado a --nav-acc */
 header[style*="--nav-acc"]{--nav-pill-bg:color-mix(in oklch,var(--nav-acc) 16%,white)}
+/* el texto de la opción activa y de la que tiene el mouse toma una versión oscura de su color */
+nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{color:color-mix(in oklch,var(--item-acc) 62%,black)}
 
 /* píldora que se desliza entre las opciones del menú */
 .nav-pill{display:none}
