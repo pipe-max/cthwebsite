@@ -850,7 +850,7 @@ body.wa-menu-open{overflow:hidden}
 
 /* tarjetas del equipo: borde iluminado, círculo que gira, correo que se copia */
 .staff-card{position:relative}
-.staff-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;
+.staff-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;
   background:radial-gradient(260px circle at var(--gx,-999px) var(--gy,-999px),rgba(46,139,87,.95),transparent 60%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
   mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transition:opacity .35s}
