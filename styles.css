@@ -1168,6 +1168,18 @@ mark.hl{color:inherit;font-weight:600;padding:0 2px;-webkit-box-decoration-break
 .proj-card.tilt:hover{--lift:-6px;transform:translateY(var(--lift,0px)) perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
 .proj-card.tilting{transition:transform .12s linear,box-shadow .28s}
 
+/* períodos de indicadores: 3D; el número en una capa más cercana y los niños solo se mueven de lado */
+.perf-period.tilt{position:relative;
+  transform:translateY(var(--lift,0px)) perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s}
+.perf-period.tilt:hover{--lift:-4px;box-shadow:0 18px 40px rgba(16,42,76,.12)}
+.perf-period.tilting{transition:transform .12s linear,box-shadow .28s}
+.perf-period-ic img,.perf-sec-mascot{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.perf-period.tilt .perf-period-ic img{transform:translate(calc(var(--tx,0) * 16px - 6px),calc(var(--ty,0) * 10px)) scale(var(--av-s,1))}
+.perf-period.tilt:hover{--av-s:1.1}
+.perf-period.tilt .perf-sec-mascot{transform:translateX(calc(var(--tx,0) * 14px))}
+.perf-period.tilting .perf-period-ic img,.perf-period.tilting .perf-sec-mascot{transition:transform .12s linear}
+
 /* pestañas de indicadores: la píldora oscura se desliza a la pestaña elegida */
 .perf-tabs.has-pill{position:relative}
 .perf-tabs.has-pill .perf-tab{position:relative;z-index:1}
