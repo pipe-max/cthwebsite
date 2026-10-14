@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261014-18">
+<link rel="stylesheet" href="styles.css?v=20261014-19">
 <meta name="description" content="Admisiones abiertas en el Colegio Theodoro Herzl para 2028–2029. Conoce el proceso de inscripción, fechas y requisitos para K3 a 12°.">
 <link rel="canonical" href="https://www.theodoro.edu.co/admisiones">
 <link rel="alternate" hreflang="es" href="https://www.theodoro.edu.co/admisiones">
@@ -103,14 +103,17 @@
       <h2>Encuentra el grado que corresponde.</h2>
     </div>
     <div class="age-calc reveal">
-      <div class="age-calc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
       <div class="age-calc-main">
+        <span class="age-calc-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>Calculadora</span>
         <h3>Calcula el grado de tu hijo</h3>
+        <p class="age-calc-lead">Según su edad cumplida al 31 de julio del año escolar en que ingresaría.</p>
         <div class="age-calc-fields">
           <label>Fecha de nacimiento<input type="date" id="age-dob" min="2005-01-01"></label>
           <label>Año escolar<select id="age-year"></select></label>
         </div>
-        <p class="age-calc-out" id="age-out" aria-live="polite">Ingresa la fecha de nacimiento y te mostramos el grado que le correspondería según su edad al 31 de julio.</p>
+      </div>
+      <div class="age-calc-result" id="age-out" aria-live="polite">
+        <div class="acr-empty"><span class="acr-q">?</span><p>Ingresa la fecha de nacimiento y aquí verás el grado que le correspondería.</p></div>
       </div>
     </div>
     <div class="ages-wrap">
@@ -448,7 +451,7 @@
     document.getElementById('cookie-close').addEventListener('click', hide);
   })();
 </script>
-<script src="admisiones.js?v=1"></script>
+<script src="admisiones.js?v=2"></script>
 <script src="motion.js?v=9"></script>
 <script src="nav.js?v=5"></script>
 <script src="whatsapp-menu.js?v=20260814-8"></script>

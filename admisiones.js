@@ -59,31 +59,33 @@
       var Y = +yearSel.value;
       var yr = Y + '–' + (Y + 1);
       var age = Y - p[0] - (p[1] >= 8 ? 1 : 0);           // cumple después del 31 de julio → un año menos
-      var note = '<small>' + (en ? 'Final placement is decided by the Admissions Committee.'
-                                 : 'La decisión final la toma el comité de admisiones.') + '</small>';
-      var html;
+      var note = '<small class="acr-note">' + (en ? 'Final placement is decided by the Admissions Committee.'
+                                                  : 'La decisión final la toma el comité de admisiones.') + '</small>';
+      var msg = function(text){ return '<div class="acr-msg"><p>' + text + '</p>' + note + '</div>'; };
       if(new Date(p[0], p[1] - 1, p[2]) > today){
-        html = en ? 'Please check the date of birth.' : 'Revisa la fecha de nacimiento.';
-      } else if(age < 3){
-        var ok = Y + (3 - age);
-        html = en ? 'In ' + yr + ' your child would be <b>' + age + '</b> on July 31 — not yet old enough for K3. They could start in <b>' + ok + '–' + (ok + 1) + '</b>.'
-                  : 'En ' + yr + ' tendría <b>' + age + ' años</b> al 31 de julio: aún no alcanza la edad para Kínder 3. Podría ingresar en <b>' + ok + '–' + (ok + 1) + '</b>.';
-      } else {
-        var m = rowsOfAge(age);
-        if(!m.length){
-          html = en ? 'In ' + yr + ' your child would be <b>' + age + '</b>. Write to us at <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> and we\'ll guide you.'
-                    : 'En ' + yr + ' tendría <b>' + age + ' años</b>. Escríbenos a <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> y te orientamos.';
-        } else {
-          m.forEach(function(x){ x.tr.classList.add('age-match'); });
-          var grades = m.map(function(x){
-            return '<b>' + esc(x.intl) + '</b> (' + esc(x.level) + (en ? ', ' + esc(x.nat) + ' in the national curriculum)' : ', ' + esc(x.nat) + ' en pénsum nacional)');
-          }).join(en ? ' or ' : ' o ');
-          html = (en ? 'In ' + yr + ' your child would be <b>' + age + '</b> on July 31. Grade: '
-                     : 'En ' + yr + ' tendría <b>' + age + ' años</b> cumplidos al 31 de julio. Le correspondería ') + grades + '.';
-          out.classList.add('has-result');
-        }
+        out.innerHTML = msg(en ? 'Please check the date of birth.' : 'Revisa la fecha de nacimiento.');
+        return;
       }
-      out.innerHTML = html + note;
+      if(age < 3){
+        var ok = Y + (3 - age);
+        out.innerHTML = msg(en ? 'In ' + yr + ' your child would be <b>' + age + '</b> on July 31 — not yet old enough for K3. They could start in <b>' + ok + '–' + (ok + 1) + '</b>.'
+                               : 'En ' + yr + ' tendría <b>' + age + (age === 1 ? ' año' : ' años') + '</b> al 31 de julio: aún no alcanza la edad para Kínder 3. Podría ingresar en <b>' + ok + '–' + (ok + 1) + '</b>.');
+        return;
+      }
+      var m = rowsOfAge(age);
+      if(!m.length){
+        out.innerHTML = msg(en ? 'In ' + yr + ' your child would be <b>' + age + '</b>. Write to us at <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> and we\'ll guide you.'
+                               : 'En ' + yr + ' tendría <b>' + age + ' años</b>. Escríbenos a <a href="mailto:admisiones@theodoro.edu.co">admisiones@theodoro.edu.co</a> y te orientamos.');
+        return;
+      }
+      m.forEach(function(x){ x.tr.classList.add('age-match'); });
+      out.innerHTML = '<div class="acr-res">' +
+        '<span class="acr-label">' + (en ? 'Your child would enter' : 'Le correspondería') + '</span>' +
+        '<span class="acr-grade">' + m.map(function(x){ return esc(x.intl); }).join(en ? ' or ' : ' o ') + '</span>' +
+        m.map(function(x){ return '<span class="acr-level">' + esc(x.level) + ' · ' + esc(x.nat) + (en ? ' (national curriculum)' : ' en pénsum nacional') + '</span>'; }).join('') +
+        '<span class="acr-age">' + (en ? age + ' years old on July 31 · ' : age + ' años al 31 de julio · ') + yr + '</span>' +
+        note + '</div>';
+      out.classList.add('has-result');
     };
     dob.addEventListener('change', calc);
     dob.addEventListener('input', calc);
