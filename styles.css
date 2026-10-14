@@ -1107,10 +1107,7 @@ mark.hl{color:inherit;font-weight:600;padding:0 2px;-webkit-box-decoration-break
 .side-index a.active .si-dot{box-shadow:0 0 0 2px #fff,0 0 0 6px rgba(245,179,0,.3)}
 
 /* ---------- PORTADA (motion.js) ---------- */
-/* banners: zoom lento en el activo y punto que se llena con el tiempo de cada banner */
-.hs-media img{transform-origin:60% 50%}
-.hs-slide.active .hs-media img{animation:kenBurns 9s ease-out forwards}
-@keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.07)}}
+/* banners: punto que se llena con el tiempo de cada banner */
 .hs-dots button{position:relative;overflow:hidden}
 .hs-dots button.on{background:rgba(255,255,255,.3);width:44px}
 .hs-dots button.on::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--gold);
