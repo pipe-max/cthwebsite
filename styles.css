@@ -1501,27 +1501,24 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 .perf-period{background:var(--neu-face);border:0;
   box-shadow:16px 16px 32px var(--neu-dark),-16px -16px 32px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.9)}
 
-/* período: aro en relieve con círculo interior hundido (como el botón de play) */
+/* período: círculo liso en relieve */
 .perf-period-ic{position:relative;width:140px;height:140px;gap:4px;justify-content:center;border-radius:50%;align-self:center;
   background:var(--neu-face);
   box-shadow:10px 10px 20px var(--neu-dark),-10px -10px 20px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
-.perf-period-ic::before{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--neu-bg);
-  box-shadow:inset 5px 5px 10px var(--neu-dark),inset -5px -5px 10px var(--neu-light)}
 .perf-period-ic > *{position:relative}
 .perf-period-ic img{height:58px}
-.perf-period-ic span{font-size:.7rem}
+.perf-period-ic span{font-size:.7rem;color:#7A879B}
 
 /* grados: botones en relieve; al pasar el mouse se hunden */
-.perf-grade{background:var(--neu-face);border:0;color:var(--ink);
+.perf-grade{background:var(--neu-face);border:0;color:#6F7C91;
   box-shadow:7px 7px 14px var(--neu-dark),-7px -7px 14px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95);
   transition:box-shadow .25s ease,color .25s ease,transform .25s ease}
 .perf-grade:hover{background:var(--neu-bg);color:var(--sapphire);transform:none;
   box-shadow:inset 5px 5px 10px var(--neu-dark),inset -5px -5px 10px var(--neu-light)}
 .perf-grade:active{box-shadow:inset 7px 7px 14px var(--neu-dark),inset -7px -7px 14px var(--neu-light)}
-.perf-grade.pending,.perf-grade.pending:hover{background:var(--neu-face);color:#A9B4C4;opacity:1;
+.perf-grade.pending,.perf-grade.pending:hover{background:var(--neu-face);color:#B6C0CE;opacity:1;
   box-shadow:5px 5px 10px var(--neu-dark),-5px -5px 10px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
 @media(max-width:640px){
   .perf-period{box-shadow:10px 10px 22px var(--neu-dark),-10px -10px 22px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.9)}
   .perf-period-ic{width:auto;height:auto;padding:12px 18px;border-radius:999px}
-  .perf-period-ic::before{inset:6px;border-radius:999px}
 }
