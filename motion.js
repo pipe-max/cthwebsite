@@ -174,7 +174,7 @@
   }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();

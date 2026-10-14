@@ -1067,18 +1067,15 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
 .side-index a.active .si-dot{background:#F5B300;transform:scale(1.35);box-shadow:0 0 0 4px rgba(245,179,0,.22)}
 @media(max-width:1100px){.side-index{display:none}}
 
-/* horaá mutemet: letras A·B·C que caen y rebotan; tarjetas con inclinación 3D */
-#horaa-mutemet .stagger > .st-in .step-letter{animation:letterDrop .9s cubic-bezier(.3,1.6,.5,1) backwards;
-  animation-delay:calc(var(--d,0ms) + 250ms)}
-@keyframes letterDrop{from{opacity:0;transform:translateY(-70px) rotate(-18deg) scale(.7)}}
-#horaa-mutemet .tl-card:hover .step-letter{animation:letterWiggle .6s ease-in-out}
-@keyframes letterWiggle{25%{transform:rotate(-10deg) scale(1.08)}75%{transform:rotate(8deg) scale(1.08)}}
-.p-card.tilt{position:relative;overflow:hidden;
-  transform:translateY(var(--lift,0px)) perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
-.p-card.tilt:hover{--lift:-6px}
-.p-card.tilt::after{background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(25,167,222,.12),transparent 50%)}
-.p-card .step-number{transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
-.p-card:hover .step-number{transform:rotate(-8deg) scale(1.12)}
+/* horaá mutemet: tarjetas como las de Programas — inclinación 3D con la letra/número en una capa más cercana */
+#horaa-mutemet .tl-card.tilt,.p-card.tilt{position:relative;overflow:hidden;
+  transform:translateY(var(--lift,0px)) perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .28s}
+#horaa-mutemet .tl-card.tilt:hover,.p-card.tilt:hover{--lift:-6px;--av-s:1.08;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+#horaa-mutemet .step-letter{height:100px}
+#horaa-mutemet .step-letter,#horaa-mutemet .step-number{transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  transform:translate(calc(var(--tx,0) * 18px),calc(var(--ty,0) * 10px)) scale(var(--av-s,1))}
+#horaa-mutemet .tilting .step-letter,#horaa-mutemet .tilting .step-number{transition:transform .12s linear}
 
 /* documentos: la tarjeta se levanta y el ícono se dibuja trazo por trazo */
 #perfil .fam{background:rgba(255,255,255,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s,box-shadow .3s,border-color .3s}
