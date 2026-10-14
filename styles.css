@@ -1540,3 +1540,15 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
   .perf-period .perf-grade:nth-child(6){transition-delay:200ms}
   .perf-period .perf-grade:hover{transition-delay:0ms}
 }
+
+/* ---------- EQUIPO · NEUMORFISMO (mismos colores por etapa) ---------- */
+/* el relieve sale del color propio de cada tarjeta: sombra = su verde oscurecido, brillo = blanco */
+.staff-card{--sc-dark:color-mix(in oklch,var(--sc-bg,#EEF2F8) 78%,#2E5E3E);border-color:transparent;
+  background:linear-gradient(145deg,color-mix(in oklch,var(--sc-bg,#fff) 70%,white),var(--sc-bg,#fff));
+  box-shadow:10px 10px 22px color-mix(in oklch,var(--sc-dark) 55%,transparent),-10px -10px 22px #fff,inset 1px 1px 0 rgba(255,255,255,.9);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.staff-card .av{box-shadow:6px 6px 12px color-mix(in oklch,var(--sc-dark) 70%,transparent),-6px -6px 12px #fff}
+@media(hover:hover){
+  .staff-card:hover{transform:translateY(-4px);border-color:transparent;
+    box-shadow:16px 16px 32px color-mix(in oklch,var(--sc-dark) 65%,transparent),-16px -16px 32px #fff,inset 1px 1px 0 rgba(255,255,255,.95)}
+}
