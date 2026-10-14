@@ -49,6 +49,10 @@
     orbs.setAttribute('aria-hidden', 'true');
     orbs.innerHTML = '<span></span><span></span><span></span>';
     hero.insertBefore(orbs, hero.firstChild);
+    var spot = document.createElement('div');
+    spot.className = 'hero-spot';
+    spot.setAttribute('aria-hidden', 'true');
+    hero.insertBefore(spot, orbs.nextSibling);
   }
 
   /* ── Grupos que entran escalonados ── */
@@ -97,6 +101,8 @@
       var r = hero.getBoundingClientRect();
       hero.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3));
       hero.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3));
+      hero.style.setProperty('--sx', (e.clientX - r.left) + 'px');
+      hero.style.setProperty('--sy', (e.clientY - r.top) + 'px');
     });
   }
 
@@ -112,11 +118,15 @@
       card.style.setProperty('--rx', ((.5 - py) * 8).toFixed(2) + 'deg');
       card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
       card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+      card.style.setProperty('--tx', (px - .5).toFixed(3));
+      card.style.setProperty('--ty', (py - .5).toFixed(3));
     });
     card.addEventListener('pointerleave', function(){
       card.classList.remove('tilting');
       card.style.setProperty('--rx', '0deg');
       card.style.setProperty('--ry', '0deg');
+      card.style.setProperty('--tx', '0');
+      card.style.setProperty('--ty', '0');
     });
   });
 

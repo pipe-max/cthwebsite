@@ -792,22 +792,24 @@ body.wa-menu-open{overflow:hidden}
 .page-hero h1.split .w{display:inline-block;animation:wordIn .9s cubic-bezier(.2,.8,.2,1) backwards;
   animation-delay:calc(150ms + var(--i) * 70ms)}
 @keyframes wordIn{from{opacity:0;transform:translateY(.45em) rotate(3deg);filter:blur(10px)}}
-.page-hero h1.split em{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 94%/0% .07em;
-  animation:emUnderline .9s cubic-bezier(.6,0,.2,1) forwards;animation-delay:calc(450ms + var(--words) * 70ms)}
-@keyframes emUnderline{to{background-size:100% .07em}}
 
 /* hero: manchas de luz flotantes + retícula en movimiento */
 .hero-orbs{position:absolute;inset:0;pointer-events:none;
   translate:calc(var(--px,0) * -30px) calc(var(--py,0) * -24px);transition:translate .8s cubic-bezier(.2,.8,.2,1)}
 .hero-orbs span{position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;
   background:radial-gradient(circle,rgba(255,255,255,.75),transparent 68%)}
-.hero-orbs span:nth-child(1){width:440px;height:440px;top:-160px;right:6%;animation:orbA 19s ease-in-out infinite alternate}
-.hero-orbs span:nth-child(2){width:320px;height:320px;bottom:-150px;left:12%;opacity:.4;animation:orbB 23s ease-in-out infinite alternate}
-.hero-orbs span:nth-child(3){width:220px;height:220px;top:30%;right:32%;opacity:.3;
-  background:radial-gradient(circle,rgba(201,162,39,.7),transparent 68%);animation:orbC 17s ease-in-out infinite alternate}
-@keyframes orbA{to{transform:translate(-140px,90px) scale(1.15)}}
-@keyframes orbB{to{transform:translate(180px,-70px) scale(.9)}}
-@keyframes orbC{to{transform:translate(-120px,-50px) scale(1.3)}}
+.hero-orbs span:nth-child(1){width:440px;height:440px;top:-160px;right:6%;animation:orbA 9s ease-in-out infinite alternate}
+.hero-orbs span:nth-child(2){width:320px;height:320px;bottom:-150px;left:12%;opacity:.45;animation:orbB 11s ease-in-out infinite alternate}
+.hero-orbs span:nth-child(3){width:220px;height:220px;top:30%;right:32%;opacity:.35;
+  background:radial-gradient(circle,rgba(201,162,39,.7),transparent 68%);animation:orbC 7s ease-in-out infinite alternate}
+@keyframes orbA{50%{transform:translate(-160px,70px) scale(1.2)}to{transform:translate(-320px,20px) scale(.95)}}
+@keyframes orbB{50%{transform:translate(220px,-90px) scale(.85)}to{transform:translate(420px,-20px) scale(1.1)}}
+@keyframes orbC{50%{transform:translate(-140px,-60px) scale(1.35)}to{transform:translate(90px,40px) scale(1)}}
+
+/* hero: destello blanco translúcido que sigue al mouse */
+.hero-spot{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(420px circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.34),transparent 70%)}
+.page-hero:hover .hero-spot{opacity:1}
 .motion .page-hero .lattice{inset:-80px;animation:latticeDrift 32s ease-in-out infinite alternate}
 @keyframes latticeDrift{to{transform:translate(60px,40px)}}
 .page-hero .wrap{will-change:transform,opacity}
@@ -824,10 +826,13 @@ body.wa-menu-open{overflow:hidden}
 .ptab.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
   background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.32),transparent 46%)}
 .ptab.tilt:hover::after{opacity:1}
-.ptab-avatar{transition:transform .45s cubic-bezier(.34,1.56,.64,1);transform-origin:50% 100%}
-.ptab:hover .ptab-avatar{transform:translateY(-6px) rotate(-2deg) scale(1.04)}
-.ptab.active .ptab-avatar{animation:avatarBob 3.2s ease-in-out infinite}
-@keyframes avatarBob{50%{transform:translateY(-5px)}}
+/* capas con profundidad: el personaje se desplaza más que la retícula del fondo */
+.ptab-avatar,.ptab-bg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ptab-avatar{transform-origin:50% 100%;
+  transform:translate(calc(var(--tx,0) * 18px),calc(var(--ty,0) * 10px)) scale(var(--av-s,1))}
+.ptab-bg{transform:translate(calc(var(--tx,0) * -8px),calc(var(--ty,0) * -6px)) scale(1.06)}
+.ptab.tilt:hover{--av-s:1.04}
+.ptab.tilting .ptab-avatar,.ptab.tilting .ptab-bg{transition:transform .12s linear}
 
 /* franja CTA: resplandor que sigue al mouse + botones magnéticos */
 .cta-band .box::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
