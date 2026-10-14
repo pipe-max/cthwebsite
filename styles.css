@@ -1498,9 +1498,8 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 .perf-tabs{background:var(--neu-bg);box-shadow:inset 5px 5px 10px var(--neu-dark),inset -5px -5px 10px var(--neu-light)}
 .perf-period{background:var(--neu-bg);border:0;
   box-shadow:14px 14px 30px var(--neu-dark),-14px -14px 30px var(--neu-light)}
-.perf-period.tilt:hover{box-shadow:18px 18px 38px var(--neu-dark),-18px -18px 38px var(--neu-light)}
 .perf-period-ic{width:112px;height:112px;justify-content:center;border-radius:50%;align-self:center;
-  box-shadow:inset 6px 6px 12px var(--neu-dark),inset -6px -6px 12px var(--neu-light)}
+  background:linear-gradient(145deg,#F2F6FB,#DEE5EF);box-shadow:8px 8px 16px var(--neu-dark),-8px -8px 16px var(--neu-light)}
 .perf-period-ic img{height:52px}
 .perf-period-ic span{font-size:.7rem}
 .perf-grade{background:var(--neu-bg);border:0;color:var(--ink);
@@ -1509,8 +1508,8 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 .perf-grade:hover{background:var(--neu-bg);color:var(--sapphire);transform:none;
   box-shadow:inset 4px 4px 9px var(--neu-dark),inset -4px -4px 9px var(--neu-light)}
 .perf-grade:active{box-shadow:inset 6px 6px 12px var(--neu-dark),inset -6px -6px 12px var(--neu-light)}
-.perf-grade.pending,.perf-grade.pending:hover{background:var(--neu-bg);color:#9AA8BC;opacity:1;
-  box-shadow:inset 3px 3px 7px var(--neu-dark),inset -3px -3px 7px var(--neu-light)}
+.perf-grade.pending,.perf-grade.pending:hover{background:var(--neu-bg);color:#A7B3C5;opacity:1;
+  box-shadow:4px 4px 9px var(--neu-dark),-4px -4px 9px var(--neu-light)}
 @media(max-width:640px){
   .perf-period{box-shadow:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light)}
   .perf-period-ic{width:auto;height:auto;padding:10px 16px;border-radius:999px}
