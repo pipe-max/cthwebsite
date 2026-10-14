@@ -40,8 +40,9 @@
     h1.classList.add('split');
     h1.style.setProperty('--words', wordCount);
     // el párrafo entra cuando el título ya casi terminó
-    var lead = hero.querySelector('.wrap > p');
-    if(lead) lead.style.transitionDelay = (300 + wordCount * 70) + 'ms';
+    hero.querySelectorAll('.wrap > p').forEach(function(p, i){
+      p.style.transitionDelay = (300 + wordCount * 70 + i * 120) + 'ms';
+    });
 
     // manchas de luz flotantes
     var orbs = document.createElement('div');
