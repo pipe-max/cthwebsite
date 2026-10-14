@@ -1073,9 +1073,9 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
   transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .28s}
 #horaa-mutemet .tl-card.tilt:hover,.p-card.tilt:hover{--lift:-6px;--av-s:1.08;box-shadow:0 20px 50px rgba(0,0,0,.28)}
 #horaa-mutemet .step-letter{height:100px}
-#horaa-mutemet .step-letter,#horaa-mutemet .step-number{transition:transform .5s cubic-bezier(.2,.8,.2,1);
+#horaa-mutemet .step-letter,#horaa-mutemet .step-number,#filosofia .step-number{transition:transform .5s cubic-bezier(.2,.8,.2,1);
   transform:translate(calc(var(--tx,0) * 18px),calc(var(--ty,0) * 10px)) scale(var(--av-s,1))}
-#horaa-mutemet .tilting .step-letter,#horaa-mutemet .tilting .step-number{transition:transform .12s linear}
+#horaa-mutemet .tilting .step-letter,#horaa-mutemet .tilting .step-number,#filosofia .tilting .step-number{transition:transform .12s linear}
 
 /* misión y visión: 3D como las demás tarjetas y frases clave pintadas con marcador dorado */
 .mv-card.tilt{position:relative;
