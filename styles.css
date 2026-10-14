@@ -1084,7 +1084,7 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
 #perfil .fam{background:rgba(255,255,255,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s,box-shadow .3s,border-color .3s}
 #perfil .fam:hover{transform:translateY(-5px);background:#fff;border-color:transparent;box-shadow:0 18px 40px rgba(122,94,14,.25)}
 #perfil .fam .ic{transition:background-color .3s,color .3s,transform .4s cubic-bezier(.3,1.5,.5,1)}
-#perfil .fam:hover .ic{background:var(--ink);color:#fff;transform:rotate(-6deg) scale(1.08)}
+#perfil .fam:hover .ic{background:var(--yellow-vivid);color:var(--ink);transform:rotate(-6deg) scale(1.08)}
 #perfil .fam:hover .ic svg *{stroke-dasharray:1;animation:iconDraw .9s cubic-bezier(.6,0,.3,1) backwards}
 #perfil .fam:hover .ic svg *:nth-child(2){animation-delay:.12s}
 #perfil .fam:hover .ic svg *:nth-child(3){animation-delay:.24s}
