@@ -79,8 +79,8 @@ section[id]{scroll-margin-top:230px}
 nav.main{display:flex;gap:4px;align-items:center;padding:12px 0}
 nav.main a{font-size:.86rem;font-weight:600;color:var(--ink-2);padding:9px 14px;border-radius:8px;transition:.2s;position:relative}
 nav.main a:hover{color:var(--sapphire);background:var(--paper-2)}
-nav.main a.active{color:var(--sapphire);background:var(--cyan-soft)}
-nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;background:var(--cyan);border-radius:3px}
+nav.main a.active{color:var(--sapphire);background:var(--nav-pill-bg,var(--cyan-soft))}
+nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;background:var(--nav-acc,var(--cyan));border-radius:3px}
 
 /* ---------- BUTTONS ---------- */
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;
@@ -871,6 +871,9 @@ header.scrolled{background:rgba(246,248,252,.72);border-bottom-color:rgba(221,22
   -webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
   box-shadow:0 10px 30px rgba(16,42,76,.08)}
 
+/* color de la página en el menú: nav.js copia el --acc del encabezado a --nav-acc */
+header[style*="--nav-acc"]{--nav-pill-bg:color-mix(in oklch,var(--nav-acc) 16%,white)}
+
 /* píldora que se desliza entre las opciones del menú */
 .nav-pill{display:none}
 @media(min-width:1181px){
@@ -879,10 +882,10 @@ header.scrolled{background:rgba(246,248,252,.72);border-bottom-color:rgba(221,22
   nav.main.has-pill a:hover,nav.main.has-pill a.active{background:none}
   nav.main.has-pill a.active::after{display:none}
   .nav-pill{display:block;position:absolute;top:0;left:0;z-index:0;pointer-events:none;
-    border-radius:8px;background:var(--cyan-soft);opacity:0;
+    border-radius:8px;background:var(--nav-pill-bg,var(--cyan-soft));opacity:0;
     transition:transform .45s cubic-bezier(.3,1.25,.5,1),width .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
   .nav-pill::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:3px;
-    background:var(--cyan);transform:scaleX(.4);opacity:0;transition:transform .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
+    background:var(--nav-acc,var(--cyan));transform:scaleX(.4);opacity:0;transition:transform .45s cubic-bezier(.3,1.25,.5,1),opacity .25s}
   .nav-pill.on{opacity:1}
   .nav-pill.on::after{transform:none;opacity:1}
   .nav-pill.instant,.nav-pill.instant::after{transition:none}

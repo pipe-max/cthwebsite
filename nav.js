@@ -6,6 +6,11 @@
   var nav = document.querySelector('nav.main');
   if(!header || !nav) return;
 
+  /* ── Color de la página: la línea del menú toma el tono del encabezado ── */
+  var hero = document.querySelector('.page-hero');
+  var acc = hero && getComputedStyle(hero).getPropertyValue('--acc').trim();
+  if(acc) header.style.setProperty('--nav-acc', acc);
+
   /* ── Barra de vidrio al hacer scroll ── */
   var scrolled = false;
   function onScroll(){
