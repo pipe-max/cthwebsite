@@ -1552,3 +1552,40 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
   .staff-card:hover{transform:translateY(-4px);border-color:transparent;
     box-shadow:16px 16px 32px color-mix(in oklch,var(--sc-dark) 65%,transparent),-16px -16px 32px #fff,inset 1px 1px 0 rgba(255,255,255,.95)}
 }
+
+/* ---------- QUIÉNES SOMOS · NEUMORFISMO (secciones claras) ---------- */
+/* fondo y superficies del mismo tono; relieve = brillo blanco arriba-izquierda + sombra abajo-derecha */
+#mision,#propuesta,#valores{--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;
+  --neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);background:var(--neu-bg);border-top:0}
+.neu-raised,#mision .mv-card,#propuesta .propuesta-box{border:0;
+  box-shadow:16px 16px 32px var(--neu-dark),-16px -16px 32px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.9)}
+
+/* misión y visión: cuerpo en relieve; cabeceras azules se mantienen */
+#mision .mv-card{background:var(--neu-face);overflow:hidden;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+#mision .mv-card .mv-body{background:none}
+@media(hover:hover){#mision .mv-card.tilt:hover{
+  box-shadow:22px 22px 44px var(--neu-dark),-22px -22px 44px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}}
+
+/* propuesta de valor: la caja de la frase en relieve */
+#propuesta .propuesta-box{background:var(--neu-face)}
+#propuesta .qw{color:rgba(10,27,51,.18)}
+#propuesta .qw.lit{color:var(--ink)}
+
+/* cinco C's: barra de pestañas hundida y panel de color en relieve */
+#valores .cfive-tabs{background:var(--neu-bg);box-shadow:inset 6px 6px 12px var(--neu-dark),inset -6px -6px 12px var(--neu-light)}
+#valores .cfive-tab.active{box-shadow:5px 5px 10px var(--neu-dark),-5px -5px 10px var(--neu-light)}
+#valores .cfive-panel{box-shadow:16px 16px 32px var(--neu-dark),-16px -16px 32px var(--neu-light),
+  inset 2px 2px 0 rgba(255,255,255,.22),inset -3px -3px 8px rgba(0,0,0,.18)}
+
+/* documentos: relieve amarillo sobre amarillo */
+#perfil{--y-dark:#C98F00;--y-light:#FFD24D;border-top:0}
+#perfil .fam{border:0;background:linear-gradient(145deg,#FFC21F,#E8A800);
+  box-shadow:10px 10px 22px var(--y-dark),-10px -10px 22px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.35)}
+#perfil .fam h3,#perfil .fam p{color:var(--ink)}
+#perfil .fam .ic{background:linear-gradient(145deg,#FFC21F,#E8A800);color:var(--ink);
+  box-shadow:5px 5px 10px var(--y-dark),-5px -5px 10px var(--y-light)}
+#perfil .fam:hover{transform:translateY(-4px);background:linear-gradient(145deg,#FFC21F,#E8A800);
+  box-shadow:16px 16px 32px var(--y-dark),-16px -16px 32px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.4)}
+#perfil .fam:hover .ic{background:var(--yellow-vivid);color:var(--ink);
+  box-shadow:inset 4px 4px 8px var(--y-dark),inset -4px -4px 8px var(--y-light)}
