@@ -1281,8 +1281,9 @@ html.pm-lock{overflow:hidden}
 .form-done p{color:var(--muted);margin:10px auto 24px;max-width:26em}
 
 /* trabaja con nosotros: aviso de seguridad como tarjeta de alerta */
-.safety-alert{display:flex;gap:28px;align-items:flex-start;max-width:900px;padding:36px 40px;border-radius:24px;
-  background:linear-gradient(135deg,#E8F5EC,#F4FAF6);border:1px solid #BFE3CB;border-left:6px solid #2E8B57}
+.safety-alert{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;max-width:860px;margin:0 auto;
+  padding:44px 48px;border-radius:24px;background:linear-gradient(135deg,#E8F5EC,#F4FAF6);border:1px solid #BFE3CB;border-top:6px solid #2E8B57}
+.safety-alert .eyebrow{justify-content:center}
 .sa-ic{flex-shrink:0;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;color:#fff;
   background:linear-gradient(135deg,#3AA36A,#2E8B57);box-shadow:0 10px 24px rgba(46,139,87,.3)}
 .sa-ic svg{width:34px;height:34px}
@@ -1293,7 +1294,7 @@ html.pm-lock{overflow:hidden}
 .safety-alert .body{margin-top:14px}
 a.copy-mail{cursor:copy;border-bottom:1.5px dashed currentColor;transition:color .2s}
 a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
-@media(max-width:640px){.safety-alert{flex-direction:column;padding:26px 22px;gap:18px}}
+@media(max-width:640px){.safety-alert{padding:30px 22px;gap:16px}}
 
 /* contáctanos: datos de contacto + mapa */
 .contact-info{border-top:1px solid var(--line)}
