@@ -1185,8 +1185,6 @@ mark.hl{color:inherit;font-weight:600;padding:0 2px;-webkit-box-decoration-break
 .perf-period.in .perf-grade:nth-child(5){animation-delay:.24s}
 .perf-period.in .perf-grade:nth-child(6){animation-delay:.3s}
 @keyframes gradeIn{from{opacity:0;transform:scale(.7)}}
-.perf-sec-mascot{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.perf-period:hover .perf-sec-mascot{transform:translateY(-8px) scale(1.04)}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
