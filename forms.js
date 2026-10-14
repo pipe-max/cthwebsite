@@ -1,6 +1,6 @@
-/* forms.js — formularios (Egresados, Contáctanos) y correos de Trabaja con nosotros (ES/EN).
+/* forms.js — formularios de Egresados y Contáctanos (ES/EN).
    Campos con el color de la página, validación amable, envío a Formspree en segundo plano
-   con estados del botón, y correos que se copian con un clic.
+   con estados del botón, 
    Estilos en styles.css, sección "FORMULARIOS". */
 (function(){
   var en = document.documentElement.lang === 'en';
@@ -109,21 +109,4 @@
     });
   });
 
-  /* ── Trabaja con nosotros: correos que se copian con un clic ── */
-  document.querySelectorAll('.safety-alert a[href^="mailto:"]').forEach(function(a){
-    if(!navigator.clipboard) return;
-    var addr = a.textContent.trim();
-    a.title = T.copy;
-    a.classList.add('copy-mail');
-    var timer;
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText(addr).then(function(){
-        clearTimeout(timer);
-        a.textContent = T.copied;
-        a.classList.add('copied');
-        timer = setTimeout(function(){ a.textContent = addr; a.classList.remove('copied'); }, 1800);
-      }, function(){ window.location.href = a.href; });
-    });
-  });
 })();
