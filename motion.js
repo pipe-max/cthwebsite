@@ -68,7 +68,7 @@
       sio.unobserve(e.target);
     });
   }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid').forEach(function(el){
+  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid, #horaa-mutemet .tl-grid, #horaa-mutemet .pill-grid, .mv-grid').forEach(function(el){
     el.classList.remove('reveal');   // el contenedor ya no se anima entero; lo hacen sus tarjetas
     el.classList.add('stagger');
     Array.prototype.forEach.call(el.children, function(c){ c.classList.remove('reveal'); sio.observe(c); });
@@ -174,7 +174,7 @@
   }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, .mv-card').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();

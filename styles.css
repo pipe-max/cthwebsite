@@ -595,7 +595,7 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
 /* misión y visión */
 .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
 .mv-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
-.mv-card:hover{box-shadow:0 18px 44px rgba(16,42,76,.12);transform:translateY(-4px)}
+.mv-card:hover{box-shadow:0 18px 44px rgba(16,42,76,.12)}
 .mv-card .mv-top{padding:28px 28px 22px;min-height:100px;display:flex;align-items:flex-end}
 .mv-card.mision .mv-top{background:linear-gradient(150deg,#1E5BB8,#102A4C)}
 .mv-card.vision .mv-top{background:linear-gradient(150deg,#19A7DE,#146E93)}
@@ -1076,6 +1076,20 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
 #horaa-mutemet .step-letter,#horaa-mutemet .step-number{transition:transform .5s cubic-bezier(.2,.8,.2,1);
   transform:translate(calc(var(--tx,0) * 18px),calc(var(--ty,0) * 10px)) scale(var(--av-s,1))}
 #horaa-mutemet .tilting .step-letter,#horaa-mutemet .tilting .step-number{transition:transform .12s linear}
+
+/* misión y visión: 3D como las demás tarjetas y frases clave pintadas con marcador dorado */
+.mv-card.tilt{position:relative;
+  transform:translateY(var(--lift,0px)) perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s}
+.mv-card.tilt:hover{--lift:-6px}
+.mv-card .mv-top h3{transition:transform .5s cubic-bezier(.2,.8,.2,1);transform:translate(calc(var(--tx,0) * 16px),calc(var(--ty,0) * 8px))}
+.mv-card.tilting .mv-top h3{transition:transform .12s linear}
+mark.hl{color:inherit;font-weight:600;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:linear-gradient(transparent 55%,rgba(245,179,0,.5) 55%,rgba(245,179,0,.5) 92%,transparent 92%) no-repeat 0 0/0% 100%;
+  transition:background-size 1s cubic-bezier(.6,0,.3,1)}
+.st-in mark.hl{background-size:100% 100%;transition-delay:calc(var(--d,0ms) + 600ms)}
+.st-in mark.hl + mark.hl,.st-in mark.hl:nth-of-type(2){transition-delay:calc(var(--d,0ms) + 1300ms)}
+@media(prefers-reduced-motion:reduce){mark.hl{background-size:100% 100%}}
 
 /* documentos: la tarjeta se levanta y el ícono se dibuja trazo por trazo */
 #perfil .fam{background:rgba(255,255,255,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s,box-shadow .3s,border-color .3s}
