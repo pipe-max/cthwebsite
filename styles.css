@@ -1259,7 +1259,8 @@ html.pm-lock{overflow:hidden}
 .smart-form .field.bad input,.smart-form .field.bad textarea{border-color:#D9534F;background:#FFF6F5}
 .f-err{display:block;margin-top:7px;text-align:center;font-size:.8rem;font-weight:600;color:#C0392B;animation:calcIn .3s ease}
 .smart-form .consent{flex-wrap:wrap}
-.smart-form .consent .f-err{flex-basis:100%;text-align:left;margin-top:2px}
+.smart-form .consent > span{flex:1 1 0;min-width:0}
+.smart-form .consent .f-err{flex-basis:100%;text-align:center;margin-top:2px}
 .smart-form .consent.bad span{color:#C0392B}
 .smart-form .consent input{accent-color:var(--form-acc)}
 
