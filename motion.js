@@ -57,20 +57,22 @@
     hero.insertBefore(spot, orbs.nextSibling);
   }
 
-  /* ── Grupos que entran escalonados ── */
-  function stagger(el){
-    Array.prototype.forEach.call(el.children, function(c, i){ c.style.setProperty('--i', i); });
-    el.classList.add('stagger');
-  }
-  // .prog-tabs y .banner-grid ya son .reveal: el observer existente les pone .in
-  document.querySelectorAll('.prog-tabs, .banner-grid').forEach(function(el){
-    el.classList.remove('reveal');
-    stagger(el);
-  });
+  /* ── Grupos que entran escalonados: cada tarjeta se anima al entrar en pantalla;
+        las que entran juntas (una fila) lo hacen una tras otra ── */
   var sio = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); sio.unobserve(e.target); } });
-  }, {threshold: .08});
-  document.querySelectorAll('.staff-grid').forEach(function(el){ stagger(el); sio.observe(el); });
+    var n = 0;
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.style.setProperty('--d', (n++ * 110) + 'ms');
+      e.target.classList.add('st-in');
+      sio.unobserve(e.target);
+    });
+  }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
+  document.querySelectorAll('.prog-tabs, .banner-grid, .staff-grid').forEach(function(el){
+    el.classList.remove('reveal');   // el contenedor ya no se anima entero; lo hacen sus tarjetas
+    el.classList.add('stagger');
+    Array.prototype.forEach.call(el.children, function(c){ sio.observe(c); });
+  });
 
   /* ── Tarjetas del equipo: el círculo gira y muestra un sobre; clic en el correo lo copia ── */
   var en = document.documentElement.lang === 'en';

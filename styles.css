@@ -823,10 +823,10 @@ body.wa-menu-open{overflow:hidden}
 @media(max-width:700px){.hero-orbs span{filter:blur(30px)}.hero-orbs span:nth-child(1){width:280px;height:280px}}
 
 /* grupos que entran escalonados */
-.stagger:not(.in) > *{opacity:0}
-.stagger.in > *{animation:staggerIn .85s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0) * 110ms)}
+.stagger > :not(.st-in){opacity:0}
+.stagger > .st-in{animation:staggerIn .85s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--d,0ms)}
 @keyframes staggerIn{from{opacity:0;transform:translateY(46px) scale(.96)}}
-.staff-grid.stagger.in > *{animation-duration:.6s;animation-delay:calc(var(--i,0) * 55ms)}
+.staff-grid.stagger > .st-in{animation-duration:.6s}
 
 /* tarjetas de programa: inclinación 3D, brillo y personajes */
 .tilt.tilting{transition:transform .12s linear,box-shadow .28s,outline-color .2s}
