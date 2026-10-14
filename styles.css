@@ -1522,3 +1522,21 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
   .perf-period{box-shadow:10px 10px 22px var(--neu-dark),-10px -10px 22px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.9)}
   .perf-period-ic{width:auto;height:auto;padding:12px 18px;border-radius:999px}
 }
+
+/* indicadores: al pasar el mouse la tarjeta sale del fondo, el círculo se infla y los grados suben en ola */
+.perf-period{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.perf-period-ic{transition:transform .5s cubic-bezier(.3,1.4,.5,1),box-shadow .5s ease}
+@media(hover:hover){
+  .perf-period:hover{transform:translateY(-4px);
+    box-shadow:22px 22px 44px var(--neu-dark),-22px -22px 44px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+  .perf-period:hover .perf-period-ic{transform:scale(1.05);
+    box-shadow:14px 14px 28px var(--neu-dark),-14px -14px 28px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+  .perf-period:hover .perf-grade:not(:hover){transform:translateY(-3px);
+    box-shadow:10px 10px 18px var(--neu-dark),-10px -10px 18px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+  .perf-period .perf-grade:nth-child(2){transition-delay:40ms}
+  .perf-period .perf-grade:nth-child(3){transition-delay:80ms}
+  .perf-period .perf-grade:nth-child(4){transition-delay:120ms}
+  .perf-period .perf-grade:nth-child(5){transition-delay:160ms}
+  .perf-period .perf-grade:nth-child(6){transition-delay:200ms}
+  .perf-period .perf-grade:hover{transition-delay:0ms}
+}
