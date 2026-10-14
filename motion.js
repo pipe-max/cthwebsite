@@ -52,6 +52,7 @@
     var spot = document.createElement('div');
     spot.className = 'hero-spot';
     spot.setAttribute('aria-hidden', 'true');
+    spot.innerHTML = '<span></span><span></span>';
     hero.insertBefore(spot, orbs.nextSibling);
   }
 
@@ -101,8 +102,6 @@
       var r = hero.getBoundingClientRect();
       hero.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3));
       hero.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3));
-      hero.style.setProperty('--sx', (e.clientX - r.left) + 'px');
-      hero.style.setProperty('--sy', (e.clientY - r.top) + 'px');
     });
   }
 

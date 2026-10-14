@@ -806,10 +806,15 @@ body.wa-menu-open{overflow:hidden}
 @keyframes orbB{50%{transform:translate(220px,-90px) scale(.85)}to{transform:translate(420px,-20px) scale(1.1)}}
 @keyframes orbC{50%{transform:translate(-140px,-60px) scale(1.35)}to{transform:translate(90px,40px) scale(1)}}
 
-/* hero: destello blanco translúcido que sigue al mouse */
-.hero-spot{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s;
-  background:radial-gradient(420px circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.34),transparent 70%)}
-.page-hero:hover .hero-spot{opacity:1}
+/* hero: dos resplandores blancos translúcidos que recorren la franja solos */
+.hero-spot{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-spot span{position:absolute;width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.36),transparent 68%)}
+.hero-spot span:nth-child(1){animation:spotA 26s ease-in-out infinite}
+.hero-spot span:nth-child(2){animation:spotB 32s ease-in-out infinite;width:380px;height:380px;margin:-190px 0 0 -190px}
+@keyframes spotA{0%,100%{left:8%;top:30%}25%{left:38%;top:75%}50%{left:70%;top:25%}75%{left:92%;top:70%}}
+@keyframes spotB{0%,100%{left:88%;top:70%}25%{left:60%;top:20%}50%{left:28%;top:72%}75%{left:6%;top:28%}}
+@media(max-width:700px){.hero-spot span{width:300px;height:300px;margin:-150px 0 0 -150px}}
 .motion .page-hero .lattice{inset:-80px;animation:latticeDrift 32s ease-in-out infinite alternate}
 @keyframes latticeDrift{to{transform:translate(60px,40px)}}
 .page-hero .wrap{will-change:transform,opacity}
