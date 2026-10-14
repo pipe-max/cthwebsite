@@ -71,53 +71,26 @@
   }, {threshold: .08});
   document.querySelectorAll('.staff-grid').forEach(function(el){ stagger(el); sio.observe(el); });
 
-  /* ── Tarjetas del equipo: la tarjeta gira y muestra el correo; clic en el correo lo copia ── */
+  /* ── Tarjetas del equipo: el círculo gira y muestra un sobre; clic en el correo lo copia ── */
   var en = document.documentElement.lang === 'en';
   var ICON_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>';
   var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
-  var HINT = en ? 'Click to copy' : 'Clic para copiar';
   var live = document.createElement('div');
   live.className = 'sr-only';
   live.setAttribute('role', 'status');
   document.body.appendChild(live);
-  var touch = !window.matchMedia('(hover: hover)').matches;
 
   document.querySelectorAll('.staff-card').forEach(function(card){
-    var link = card.querySelector('a.email');
     var av = card.querySelector('.av');
-    var info = card.querySelector('.info');
-    if(!link || !av || !info) return;
-    var addr = link.textContent.trim();
-    var name = (card.querySelector('h4') || {}).textContent || '';
-    link.parentNode.removeChild(link);
-
-    var inner = document.createElement('div');
-    inner.className = 'sc-inner';
-    var front = document.createElement('div');
-    front.className = 'sc-face sc-front';
-    front.appendChild(av);
-    front.appendChild(info);
-    var back = document.createElement('div');
-    back.className = 'sc-face sc-back';
-    back.innerHTML = '<div class="av">' + ICON_MAIL + '</div><div class="info"><div class="hint">' +
-      (en ? 'Email ' : 'Escríbele a ') + name.split(' ')[0] + ' · ' + HINT + '</div></div>';
-    link.title = HINT;
-    back.querySelector('.info').appendChild(link);
-    inner.appendChild(front);
-    inner.appendChild(back);
-    card.innerHTML = '';
-    card.appendChild(inner);
-    card.classList.add('flipcard');
-
-    if(touch){
-      card.addEventListener('click', function(e){
-        if(e.target.closest('a.email')) return;
-        card.classList.toggle('flipped');
-      });
+    if(av){
+      av.innerHTML = '<span class="av-face av-front">' + av.innerHTML + '</span>' +
+                     '<span class="av-face av-back">' + ICON_MAIL + '</span>';
+      av.classList.add('flip');
     }
-
-    if(!navigator.clipboard) return;
-    var backIcon = back.querySelector('.av');
+    var link = card.querySelector('a.email');
+    if(!link || !navigator.clipboard) return;
+    var addr = link.textContent.trim();
+    link.title = en ? 'Click to copy' : 'Clic para copiar';
     var timer;
     link.addEventListener('click', function(e){
       e.preventDefault();
@@ -125,12 +98,12 @@
         clearTimeout(timer);
         link.textContent = en ? 'Email copied ✓' : '¡Correo copiado! ✓';
         card.classList.add('copied');
-        backIcon.innerHTML = ICON_CHECK;
+        if(av) av.querySelector('.av-back').innerHTML = ICON_CHECK;
         live.textContent = (en ? 'Copied: ' : 'Copiado: ') + addr;
         timer = setTimeout(function(){
           link.textContent = addr;
           card.classList.remove('copied');
-          backIcon.innerHTML = ICON_MAIL;
+          if(av) av.querySelector('.av-back').innerHTML = ICON_MAIL;
         }, 1800);
       }, function(){ window.location.href = link.href; });
     });
