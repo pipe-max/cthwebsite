@@ -1,6 +1,6 @@
 /* forms.js — formularios de Egresados y Contáctanos (ES/EN).
    Campos con el color de la página, validación amable, envío a Formspree en segundo plano
-   con estados del botón, 
+   con estados del botón.
    Estilos en styles.css, sección "FORMULARIOS". */
 (function(){
   var en = document.documentElement.lang === 'en';
