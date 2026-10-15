@@ -1694,3 +1694,4 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .yt-lite:hover img{opacity:1}
 .yt-lite:hover .yt-play{transform:scale(1.1)}
 .yt-lite:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.page-hero.hero-orange{--fg-soft:rgba(10,27,51,.92)}
