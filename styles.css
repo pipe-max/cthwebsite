@@ -1617,3 +1617,15 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 @media(max-width:1180px){.cred-stats{gap:20px;padding:6px 6px 36px}}
 @media(max-width:640px){.cred-stats{gap:16px}.stat,.stat:nth-child(odd),.stat:last-child{padding:22px 12px;border-radius:18px;
   box-shadow:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}}
+
+/* ---------- PORTADA · ACCESO RÁPIDO EN RELIEVE (amarillo sobre amarillo) ---------- */
+.families .fam-grid-lg{--y-dark:#C98F00;--y-light:#FFD24D;gap:28px}
+.families .fam-grid-lg .fam-lg{border:0;border-radius:24px;background:linear-gradient(145deg,#FFC21F,#E8A800);
+  box-shadow:12px 12px 26px var(--y-dark),-12px -12px 26px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.35);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+@media(hover:hover) and (pointer:fine){
+  .families .fam-grid-lg .fam-lg:hover{background:linear-gradient(145deg,#FFC21F,#E8A800);border-color:transparent;
+    box-shadow:18px 18px 36px var(--y-dark),-18px -18px 36px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.4)}
+}
+@media(max-width:640px){.families .fam-grid-lg{gap:22px}.families .fam-grid-lg .fam-lg{
+  box-shadow:8px 8px 18px var(--y-dark),-8px -8px 18px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.35)}}
