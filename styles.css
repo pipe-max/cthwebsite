@@ -1640,3 +1640,18 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
     inset 3px 3px 6px rgba(255,255,255,1),inset -4px -4px 10px rgba(120,140,170,.28)}
 .timeline .tl-countdown{border:0;border-radius:20px;background:#0D1A2F;
   box-shadow:inset 7px 7px 16px var(--d-dark),inset -6px -6px 14px var(--d-light)}
+
+/* ---------- SERVICIOS · RELIEVE (mismo color durazno) ---------- */
+.banner-grid{gap:34px}
+.svc-banner{background:linear-gradient(145deg,#FDF1E7,#F6E1D0);
+  box-shadow:14px 14px 30px rgba(170,120,80,.28),-8px -8px 22px rgba(255,255,255,.9),
+    inset 3px 3px 6px rgba(255,255,255,.85),inset -4px -4px 10px rgba(170,120,80,.16)}
+@media(hover:hover){.svc-banner.tilt:hover{
+  box-shadow:20px 20px 40px rgba(170,120,80,.32),-10px -10px 26px rgba(255,255,255,.95),
+    inset 3px 3px 6px rgba(255,255,255,.9),inset -4px -4px 10px rgba(170,120,80,.18)}}
+/* botón del correo en relieve; al pasar el mouse se llena de naranja como antes */
+.svc-banner-mail{border:0;background:linear-gradient(145deg,#FFFFFF,#F7EDE4);
+  box-shadow:5px 5px 12px rgba(170,120,80,.25),-4px -4px 10px rgba(255,255,255,.9)}
+.svc-banner-mail:hover{box-shadow:inset 3px 3px 7px rgba(110,50,10,.35),inset -2px -2px 5px rgba(255,190,140,.35)}
+@media(max-width:640px){.svc-banner{box-shadow:9px 9px 20px rgba(170,120,80,.26),-6px -6px 16px rgba(255,255,255,.9),
+  inset 2px 2px 5px rgba(255,255,255,.85),inset -3px -3px 8px rgba(170,120,80,.16)}}
