@@ -1575,17 +1575,20 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 #valores .cfive-panel{box-shadow:16px 16px 32px var(--neu-dark),-16px -16px 32px var(--neu-light),
   inset 2px 2px 0 rgba(255,255,255,.22),inset -3px -3px 8px rgba(0,0,0,.18)}
 
-/* documentos: relieve amarillo sobre amarillo */
-#perfil{--y-dark:#C98F00;--y-light:#FFD24D;border-top:0}
-#perfil .fam{border:0;background:linear-gradient(145deg,#FFC21F,#E8A800);
-  box-shadow:10px 10px 22px var(--y-dark),-10px -10px 22px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.35)}
+/* documentos: relieve amarillo sobre amarillo, igual que los accesos rápidos de la portada
+   (bordes interiores iluminado/sombreado + sombra dorada exterior; sin luz exterior que haga halo) */
+#perfil{--y-dark:rgba(166,112,0,.45);border-top:0}
+#perfil .fam{border:0;background:linear-gradient(145deg,#FCBC16,#EDA900);
+  box-shadow:12px 12px 26px var(--y-dark),inset 3px 3px 6px rgba(255,236,170,.75),inset -4px -4px 8px rgba(150,98,0,.22)}
 #perfil .fam h3,#perfil .fam p{color:var(--ink)}
-#perfil .fam .ic{background:linear-gradient(145deg,#FFC21F,#E8A800);color:var(--ink);
-  box-shadow:5px 5px 10px var(--y-dark),-5px -5px 10px var(--y-light)}
-#perfil .fam:hover{transform:translateY(-4px);background:linear-gradient(145deg,#FFC21F,#E8A800);
-  box-shadow:16px 16px 32px var(--y-dark),-16px -16px 32px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.4)}
-#perfil .fam:hover .ic{background:var(--yellow-vivid);color:var(--ink);
-  box-shadow:inset 4px 4px 8px var(--y-dark),inset -4px -4px 8px var(--y-light)}
+#perfil .fam .ic{background:linear-gradient(145deg,#FCBC16,#EDA900);color:var(--ink);
+  box-shadow:5px 5px 10px var(--y-dark),inset 2px 2px 4px rgba(255,236,170,.75),inset -2px -2px 5px rgba(150,98,0,.22)}
+#perfil .fam:hover{transform:translateY(-4px);background:linear-gradient(145deg,#FCBC16,#EDA900);
+  box-shadow:18px 18px 34px var(--y-dark),inset 3px 3px 6px rgba(255,236,170,.85),inset -4px -4px 8px rgba(150,98,0,.25)}
+#perfil .fam:hover .ic{background:#EDA900;color:var(--ink);
+  box-shadow:inset 4px 4px 8px rgba(150,98,0,.35),inset -3px -3px 6px rgba(255,236,170,.6)}
+@media(max-width:640px){#perfil .fam{
+  box-shadow:8px 8px 18px var(--y-dark),inset 2px 2px 5px rgba(255,236,170,.75),inset -3px -3px 6px rgba(150,98,0,.22)}}
 
 /* ---------- AJUSTES CELULAR ---------- */
 /* calculadora: el campo de fecha de iOS no se sale de su caja */
