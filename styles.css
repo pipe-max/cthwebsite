@@ -1586,20 +1586,6 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 @media(max-width:640px){.cred-stats{gap:16px}.stat,.stat:nth-child(odd),.stat:last-child{padding:22px 12px;border-radius:18px;
   box-shadow:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}}
 
-/* ---------- PORTADA · ACCESO RÁPIDO EN RELIEVE (amarillo sobre amarillo) ---------- */
-/* sin luz exterior (en amarillo saturado se ve como halo): el relieve lo dan bordes interiores
-   iluminado arriba-izquierda / sombreado abajo-derecha + sombra dorada exterior */
-.families .fam-grid-lg{--y-dark:rgba(166,112,0,.45);gap:28px}
-.families .fam-grid-lg .fam-lg{border:0;border-radius:24px;background:linear-gradient(145deg,#FCBC16,#EDA900);
-  box-shadow:12px 12px 26px var(--y-dark),inset 3px 3px 6px rgba(255,236,170,.75),inset -4px -4px 8px rgba(150,98,0,.22);
-  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
-@media(hover:hover) and (pointer:fine){
-  .families .fam-grid-lg .fam-lg:hover{background:linear-gradient(145deg,#FCBC16,#EDA900);border-color:transparent;
-    box-shadow:18px 18px 34px var(--y-dark),inset 3px 3px 6px rgba(255,236,170,.85),inset -4px -4px 8px rgba(150,98,0,.25)}
-}
-@media(max-width:640px){.families .fam-grid-lg{gap:22px}.families .fam-grid-lg .fam-lg{
-  box-shadow:8px 8px 18px var(--y-dark),inset 2px 2px 5px rgba(255,236,170,.75),inset -3px -3px 6px rgba(150,98,0,.22)}}
-
 /* ---------- ADMISIONES · NEUMORFISMO (recuadro de dudas y calculadora) ---------- */
 section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;
   --neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);background:var(--neu-bg);border-top:0}
