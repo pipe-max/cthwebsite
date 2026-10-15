@@ -139,7 +139,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 /* variantes de color vivo por sección — tonos joya, saturados y con buen contraste para texto blanco.
    --fg-em se deriva automáticamente de --acc (más clara sobre fondos oscuros, más oscura
    sobre fondos claros) para que la palabra en cursiva sea siempre un matiz del mismo color. */
-.page-hero.hero-celeste{--acc:#0D7AA8}
+.page-hero.hero-celeste{--acc:#9FD3F2;--fg-em:#1D68B0}
 .page-hero.hero-orange{--acc:#B8500F}
 .page-hero.hero-violet{--acc:#7038C7}
 .page-hero.hero-teal{--acc:#2E8B57}
@@ -149,11 +149,12 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero.hero-sky{--acc:#0F6FC7}
 .page-hero.hero-goldbright{--acc:#93700C}
 .page-hero.hero-rose{--acc:#C21E56}
-.page-hero.hero-navy{--acc:var(--ink-2)}
+.page-hero.hero-navy{--acc:#2448C8}
 
 /* variantes claras: fondo pastel/brillante + texto oscuro, em más oscuro que el fondo */
 .page-hero.hero-yellow,
-.page-hero.hero-mint{
+.page-hero.hero-mint,
+.page-hero.hero-celeste{
   --fg:var(--ink);--fg-soft:rgba(10,27,51,.78);
   --fg-em:color-mix(in oklch,var(--acc) 68%,black 32%);
   --fg-crumb:var(--ink);--fg-crumb-link:rgba(10,27,51,.62);
@@ -1678,3 +1679,5 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .ci-ic{box-shadow:5px 5px 10px var(--neu-dark),-5px -5px 10px var(--neu-light)}
 .ci-map{border:0;box-shadow:14px 14px 30px var(--neu-dark),-14px -14px 30px var(--neu-light)}
 @media(max-width:640px){.ci-card{box-shadow:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light)}}
+
+.page-hero.hero-celeste{--fg-em:#1D68B0}
