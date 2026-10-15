@@ -44,17 +44,6 @@
       p.style.transitionDelay = (300 + wordCount * 70 + i * 120) + 'ms';
     });
 
-    // manchas de luz flotantes
-    var orbs = document.createElement('div');
-    orbs.className = 'hero-orbs';
-    orbs.setAttribute('aria-hidden', 'true');
-    orbs.innerHTML = '<span></span><span></span><span></span>';
-    hero.insertBefore(orbs, hero.firstChild);
-    var spot = document.createElement('div');
-    spot.className = 'hero-spot';
-    spot.setAttribute('aria-hidden', 'true');
-    spot.innerHTML = '<span></span><span></span>';
-    hero.insertBefore(spot, orbs.nextSibling);
   }
 
   /* ── Grupos que entran escalonados: cada tarjeta se anima al entrar en pantalla;
@@ -221,15 +210,6 @@
   onScroll();
 
   if(!finePointer){ return; }
-
-  /* ── Hero: las manchas siguen levemente al mouse ── */
-  if(hero){
-    hero.addEventListener('pointermove', function(e){
-      var r = hero.getBoundingClientRect();
-      hero.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3));
-      hero.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3));
-    });
-  }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
   document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card, .fam-lg, .n-card, .proj-card').forEach(function(card){

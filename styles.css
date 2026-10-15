@@ -127,12 +127,6 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
   position:relative;color:var(--fg);overflow:hidden;
   background:var(--acc);
 }
-.page-hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(52% 130% at 90% -15%,rgba(255,255,255,.20),transparent 62%),
-    radial-gradient(40% 85% at 4% 118%,rgba(0,0,0,.16),transparent 60%);
-}
 .page-hero .lattice{position:absolute;inset:0;opacity:.3;pointer-events:none;mix-blend-mode:overlay}
 .page-hero .wrap{position:relative;padding:68px 28px 64px}
 .breadcrumb{font-size:.8rem;color:var(--fg-crumb);font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
@@ -797,32 +791,7 @@ body.wa-menu-open{overflow:hidden}
   animation-delay:calc(150ms + var(--i) * 70ms)}
 @keyframes wordIn{from{opacity:0;transform:translateY(.45em) rotate(3deg);filter:blur(10px)}}
 
-/* hero: manchas de luz flotantes + retícula en movimiento */
-.hero-orbs{position:absolute;inset:0;pointer-events:none;
-  translate:calc(var(--px,0) * -30px) calc(var(--py,0) * -24px);transition:translate .8s cubic-bezier(.2,.8,.2,1)}
-.hero-orbs span{position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;
-  background:radial-gradient(circle,rgba(255,255,255,.75),transparent 68%)}
-.hero-orbs span:nth-child(1){width:440px;height:440px;top:-160px;right:6%;animation:orbA 9s ease-in-out infinite alternate}
-.hero-orbs span:nth-child(2){width:320px;height:320px;bottom:-150px;left:12%;opacity:.45;animation:orbB 11s ease-in-out infinite alternate}
-.hero-orbs span:nth-child(3){width:220px;height:220px;top:30%;right:32%;opacity:.35;
-  background:radial-gradient(circle,rgba(201,162,39,.7),transparent 68%);animation:orbC 7s ease-in-out infinite alternate}
-@keyframes orbA{50%{transform:translate(-160px,70px) scale(1.2)}to{transform:translate(-320px,20px) scale(.95)}}
-@keyframes orbB{50%{transform:translate(220px,-90px) scale(.85)}to{transform:translate(420px,-20px) scale(1.1)}}
-@keyframes orbC{50%{transform:translate(-140px,-60px) scale(1.35)}to{transform:translate(90px,40px) scale(1)}}
-
-/* hero: dos resplandores blancos translúcidos que recorren la franja solos */
-.hero-spot{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.hero-spot span{position:absolute;width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.36),transparent 68%)}
-.hero-spot span:nth-child(1){animation:spotA 26s ease-in-out infinite}
-.hero-spot span:nth-child(2){animation:spotB 32s ease-in-out infinite;width:380px;height:380px;margin:-190px 0 0 -190px}
-@keyframes spotA{0%,100%{left:8%;top:30%}25%{left:38%;top:75%}50%{left:70%;top:25%}75%{left:92%;top:70%}}
-@keyframes spotB{0%,100%{left:88%;top:70%}25%{left:60%;top:20%}50%{left:28%;top:72%}75%{left:6%;top:28%}}
-@media(max-width:700px){.hero-spot span{width:300px;height:300px;margin:-150px 0 0 -150px}}
-.motion .page-hero .lattice{inset:-80px;animation:latticeDrift 32s ease-in-out infinite alternate}
-@keyframes latticeDrift{to{transform:translate(60px,40px)}}
 .page-hero .wrap{will-change:transform,opacity}
-@media(max-width:700px){.hero-orbs span{filter:blur(30px)}.hero-orbs span:nth-child(1){width:280px;height:280px}}
 
 /* grupos que entran escalonados */
 .stagger > :not(.st-in){opacity:0}
@@ -1634,3 +1603,7 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 }
 @media(max-width:640px){.families .fam-grid-lg{gap:22px}.families .fam-grid-lg .fam-lg{
   box-shadow:8px 8px 18px var(--y-dark),inset 2px 2px 5px rgba(255,236,170,.75),inset -3px -3px 6px rgba(150,98,0,.22)}}
+
+/* destellos de la calculadora de Admisiones */
+@keyframes orbA{50%{transform:translate(-160px,70px) scale(1.2)}to{transform:translate(-320px,20px) scale(.95)}}
+@keyframes orbB{50%{transform:translate(220px,-90px) scale(.85)}to{transform:translate(420px,-20px) scale(1.1)}}
