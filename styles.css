@@ -1035,10 +1035,6 @@ nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{col
 
 /* propuesta de valor: la frase se enciende palabra por palabra */
 .propuesta-box{position:relative;overflow:hidden}
-.propuesta-box.scroll-lit::before{content:"\201C";position:absolute;left:28px;top:-34px;font-family:var(--display);
-  font-size:13rem;line-height:1;color:var(--gold);opacity:.35;pointer-events:none}
-.propuesta-box.scroll-lit::after{content:"\201D";position:absolute;right:28px;bottom:-118px;font-family:var(--display);
-  font-size:13rem;line-height:1;color:var(--gold);opacity:.35;pointer-events:none}
 .propuesta-box blockquote{position:relative}
 .qw{color:rgba(10,27,51,.16);transition:color .35s ease}
 .qw.lit{color:var(--ink)}
@@ -1598,7 +1594,12 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 .age-calc-fields label{min-width:0}
 /* propuesta de valor: comillas más pequeñas para no pisar la frase */
 @media(max-width:640px){
-  .propuesta-box{padding:58px 26px 54px;min-height:0}
-  .propuesta-box.scroll-lit::before{font-size:6rem;left:18px;top:-10px}
-  .propuesta-box.scroll-lit::after{font-size:6rem;right:18px;bottom:-58px}
+  .propuesta-box{padding:52px 34px;min-height:0}
 }
+
+/* propuesta de valor: comillas doradas pegadas al bloque de la frase */
+.propuesta-box.scroll-lit blockquote{position:relative;padding:0 .2em}
+.propuesta-box.scroll-lit blockquote::before,.propuesta-box.scroll-lit blockquote::after{position:absolute;
+  font-family:var(--display);font-size:3.2em;line-height:1;color:var(--gold);opacity:.45;pointer-events:none}
+.propuesta-box.scroll-lit blockquote::before{content:"\201C";left:-.42em;top:-.32em}
+.propuesta-box.scroll-lit blockquote::after{content:"\201D";right:-.42em;bottom:-.72em}
