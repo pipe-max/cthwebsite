@@ -1666,3 +1666,15 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .ptab:hover{box-shadow:18px 18px 36px var(--neu-dark),-18px -18px 36px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
 .ptab.active{box-shadow:20px 20px 40px var(--neu-dark),-20px -20px 40px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
 @media(max-width:640px){.ptab{box-shadow:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light)}}
+
+/* ---------- CONTÁCTANOS · DATOS DE CONTACTO EN RELIEVE ---------- */
+.contact-info{--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;--neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);
+  background:var(--neu-bg);border-top:0}
+.ci-cards{gap:22px}
+.ci-card{border:0;border-radius:22px;background:var(--neu-face);
+  box-shadow:12px 12px 26px var(--neu-dark),-12px -12px 26px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+.ci-card:hover{border-color:transparent;transform:translateX(6px);
+  box-shadow:16px 16px 32px var(--neu-dark),-16px -16px 32px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+.ci-ic{box-shadow:5px 5px 10px var(--neu-dark),-5px -5px 10px var(--neu-light)}
+.ci-map{border:0;box-shadow:14px 14px 30px var(--neu-dark),-14px -14px 30px var(--neu-light)}
+@media(max-width:640px){.ci-card{box-shadow:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light)}}
