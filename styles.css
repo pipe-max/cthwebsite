@@ -1598,3 +1598,20 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 }
 @media(max-width:640px){.families .fam-grid-lg{gap:22px}.families .fam-grid-lg .fam-lg{
   box-shadow:8px 8px 18px var(--y-dark),inset 2px 2px 5px rgba(255,236,170,.75),inset -3px -3px 6px rgba(150,98,0,.22)}}
+
+/* ---------- ADMISIONES · NEUMORFISMO (recuadro de dudas y calculadora) ---------- */
+section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;
+  --neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);background:var(--neu-bg);border-top:0}
+.trust{border:0;border-radius:22px;padding:30px;background:var(--neu-face);
+  box-shadow:14px 14px 30px var(--neu-dark),-14px -14px 30px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+.trust .ic{box-shadow:5px 5px 10px var(--neu-dark),-5px -5px 10px var(--neu-light)}
+/* calculadora: la tarjeta azul sale del fondo; el panel de resultado queda hundido */
+.age-calc{box-shadow:16px 16px 34px var(--neu-dark),-16px -16px 34px var(--neu-light),
+  inset 2px 2px 0 rgba(255,255,255,.18),inset -3px -3px 10px rgba(0,0,0,.18)}
+.age-calc-result{border:0;background:rgba(8,32,72,.28);
+  box-shadow:inset 6px 6px 14px rgba(5,20,50,.45),inset -5px -5px 12px rgba(120,170,230,.25)}
+.age-calc-fields input,.age-calc-fields select{box-shadow:5px 5px 12px rgba(5,20,50,.35),-3px -3px 8px rgba(120,170,230,.25)}
+@media(max-width:640px){
+  .trust{box-shadow:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+  .age-calc{box-shadow:10px 10px 22px var(--neu-dark),-10px -10px 22px var(--neu-light),inset -3px -3px 10px rgba(0,0,0,.18)}
+}
