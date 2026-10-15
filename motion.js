@@ -212,7 +212,7 @@
   if(!finePointer){ return; }
 
   /* ── Tarjetas con inclinación 3D + brillo ── */
-  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card, .fam-lg, .n-card, .proj-card').forEach(function(card){
+  document.querySelectorAll('.ptab, .svc-banner, #horaa-mutemet .p-card, #horaa-mutemet .tl-card, #filosofia .p-card, .mv-card, .n-card, .proj-card').forEach(function(card){
     card.classList.add('tilt');
     card.addEventListener('pointermove', function(e){
       var r = card.getBoundingClientRect();

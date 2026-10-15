@@ -1668,3 +1668,8 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 
 .page-hero.hero-celeste{--fg-em:#1D68B0}
 .page-hero.hero-celeste{--nav-text:#1D68B0}
+
+/* portada · accesos rápidos: sin recuadro al pasar el mouse; solo el ícono sube un poco */
+.families .fam-lg,.families .fam-lg:hover{background:transparent!important;box-shadow:none!important;border-color:transparent!important;transform:none!important}
+.families .fam-lg .ic img{transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
+.families .fam-lg:hover .ic img{transform:translateY(-6px) scale(1.04)}
