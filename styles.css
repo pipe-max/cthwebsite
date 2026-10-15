@@ -1598,7 +1598,7 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
 .age-calc-fields label{min-width:0}
 /* propuesta de valor: comillas más pequeñas para no pisar la frase */
 @media(max-width:640px){
-  .propuesta-box{padding:64px 24px 72px}
-  .propuesta-box.scroll-lit::before{font-size:7rem;left:16px;top:-14px}
-  .propuesta-box.scroll-lit::after{font-size:7rem;right:16px;bottom:-62px}
+  .propuesta-box{padding:58px 26px 54px;min-height:0}
+  .propuesta-box.scroll-lit::before{font-size:6rem;left:18px;top:-10px}
+  .propuesta-box.scroll-lit::after{font-size:6rem;right:18px;bottom:-58px}
 }
