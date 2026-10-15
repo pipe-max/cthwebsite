@@ -49,8 +49,8 @@
     box.classList.add('scroll-lit');
     scrollers.push(function(){
       var r = box.getBoundingClientRect();
-      // empieza cuando la caja asoma al 85 % de la pantalla y termina cuando su centro llega al 45 %
-      var start = vh() * 0.85, end = vh() * 0.45;
+      // empieza cuando la caja asoma abajo y termina cuando su centro llega al 62 % de la pantalla
+      var start = vh() * 0.95, end = vh() * 0.62;
       var p = reduce ? 1 : Math.max(0, Math.min(1, (start - (r.top + r.height / 2)) / (start - end)));
       var lit = Math.round(p * qws.length);
       qws.forEach(function(w, i){ w.classList.toggle('lit', i < lit); });
