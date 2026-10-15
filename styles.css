@@ -1615,3 +1615,28 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
   .trust{box-shadow:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
   .age-calc{box-shadow:10px 10px 22px var(--neu-dark),-10px -10px 22px var(--neu-light),inset -3px -3px 10px rgba(0,0,0,.18)}
 }
+
+/* ---------- ADMISIONES · NEUMORFISMO (procesos actuales y próximo proceso) ---------- */
+/* procesos actuales: fondo gris azulado y tarjeta en relieve */
+#procesos{--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;--neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);
+  background:var(--neu-bg);border-top:0}
+#procesos .track{border:0;border-radius:26px;background:var(--neu-face);
+  box-shadow:16px 16px 34px var(--neu-dark),-16px -16px 34px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+#procesos .track:hover{box-shadow:20px 20px 40px var(--neu-dark),-20px -20px 40px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+#procesos .track-grid{border-top-color:#D5DCE7}
+#procesos .doc-note{border:0;box-shadow:inset 4px 4px 9px rgba(190,160,60,.35),inset -4px -4px 9px rgba(255,255,255,.7)}
+#procesos .doclist.checklist input{border:0;background:var(--neu-bg);
+  box-shadow:3px 3px 6px var(--neu-dark),-3px -3px 6px var(--neu-light)}
+#procesos .doclist.checklist input:checked{background:#2E8B57;box-shadow:inset 2px 2px 4px rgba(0,0,0,.25)}
+
+/* próximo proceso: neumorfismo oscuro, tarjetas del mismo azul que el fondo */
+.timeline{--d-dark:rgba(3,10,24,.75);--d-light:rgba(60,88,130,.38);--d-face:linear-gradient(145deg,#1A2C4A,#0E1C33)}
+.timeline .tl-card{border:0;border-radius:24px;background:var(--d-face);
+  box-shadow:14px 14px 30px var(--d-dark),-10px -10px 26px var(--d-light),inset 1px 1px 0 rgba(255,255,255,.07)}
+.timeline .tl-card h3{color:#fff}
+.timeline .tl-card p{color:#AFC0D8}
+.timeline .tl-card .date{color:#7FD0F0}
+.timeline .tl-card.is-next,.timeline .tl-card.is-open{
+  box-shadow:0 0 0 2px var(--gold),14px 14px 30px var(--d-dark),-10px -10px 26px var(--d-light)}
+.timeline .tl-countdown{border:0;border-radius:20px;background:#0D1A2F;
+  box-shadow:inset 7px 7px 16px var(--d-dark),inset -6px -6px 14px var(--d-light)}
