@@ -1655,3 +1655,14 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .svc-banner-mail:hover{box-shadow:inset 3px 3px 7px rgba(110,50,10,.35),inset -2px -2px 5px rgba(255,190,140,.35)}
 @media(max-width:640px){.svc-banner{box-shadow:9px 9px 20px rgba(170,120,80,.26),-6px -6px 16px rgba(255,255,255,.9),
   inset 2px 2px 5px rgba(255,255,255,.85),inset -3px -3px 8px rgba(170,120,80,.16)}}
+
+/* ---------- PROGRAMAS · TARJETAS DE ETAPA EN RELIEVE ---------- */
+.prog-tabs-section{--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;--neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);
+  background:var(--neu-bg);padding-bottom:28px}
+.prog-tabs{gap:32px}
+.ptab{border-radius:24px;
+  box-shadow:14px 14px 30px var(--neu-dark),-14px -14px 30px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+.ptab-body{background:var(--neu-face)}
+.ptab:hover{box-shadow:18px 18px 36px var(--neu-dark),-18px -18px 36px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+.ptab.active{box-shadow:20px 20px 40px var(--neu-dark),-20px -20px 40px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}
+@media(max-width:640px){.ptab{box-shadow:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light)}}
