@@ -589,8 +589,9 @@ nav.main .has-dropdown:hover > a svg.caret{transform:rotate(180deg)}
   .hist-tl{max-width:560px}
   .hist-tl::before{left:18px;transform:none}
   .hist-item{width:auto;margin-left:52px!important;margin-right:0!important}
-  .hist-item:nth-child(odd)::before,.hist-item:nth-child(even)::before{left:-52px;right:auto}
+  .hist-item:nth-child(odd)::before,.hist-item:nth-child(even)::before{left:-40px;right:auto}
   .hist-tl .hist-item.reveal,.hist-tl .hist-item:nth-child(even).reveal{transform:translateY(26px)}
+  .hist-tl .hist-item.reveal.in,.hist-tl .hist-item:nth-child(even).reveal.in{transform:none}
 }
 
 /* misión y visión */
@@ -1589,3 +1590,15 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
   box-shadow:16px 16px 32px var(--y-dark),-16px -16px 32px var(--y-light),inset 1px 1px 0 rgba(255,255,255,.4)}
 #perfil .fam:hover .ic{background:var(--yellow-vivid);color:var(--ink);
   box-shadow:inset 4px 4px 8px var(--y-dark),inset -4px -4px 8px var(--y-light)}
+
+/* ---------- AJUSTES CELULAR ---------- */
+/* calculadora: el campo de fecha de iOS no se sale de su caja */
+.age-calc-fields input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;max-width:100%;min-height:50px}
+.age-calc-fields input[type=date]::-webkit-date-and-time-value{text-align:left}
+.age-calc-fields label{min-width:0}
+/* propuesta de valor: comillas más pequeñas para no pisar la frase */
+@media(max-width:640px){
+  .propuesta-box{padding:64px 24px 72px}
+  .propuesta-box.scroll-lit::before{font-size:7rem;left:16px;top:-14px}
+  .propuesta-box.scroll-lit::after{font-size:7rem;right:16px;bottom:-62px}
+}
