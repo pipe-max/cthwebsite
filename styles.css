@@ -1631,12 +1631,12 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 
 /* próximo proceso: neumorfismo oscuro, tarjetas del mismo azul que el fondo */
 .timeline{--d-dark:rgba(3,10,24,.75);--d-light:rgba(60,88,130,.38);--d-face:linear-gradient(145deg,#1A2C4A,#0E1C33)}
-.timeline .tl-card{border:0;border-radius:24px;background:var(--d-face);
-  box-shadow:14px 14px 30px var(--d-dark),-10px -10px 26px var(--d-light),inset 1px 1px 0 rgba(255,255,255,.07)}
-.timeline .tl-card h3{color:#fff}
-.timeline .tl-card p{color:#AFC0D8}
-.timeline .tl-card .date{color:#7FD0F0}
+/* tarjetas blancas (colores originales) con relieve: bordes interiores + sombra profunda */
+.timeline .tl-card{border:0;border-radius:24px;background:linear-gradient(145deg,#FFFFFF,#E8EDF4);
+  box-shadow:16px 16px 34px var(--d-dark),-8px -8px 22px var(--d-light),
+    inset 3px 3px 6px rgba(255,255,255,1),inset -4px -4px 10px rgba(120,140,170,.28)}
 .timeline .tl-card.is-next,.timeline .tl-card.is-open{
-  box-shadow:0 0 0 2px var(--gold),14px 14px 30px var(--d-dark),-10px -10px 26px var(--d-light)}
+  box-shadow:0 0 0 3px var(--gold),16px 16px 34px var(--d-dark),-8px -8px 22px var(--d-light),
+    inset 3px 3px 6px rgba(255,255,255,1),inset -4px -4px 10px rgba(120,140,170,.28)}
 .timeline .tl-countdown{border:0;border-radius:20px;background:#0D1A2F;
   box-shadow:inset 7px 7px 16px var(--d-dark),inset -6px -6px 14px var(--d-light)}
