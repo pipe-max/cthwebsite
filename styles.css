@@ -1603,3 +1603,17 @@ a.copy-mail.copied{color:#2E8B57!important;border-bottom-color:transparent}
   font-family:var(--display);font-size:3.2em;line-height:1;color:var(--gold);opacity:.45;pointer-events:none}
 .propuesta-box.scroll-lit blockquote::before{content:"\201C";left:-.42em;top:-.32em}
 .propuesta-box.scroll-lit blockquote::after{content:"\201D";right:-.42em;bottom:-.72em}
+
+/* ---------- PORTADA · DATOS EN RELIEVE (neumorfismo) ---------- */
+.creds{--neu-bg:#E9EDF3;--neu-dark:#BCC6D4;--neu-light:#FFFFFF;--neu-face:linear-gradient(145deg,#F4F7FA,#E1E6EE);
+  background:var(--neu-bg);border-bottom:0}
+.cred-stats{gap:28px;padding:10px 0 48px}
+.stat,.stat:nth-child(odd),.stat:last-child{border:0;border-radius:22px;background:var(--neu-face);padding:30px 18px;
+  box-shadow:12px 12px 26px var(--neu-dark),-12px -12px 26px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+@media(hover:hover){.stat:hover{transform:translateY(-4px);
+  box-shadow:18px 18px 36px var(--neu-dark),-18px -18px 36px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}}
+.stat .lbl{color:#6F7C91}
+@media(max-width:1180px){.cred-stats{gap:20px;padding:6px 6px 36px}}
+@media(max-width:640px){.cred-stats{gap:16px}.stat,.stat:nth-child(odd),.stat:last-child{padding:22px 12px;border-radius:18px;
+  box-shadow:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light),inset 1px 1px 0 rgba(255,255,255,.95)}}
