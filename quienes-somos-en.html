@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261014-77">
+<link rel="stylesheet" href="styles.css?v=20261015-1">
 <meta name="description" content="Discover the history, mission, vision, and values of Theodoro Herzl School: nearly a century shaping education in diversity and mutual respect in Envigado.">
 <link rel="canonical" href="https://www.theodoro.edu.co/quienes-somos-en">
 <link rel="alternate" hreflang="es" href="https://www.theodoro.edu.co/quienes-somos">
@@ -40,7 +40,7 @@
   <div class="wrap header-top">
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     <a class="brand" href="index-en.html">
-      <img class="mark-logo" src="logo ingles.png" alt="Theodoro Herzl School">
+      <img class="mark-logo" src="logo ingles.png" width="156" height="150" alt="Theodoro Herzl School">
     </a>
     <span class="lang"><a href="quienes-somos.html">ES</a><a class="on" href="quienes-somos-en.html">EN</a></span>
   </div>
@@ -235,11 +235,11 @@
     </div>
     <div class="cfive reveal">
       <div class="cfive-tabs" role="tablist">
-        <button class="cfive-tab active" style="--c:#9B1C1C" data-target="c-compasion">Compassion</button>
-        <button class="cfive-tab" style="--c:#2E7D32" data-target="c-comprension">Comprehension</button>
-        <button class="cfive-tab" style="--c:#6A1B9A" data-target="c-confianza">Confidence</button>
-        <button class="cfive-tab" style="--c:#E67E22" data-target="c-civismo">Civility</button>
-        <button class="cfive-tab" style="--c:#2196C4" data-target="c-convivencia">Coexistence</button>
+        <button class="cfive-tab active" role="tab" aria-selected="true" style="--c:#9B1C1C" data-target="c-compasion">Compassion</button>
+        <button class="cfive-tab" role="tab" aria-selected="false" style="--c:#2E7D32" data-target="c-comprension">Comprehension</button>
+        <button class="cfive-tab" role="tab" aria-selected="false" style="--c:#6A1B9A" data-target="c-confianza">Confidence</button>
+        <button class="cfive-tab" role="tab" aria-selected="false" style="--c:#E67E22" data-target="c-civismo">Civility</button>
+        <button class="cfive-tab" role="tab" aria-selected="false" style="--c:#2196C4" data-target="c-convivencia">Coexistence</button>
       </div>
       <div class="cfive-panels">
         <div class="cfive-panel active" id="c-compasion" style="--c:#9B1C1C">
@@ -451,9 +451,10 @@
     const panels = document.querySelectorAll('.cfive-panel');
     tabs.forEach(tab=>{
       tab.addEventListener('click', ()=>{
-        tabs.forEach(t=>t.classList.remove('active'));
+        tabs.forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');});
         panels.forEach(p=>p.classList.remove('active'));
         tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
         document.getElementById(tab.dataset.target).classList.add('active');
       });
     });

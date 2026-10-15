@@ -39,7 +39,7 @@ img{max-width:100%;display:block}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .eyebrow{
   font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
+  color:#0B78A8;display:inline-flex;align-items:center;gap:10px;
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan)}
 .lattice{display:none}
@@ -66,7 +66,7 @@ section[id]{scroll-margin-top:230px}
 .header-top .lang{position:absolute;right:28px;top:50%;transform:translateY(-50%);
     display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex-shrink:0}
 .header-top .lang a{display:block;background:none;border:0;color:var(--ink-2);font-family:var(--sans);font-size:.82rem;font-weight:600;padding:9px 15px;cursor:pointer;text-decoration:none}
-.header-top .lang a.on{background:var(--cyan);color:#fff}
+.header-top .lang a.on{background:#0B78A8;color:#fff}
 
 .burger{position:absolute;left:28px;top:50%;transform:translateY(-50%);
     display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;z-index:60}
@@ -122,15 +122,15 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .page-hero{
   --acc:var(--sapphire);
   --fg:#fff;--fg-soft:rgba(255,255,255,.9);
-  --fg-em:color-mix(in oklch,var(--acc) 62%,white 38%);
-  --fg-crumb:#fff;--fg-crumb-link:rgba(255,255,255,.68);
+  --fg-em:color-mix(in srgb,var(--acc) 35%,white 65%);
+  --fg-crumb:#fff;--fg-crumb-link:#fff;
   position:relative;color:var(--fg);overflow:hidden;
   background:var(--acc);
 }
 .page-hero .lattice{position:absolute;inset:0;opacity:.3;pointer-events:none;mix-blend-mode:overlay}
 .page-hero .wrap{position:relative;padding:68px 28px 64px}
 .breadcrumb{font-size:.8rem;color:var(--fg-crumb);font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:18px}
-.breadcrumb a{color:var(--fg-crumb-link)}
+.breadcrumb a{color:var(--fg-crumb-link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .breadcrumb a:hover{color:var(--fg)}
 .page-hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
 .page-hero h1 em{font-style:italic;color:var(--fg-em);font-weight:600}
@@ -140,7 +140,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
    --fg-em se deriva automáticamente de --acc (más clara sobre fondos oscuros, más oscura
    sobre fondos claros) para que la palabra en cursiva sea siempre un matiz del mismo color. */
 .page-hero.hero-celeste{--acc:#9FD3F2;--fg-em:#1D68B0}
-.page-hero.hero-orange{--acc:#EE7414;--nav-text:#C2560A;--fg-em:#FFE0BD}
+.page-hero.hero-orange{--acc:#EE7414;--nav-text:#C2560A}
 .page-hero.hero-violet{--acc:#7038C7}
 .page-hero.hero-teal{--acc:#2E8B57}
 .page-hero.hero-indigo{--acc:#3C4CC7}
@@ -154,10 +154,11 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
 /* variantes claras: fondo pastel/brillante + texto oscuro, em más oscuro que el fondo */
 .page-hero.hero-yellow,
 .page-hero.hero-mint,
-.page-hero.hero-celeste{
+.page-hero.hero-celeste,
+.page-hero.hero-orange{
   --fg:var(--ink);--fg-soft:rgba(10,27,51,.78);
-  --fg-em:color-mix(in oklch,var(--acc) 68%,black 32%);
-  --fg-crumb:var(--ink);--fg-crumb-link:rgba(10,27,51,.62);
+  --fg-em:color-mix(in srgb,var(--acc) 40%,black 60%);
+  --fg-crumb:var(--ink);--fg-crumb-link:rgba(10,27,51,.85);
 }
 .page-hero.hero-yellow{--acc:var(--yellow-vivid)}
 .page-hero.hero-mint{--acc:#66CC67}
@@ -1673,3 +1674,23 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .families .fam-lg,.families .fam-lg:hover{background:transparent!important;box-shadow:none!important;border-color:transparent!important;transform:none!important}
 .families .fam-lg .ic img{transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
 .families .fam-lg:hover .ic img{transform:translateY(-6px) scale(1.04)}
+
+/* ---------- ACCESIBILIDAD ---------- */
+/* puntos del slider: zona táctil de 24 px; el punto visible se dibuja con ::before */
+.hs-dots{gap:4px}
+.hs-dots button,.hs-dots button.on{position:relative;width:24px;height:24px;background:none;border-radius:0;overflow:visible}
+.hs-dots button::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:5px;
+  background:rgba(255,255,255,.3);transition:width .25s,margin .25s,background-color .25s}
+.hs-dots button.on{width:48px}
+.hs-dots button.on::before{width:44px;margin-left:-22px}
+.hs-dots button.on::after{inset:auto;left:2px;top:50%;width:44px;height:9px;margin-top:-4.5px;border-radius:5px}
+/* enlace dentro de texto: subrayado, no solo color */
+.contact-form .consent a{text-decoration:underline;text-underline-offset:2px}
+
+/* ---------- VIDEO LIVIANO (portada) ---------- */
+.yt-lite{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000;display:block}
+.yt-lite img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:opacity .3s}
+.yt-lite .yt-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;transition:transform .25s}
+.yt-lite:hover img{opacity:1}
+.yt-lite:hover .yt-play{transform:scale(1.1)}
+.yt-lite:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
