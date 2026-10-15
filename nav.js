@@ -37,6 +37,9 @@
     probe.className = 'page-hero ' + HERO[m[1]];
     it.dataset.acc = getComputedStyle(probe).getPropertyValue('--acc').trim();
     a.style.setProperty('--item-acc', it.dataset.acc);
+    // color de texto propio de la sección (si el encabezado lo define, p. ej. fondos muy claros)
+    var txt = getComputedStyle(probe).getPropertyValue('--nav-text').trim();
+    if(txt) a.style.setProperty('--item-text', txt);
   });
   probe.remove();
 

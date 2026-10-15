@@ -140,7 +140,7 @@ nav.main a.active::after{content:"";position:absolute;left:14px;right:14px;botto
    --fg-em se deriva automáticamente de --acc (más clara sobre fondos oscuros, más oscura
    sobre fondos claros) para que la palabra en cursiva sea siempre un matiz del mismo color. */
 .page-hero.hero-celeste{--acc:#9FD3F2;--fg-em:#1D68B0}
-.page-hero.hero-orange{--acc:#B8500F}
+.page-hero.hero-orange{--acc:#EE7414;--nav-text:#C2560A;--fg-em:#FFE0BD}
 .page-hero.hero-violet{--acc:#7038C7}
 .page-hero.hero-teal{--acc:#2E8B57}
 .page-hero.hero-indigo{--acc:#3C4CC7}
@@ -847,7 +847,7 @@ header.scrolled{background:rgba(246,248,252,.96);border-bottom-color:rgba(221,22
 /* color de la página en el menú: nav.js copia el --acc del encabezado a --nav-acc */
 header[style*="--nav-acc"]{--nav-pill-bg:color-mix(in oklch,var(--nav-acc) 16%,white)}
 /* el texto de la opción activa y de la que tiene el mouse toma una versión oscura de su color */
-nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{color:color-mix(in oklch,var(--item-acc) 62%,black)}
+nav.main a[style*="--item-acc"]:hover,nav.main a.active[style*="--item-acc"]{color:var(--item-text,color-mix(in oklch,var(--item-acc) 62%,black))}
 
 /* píldora que se desliza entre las opciones del menú */
 .nav-pill{display:none}
@@ -1667,3 +1667,4 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 @media(max-width:640px){.ci-card{box-shadow:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light)}}
 
 .page-hero.hero-celeste{--fg-em:#1D68B0}
+.page-hero.hero-celeste{--nav-text:#1D68B0}
