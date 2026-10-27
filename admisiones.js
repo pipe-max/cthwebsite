@@ -143,7 +143,8 @@
           '<span class="acr-grade">' + esc(row.intl) + '</span>' +
           '<span class="acr-level">' + esc(row.level) + ' · ' + esc(row.nat) + (en ? ' (national curriculum)' : ' en pénsum nacional') + '</span>' +
           '<span class="acr-age">' + (en ? 'Now in ' : 'Viene de ') + esc(selG.options[selG.selectedIndex].text) +
-            (selT.value === 'nac' ? (en ? ' national' : ' nacional') : (en ? ' international' : ' internacional')) +
+            (selT.value === 'nac' ? (en ? ' national = ' : ' nacional = ') + selG.value + (en ? '° international' : '° internacional')   // equivalencia en el Theodoro
+                                  : (en ? ' international' : ' internacional')) +
             (en ? ' · calendar ' : ' · calendario ') + selC.value + '</span>' +
           warn + '</div>';
         out.classList.add('has-result');
