@@ -52,11 +52,9 @@
       var p = dob.value.split('-').map(Number);           // [año, mes, día]
       var yr = Y + '–' + (Y + 1);
       var age = Y - p[0] - (p[1] >= 8 ? 1 : 0);           // cumple después del 31 de julio → un año menos
-      var note = '<small class="acr-note">' + (en ? 'Final placement is decided by the Admissions Committee.'
-                                                  : 'La decisión final la toma el comité de admisiones.') + '</small>';
       // mensajes especiales: misma jerarquía que el resultado (título grande + texto + acción)
       var msg = function(title, text, extra){
-        return '<div class="acr-res acr-msg"><span class="acr-title">' + title + '</span><p>' + text + '</p>' + (extra || '') + note + '</div>';
+        return '<div class="acr-res acr-msg"><span class="acr-title">' + title + '</span><p>' + text + '</p>' + (extra || '') + '</div>';
       };
       var MAIL = '<a class="acr-btn" href="mailto:admisiones@theodoro.edu.co">' + ICON_MAIL_SM + (en ? 'Email Admissions' : 'Escribir a admisiones') + '</a>';
       var yearsTxt = function(n){ return en ? n + (n === 1 ? ' year old' : ' years old') : n + (n === 1 ? ' año' : ' años'); };
@@ -88,7 +86,7 @@
         '<span class="acr-grade">' + m.map(function(x){ return esc(x.intl); }).join(en ? ' or ' : ' o ') + '</span>' +
         m.map(function(x){ return '<span class="acr-level">' + esc(x.level) + ' · ' + esc(x.nat) + (en ? ' (national curriculum)' : ' en pénsum nacional') + '</span>'; }).join('') +
         '<span class="acr-age">' + (en ? age + ' years old on July 31 · ' : age + ' años al 31 de julio · ') + yr + '</span>' +
-        note + '</div>';
+        '</div>';
       out.classList.add('has-result');
     };
     dob.addEventListener('change', calc);
