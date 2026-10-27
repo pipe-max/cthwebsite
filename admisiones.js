@@ -38,17 +38,10 @@
   /* ── Calculadora de grado: edad cumplida al 31 de julio del año escolar ── */
   var ICON_MAIL_SM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>';
   var dob = document.getElementById('age-dob');
-  var yearSel = document.getElementById('age-year');
   var out = document.getElementById('age-out');
-  if(dob && yearSel && out){
+  if(dob && out){
     var today = new Date();
-    var first = today.getMonth() >= 7 ? today.getFullYear() + 1 : today.getFullYear(); // agosto en adelante → próximo año
-    for(var y = first; y < first + 4; y++){
-      var o = document.createElement('option');
-      o.value = y;
-      o.textContent = y + '–' + (y + 1);
-      yearSel.appendChild(o);
-    }
+    var Y = today.getMonth() >= 7 ? today.getFullYear() + 1 : today.getFullYear(); // próximo año escolar (agosto en adelante → el siguiente)
     dob.max = today.toISOString().slice(0, 10);
     var intro = out.innerHTML;
 
@@ -57,7 +50,6 @@
       out.classList.remove('has-result');
       if(!dob.value){ out.innerHTML = intro; return; }
       var p = dob.value.split('-').map(Number);           // [año, mes, día]
-      var Y = +yearSel.value;
       var yr = Y + '–' + (Y + 1);
       var age = Y - p[0] - (p[1] >= 8 ? 1 : 0);           // cumple después del 31 de julio → un año menos
       var note = '<small class="acr-note">' + (en ? 'Final placement is decided by the Admissions Committee.'
@@ -77,8 +69,7 @@
       if(age < 3){
         var ok = Y + (3 - age);
         out.innerHTML = msg(en ? 'Not old enough yet' : 'Aún no tiene la edad',
-                            (en ? 'In ' + yr + ' your child would be ' + yearsTxt(age) + ' on July 31. K3 starts at 3. They could start in:'
-                                : 'En ' + yr + ' tendría ' + yearsTxt(age) + ' al 31 de julio, y Kínder 3 inicia a los 3. Podría ingresar en:'),
+                            en ? 'The entry year would be:' : 'El año de ingreso corresponde a:',
                             '<span class="acr-age">' + ok + '–' + (ok + 1) + '</span>');
         out.classList.add('has-result');
         return;
@@ -102,7 +93,6 @@
     };
     dob.addEventListener('change', calc);
     dob.addEventListener('input', calc);
-    yearSel.addEventListener('change', calc);
   }
 
   /* ── Próximo proceso: cuenta regresiva según las fechas de cada tarjeta ── */
