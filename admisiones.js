@@ -101,10 +101,10 @@
       }
       m.forEach(function(x){ x.tr.classList.add('age-match'); });
       out.innerHTML = '<div class="acr-res">' +
-        '<span class="acr-label">' + (en ? 'Your child would enter' : 'Le correspondería') + '</span>' +
-        '<span class="acr-grade">' + m.map(function(x){ return esc(x.intl); }).join(en ? ' or ' : ' o ') + '</span>' +
-        m.map(function(x){ return '<span class="acr-level">' + esc(x.level) + ' · ' + esc(x.nat) + (en ? ' (national curriculum)' : ' en pénsum nacional') + '</span>'; }).join('') +
-        '<span class="acr-age">' + (en ? age + ' years old on July 31 · ' : age + ' años al 31 de julio · ') + yr + '</span>' +
+        '<span class="acr-label">' + (en ? 'In ' + yr + ' they would enter' : 'En ' + yr + ' ingresaría a') + '</span>' +
+        '<span class="acr-grade">' + m.map(function(x){ return esc(x.nat); }).join(en ? ' or ' : ' o ') + '</span>' +
+        m.map(function(x){ return '<span class="acr-level">' + esc(x.level) + ' · ' + esc(x.intl) + (en ? ' (international curriculum)' : ' en pénsum internacional') + '</span>'; }).join('') +
+        '<span class="acr-age">' + (en ? age + ' years old on July 31' : age + ' años al 31 de julio') + '</span>' +
         '</div>';
       out.classList.add('has-result');
     };
