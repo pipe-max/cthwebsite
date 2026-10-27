@@ -37,19 +37,32 @@
 
   /* ── Calculadora de grado: edad cumplida al 31 de julio del año escolar ── */
   var ICON_MAIL_SM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>';
-  var dob = document.getElementById('age-dob');
+  // fecha en tres listas (día, mes, año): el campo de fecha nativo falla al escribir en Safari
+  var selD = document.getElementById('age-d');
+  var selM = document.getElementById('age-m');
+  var selY = document.getElementById('age-y');
   var out = document.getElementById('age-out');
-  if(dob && out){
+  if(selD && selM && selY && out){
     var today = new Date();
     var Y = today.getMonth() >= 7 ? today.getFullYear() + 1 : today.getFullYear(); // próximo año escolar (agosto en adelante → el siguiente)
-    dob.max = today.toISOString().slice(0, 10);
+    var addOpt = function(sel, value, text){
+      var o = document.createElement('option');
+      o.value = value;
+      o.textContent = text;
+      sel.appendChild(o);
+    };
+    var MONTHS = en ? ['January','February','March','April','May','June','July','August','September','October','November','December']
+                    : ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    for(var i = 1; i <= 31; i++) addOpt(selD, i, i);
+    MONTHS.forEach(function(name, k){ addOpt(selM, k + 1, name); });
+    for(var yy = today.getFullYear(); yy >= 2005; yy--) addOpt(selY, yy, yy);
     var intro = out.innerHTML;
 
     var calc = function(){
       rows.forEach(function(x){ x.tr.classList.remove('age-match'); });
       out.classList.remove('has-result');
-      if(!dob.value){ out.innerHTML = intro; return; }
-      var p = dob.value.split('-').map(Number);           // [año, mes, día]
+      if(!selD.value || !selM.value || !selY.value){ out.innerHTML = intro; return; }
+      var p = [+selY.value, +selM.value, +selD.value];    // [año, mes, día]
       var yr = Y + '–' + (Y + 1);
       var age = Y - p[0] - (p[1] >= 8 ? 1 : 0);           // cumple después del 31 de julio → un año menos
       // mensajes especiales: misma jerarquía que el resultado (título grande + texto + acción)
@@ -58,6 +71,12 @@
       };
       var MAIL = '<a class="acr-btn" href="mailto:admisiones@theodoro.edu.co">' + ICON_MAIL_SM + (en ? 'Email Admissions' : 'Escribir a admisiones') + '</a>';
       var yearsTxt = function(n){ return en ? n + (n === 1 ? ' year old' : ' years old') : n + (n === 1 ? ' año' : ' años'); };
+      if(new Date(p[0], p[1] - 1, p[2]).getDate() !== p[2]){   // p. ej. 31 de febrero
+        out.innerHTML = msg(en ? 'Check the date' : 'Revisa la fecha',
+                            en ? 'That day doesn\'t exist in that month.' : 'Ese día no existe en ese mes.');
+        out.classList.add('has-result');
+        return;
+      }
       if(new Date(p[0], p[1] - 1, p[2]) > today){
         out.innerHTML = msg(en ? 'Check the date' : 'Revisa la fecha',
                             en ? 'The date of birth can\'t be in the future.' : 'La fecha de nacimiento no puede ser futura.');
@@ -89,8 +108,7 @@
         '</div>';
       out.classList.add('has-result');
     };
-    dob.addEventListener('change', calc);
-    dob.addEventListener('input', calc);
+    [selD, selM, selY].forEach(function(sel){ sel.addEventListener('change', calc); });
   }
 
   /* ── Próximo proceso: cuenta regresiva según las fechas de cada tarjeta ── */

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261015-2">
+<link rel="stylesheet" href="styles.css?v=20261027-1">
 <meta name="description" content="Admisiones abiertas en el Colegio Theodoro Herzl para 2028–2029. Conoce el proceso de inscripción, fechas y requisitos para K3 a 12°.">
 <link rel="canonical" href="https://www.theodoro.edu.co/admisiones">
 <link rel="alternate" hreflang="es" href="https://www.theodoro.edu.co/admisiones">
@@ -106,7 +106,9 @@
         <h3>Calcula el grado de tu hijo</h3>
         <p class="age-calc-lead">Según su edad cumplida al 31 de julio del año escolar en que ingresaría.</p>
         <div class="age-calc-fields">
-          <label>Fecha de nacimiento<input type="date" id="age-dob" min="2005-01-01"></label>
+          <div class="age-dob" role="group" aria-labelledby="age-dob-lbl"><span id="age-dob-lbl">Fecha de nacimiento</span>
+            <div class="age-dob-sel"><select id="age-d" aria-label="Día"><option value="">Día</option></select><select id="age-m" aria-label="Mes"><option value="">Mes</option></select><select id="age-y" aria-label="Año"><option value="">Año</option></select></div>
+          </div>
         </div>
       </div>
       <div class="age-calc-result" id="age-out" aria-live="polite">
@@ -448,7 +450,7 @@
     document.getElementById('cookie-close').addEventListener('click', hide);
   })();
 </script>
-<script src="admisiones.js?v=4"></script>
+<script src="admisiones.js?v=5"></script>
 <script src="motion.js?v=21"></script>
 <script src="nav.js?v=6"></script>
 <script src="whatsapp-menu.js?v=20260814-8"></script>
