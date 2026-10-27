@@ -58,6 +58,25 @@
     for(var yy = today.getFullYear(); yy >= 2005; yy--) addOpt(selY, yy, yy);
     var intro = out.innerHTML;
 
+    // primaria y bachillerato: el grado sale del grado que cursa y su calendario, no de la edad
+    var more = document.getElementById('age-more');
+    var selT = document.getElementById('age-t');     // tipo de grado: nacional o internacional/exterior
+    var selG = document.getElementById('age-g');     // grado que cursa (valor = grado internacional del Theodoro)
+    var selC = document.getElementById('age-c');     // calendario A o B
+    var fillGrades = function(){
+      var keep = selG.value;
+      selG.length = 1;                                 // deja solo la opción "Elige…"
+      if(selT.value === 'nac'){                        // nacional: Transición = 1° internacional, 5° nacional = 6° internacional…
+        addOpt(selG, 1, en ? 'Transition' : 'Transición');
+        for(var g = 1; g <= 11; g++) addOpt(selG, g + 1, g + '°');
+      } else if(selT.value === 'int'){                 // internacional o exterior: los grados van hasta 12°
+        for(var h = 1; h <= 12; h++) addOpt(selG, h, h + '°');
+      }
+      selG.disabled = !selT.value;
+      selG.value = keep;
+      if(selG.value !== keep) selG.value = '';
+    };
+
     var calc = function(){
       rows.forEach(function(x){ x.tr.classList.remove('age-match'); });
       out.classList.remove('has-result');
@@ -91,6 +110,45 @@
         out.classList.add('has-result');
         return;
       }
+      var school = age >= 7;                              // desde primaria manda el grado que cursa
+      if(more) more.hidden = !school;
+      if(school && more){
+        if(!selT.value || !selG.value || !selC.value){
+          out.innerHTML = msg(en ? 'One more step' : 'Un paso más',
+                              en ? 'For Elementary and High School, tell us the grade your child is in now and their school calendar.'
+                                 : 'Para primaria y bachillerato, cuéntanos qué grado cursa ahora y el calendario de su colegio.');
+          out.classList.add('has-result');
+          return;
+        }
+        var next = +selG.value + 1;                       // grado internacional del Theodoro al que pasaría
+        var calA = selC.value === 'A';
+        // calendario A termina en noviembre → entra en enero; calendario B termina en junio → entra en agosto
+        var when = calA ? (en ? 'In January ' : 'En enero de ') + (today.getFullYear() + 1) : (en ? 'In ' : 'En ') + yr;
+        var row = rowsOfAge(next + 5)[0];                // en la tabla, cada grado internacional n va con la edad n + 5
+        if(!row){
+          out.innerHTML = msg(en ? 'Let\'s talk' : 'Hablemos',
+                              en ? 'Your child would finish school before joining us. Write to us and we\'ll guide you.'
+                                 : 'Terminaría el colegio antes de ingresar. Escríbenos y te orientamos.', MAIL);
+          out.classList.add('has-result');
+          return;
+        }
+        row.tr.classList.add('age-match');
+        var byAge = rowsOfAge(age)[0];                   // calendario A va medio año adelante: se compara con agosto igual
+        var warn = byAge && byAge.age !== row.age
+          ? '<small class="acr-note">' + (en ? 'By age, your child would be in ' + esc(byAge.intl) + '. Write to us and we\'ll review it.'
+                                            : 'Por su edad le correspondería ' + esc(byAge.intl) + '. Escríbenos y lo revisamos.') + '</small>'
+          : '';
+        out.innerHTML = '<div class="acr-res">' +
+          '<span class="acr-label">' + when + (en ? ' they would enter' : ' ingresaría a') + '</span>' +
+          '<span class="acr-grade">' + esc(row.intl) + '</span>' +
+          '<span class="acr-level">' + esc(row.level) + ' · ' + esc(row.nat) + (en ? ' (national curriculum)' : ' en pénsum nacional') + '</span>' +
+          '<span class="acr-age">' + (en ? 'Now in ' : 'Viene de ') + esc(selG.options[selG.selectedIndex].text) +
+            (selT.value === 'nac' ? (en ? ' national' : ' nacional') : (en ? ' international' : ' internacional')) +
+            (en ? ' · calendar ' : ' · calendario ') + selC.value + '</span>' +
+          warn + '</div>';
+        out.classList.add('has-result');
+        return;
+      }
       var m = rowsOfAge(age);
       if(!m.length){
         out.innerHTML = msg(yearsTxt(age) + (en ? ' in ' : ' en ') + yr,
@@ -108,7 +166,8 @@
         '</div>';
       out.classList.add('has-result');
     };
-    [selD, selM, selY].forEach(function(sel){ sel.addEventListener('change', calc); });
+    if(selT) selT.addEventListener('change', fillGrades);
+    [selD, selM, selY, selT, selG, selC].forEach(function(sel){ if(sel) sel.addEventListener('change', calc); });
   }
 
   /* ── Próximo proceso: cuenta regresiva según las fechas de cada tarjeta ── */
