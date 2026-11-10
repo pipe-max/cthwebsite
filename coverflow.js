@@ -75,5 +75,15 @@
     });
 
     layout();
+
+    // entrada: el carrusel completo aparece al verse (no depende de motion.js)
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ stage.classList.add('st-in'); io.unobserve(stage); } });
+      }, {threshold: .1});
+      io.observe(stage);
+    } else {
+      stage.classList.add('st-in');
+    }
   });
 })();
