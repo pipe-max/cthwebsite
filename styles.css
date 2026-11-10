@@ -1742,3 +1742,33 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .cf-dots button.on{width:36px}
 .cf-dots button.on::before{width:30px;margin-left:-15px;background:var(--ink)}
 .cf-dots button:focus-visible{outline:3px solid var(--cyan);outline-offset:1px;border-radius:6px}
+
+/* ---------- SERVICIOS · CARRUSEL COVERFLOW (coverflow.js) ---------- */
+.services{overflow-x:hidden;overflow-x:clip}
+.banner-grid.cf{display:grid;grid-template-columns:1fr;grid-template-areas:"cf";justify-items:center;align-items:stretch;
+  gap:0;padding:20px 0 10px;touch-action:pan-y}
+.cf .svc-banner{grid-area:cf;width:clamp(280px,32%,380px);
+  transform:perspective(1200px) translateX(var(--cf-x,0)) translateY(var(--lift,0px)) translateZ(var(--cf-z,0px))
+    rotateY(calc(var(--cf-ry,0deg) + var(--ry,0deg))) rotateX(var(--rx,0deg)) scale(var(--cf-s,1));
+  transition:transform .6s cubic-bezier(.22,.8,.22,1),filter .6s,opacity .6s,box-shadow .28s}
+.cf .svc-banner[data-pos="0"]{--cf-s:1.04;z-index:5}
+.cf .svc-banner[data-pos="-1"]{--cf-x:-78%;--cf-z:-120px;--cf-ry:22deg;--cf-s:.88;z-index:4;filter:saturate(.8) brightness(.97)}
+.cf .svc-banner[data-pos="1"]{--cf-x:78%;--cf-z:-120px;--cf-ry:-22deg;--cf-s:.88;z-index:4;filter:saturate(.8) brightness(.97)}
+.cf .svc-banner[data-pos="-2"]{--cf-x:-140%;--cf-z:-260px;--cf-ry:30deg;--cf-s:.76;z-index:3;filter:saturate(.6) brightness(.94);opacity:.85}
+.cf .svc-banner[data-pos="2"]{--cf-x:140%;--cf-z:-260px;--cf-ry:-30deg;--cf-s:.76;z-index:3;filter:saturate(.6) brightness(.94);opacity:.85}
+.cf .svc-banner[data-pos="x"]{--cf-z:-400px;--cf-s:.6;z-index:1;opacity:0;pointer-events:none}
+.cf .svc-banner:not([data-pos="0"]){cursor:pointer}
+.cf .svc-banner:not([data-pos="0"]):hover{filter:none}
+@media(max-width:1100px){
+  .cf .svc-banner[data-pos="-2"],.cf .svc-banner[data-pos="2"]{opacity:0;pointer-events:none}
+  .cf .svc-banner{width:clamp(280px,44%,400px)}
+}
+@media(max-width:640px){
+  .cf .svc-banner{width:78%}
+  .cf .svc-banner[data-pos="-1"]{--cf-x:-90%;--cf-z:-80px;--cf-ry:20deg}
+  .cf .svc-banner[data-pos="1"]{--cf-x:90%;--cf-z:-80px;--cf-ry:-20deg}
+}
+@media(prefers-reduced-motion:reduce){.cf .svc-banner{transition:none}}
+.services .cf-nav{--neu-face:linear-gradient(145deg,#FFFFFF,#F7EDE4);--neu-dark:rgba(170,120,80,.3);--neu-light:rgba(255,255,255,.95)}
+.services .cf-arrow:hover{color:var(--svc-acc,#B8500F)}
+.services .cf-dots button.on::before{background:#B8500F}
