@@ -1792,3 +1792,22 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .cred-stats.cf{--cf-w:clamp(240px,30%,330px);padding:16px 0 10px}
 .cred-stats.cf+.cf-nav{margin:18px 0 0;padding-bottom:40px}
 @media(max-width:640px){.cred-stats.cf{--cf-w:72%}}
+/* portada · acceso rápido: sin tarjeta, solo los PNG con su texto giran; más separados y
+   los laterales se desvanecen en vez de oscurecerse (el fondo amarillo se ensuciaría) */
+.families{overflow-x:hidden;overflow-x:clip}
+.fam-grid-lg.cf{--cf-w:clamp(230px,26%,300px);--cf-dim1:none;--cf-dim2:none;padding:10px 0 0}
+.fam-grid-lg.cf>[data-pos="-1"]{--cf-x:-112%;opacity:.55}
+.fam-grid-lg.cf>[data-pos="1"]{--cf-x:112%;opacity:.55}
+.fam-grid-lg.cf>[data-pos]:not([data-pos="0"]):hover{opacity:.85}
+.fam-grid-lg.cf>[data-pos="0"]{--cf-s:1.1}
+.families .cf-nav{margin-top:30px}
+.families .cf-arrow{background:rgba(255,255,255,.35);color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(10,27,51,.25)}
+.families .cf-arrow:hover{background:var(--ink);color:#fff}
+.families .cf-arrow:active{box-shadow:inset 0 0 0 1.5px rgba(10,27,51,.25)}
+.families .cf-dots button::before{background:rgba(10,27,51,.28)}
+.families .cf-dots button.on::before{background:var(--ink)}
+@media(max-width:640px){
+  .fam-grid-lg.cf{--cf-w:62%}
+  .fam-grid-lg.cf>[data-pos="-1"]{--cf-x:-82%}
+  .fam-grid-lg.cf>[data-pos="1"]{--cf-x:82%}
+}
