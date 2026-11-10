@@ -1787,3 +1787,8 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 [data-coverflow].cf:not(.st-in){opacity:0}
 [data-coverflow].cf.st-in{animation:staggerIn .85s cubic-bezier(.2,.8,.2,1) backwards}
 @media(prefers-reduced-motion:reduce){[data-coverflow].cf:not(.st-in){opacity:1}}
+/* portada · datos (Horaá Mutemet, Calendario B…): tarjetas más angostas */
+.creds{overflow-x:hidden;overflow-x:clip}
+.cred-stats.cf{--cf-w:clamp(240px,30%,330px);padding:16px 0 10px}
+.cred-stats.cf+.cf-nav{margin:18px 0 0;padding-bottom:40px}
+@media(max-width:640px){.cred-stats.cf{--cf-w:72%}}

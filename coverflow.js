@@ -12,7 +12,7 @@
     var reach = Math.min(2, Math.floor((n - 1) / 2));   // cuántas tarjetas se ven a cada lado
     stage.classList.add('cf');
     // las tarjetas ya no aparecen una por una (su animación de entrada choca con el giro)
-    cards.forEach(function(c){ c.classList.remove('reveal'); });
+    cards.forEach(function(c){ c.classList.remove('reveal'); c.classList.add('in'); });
 
     var nav = document.createElement('div');
     nav.className = 'cf-nav';
