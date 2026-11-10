@@ -1705,3 +1705,40 @@ section:has(> .wrap .trust),section:has(> .wrap .age-calc){--neu-bg:#E9EDF3;--ne
 .yt-lite:hover .yt-play{transform:scale(1.1)}
 .yt-lite:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 .page-hero.hero-orange{--fg-soft:rgba(10,27,51,.92)}
+
+/* ---------- PROGRAMAS · CARRUSEL COVERFLOW DE ETAPAS ---------- */
+/* las tres tarjetas se apilan en la misma celda; JS les da data-pos (-1, 0, 1) */
+.prog-tabs-section{overflow-x:hidden;overflow-x:clip}
+.prog-tabs.cf{display:grid;grid-template-columns:1fr;grid-template-areas:"cf";justify-items:center;align-items:stretch;
+  gap:0;max-width:none;padding:18px 0 8px;touch-action:pan-y}
+.cf .ptab{grid-area:cf;width:clamp(280px,40%,400px);
+  transform:perspective(1200px) translateX(var(--cf-x,0)) translateY(var(--lift,0px)) translateZ(var(--cf-z,0px))
+    rotateY(calc(var(--cf-ry,0deg) + var(--ry,0deg))) rotateX(var(--rx,0deg)) scale(var(--cf-s,1));
+  transition:transform .6s cubic-bezier(.22,.8,.22,1),filter .6s,opacity .6s,box-shadow .28s,outline-color .2s}
+.cf .ptab[data-pos="0"]{--cf-s:1.06;z-index:3}
+.cf .ptab[data-pos="-1"]{--cf-x:-82%;--cf-z:-120px;--cf-ry:24deg;--cf-s:.88;z-index:1;filter:saturate(.75) brightness(.96)}
+.cf .ptab[data-pos="1"]{--cf-x:82%;--cf-z:-120px;--cf-ry:-24deg;--cf-s:.88;z-index:1;filter:saturate(.75) brightness(.96)}
+.cf .ptab:not([data-pos="0"]) .ptab-link{opacity:.5}
+.cf .ptab:not([data-pos="0"]):hover{filter:none}
+@media(max-width:640px){
+  .cf .ptab{width:76%}
+  .cf .ptab[data-pos="-1"]{--cf-x:-90%;--cf-z:-80px;--cf-ry:20deg}
+  .cf .ptab[data-pos="1"]{--cf-x:90%;--cf-z:-80px;--cf-ry:-20deg}
+}
+@media(prefers-reduced-motion:reduce){.cf .ptab{transition:none}}
+
+/* controles: flecha · puntos · flecha */
+.cf-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px}
+.cf-arrow{width:46px;height:46px;border:0;border-radius:50%;cursor:pointer;display:grid;place-items:center;color:var(--ink);
+  background:var(--neu-face,#fff);box-shadow:6px 6px 14px var(--neu-dark,#BCC6D4),-6px -6px 14px var(--neu-light,#fff);
+  transition:box-shadow .2s,color .2s}
+.cf-arrow:hover{color:var(--sapphire)}
+.cf-arrow:active{box-shadow:inset 3px 3px 7px var(--neu-dark,#BCC6D4),inset -3px -3px 7px var(--neu-light,#fff)}
+.cf-arrow:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.cf-dots{display:flex;align-items:center;gap:4px}
+.cf-dots button{position:relative;width:24px;height:24px;border:0;padding:0;background:none;cursor:pointer;transition:width .3s}
+.cf-dots button::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:5px;
+  background:#B5C0CF;transition:width .3s,margin .3s,background-color .3s}
+.cf-dots button.on{width:36px}
+.cf-dots button.on::before{width:30px;margin-left:-15px;background:var(--ink)}
+.cf-dots button:focus-visible{outline:3px solid var(--cyan);outline-offset:1px;border-radius:6px}

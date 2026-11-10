@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261027-2">
+<link rel="stylesheet" href="styles.css?v=20261110-1">
 <meta name="description" content="Programas académicos del Colegio Theodoro Herzl: preescolar, primaria y bachillerato con un pénsum internacional homologado y educación trilingüe.">
 <link rel="canonical" href="https://www.theodoro.edu.co/programas">
 <link rel="alternate" hreflang="es" href="https://www.theodoro.edu.co/programas">
@@ -83,7 +83,7 @@
 <!-- TABS DE PROGRAMAS -->
 <div class="prog-tabs-section">
   <div class="wrap">
-    <div class="prog-tabs reveal" role="tablist">
+    <div class="prog-tabs cf reveal" role="tablist">
 
       <!-- Preescolar -->
       <button class="ptab active" data-panel="preescolar" aria-selected="true" role="tab">
@@ -136,6 +136,11 @@
         </div>
       </button>
 
+    </div>
+    <div class="cf-nav">
+      <button type="button" class="cf-arrow" data-cf="-1" aria-label="Etapa anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="cf-dots"></div>
+      <button type="button" class="cf-arrow" data-cf="1" aria-label="Etapa siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
 </div>
@@ -662,19 +667,69 @@
     window.scrollTo({top, behavior:'smooth'});
   }
 
-  tabs.forEach(tab=>{
+  // ── Carrusel coverflow: la tarjeta activa al centro, las otras a los lados ──
+  const tabList = Array.from(tabs);
+  const dotsBox = document.querySelector('.cf-dots');
+  const dots = tabList.map((t,i)=>{
+    const d = document.createElement('button');
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Ver etapa: ' + t.querySelector('h3').textContent);
+    d.addEventListener('click', ()=>goTo(i));
+    dotsBox.appendChild(d);
+    return d;
+  });
+  function layout(){
+    const n = tabList.length;
+    const cur = tabList.findIndex(t=>t.classList.contains('active'));
+    tabList.forEach((t,i)=>{
+      let off = (i - cur + n) % n;
+      if(off > n/2) off -= n;
+      t.dataset.pos = off;
+    });
+    dots.forEach((d,i)=>d.classList.toggle('on', i===cur));
+  }
+  function goTo(i){
+    const n = tabList.length;
+    activateTab(tabList[(i + n) % n].dataset.panel);
+    layout();
+  }
+  function step(dir){ goTo(tabList.findIndex(t=>t.classList.contains('active')) + dir); }
+  document.querySelectorAll('.cf-arrow').forEach(b=>b.addEventListener('click',()=>step(+b.dataset.cf)));
+
+  tabList.forEach((tab,i)=>{
     tab.addEventListener('click',()=>{
+      // tarjeta lateral: solo gira al centro; tarjeta central: baja al contenido
+      if(tab.dataset.pos !== '0'){ goTo(i); return; }
       const panel = activateTab(tab.dataset.panel);
-      // esperar un frame para que el panel sea visible antes de medir su posición
       requestAnimationFrame(()=>scrollToPanelTitle(panel));
     });
   });
+
+  // teclado (← →) y deslizar con el dedo
+  const stage = document.querySelector('.prog-tabs.cf');
+  stage.addEventListener('keydown', e=>{
+    if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+      e.preventDefault(); step(e.key==='ArrowLeft'?-1:1);
+      tabList.find(t=>t.dataset.pos==='0').focus();
+    }
+  });
+  let sx=null, sy=0, swiped=false;
+  stage.addEventListener('touchstart', e=>{ sx=e.touches[0].clientX; sy=e.touches[0].clientY; swiped=false; }, {passive:true});
+  stage.addEventListener('touchend', e=>{
+    if(sx===null) return;
+    const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)){ swiped=true; step(dx<0?1:-1); }
+    sx=null;
+  });
+  stage.addEventListener('click', e=>{ if(swiped){ e.stopPropagation(); e.preventDefault(); swiped=false; } }, true);
+  layout();
 
   // Activate panel from URL hash on load (e.g. programas.html#primaria)
   const hash = location.hash.replace('#','');
   const hashIsValidPanel = hash && Array.from(tabs).some(t => t.dataset.panel === hash);
   if(hashIsValidPanel){
     const panel = activateTab(hash);
+    layout();
     window.addEventListener('load',()=>setTimeout(()=>scrollToPanelTitle(panel),150));
   }
 </script>
