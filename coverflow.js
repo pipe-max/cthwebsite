@@ -9,7 +9,10 @@
   document.querySelectorAll('[data-coverflow]').forEach(function(stage){
     var cards = Array.prototype.slice.call(stage.children);
     var n = cards.length, cur = 0;
+    var reach = Math.min(2, Math.floor((n - 1) / 2));   // cuántas tarjetas se ven a cada lado
     stage.classList.add('cf');
+    // las tarjetas ya no aparecen una por una (su animación de entrada choca con el giro)
+    cards.forEach(function(c){ c.classList.remove('reveal'); });
 
     var nav = document.createElement('div');
     nav.className = 'cf-nav';
@@ -36,7 +39,7 @@
       cards.forEach(function(c, i){
         var off = (i - cur + n) % n;
         if(off > n / 2) off -= n;
-        c.dataset.pos = Math.abs(off) > 2 ? 'x' : off;
+        c.dataset.pos = Math.abs(off) > reach ? 'x' : off;
         c.setAttribute('aria-hidden', off === 0 ? 'false' : 'true');
         c.querySelectorAll('a,button').forEach(function(el){ el.tabIndex = off === 0 ? 0 : -1; });
       });
