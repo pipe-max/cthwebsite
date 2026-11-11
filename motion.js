@@ -81,6 +81,7 @@
     bg.className = 'img-bg';
     bg.setAttribute('aria-hidden', 'true');
     bg.style.backgroundImage = img.style.backgroundImage || getComputedStyle(img).backgroundImage;
+    bg.style.backgroundPosition = img.style.backgroundPosition || 'center';
     img.style.background = 'none';
     img.insertBefore(bg, img.firstChild);
   });

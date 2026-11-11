@@ -293,7 +293,7 @@ section{padding:96px 0}
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
 .n-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s;display:block;color:inherit;text-decoration:none}
 .n-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(16,42,76,.12)}
-.n-card .img{height:180px;position:relative;display:flex;align-items:flex-end;padding:16px;background-size:cover;background-position:center;
+.n-card .img{height:230px;position:relative;display:flex;align-items:flex-end;padding:16px;background-size:cover;background-position:center;
     background:linear-gradient(150deg,#1E5BB8,#102A4C);color:#fff}
 .n-card .img .ph-grid{position:absolute;inset:0;opacity:.35}
 .n-card .img .tagcat{position:relative;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
